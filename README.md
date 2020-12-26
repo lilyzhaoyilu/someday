@@ -1,2 +1,2 @@
 # someday
-a collaborated MERN project
+A collaborative MERN project, using MongoDB, Express, React, and NodeJS.
