@@ -1,4 +1,4 @@
-# someday
+# Someday
 
 ### Someday
 Someday is a collaborative MERN project, using MongoDB, Express, React, and NodeJS. It helps users to keep track of the movies and TV shows that they have watched and want to watch. 
