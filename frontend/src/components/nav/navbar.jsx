@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 // import "./navbar.css";
 
 class NavBar extends React.PureComponent {
@@ -15,6 +15,29 @@ class NavBar extends React.PureComponent {
 	}
 
 	getLinks() {
+		let navLinks;
+
+		if (this.props.location.pathname === "/login") {
+			navLinks = (
+				<div>
+					<Link to="/signup">Signup</Link>
+				</div>
+			);
+		} else if (this.props.location.pathname === "/signup") {
+			navLinks = (
+				<div>
+					<Link to="/login">Login</Link>
+				</div>
+			);
+		} else {
+			navLinks = (
+				<div>
+					<Link to="/signup">Signup</Link>
+					<Link to="/login">Login</Link>
+				</div>
+			);
+		}
+
 		if (this.props.loggedIn) {
 			return (
 				<div>
@@ -23,16 +46,12 @@ class NavBar extends React.PureComponent {
 				</div>
 			);
 		} else {
-			return (
-				<div>
-					<Link to="/signup">Signup</Link>
-					<Link to="/login">Login</Link>
-				</div>
-			);
+			return navLinks;
 		}
 	}
 
 	render() {
+		console.log(this.props.location.pathname);
 		return (
 			<div>
 				<h1>Someday</h1>
@@ -42,4 +61,4 @@ class NavBar extends React.PureComponent {
 	}
 }
 
-export default NavBar;
+export default withRouter(NavBar);
