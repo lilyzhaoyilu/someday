@@ -1,0 +1,28 @@
+.splash-header{
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+
+.splash-features{
+  height: 45vh;
+  background-color:#edf4ed;
+}
+.splash-features li{
+  list-style: none;
+}
+
+.splash-trending-movies{
+  height: 45vh;
+  
+}
+
+.splash-trending-tvshows{
+  height: 45vh;
+  background-color:#f7f7f7;
+}
