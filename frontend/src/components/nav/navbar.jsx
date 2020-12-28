@@ -18,9 +18,7 @@ class NavBar extends React.PureComponent {
 		if (this.props.loggedIn) {
 			return (
 				<div>
-					<Link to={"/tweets"}>All Tweets</Link>
 					<Link to={"/profile"}>Profile</Link>
-					<Link to="/new_tweet">Write a Tweet</Link>
 					<button onClick={this.logoutUser}>Logout</button>
 				</div>
 			);
