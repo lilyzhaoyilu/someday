@@ -47,9 +47,9 @@ User Profile Page
 ![User Profile Page](https://github.com/lilyzhaoyilu/someday/blob/main/assets/userpage.png)
 
 ## Group Members and Work Breakdown
-Website wireframes - Lily
-Sample state - Michael
-Sample database /sample schema - Rex
-API routes - Rex
-Frontend routes -Michael
-Sam helps Michael and Rex
+Website wireframes - Lily   
+Sample state - Michael   
+Sample database /sample schema - Rex   
+API routes - Rex   
+Frontend routes -Michael   
+Sam helps Michael and Rex   
