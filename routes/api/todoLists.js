@@ -35,12 +35,19 @@ router.post(
       return res.status(400).json(errors);
     }
 
+    TodoList.findOne({ email: req.body.name }).then((todoList)=>{
+      if(todoList){
+        return res
+        .status(400)
+        .json({todoList: "This list already exist"})
+      }else{
     const newTodoList = new TodoList({
       name: req.body.name,
       user: req.user.id,
       movie: req.movie.id,
     });
-
+  }
+})
     newTodoList.save().then((todoList) => res.json(todoList));
   }
 );
