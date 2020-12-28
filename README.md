@@ -16,7 +16,6 @@ We often have TV shows and movies that we want to watch and have watched but do 
 
 ## Technologies & Challenges
 
-
 ### Architecture 
 The overall application architecture is geared toward a light and simple application.
 
@@ -36,6 +35,16 @@ Also, since we are using a API for gathering all the data, we need try to minimi
 
 * Implementing effective search
 * Utilizing MongoDB database 
+
+## WireFrames and Mocks
+Login, sign up, and Splash
+![Login and Splash](https://github.com/lilyzhaoyilu/someday/blob/main/assets/Login%20%26%20Splash.png)
+
+Media Page
+![Media Page](https://github.com/lilyzhaoyilu/someday/blob/main/assets/media%20page.png)
+
+User Profile Page
+![User Profile Page](https://github.com/lilyzhaoyilu/someday/blob/main/assets/userpage.png)
 
 ## Group Members and Work Breakdown
 Website wireframes - Lily
