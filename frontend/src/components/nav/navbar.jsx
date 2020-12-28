@@ -54,7 +54,9 @@ class NavBar extends React.PureComponent {
 		console.log(this.props.location.pathname);
 		return (
 			<div>
-				<h1>Someday</h1>
+				<Link to="/">
+					<h1>Someday</h1>
+				</Link>
 				{this.getLinks()}
 			</div>
 		);
