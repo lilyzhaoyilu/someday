@@ -1,6 +1,7 @@
 # Someday
 
 ### Someday
+
 Someday is a collaborative MERN project, using MongoDB, Express, React, and NodeJS. It helps users to keep track of the movies and TV shows that they have watched and want to watch. 
 
 ## Background and Overview
@@ -14,6 +15,7 @@ We often have TV shows and movies that we want to watch and have watched but do 
 - [ ] Comments underneath the movie/tvshow's page
 
 ## Technologies & Challenges
+
 
 ### Architecture 
 The overall application architecture is geared toward a light and simple application.
