@@ -2,31 +2,31 @@ const express = require("express");
 const router = express.Router();
 const moogoose = require('mongoose');
 const passport = require("passposrt");
-const TodoList = require("../../models/TodoList");
+const WatchedList = require("../../models/WatchedList");
 const validateList = require("../../validation/list");
 
 
-router.get("/todoList", (req, res) => {
-  TodoList.find()
+router.get("/watchedList", (req, res) => {
+  WatchedList.find()
     .sort({ data: -1 })
-    .then((todoLists) => res.json(todoLists))
+    .then((watchedLists) => res.json(watchedLists))
     .catch((err) => res.status(400).json(err));
 });
 
-router.get("/user/:user_id/todoList", (req, res) => {
-    TodoList.find({user: req.params.user_id})
-    .then((todoLists)=>res.json(todoLists))
+router.get("/user/:user_id/watchedList", (req, res) => {
+    WatchedList.find({user: req.params.user_id})
+    .then((watchedLists)=>res.json(watchedLists))
     .catch((err)=> res.status(400).json(err));
 });
 
-router.get("/todoList/:id", (req, res) => {
-  TodoList.findById(req.params.id)
-    .then((todoList) => res.json(todoList))
+router.get("/watchedList/:id", (req, res) => {
+  WatchedList.findById(req.params.id)
+    .then((watchedList) => res.json(watchedList))
     .catch((err) => res.status(400).json(err));
 });
 
 router.post(
-  "/todoList",
+  "/watchedList",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { isValid, errors } = validateList(req.body);
@@ -35,12 +35,12 @@ router.post(
       return res.status(400).json(errors);
     }
 
-    const newTodoList = new TodoList({
+    const newWatchedList = new WatchedList({
       name: req.body.name,
       user: req.user.id,
       movie: req.movie.id,
     });
 
-    newTodoList.save().then((todoList) => res.json(todoList));
+    newWatchedList.save().then((watchedList) => res.json(watchedList));
   }
 );
