@@ -4,15 +4,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
 }
-
-
 
 .splash-features{
   height: 45vh;
   background-color:#edf4ed;
 }
+
 .splash-features li{
   list-style: none;
 }

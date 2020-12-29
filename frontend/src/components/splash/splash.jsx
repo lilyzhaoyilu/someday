@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 class Splash extends React.Component {
 	constructor(props) {
@@ -16,8 +16,8 @@ class Splash extends React.Component {
           <span><input type="text" placeholder="search"></input></span>
           </div>
           <div className="splash-header-right">
-          <span>try demo</span>
-          <span>login</span>
+          <span>try demo</span> 
+          <span>login</span> <Link to="login">login</Link>
           </div>
         </div>
 
