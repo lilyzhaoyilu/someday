@@ -54,7 +54,7 @@ class SignupForm extends React.Component {
 			<div className="signup-form-container">
 
 				<div className="signup-form-title">
-				this is the title and the logo
+				<Link to="/">this is the title and the logo</Link>
 				</div>
 				<div>
 				<Link to="/login">Log in instead</Link>
