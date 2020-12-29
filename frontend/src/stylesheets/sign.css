@@ -10,9 +10,9 @@
   min-width: 200px;
 }
 
-.signup-form label input{
+/* .signup-form label input{
   width: 100%;
-}
+} */
 
 
 
@@ -28,3 +28,13 @@
 
 
 /* login below */
+.login-form-container{
+  margin: 50px 30vw 50px;
+}
+
+.login-form{
+  display:flex;
+  flex-direction:column;
+  width: 40vw;
+  min-width: 200px;
+}
