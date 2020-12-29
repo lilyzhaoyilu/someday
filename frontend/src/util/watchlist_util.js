@@ -6,7 +6,7 @@ export const postWatchlist = (listData) => {
 }
 
 //* PATCH / api / todolist /: id - update todo - list(add or delete movie),
-export const updataWatchlist = (listData) => {
+export const updateWatchlist = (listData) => {
   return axios.patch(`/api/todolist/${listData}`, listData);
 }
 

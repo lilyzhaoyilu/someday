@@ -1,5 +1,5 @@
 import movieKey from '../util/keys/keys'
-import APIUTIL from '../util/movie_util'
+import * as APIUTIL from '../util/movie_util'
 
 
 export const RECEIVE_A_MOVIE = 'RECEIVE_A_MOVIE';

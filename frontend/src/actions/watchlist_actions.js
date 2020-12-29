@@ -49,7 +49,7 @@ export const deleteWatchlist = (watchlistId) => dispatch => (
       err => dispatch(receiveErrors(err))
     )
 )
-// ! confirm with rex
+//! confirm with rex
 export const getMyWatchlist = (userId) => dispatch => (
   APIUTIL.getMyWatchlist(userId)
     .then(

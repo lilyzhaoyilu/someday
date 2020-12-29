@@ -28,8 +28,8 @@ export const updateHistorylist = (historylist) => dispatch => (
     )
 )
 
-export const shwoHistorylist = (userId) => dispatch => (
-  APIUTIL.shwoHistorylist(userId)
+export const showHistorylist = (userId) => dispatch => (
+  APIUTIL.showHistorylist(userId)
     .then(
       list => dispatch(receiveHistorylist(list)),
       err => dispatch(receiveErrors(err))
