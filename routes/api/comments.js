@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const moogoose = require("mongoose");
-const passport = require("passposrt");
+const passport = require("passport");
 const Comment = require("../../models/Comment");
 const validateComment = require("../../validation/comments");
 
