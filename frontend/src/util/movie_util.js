@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-
-
-export const getThisMovie = (movieData) => (
-  axios.request(movieData)
+export const getThisMovie = (movieId) => (
+  axios.request(movieId)
 )
 

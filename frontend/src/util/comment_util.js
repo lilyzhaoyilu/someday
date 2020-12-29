@@ -6,10 +6,10 @@ export const postComment = commentData => (
   axios.post(`/api/comment`, commentData)
 )
 
-//* Get / api / comments /: id - display all comments,
+//* Get / api / user/ :id / comments - display all comments,
 
-export const indexOfComments = () => (
-  axios.post(`/api/comments/`)
+export const indexOfComments = (userId) => (
+  axios.get(`/api/user/${userId}/comments/`)
 )
 
 //* DELETE / api / comment /: id - delete user comments,
@@ -17,3 +17,5 @@ export const indexOfComments = () => (
 export const deleteComment = (commentId) => (
   axios.delete(`/api/comment/${commentId}`)
 )
+
+
