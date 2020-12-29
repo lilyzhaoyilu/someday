@@ -58,7 +58,7 @@ class NavBar extends React.PureComponent {
 	render() {
 		return (
 			<div>
-				<Link to="/">
+				<Link to="/splash">
 					<h1>Someday</h1>
 				</Link>
 				<SearchBarContainer />
