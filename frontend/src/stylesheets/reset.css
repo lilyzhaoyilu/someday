@@ -139,3 +139,10 @@ a {
 	text-decoration: none;
 	color: black;
 }
+
+
+
+/* reset all buttons and input(type:submit to have cursor pointer) */
+input[type=submit], button{
+	cursor: pointer;
+}
