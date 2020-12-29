@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-
+import Logo from '../../util/somedaylogo.svg';
 class Splash extends React.Component {
 	constructor(props) {
 		super(props);
@@ -12,12 +12,12 @@ class Splash extends React.Component {
 			<div className="splash">
 				<div className="splash-header">
           <div className="splash-header-left">
-          <span>Someday</span>
-          <span><input type="text" placeholder="search"></input></span>
+          <img src={Logo}></img>
+          <input type="text" placeholder="search"></input>
           </div>
           <div className="splash-header-right">
-          <span>try demo</span> 
-          <span>login</span> <Link to="login">login</Link>
+          {/* <Link to="/">try demo need to do</Link> */}
+          <Link to="login">login</Link>
           </div>
         </div>
 
