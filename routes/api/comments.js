@@ -5,9 +5,9 @@ const passport = require("passposrt");
 const Comment = require("../../models/Comment");
 const validateComment = require("../../validation/comments");
 
-//get all comments
-router.get("/comment", (req, res) => {
-  Comment.find()
+//get all comments from one movie
+router.get("/movie/:movie_id/comment", (req, res) => {
+  Comment.find({ user: req.params.movie_id })
     .sort({ data: -1 })
     .then((comments) => res.json(comments))
     .catch((err) => res.status(400).json(err));
@@ -16,6 +16,7 @@ router.get("/comment", (req, res) => {
 //get all user's comments
 router.get("/user/:user_id/comment", (req, res) => {
   Comment.find({ user: req.params.user_id })
+    .sort({ data: -1 })
     .then((comments) => res.json(comments))
     .catch((err) => res.status(400).json(err));
 });
@@ -23,6 +24,7 @@ router.get("/user/:user_id/comment", (req, res) => {
 //get all todolist comments
 router.get("todoList/:todoList_id/comment", (req, res) => {
   Comment.find({ todoList: req.params.todolist_id })
+    .sort({ data: -1 })
     .then((comments) => res.json(comments))
     .catch((err) => res.status(400).json(err));
 });
@@ -30,6 +32,7 @@ router.get("todoList/:todoList_id/comment", (req, res) => {
 //get all watchedlist comments
 router.get("todoList/:watchedList_id/comment", (req, res) => {
   Comment.find({ watchedList: req.params.watchedlist_id })
+    .sort({ data: -1 })
     .then((comments) => res.json(comments))
     .catch((err) => res.status(400).json(err));
 });
