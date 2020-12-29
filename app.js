@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const app = express();
 const db = require('./config/keys').mongoURI;
 
-// app.get("/", (req, res) => res.send("Hello World"));
 const users = require("./routes/api/users");
 
 mongoose
