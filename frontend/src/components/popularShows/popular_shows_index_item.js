@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-export default class PopularMoviesIndexItem extends Component {
+export default class PopularShowsIndexItem extends Component {
   render() {
-    const { movie, key, imgUrl, name, year } = this.props
+    const { show, key, imgUrl, name, year}
     return (
       <div>
         <li>
