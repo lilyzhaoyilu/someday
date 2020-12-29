@@ -1,7 +1,9 @@
-/node_modules
 
+/config/keys_dev.js
+/node_modules
 
 # ignore frontend files
 /frontend/node_modules;
 frontend/src/util/keys/keys_dev.js
 /frontend/.env
+frontend/src/util/keys/keys_dev.js
