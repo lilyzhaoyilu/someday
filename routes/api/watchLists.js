@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const moogoose = require('mongoose');
+const moogoose = require("mongoose");
 const passport = require("passposrt");
-const WatchedList = require('../../models/WatchedList');
+const WatchedList = require("../../models/WatchedList");
 const validateList = require("../../validation/list");
-
 
 router.get("/watchedList", (req, res) => {
   WatchedList.find()
@@ -14,9 +13,9 @@ router.get("/watchedList", (req, res) => {
 });
 
 router.get("/user/:user_id/watchedList", (req, res) => {
-    WatchedList.find({user: req.params.user_id})
-    .then((watchedLists)=>res.json(watchedLists))
-    .catch((err)=> res.status(400).json(err));
+  WatchedList.find({ user: req.params.user_id })
+    .then((watchedLists) => res.json(watchedLists))
+    .catch((err) => res.status(400).json(err));
 });
 
 router.get("/watchedList/:id", (req, res) => {
@@ -35,60 +34,61 @@ router.post(
       return res.status(400).json(errors);
     }
 
-    WatchedList.findOne({ name: req.body.name }).then((watchedList) => {
-      if (watchedList) {
-        return res.status(400).json({ watchedList: "This list already exist" });
-      } else {
-        const newWatchedList = new WatchedList({
-          name: req.body.name,
-          user: req.user.id,
-          movie: req.body.movie,
-        });
-      }
+    const newWatchedList = new WatchedList({
+      name: req.body.name,
+      user: req.user.id,
+      movie: req.body.movie,
     });
+
     newWatchedList.save().then((watchedList) => res.json(watchedList));
   }
 );
 
-router.patch("/watchedList/:id", (req, res) => {
+router.patch(
+  "/watchedList/:id",
   passport.authenticate("jwt", { session: false }),
-    (req, res) => {
-      const { isValid, errors } = validateList(req.body);
+  (req, res) => {
+    const { isValid, errors } = validateList(req.body);
 
-      if (!isValid) {
-        return res.status(400).json(errors);
-      }
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
 
-      const newWatchedList = new WatchedList({
-        _id: req.params.id,
-        name: req.body.name,
-        user: req.user.id,
-        movie: req.body.movie,
-      });
-      WatchedList.updateOne({ _id: req.params.id }, newWatchedList)
-        .then(() => {
-          res.status(201).json({
-            message: "Watched List updated successfully!",
-          });
-        })
-        .catch((error) => {
-          res.status(400).json({
-            error: error,
-          });
+    const newWatchedList = new WatchedList({
+      _id: req.params.id,
+      name: req.body.name,
+      user: req.user.id,
+      movie: req.body.movie,
+    });
+    WatchedList.updateOne({ _id: req.params.id }, newWatchedList)
+      .then(() => {
+        res.status(201).json({
+          message: "Watched List updated successfully!",
         });
-    };
-});
+      })
+      .catch((error) => {
+        res.status(400).json({
+          error: error,
+        });
+      });
+  }
+);
 
 //detele todoList
-router.delete("/api/watchedList/:id", (req, res) =>{
-  WatchedList.deleteOne({_id: req.params.id}).then(() =>{
-    res.status(200).json({
-      message: 'Todo List Deleted!'
-    })
-  }).catch(error => {
-    res.status(400).json({error: error})
-  })
-})
-
+router.delete(
+  "/api/watchedList/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    WatchedList.deleteOne({ _id: req.params.id })
+      .then(() => {
+        res.status(200).json({
+          message: "Todo List Deleted!",
+        });
+      })
+      .catch((error) => {
+        res.status(400).json({ error: error });
+      });
+  }
+);
 
 module.exports = router;
