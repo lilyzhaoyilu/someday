@@ -6,7 +6,7 @@ export const postWatchlist = (listData) => {
 }
 
 //* PATCH / api / todolist /: id - update todo - list(add or delete movie),
-export const updataWatchlist = (listData) => {
+export const updateWatchlist = (listData) => {
   return axios.patch(`/api/todolist/${listData}`, listData);
 }
 
@@ -16,6 +16,6 @@ export const deleteWatchlist = (listId) => {
 }
 
 //* Get / api / users /: id / todolist - display user todolists
-export const getThisWatchlist = (userId) => {
+export const getMyWatchlist = (userId) => {
   return axios.get(`/api/users/${userId}/todolist`)
 }

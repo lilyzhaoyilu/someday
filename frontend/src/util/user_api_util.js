@@ -14,7 +14,7 @@ export const getThisUser = (userId) => {
 
 //* Get / api / users - list other users
 
-export const getAllUser = () => {
+export const getAllUsers = () => {
   return axios.get(`/api/users/`);
 }
 
