@@ -1,5 +1,5 @@
 /node_modules
-/config/keys.js;
+
 
 # ignore frontend files
 /frontend/node_modules;
