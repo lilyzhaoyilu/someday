@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom'
 
 import '../stylesheets/reset.css'
+import '../stylesheets/splash.css'
 
 import App from './app'
 
