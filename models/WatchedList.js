@@ -21,4 +21,5 @@ const WatchedListSchema = new Schema({
     }
 });
 
-module.exports = WatchedList = mongoose.model('todoList', WatchedListSchema);
+const WatchedList = mongoose.model('watchedList', WatchedListSchema);
+module.exports = WatchedList;
