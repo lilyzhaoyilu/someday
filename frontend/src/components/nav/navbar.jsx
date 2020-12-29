@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import DemoButtonContainer from "../session/demo_button/demo_button_container";
+import SearchBarContainer from "./search_bar/search_bar_container";
 // import "./navbar.css";
 
 class NavBar extends React.PureComponent {
@@ -21,12 +23,14 @@ class NavBar extends React.PureComponent {
 			navLinks = (
 				<div>
 					<Link to="/signup">Signup</Link>
+					<DemoButtonContainer />
 				</div>
 			);
 		} else if (this.props.location.pathname === "/signup") {
 			navLinks = (
 				<div>
 					<Link to="/login">Login</Link>
+					<DemoButtonContainer />
 				</div>
 			);
 		} else {
@@ -34,6 +38,7 @@ class NavBar extends React.PureComponent {
 				<div>
 					<Link to="/signup">Signup</Link>
 					<Link to="/login">Login</Link>
+					<DemoButtonContainer />
 				</div>
 			);
 		}
@@ -51,12 +56,12 @@ class NavBar extends React.PureComponent {
 	}
 
 	render() {
-		console.log(this.props.location.pathname);
 		return (
 			<div>
 				<Link to="/">
 					<h1>Someday</h1>
 				</Link>
+				<SearchBarContainer />
 				{this.getLinks()}
 			</div>
 		);

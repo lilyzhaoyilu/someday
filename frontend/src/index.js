@@ -29,6 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
   window.getState = store.getState;
-  window.getMostPopularMovies = getMostPopularMovies;
+
   ReactDOM.render(<Root store={store} />, root);
 });

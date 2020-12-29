@@ -2,13 +2,12 @@ import React, { Component } from 'react'
 
 export default class MovieIndexItem extends Component {
   render() {
-    const { movie, url, imgUrl, name }
+    const { movie, imgUrl, name, year } = this.props
     return (
       <div>
-        <a href={url}>
-          <img src={imgUrl} alt={name} />
-        </a>
+        <img src={imgUrl} alt={name} style={{ width: '100px', height: 'auto' }} />
         <h3>{name}</h3>
+        <p>{year}</p>
       </div>
     )
   }

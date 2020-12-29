@@ -11,7 +11,8 @@ export default (oldState = {}, action) => {
       }
     case RECEIVE_SHOWS:
       const newState = {};
-      action.shows.forEach(show => newState[show.id] = show)
+      action.shows.data.d.forEach(show => newState[show.id] = show)
+      console.log(newState);
       return { ...oldState, ...newState }
     default:
       return oldState

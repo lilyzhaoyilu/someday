@@ -3,19 +3,34 @@ import MovieIndexItem from './movie_index_item';
 
 export default class MovieIndex extends Component {
 
-  componentDidMount(){
-    this.props.fetchAllMovies()
-  }
+
 
   render() {
     const { movies } = this.props;
-    return (
-      <div>
-        <ul>
-          {movies.map(movie => <MovieIndexItem 
-          key={movie.id} movie={movie} url={movie.url} imgUrl={movie.imgUrl} name={movie.name}/>)}
-        </ul>
-      </div>
-    )
+    if (movies) {
+      console.log(movies)
+      return (
+        <div>
+          <ul>
+            {movies.map(movie => {
+              if (movie.id.slice(0, 2) === 'tt') {
+                return (
+                  <MovieIndexItem
+                    key={movie.id}
+                    movie={movie}
+                    imgUrl={movie.i.imageUrl}
+                    name={movie.l}
+                    year={movie.y}
+                  />
+                )
+              }
+            })}
+          </ul>
+        </div>
+      )
+
+    } else {
+      return null;
+    }
   }
 }
