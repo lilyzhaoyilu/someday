@@ -12,14 +12,10 @@ import SplashContainer from './splash/splash_container'
 
 const App = () => (
   <div>
+
     <Switch>
-      <AuthRoute path='/' component={NavBarContainer} />
-    </Switch>
-    <Switch>
-      <AuthRoute exact path='/' component={SplashContainer} />
-      <AuthRoute exact path='/login' component={LoginFormContainer} />
-      <AuthRoute exact path='/signup' component={SignupFormContainer} />
-      <AuthRoute exact path='/search-result' component={MovieIndexContainer} />
+      <AuthRoute path='/' component={SplashContainer} />
+      <ProtectedRoute path='/' component={MainPage} />
     </Switch>
   </div>
 )
