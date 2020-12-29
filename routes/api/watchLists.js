@@ -76,7 +76,7 @@ router.patch(
 
 //detele todoList
 router.delete(
-  "/api/watchedList/:id",
+  "/watchedList/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     WatchedList.deleteOne({ _id: req.params.id })

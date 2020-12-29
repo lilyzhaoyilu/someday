@@ -20,7 +20,7 @@ router.get("/user/:user_id/todoList", (req, res) => {
     .catch((err) => res.status(400).json(err));
 });
 
-//get specific todolists
+//get specific todolist
 router.get("/todoList/:id", (req, res) => {
   TodoList.findById(req.params.id)
     .then((todoList) => res.json(todoList))
@@ -78,7 +78,7 @@ router.patch(
 
 //detele todoList
 router.delete(
-  "/api/todoList/:id",
+  "/todoList/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     TodoList.deleteOne({ _id: req.params.id })

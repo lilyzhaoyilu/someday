@@ -7,8 +7,16 @@ const MovieSchema = new Schema(
       type: String,
       required: true,
     },
+    name: {
+      type: String, 
+      required: true,
+    },
+    imgUrl: {
+      type: String,
+    },
+    tag: [String],
   },
   { _id: true, timestamps: true }
 );
-
-module.exports = mongoose.model('movie', MovieSchema)
+const Movie = mongoose.model("movie", MovieSchema);
+module.exports = Movie;
