@@ -1,6 +1,7 @@
 # Someday
 
 ### Someday
+
 Someday is a collaborative MERN project, using MongoDB, Express, React, and NodeJS. It helps users to keep track of the movies and TV shows that they have watched and want to watch. 
 
 ## Background and Overview
@@ -35,10 +36,20 @@ Also, since we are using a API for gathering all the data, we need try to minimi
 * Implementing effective search
 * Utilizing MongoDB database 
 
+## WireFrames and Mocks
+Login, sign up, and Splash
+![Login and Splash](https://github.com/lilyzhaoyilu/someday/blob/main/assets/Login%20%26%20Splash.png)
+
+Media Page
+![Media Page and search page](https://github.com/lilyzhaoyilu/someday/blob/main/assets/media%20page%20and%20search%20result.png)
+
+User Profile Page
+![User Profile Page](https://github.com/lilyzhaoyilu/someday/blob/main/assets/userpage.png)
+
 ## Group Members and Work Breakdown
-Website wireframes - Lily
-Sample state - Michael
-Sample database /sample schema - Rex
-API routes - Rex
-Frontend routes -Michael
-Sam helps Michael and Rex
+Website wireframes - Lily   
+Sample state - Michael   
+Sample database /sample schema - Rex   
+API routes - Rex   
+Frontend routes -Michael   
+Sam helps Michael and Rex   
