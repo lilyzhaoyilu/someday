@@ -4,7 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 
-
+import { getMostPopularMovies } from './util/movie_util'
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
@@ -29,5 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const root = document.getElementById('root');
   window.getState = store.getState;
+  window.getMostPopularMovies = getMostPopularMovies;
   ReactDOM.render(<Root store={store} />, root);
 });

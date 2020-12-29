@@ -12,12 +12,12 @@ const receiveErrors = errors => ({
 })
 
 const receiveThisUser = user => ({
-  type: RECEIVE_THIS_USER,
+  type: FETCH_THIS_USER,
   user
 })
 
 const receiveAllUsers = users => ({
-  type: RECEIVE_ALL_USER,
+  type: FETCH_ALL_USER,
   users
 })
 
