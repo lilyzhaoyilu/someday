@@ -85,4 +85,12 @@ router.post("/login", (req, res) => {
     });
   });
 });
+//show other user profile
+router.get(
+  "/user/:id", (req, res) => {
+    User.findOne({ email: req.params.id })
+      .then((user) => res.json(user))
+      .catch((err) => res.status(400).json(err));
+  });
+
 module.exports = router;
