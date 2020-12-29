@@ -41,7 +41,7 @@ Login, sign up, and Splash
 ![Login and Splash](https://github.com/lilyzhaoyilu/someday/blob/main/assets/Login%20%26%20Splash.png)
 
 Media Page
-![Media Page](https://github.com/lilyzhaoyilu/someday/blob/main/assets/media%20page.png)
+![Media Page and search page](https://github.com/lilyzhaoyilu/someday/blob/main/assets/media%20page%20and%20search%20result.png)
 
 User Profile Page
 ![User Profile Page](https://github.com/lilyzhaoyilu/someday/blob/main/assets/userpage.png)
