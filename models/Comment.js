@@ -9,10 +9,21 @@ const CommentSchema = new Schema({
   movie: {
     type: Schema.Types.ObjectId,
     ref: "movies",
+    default: null,
   },
-  reply:{
+  reply: {
     type: Schema.Types.ObjectId,
-    ref: 'comments',
+    ref: "comments",
+    default: null,
+  },
+  todoList: {
+    type: Schema.Types.ObjectId,
+    ref: "todoLists",
+    default: null,
+  },
+  watchedList: {
+    type: Schema.Types.ObjectId,
+    ref: "watchedLists",
     default: null,
   },
   text: {

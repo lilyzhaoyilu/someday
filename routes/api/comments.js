@@ -3,14 +3,14 @@ const router = express.Router();
 const moogoose = require("mongoose");
 const passport = require("passposrt");
 const Comment = require("../../models/Comment");
-const validateComment = require("../../validation/comments")
+const validateComment = require("../../validation/comments");
 
 //get all comments
-router.get("/comment", (req,res)=> {
-    Comment.find()
-    .sort({data: -1})
-    .then((comments)=>res.json(comments))
-    .catch((err)=> res.status(400).json(err));
+router.get("/comment", (req, res) => {
+  Comment.find()
+    .sort({ data: -1 })
+    .then((comments) => res.json(comments))
+    .catch((err) => res.status(400).json(err));
 });
 
 //get all user's comments
@@ -19,10 +19,20 @@ router.get("/user/:user_id/comment", (req, res) => {
     .then((comments) => res.json(comments))
     .catch((err) => res.status(400).json(err));
 });
+
 //get all todolist comments
-router.get("todoList/:todoList_id/comment",(req,res)=>{
-    Comment.find({todolist: req.params.todolist_id})
-})
+router.get("todoList/:todoList_id/comment", (req, res) => {
+  Comment.find({ todoList: req.params.todolist_id })
+    .then((comments) => res.json(comments))
+    .catch((err) => res.status(400).json(err));
+});
+
+//get all watchedlist comments
+router.get("todoList/:watchedList_id/comment", (req, res) => {
+  Comment.find({ watchedList: req.params.watchedlist_id })
+    .then((comments) => res.json(comments))
+    .catch((err) => res.status(400).json(err));
+});
 
 //get specific comment
 router.get("/comment/:id", (req, res) => {
@@ -46,7 +56,7 @@ router.post(
       text: req.body.text,
       user: req.user.id,
       movie: req.movie.id,
-      reply: req.reply.id
+      reply: req.reply.id,
     });
     newComment.save().then((comment) => res.json(comment));
   }
