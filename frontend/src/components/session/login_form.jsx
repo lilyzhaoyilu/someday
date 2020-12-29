@@ -1,5 +1,8 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+import Logo from '../../util/somedaylogo.svg';
+
+
 
 class LoginForm extends React.Component {
 	constructor(props) {
@@ -48,27 +51,33 @@ class LoginForm extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
-					<div>
+		
+			<div className="login-form-container">
+				
+				<div><Link to="/"><img className="login-form-logo" src={Logo}></img></Link></div>
+				
+				<div ><Link className="login-form-signup" to="/signup">Sign up instead</Link></div>
+				<form className="login-form" onSubmit={this.handleSubmit}>
+
 						<input
 							type="text"
 							value={this.state.email}
 							onChange={this.update("email")}
 							placeholder="Email"
 						/>
-						<br />
+					
 						<input
 							type="password"
 							value={this.state.password}
 							onChange={this.update("password")}
 							placeholder="Password"
 						/>
-						<br />
+					
 						<input type="submit" value="Submit" />
-						{this.renderErrors()}
-					</div>
+						
+						<button className="sinup-form-demo">Login as demo user</button>
 				</form>
+				{this.renderErrors()}
 			</div>
 		);
 	}

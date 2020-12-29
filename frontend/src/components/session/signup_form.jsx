@@ -1,5 +1,6 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+import Logo from '../../util/somedaylogo.svg';
 
 class SignupForm extends React.Component {
 	constructor(props) {
@@ -52,53 +53,64 @@ class SignupForm extends React.Component {
 	render() {
 		return (
 			<div className="signup-form-container">
-				<form onSubmit={this.handleSubmit}>
-					<div className="signup-form">
-						<br />
-						<label>
-							Email:
+
+				<div>
+					<Link to="/"><img className="login-form-logo" src={Logo}></img></Link>
+				</div>
+
+				<div>
+					<Link className="sinup-form-signup" to="/login">Log in instead</Link>
+				</div>
+				
+
+
+				<form onSubmit={this.handleSubmit} className="signup-form">
+					
+					
 							<input
 								type="text"
 								value={this.state.email}
 								onChange={this.update("email")}
-								placeholder="Email"
+								placeholder="Email*"
 							/>
-						</label>
-						<br />
+					
+					
 						<input
 							type="text"
 							value={this.state.handle}
 							onChange={this.update("handle")}
 							placeholder="Handle"
 						/>
-						<br />
-						<label>
-							Password:
+				
+					
 							<input
-								type="password"
+								type="password*"
 								value={this.state.password}
 								onChange={this.update("password")}
-								placeholder="Password"
+								placeholder="Password*"
 							/>
-							<br />
+					
+
+				
 							<input
-								type="password"
+								type="password*"
 								value={this.state.password2}
 								onChange={this.update("password2")}
-								placeholder="Confirm Password"
+								placeholder="Confirm Password*"
 							/>
-							<br />
-						</label>
-						<label>About
+					
+
+					
 							<textarea 
 								value={this.state.about} 
 								onChange={this.update('about')}
 								placeholder="Tell us about you"
 							/>
-						</label>
-						<input type="submit" value="Submit" />
+					
+						<input type="submit" value="Sign Up" />
 						{this.renderErrors()}
-					</div>
+				
+				<button className="sinup-form-demo">Login as demo user</button>
 				</form>
 			</div>
 		);
