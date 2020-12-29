@@ -1,14 +1,18 @@
-import { RECEIVE_A_MOVIE } from '../actions/movie_actions';
+import { RECEIVE_A_SHOW, RECEIVE_SHOWS } from '../actions/movie_actions';
 
-export default function(oldState={}, action) {
+export default (oldState = {}, action) => {
   Object.freeze(oldState);
 
-  switch (action.type){
-    case RECEIVE_A_MOVIE:
+  switch (action.type) {
+    case RECEIVE_A_SHOW:
       return {
         ...oldState,
         [action.movie.id]: action.movie
       }
+    case RECEIVE_SHOWS:
+      const newState = {};
+      action.shows.forEach(show => newState[show.id] = show)
+      return { ...oldState, ...newState }
     default:
       return oldState
   }

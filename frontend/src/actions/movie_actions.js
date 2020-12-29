@@ -1,24 +1,60 @@
-import movieKey from '../util/keys/keys'
 import * as APIUTIL from '../util/movie_util'
 
+export const RECEIVE_SHOWS = "RECEIVE_POPULAR_SHOWS";
+export const RECEIVE_A_SHOW = 'RECEIVE_A_SHOW';
+export const RECEIVE_SHOW_ERRORS = 'RECEIVE_SHOW_ERRORS';
 
-export const RECEIVE_A_MOVIE = 'RECEIVE_A_MOVIE';
-export const RECEIVE_MOVIE_ERRORS = 'RECEIVE_MOVIE_ERRORS';
+const receiveAShow = (show) => ({
+  type: RECEIVE_A_SHOW,
+  show
+})
 
-const receiveAMovie = (movie) => ({
-  type: RECEIVE_A_MOVIE,
-  movie
+const receiveShows = (shows) => ({
+  type: RECEIVE_SHOWS,
+  shows
 })
 
 const receiveErrors = (errors) => ({
-  type: RECEIVE_MOVIE_ERRORS,
+  type: RECEIVE_SHOW_ERRORS,
   errors
 })
 
-export const fetchAMovie = (movieId) => dispatch => (
-  APIUTIL.getThisMovie(movieId)
+export const fetchShowData = (movieId) => dispatch => (
+  APIUTIL.fetchShowData(movieId)
     .then(
-      movie => dispatch(receiveAMovie(movie)),
+      show => dispatch(receiveAShow(show)),
+      err => dispatch(receiveErrors(err))
+    )
+)
+
+export const fetchPopularMovies = () => dispatch => (
+  APIUTIL.getMostPopularMovies()
+    .then(
+      movies => dispatch(receiveShows(movies)),
+      err => dispatch(receiveErrors(err))
+    )
+)
+
+export const fetchPopularTv = () => dispatch => (
+  APIUTIL.getMostPopularTV()
+    .then(
+      tvs => dispatch(receiveShows(tvs)),
+      err => dispatch(receiveErrors(err))
+    )
+)
+
+export const searchShows = (input) => dispatch => (
+  APIUTIL.searchShow(input)
+    .then(
+      shows => dispatch(receiveShows(shows)),
+      err => dispatch(receiveErrors(err))
+    )
+)
+
+export const fetchAllShows = () => dispatch => (
+  APIUTIL.fetchAllShows()
+    .then(
+      shows => dispatch(receiveShows(shows)),
       err => dispatch(receiveErrors(err))
     )
 )

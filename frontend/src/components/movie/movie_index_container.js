@@ -1,9 +1,12 @@
 import { connect } from 'react-redux';
-import fetchAllMovies from '../../actions/movie_actions';
+import { fetchAllShows } from '../../actions/movie_actions';
 import MovieIndex from './movie_index';
 
 const mstp = state => ({
-  movies: state.entities.movies
+  movies: Object.values(state.entities.movies)
+})
+const mdtp = dispatch => ({
+  fetchAllShows: dispatch(fetchAllShows)
 })
 
-export default connect(mstp, { fetchAllMovies })(MovieIndex);
+export default connect(mstp, mdtp)(MovieIndex);
