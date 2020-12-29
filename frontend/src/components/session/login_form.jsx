@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
 		
 			<div className="login-form-container">
 				
-				<div><Link to="/"><img className="login-form-logo" src={Logo}></img></Link></div>
+				<div><Link to="/splash"><img className="login-form-logo" src={Logo}></img></Link></div>
 				
 				<div ><Link className="login-form-signup" to="/signup">Sign up instead</Link></div>
 				<form className="login-form" onSubmit={this.handleSubmit}>

@@ -1,11 +1,15 @@
 import React from 'react'
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom'
-
-import '../stylesheets/reset.css'
-import '../stylesheets/splash.css'
-
 import App from './app'
+
+import '../stylesheets/reset.css';
+import '../stylesheets/splash.css';
+import '../stylesheets/sign.css';
+import '../stylesheets/navbar.css';
+
+
+
 
 const Root = ({ store }) => (
   <Provider store={store}>
