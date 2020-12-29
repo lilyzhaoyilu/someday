@@ -16,7 +16,7 @@ class Splash extends React.Component {
           <input type="text" placeholder="search"></input>
           </div>
           <div className="splash-header-right">
-          <span>try demo</span> 
+          {/* <Link to="/">try demo need to do</Link> */}
           <Link to="login">login</Link>
           </div>
         </div>

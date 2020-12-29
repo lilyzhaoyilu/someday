@@ -1,5 +1,14 @@
 .signup-form-container{
   margin: 50px 30vw 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+
+.signup-form-logo{
+  width: 100%;
 }
 
 
@@ -8,12 +17,28 @@
   flex-direction:column;
   width: 40vw;
   min-width: 200px;
+  padding-top: 20px;
 }
 
-/* .signup-form label input{
-  width: 100%;
-} */
+.signup-form-title{
+  width: 20vw;
+}
 
+.signup-form input, .signup-form textarea, .sinup-form-demo{
+  margin: 1vh;
+  height: 5vh;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.signup-form input[type=submit], .sinup-form-demo{
+  background-color: #007a5a;
+  border: none;
+  outline: none;
+  color:white;
+  font-weight: 800;
+  
+}
 
 
 
@@ -30,6 +55,19 @@
 /* login below */
 .login-form-container{
   margin: 50px 30vw 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login-form-logo{
+  width: 100%;
+}
+
+.login-form-signup{
+  size: 20px;
+  margin: 20px;
 }
 
 .login-form{
@@ -37,4 +75,20 @@
   flex-direction:column;
   width: 40vw;
   min-width: 200px;
+  padding-top: 20px;
+}
+
+.login-form input{
+  margin: 1vh;
+  height: 5vh;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.login-form input[type=submit]{
+  background-color: #007a5a;
+  border: none;
+  outline: none;
+  color:white;
+  font-weight: 800;
 }

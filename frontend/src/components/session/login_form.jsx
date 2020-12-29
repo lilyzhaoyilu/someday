@@ -1,5 +1,9 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
+import Logo from '../../util/somedaylogo.svg';
+
+
+
 class LoginForm extends React.Component {
 	constructor(props) {
 		super(props);
@@ -49,10 +53,10 @@ class LoginForm extends React.Component {
 		return (
 		
 			<div className="login-form-container">
-				<div className="login-form-title">
-				<Link to="/">this is the title and the logo</Link>
-				</div>
-				<Link to="/signup">Sign up instead</Link>
+				
+				<div><Link to="/"><img className="login-form-logo" src={Logo}></img></Link></div>
+				
+				<div ><Link className="login-form-signup" to="/signup">Sign up instead</Link></div>
 				<form className="login-form" onSubmit={this.handleSubmit}>
 
 						<input
@@ -70,9 +74,10 @@ class LoginForm extends React.Component {
 						/>
 					
 						<input type="submit" value="Submit" />
-						{this.renderErrors()}
-				
+						
+						<button className="sinup-form-demo">Login as demo user</button>
 				</form>
+				{this.renderErrors()}
 			</div>
 		);
 	}
