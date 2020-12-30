@@ -33,8 +33,8 @@ export const postComment = comment => dispatch => (
     )
 )
 
-export const indexOfComments = userId => dispatch => (
-  APIUTIL.indexOfComments(userId)
+export const getUserComments = userId => dispatch => (
+  APIUTIL.getUserComments(userId)
     .then(
       comments => dispatch(receiveMyComments(comments)),
       err => dispatch(receiveErrors(err))

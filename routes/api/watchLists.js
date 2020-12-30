@@ -61,11 +61,12 @@ router.patch(
       movie: req.body.movie,
     });
     WatchedList.updateOne({ _id: req.params.id }, newWatchedList)
-      .then(() => {
-        res.status(201).json({
-          message: "Watched List updated successfully!",
-        });
-      })
+    .then((watchedList) => res.json(watchedList))
+      // .then(() => {
+      //   res.status(201).json({
+      //     message: "Watched List updated successfully!",
+      //   });
+      // })
       .catch((error) => {
         res.status(400).json({
           error: error,

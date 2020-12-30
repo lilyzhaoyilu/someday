@@ -65,11 +65,12 @@ router.patch(
       movie: req.body.movie,
     });
     TodoList.updateOne({ _id: req.params.id }, newTodoList)
-      .then(() => {
-        res.status(201).json({
-          message: "Todo List updated successfully!",
-        });
-      })
+      .then((todoList) => res.json(todoList))
+      // .then(() => {
+      //   res.status(201).json({
+      //     message: "Todo List updated successfully!",
+      //   });
+      // })
       .catch((error) => {
         res.status(400).json({ error: error });
       });

@@ -22,7 +22,7 @@ router.get("/user/:user_id/comment", (req, res) => {
 });
 
 //get all todolist comments
-router.get("todoList/:todoList_id/comment", (req, res) => {
+router.get("/todoList/:todoList_id/comment", (req, res) => {
   Comment.find({ todoList: req.params.todolist_id })
     .sort({ data: -1 })
     .then((comments) => res.json(comments))
@@ -30,7 +30,7 @@ router.get("todoList/:todoList_id/comment", (req, res) => {
 });
 
 //get all watchedlist comments
-router.get("todoList/:watchedList_id/comment", (req, res) => {
+router.get("/watchedList/:watchedList_id/comment", (req, res) => {
   Comment.find({ watchedList: req.params.watchedlist_id })
     .sort({ data: -1 })
     .then((comments) => res.json(comments))

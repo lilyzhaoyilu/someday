@@ -1,6 +1,7 @@
 import * as APIUTIL from '../util/movie_util'
 
 export const RECEIVE_SHOWS = "RECEIVE_POPULAR_SHOWS";
+export const RECEIVE_POPULAR_SHOWS = "RECEIVE_POPULAR_SHOWS"
 export const RECEIVE_A_SHOW = 'RECEIVE_A_SHOW';
 export const RECEIVE_SHOW_ERRORS = 'RECEIVE_SHOW_ERRORS';
 
@@ -14,10 +15,17 @@ const receiveShows = (shows) => ({
   shows
 })
 
+const receivePopularShows = (shows) => ({
+  type: RECEIVE_POPULAR_SHOWS,
+  shows
+})
+
 const receiveErrors = (errors) => ({
   type: RECEIVE_SHOW_ERRORS,
   errors
 })
+
+
 
 export const fetchShowData = (movieId) => dispatch => (
   APIUTIL.fetchShowData(movieId)
@@ -30,7 +38,7 @@ export const fetchShowData = (movieId) => dispatch => (
 export const fetchPopularMovies = () => dispatch => (
   APIUTIL.getMostPopularMovies()
     .then(
-      movies => dispatch(receiveShows(movies)),
+      movies => dispatch(receivePopularShows(movies)),
       err => dispatch(receiveErrors(err))
     )
 )
@@ -38,7 +46,7 @@ export const fetchPopularMovies = () => dispatch => (
 export const fetchPopularTv = () => dispatch => (
   APIUTIL.getMostPopularTV()
     .then(
-      tvs => dispatch(receiveShows(tvs)),
+      tvs => dispatch(receivePopularShows(tvs)),
       err => dispatch(receiveErrors(err))
     )
 )

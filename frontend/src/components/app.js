@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import NavBarContainer from './nav/navbar_container'
 
@@ -13,13 +13,13 @@ import SplashContainer from './splash/splash_container'
 
 const App = () => (
   <div>
-    <AuthRoute exact path='/' component={NavBarContainer} />
-
+    <NavBarContainer />
     <Switch>
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
-      <AuthRoute exact path='/splash' component={SplashContainer} />
-      <ProtectedRoute path='/' component={MainPage} />
+      <ProtectedRoute exact path='/' component={MainPage} />
+      <AuthRoute path='/splash' component={SplashContainer} />
+
     </Switch>
   </div>
 )

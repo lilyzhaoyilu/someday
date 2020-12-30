@@ -10,7 +10,7 @@ const validateLoginInput = require("../../validation/login");
 
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
-router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.json({
     id: req.user.id,
     handle: req.user.handle,
@@ -19,11 +19,11 @@ router.get('/current', passport.authenticate('jwt', {session: false}), (req, res
 })
 
 router.post("/register", (req, res) => {
-    const {errors, isValid} = validateRegisterInput(req.body);
-    
-    if(!isValid) {
-        return res.status(400).json(errors);
-    }
+  const { errors, isValid } = validateRegisterInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
 
   User.findOne({ email: req.body.email }).then((user) => {
     if (user) {
@@ -59,18 +59,18 @@ router.post("/login", (req, res) => {
     return res.status(400).json(errors);
   }
 
-  const handle = req.body.handle;
+  const email = req.body.email;
   const password = req.body.password;
 
-  User.findOne({ handle }).then(user => {
+  User.findOne({ email }).then(user => {
     if (!user) {
-      errors.handle = "This user does not exist";
+      errors.email = "This user does not exist";
       return res.status(400).json(errors);
     }
 
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
-        const payload = { id: user.id, handle: user.handle };
+        const payload = { id: user.id, email: user.email };
 
         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
           res.json({
@@ -87,10 +87,16 @@ router.post("/login", (req, res) => {
 });
 //show other user profile
 router.get(
-  "/user/:id", (req, res) => {
-    User.findOne({ email: req.params.id })
+  "/:user_id", (req, res) => {
+    User.findById({ id: req.params.user_id })
       .then((user) => res.json(user))
       .catch((err) => res.status(400).json(err));
   });
 
+router.patch('/update', passport.authenticate('jwt', { session: false }), (req, res) => {
+  User.updateOne({ id: req.body.user_id }, { tag: req.body.tag})
+    .then((user) => res.json(user))
+    .catch((err) => res.status(400).json(err));
+  
+});
 module.exports = router;
