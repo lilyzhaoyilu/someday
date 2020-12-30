@@ -109,6 +109,7 @@ class SignupForm extends React.Component {
 					{this.renderErrors()}
 
 					<button className="sinup-form-demo">Login as demo user</button>
+
 				</form>
 			</div>
 		);

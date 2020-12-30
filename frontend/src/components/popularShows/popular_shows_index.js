@@ -17,6 +17,7 @@ export default class PopularShowsIndex extends Component {
                 <PopularShowsIndexItem
                   show={show}
                   key={show.id}
+
                 />
               )
             }

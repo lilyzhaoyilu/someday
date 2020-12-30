@@ -19,8 +19,9 @@ const App = () => (
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
       <ProtectedRoute exact path='/' component={MainPage} />
       <AuthRoute path='/splash' component={SplashContainer} />
+
     </Switch>
   </div>
 )
 
-export default App
+export default App;
