@@ -67,6 +67,6 @@ export const fetchShowData = (movieId) => {
 }
 
 //* fetch All shows from backend
-export const fetchAllShows = () =>(
+export const fetchAllShows = () => (
   axios.get('/api/movie')
 )

@@ -33,7 +33,7 @@ module.exports = function validateRegisterInput(data) {
     errors.password = "Password must be between 2 and 30 chars";
   }
 
-  if(!Validator.equals(data.password, data.password2)){
+  if (!Validator.equals(data.password, data.password2)) {
     errors.password2 = "Password must match";
   }
 
