@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { postComment } from '../../actions/comment_actions';
-import CommentForm from './comment_form';
+import { postComment } from '../../../actions/comment_actions';
+import CommentForm from './comment_form.jsx';
 
 const mstp = state => ({
   // movies: Object.values(state.entities.movies)

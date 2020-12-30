@@ -4,7 +4,7 @@ class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+      text: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     
@@ -13,6 +13,7 @@ class CommentForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
+    
     this.props.postComment();
   }
 
