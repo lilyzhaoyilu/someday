@@ -1,6 +1,6 @@
 import {
   RECEIVE_HISTORYLIST
-} from '../actions/historylist_actinos'
+} from '../actions/historylist_actions'
 
 export default (state = {}, action) => {
   switch (action.type) {
