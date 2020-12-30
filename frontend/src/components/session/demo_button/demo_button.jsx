@@ -1,3 +1,3 @@
-export default ({ demoUser, login }) => (
-	<button onClick={() => login(demoUser)}>Demo Login</button>
-);
+export default ({ demoUser, login }) => {
+	return <button onClick={() => login(demoUser)}>Demo Login</button>;
+};

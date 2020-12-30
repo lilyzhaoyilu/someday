@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import { Switch } from 'react-router-dom';
@@ -12,17 +13,15 @@ import SplashContainer from './splash/splash_container'
 
 const App = () => (
   <div>
+    <AuthRoute path='/' component={NavBarContainer} />
 
     <Switch>
-
-      <AuthRoute exact path='/' component={NavBarContainer} />
-    </Switch>
-    <Switch>
-      <AuthRoute exact path='/splash' component={SplashContainer} />
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
-      <AuthRoute exact path='/search-result' component={MovieIndexContainer} />
+      <AuthRoute path='/' component={SplashContainer} />
+      <ProtectedRoute path='/' component={MainPage} />
     </Switch>
   </div>
 )
+
 export default App

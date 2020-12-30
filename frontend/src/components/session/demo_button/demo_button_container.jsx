@@ -9,7 +9,7 @@ const mSTP = (state, ownProps) => ({
 });
 
 const mDTP = (dispatch) => ({
-	login: () => dispatch(login),
+	login: (user) => dispatch(login(user)),
 });
 
 export default connect(mSTP, mDTP)(DemoButton);
