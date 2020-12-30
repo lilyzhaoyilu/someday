@@ -6,6 +6,7 @@ const mstp = state => ({
   // movies: Object.values(state.entities.movies)
 })
 const mdtp = dispatch => ({
+  
   postComment: comment => dispatch(postComment(comment)),
 })
 

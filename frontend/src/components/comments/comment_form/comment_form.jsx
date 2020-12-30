@@ -7,14 +7,22 @@ class CommentForm extends Component {
       text: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
     
   }
+
+  update(field) {
+		return (e) =>
+			this.setState({
+				[field]: e.currentTarget.value,
+			});
+	}
 
 
   handleSubmit(e){
     e.preventDefault();
-    
-    this.props.postComment();
+    debugger;
+    this.props.postComment(this.state);
   }
 
 
@@ -22,9 +30,8 @@ class CommentForm extends Component {
   render() {
     return (
         <form action="">
-        <textarea>
-
-        </textarea>
+        <textarea onChange={this.update("text")}></textarea>
+        <button onClick={this.handleSubmit}>Submit</button>
         </form>
      
     )
