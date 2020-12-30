@@ -37,7 +37,10 @@ class LoginForm extends React.Component {
 		this.props.login(user);
 		this.props.history.push("/");
 	}
-
+	//remove session errors before unmount
+	componentWillUnmount() {
+		this.props.eraseSessionErrors();
+	}
 	// Render the session errors if there are any
 	renderErrors() {
 		return (
