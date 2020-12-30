@@ -63,6 +63,10 @@ class NavBar extends React.PureComponent {
 				<img src={Logo}></img>
 				</Link>
 
+				<Link to="">My Page</Link>
+				
+				<Link to="">Shows</Link>
+
 				<SearchBarContainer />
 
 				{/* {this.getLinks()} */}
