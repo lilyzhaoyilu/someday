@@ -1,6 +1,6 @@
 import * as APIUTIL from '../util/movie_util'
 
-export const RECEIVE_SHOWS = "RECEIVE_POPULAR_SHOWS";
+export const RECEIVE_SHOWS = "RECEIVE_SHOWS";
 export const RECEIVE_POPULAR_SHOWS = "RECEIVE_POPULAR_SHOWS"
 export const RECEIVE_A_SHOW = 'RECEIVE_A_SHOW';
 export const RECEIVE_SHOW_ERRORS = 'RECEIVE_SHOW_ERRORS';

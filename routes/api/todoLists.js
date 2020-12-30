@@ -4,6 +4,7 @@ const moogoose = require("mongoose");
 const passport = require("passport");
 const TodoList = require("../../models/TodoList");
 const validateList = require("../../validation/list");
+const jwt = require('jsonwebtoken');
 
 //get all the todolist (includes other users)
 router.get("/todoList", (req, res) => {
@@ -58,13 +59,13 @@ router.patch(
       return res.status(400).json(errors);
     }
 
-    const newTodoList = new TodoList({
-      _id: req.params.id,
-      name: req.body.name,
-      user: req.user.id,
-      movie: req.body.movie,
-    });
-    TodoList.updateOne({ _id: req.params.id }, newTodoList)
+    // const newTodoList = new TodoList({
+    //   _id: req.params.id,
+    //   name: req.body.name,
+    //   user: req.user.id,
+    //   movie: req.body.movie,
+    // });
+    TodoList.findOneAndUpdate({ _id: req.params.id }, { name: req.body.name, movie: req.body.movie }, { new: true })
       .then((todoList) => res.json(todoList))
       // .then(() => {
       //   res.status(201).json({

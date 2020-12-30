@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import { fetchPopularTv } from '../../actions/movie_actions';
-import PopularShowsIndex from './popular_shows_index';
+import { fetchShowData } from '../../actions/movie_actions';
+import IndexItem from './popular_shows_index_item';
 
-const mstp = state => ({
-  shows: Object.values(state.entities.movies)
+const mstp = (state, ownProps) => ({
+  show: state.entities.movies[ownProps.show.id]
 });
 
 const mdtp = dispatch => ({
-  fetchPopularTv: () => dispatch(fetchPopularTv())
+  fetchShowData: (showId) => dispatch(fetchShowData(showId))
 });
 
-export default connect(mstp, mdtp)(PopularShowsIndex)
+export default connect(mstp, mdtp)(IndexItem)
