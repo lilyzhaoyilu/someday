@@ -1,9 +1,17 @@
 .navbar{
   display: flex; 
-  height: 5vh;
+  height: 10vh;
   flex-direction: row;
+  background-color:#edf4ed;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 
 .navbar-logo{
   height:100%;
+}
+
+.navbar-logo img{
+  height: 100%;
 }

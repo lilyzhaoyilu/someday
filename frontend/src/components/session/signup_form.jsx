@@ -1,6 +1,8 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import Logo from "../../util/somedaylogo.svg";
+import DemoButtonContainer from './demo_button/demo_button_container';
+
 
 class SignupForm extends React.Component {
 	constructor(props) {
@@ -36,8 +38,7 @@ class SignupForm extends React.Component {
 		};
 
 		this.props.signup(user);
-		this.props.login(user);
-		this.props.history.push("/");
+		this.props.login(user).then(() =>this.props.history.push("/"));
 	}
 
 	renderErrors() {
@@ -108,7 +109,7 @@ class SignupForm extends React.Component {
 					<input type="submit" value="Sign Up" />
 					{this.renderErrors()}
 
-					<button className="sinup-form-demo">Login as demo user</button>
+					<DemoButtonContainer  />
 
 				</form>
 			</div>

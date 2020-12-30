@@ -54,14 +54,14 @@ router.patch(
       return res.status(400).json(errors);
     }
 
-    // const newWatchedList = new WatchedList({
-    //   _id: req.params.id,
-    //   name: req.body.name,
-    //   user: req.user.id,
-    //   movie: req.body.movie,
-    // });
-    WatchedList.findOneAndUpdate({ _id: req.params.id }, { name: req.body.name, movie: req.body.movie}, { new: true })
-      .then((watchedList) => res.json(watchedList))
+    const newWatchedList = new WatchedList({
+      _id: req.params.id,
+      name: req.body.name,
+      user: req.user.id,
+      movie: req.body.movie,
+    });
+    WatchedList.updateOne({ _id: req.params.id }, newWatchedList)
+    .then((watchedList) => res.json(watchedList))
       // .then(() => {
       //   res.status(201).json({
       //     message: "Watched List updated successfully!",

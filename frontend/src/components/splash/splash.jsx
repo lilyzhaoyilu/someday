@@ -9,7 +9,7 @@ class Splash extends React.Component {
 		super(props);
 	}
 
-	render() {
+render() {
 		return (
 			<div className="splash">
 				<div className="splash-header">
