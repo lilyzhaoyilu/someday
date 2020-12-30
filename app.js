@@ -25,11 +25,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
-app.use("./api/todoLists", todoLists);
-app.use("./api/watchLists", watchedLists);
-app.use("./api/search", search);
-app.use("./api/movies", movies);
-app.use("./api/comments", comments)
+app.use("/api/todoLists", todoLists);
+app.use("/api/watchedLists", watchedLists);
+app.use("/api/search", search);
+app.use("/api/movies", movies);
+app.use("/api/comments", comments)
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

@@ -92,7 +92,7 @@ router.get(
       .then((user) => res.json(user))
       .catch((err) => res.status(400).json(err));
   });
-
+//update user tags
 router.patch('/update', passport.authenticate('jwt', { session: false }), (req, res) => {
   User.findOneAndUpdate({ id: req.body.user_id }, { tag: req.body.tag }, { new: true})
     .then((user) => res.json(user))

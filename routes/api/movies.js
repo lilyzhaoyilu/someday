@@ -3,7 +3,7 @@ const router = express.Router();
 const moogoose = require("mongoose");
 const Movie = require('../../models/Movie')
 
-//get all the todolist (includes other users)
+//get all the movie (includes other users)
 router.get("/movie", (req, res) => {
   Movie.find()
     .sort({ data: -1 })
@@ -35,3 +35,5 @@ router.post(
     newMovie.save().then((todoList) => res.json(todoList));
   }
 );
+
+module.exports = router;
