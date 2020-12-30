@@ -4,6 +4,7 @@ export default class PopularShowsIndexItem extends Component {
   render() {
     const { show } = this.props
     console.log(show.id);
+
     return (
       <div>
         <li>

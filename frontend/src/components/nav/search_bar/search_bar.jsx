@@ -22,17 +22,18 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-			<div>
-				<form onSubmit={this.handleSubmit}>
+			
+				<form className="navbar-search" onSubmit={this.handleSubmit}>
 					<input
 						type="text"
 						value={this.state.input}
 						placeholder="Search your favorite shows"
 						onChange={this.update()}
 					/>
+					
 					<input type="submit" value="Search" />
 				</form>
-			</div>
+			
 		);
 	}
 }

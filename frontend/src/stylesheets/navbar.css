@@ -1,0 +1,9 @@
+.navbar{
+  display: flex; 
+  height: 5vh;
+  flex-direction: row;
+}
+
+.navbar-logo{
+  height:100%;
+}
