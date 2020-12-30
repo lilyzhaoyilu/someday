@@ -1,12 +1,32 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export default class CommentForm extends Component {
+class CommentForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      
+    }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    
+  }
+
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.postComment();
+  }
 
 
 
   render() {
     return (
-      <div>this is comment form</div>
+        <form action="">
+        <textarea>
+
+        </textarea>
+        </form>
+     
     )
   }
 }
+export default CommentForm;

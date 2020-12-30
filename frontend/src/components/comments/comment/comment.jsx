@@ -7,7 +7,7 @@ export default class Comment extends Component {
 
   render() {
     return (
-      <div>this is comment form</div>
+      <div>this is displaying the comments</div>
     )
   }
 }
