@@ -2,9 +2,16 @@
   display: flex; 
   height: 10vh;
   flex-direction: row;
-  background-color: aqua;
+  background-color:#edf4ed;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 
 .navbar-logo{
   height:100%;
+}
+
+.navbar-logo img{
+  height: 100%;
 }
