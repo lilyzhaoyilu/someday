@@ -57,7 +57,6 @@ class LoginForm extends React.Component {
 			email: "demouser@demo.com",
 			password: "hunter12"
 		}
-		console.log(errors);
 		return (
 		
 			<div className="login-form-container">
