@@ -94,10 +94,9 @@ router.get(
   });
 
 router.patch('/update', passport.authenticate('jwt', { session: false }), (req, res) => {
-  const tag = req.body.tag;
-  User.updateOne({ id: req.body.user_id }, { "tag": tag })
+  User.updateOne({ id: req.body.user_id }, { tag: req.body.tag})
     .then((user) => res.json(user))
-      .catch((err) => res.status(400).json(err));
+    .catch((err) => res.status(400).json(err));
   
 });
 module.exports = router;
