@@ -61,9 +61,9 @@ class LoginForm extends React.Component {
         </div>
 
         <div className="session-link">
-          <h3>Register Now</h3>
+          <h3>Don't have an account?</h3>
           <Link to="/signup">
-            sign up
+            Sign Up
           </Link>
         </div>
         <form className="login-form" onSubmit={this.handleSubmit}>
