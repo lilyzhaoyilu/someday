@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("./api/todoLists", todoLists);
 app.use("./api/watchLists", watchedLists);
-app.use("")
+app.use("./api/search", search);
 app.use("./api/movies", movies);
 app.use("./api/comments", comments)
 
