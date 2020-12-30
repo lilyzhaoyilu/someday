@@ -6,10 +6,10 @@ export const updateProfile = (userData) => {
   return axios.patch(`/api/users/${userData.id}`, userData);
 }
 
-//* Get / api / user /: id - look up other users profile
+//* Get / api / users /: id - look up other users profile
 
 export const getThisUser = (userId) => {
-  return axios.get(`./api/users/${userId}`);
+  return axios.get(`/api/users/${userId}`);
 }
 
 //* Get / api / users - list other users
@@ -18,3 +18,7 @@ export const getAllUsers = () => {
   return axios.get(`/api/users/`);
 }
 
+//* get /api/users/current
+export const getCurrentUser = () => {
+  return axios.get(`/api/users/update`);
+}

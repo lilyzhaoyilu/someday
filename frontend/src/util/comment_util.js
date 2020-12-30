@@ -6,8 +6,6 @@ export const postComment = commentData => (
   axios.post(`/api/comment`, commentData)
 )
 
-
-
 //* DELETE / api / comment /: id - delete user comments,
 
 export const deleteComment = (commentId) => (
@@ -32,4 +30,9 @@ export const getWatchlistComments = (watchlistId) => (
 
 export const getUserComments = (userId) => (
   axios.get(`/api/user/${userId}/comments/`)
+)
+
+//* get /api/watchedList/:watchedList_id/comment get all watchedlist comments_reducer
+export const getHistorylistComments = (historylistId) =>(
+  axios.get(`/api/watchedList/${historylistId}/comment`)
 )

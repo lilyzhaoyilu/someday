@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import Logo from "../../util/somedaylogo.svg";
 import PopularShowsContainer from "../popularShows/popular_shows_index_container";
+import PopularMoviesContainer from "../popularMovies/popular_movies_index_container";
 class Splash extends React.Component {
 	constructor(props) {
 		super(props);

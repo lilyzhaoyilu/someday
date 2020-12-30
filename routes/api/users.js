@@ -87,10 +87,17 @@ router.post("/login", (req, res) => {
 });
 //show other user profile
 router.get(
-  "/user/:id", (req, res) => {
-    User.findOne({ email: req.params.id })
+  "/:user_id", (req, res) => {
+    User.findById({ id: req.params.user_id })
       .then((user) => res.json(user))
       .catch((err) => res.status(400).json(err));
   });
 
+router.patch('/update', passport.authenticate('jwt', { session: false }), (req, res) => {
+  const tag = req.body.tag;
+  User.updateOne({ id: req.body.user_id }, { "tag": tag })
+    .then((user) => res.json(user))
+      .catch((err) => res.status(400).json(err));
+  
+});
 module.exports = router;
