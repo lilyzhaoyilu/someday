@@ -12,7 +12,8 @@ export default (oldState = {}, action) => {
 
     case RECEIVE_POPULAR_SHOWS:
       newState = {};
-      action.shows.data.slice(0, 8).forEach(show => {
+      console.log(action.shows.data);
+      action.shows.data.forEach(show => {
         const showId = show.split('/')[2]
         newState[showId] = { id: showId }
       });
@@ -20,6 +21,7 @@ export default (oldState = {}, action) => {
     case RECEIVE_SHOWS:
       newState = {};
       action.shows.data.d.forEach(show => newState[show.id] = show)
+      console.log(newState);
       return { ...oldState, ...newState }
     default:
       return oldState
