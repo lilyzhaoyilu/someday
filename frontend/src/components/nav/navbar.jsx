@@ -2,7 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import DemoButtonContainer from "../session/demo_button/demo_button_container";
 import SearchBarContainer from "./search_bar/search_bar_container";
-import Logo from "../../util/somedaylogo.svg";
+import Logo from '../../util/somedaylogo.svg';
 
 class NavBar extends React.PureComponent {
 	constructor(props) {
@@ -58,8 +58,9 @@ class NavBar extends React.PureComponent {
 	render() {
 		return (
 			<div className="navbar">
+				
 				<Link className="navbar-logo" to="/splash">
-					<img src={Logo}></img>
+				<img src={Logo}></img>
 				</Link>
 
 				<SearchBarContainer />

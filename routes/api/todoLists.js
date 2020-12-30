@@ -58,13 +58,13 @@ router.patch(
       return res.status(400).json(errors);
     }
 
-    // const newTodoList = new TodoList({
-    //   _id: req.params.id,
-    //   name: req.body.name,
-    //   user: req.user.id,
-    //   movie: req.body.movie,
-    // });
-    TodoList.findOneAndUpdate({ _id: req.params.id }, { name: req.body.name, movie: req.body.movie}, { new: true })
+    const newTodoList = new TodoList({
+      _id: req.params.id,
+      name: req.body.name,
+      user: req.user.id,
+      movie: req.body.movie,
+    });
+    TodoList.updateOne({ _id: req.params.id }, newTodoList)
       .then((todoList) => res.json(todoList))
       // .then(() => {
       //   res.status(201).json({
