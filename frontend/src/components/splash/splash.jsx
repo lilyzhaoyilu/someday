@@ -1,6 +1,8 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import Logo from '../../util/somedaylogo.svg';
+import MovieIndex from '../popularMovies/popular_movies_index_container';
+import PopularShowsIndex from '../popularShows/popular_shows_index_container';
 class Splash extends React.Component {
 	constructor(props) {
 		super(props);
@@ -32,10 +34,12 @@ class Splash extends React.Component {
 
         <div className="splash-trending-movies">
           trending movies
+          {/* <MovieIndex /> */}
         </div>
 
         <div className="splash-trending-tvshows">
           trending tv shows
+          {/* < PopularShowsIndex /> */}
         </div>
 			</div>
 		);

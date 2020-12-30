@@ -13,15 +13,15 @@ import SplashContainer from './splash/splash_container'
 
 const App = () => (
   <div>
-    <AuthRoute path='/' component={NavBarContainer} />
+    <AuthRoute exact path='/' component={NavBarContainer} />
 
     <Switch>
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
-      <AuthRoute path='/' component={SplashContainer} />
+      <AuthRoute exact path='/splash' component={SplashContainer} />
       <ProtectedRoute path='/' component={MainPage} />
     </Switch>
   </div>
 )
 
-export default App
+export default App;
