@@ -3,7 +3,7 @@ import axios from 'axios';
 //* POST / api / comment - add user comment,
 
 export const postComment = commentData => (
-  axios.post(`/api/comment`, commentData)
+  axios.post(`/api/comments`, commentData)
 )
 
 //* DELETE / api / comment /: id - delete user comments,

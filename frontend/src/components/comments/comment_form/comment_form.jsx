@@ -21,7 +21,7 @@ class CommentForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    debugger;
+    // debugger;
     this.props.postComment(this.state);
   }
 
