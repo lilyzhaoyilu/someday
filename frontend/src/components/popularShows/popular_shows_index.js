@@ -18,9 +18,9 @@ export default class PopularShowsIndex extends Component {
                 show = {
                   show
                 }
-                key = {
-                  key
-                }
+                // key = {
+                //   key
+                // }
                 imgUrl = {
                   show.imgUrl
                 }

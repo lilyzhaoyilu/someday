@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 export default class PopularShowsIndexItem extends Component {
   render() {
-    const { show, key, imgUrl, name, year}
+    // const { show, key, imgUrl, name, year}
+    const { show, imgUrl, name, year} = this.props;
     return (
       <div>
         <li>
