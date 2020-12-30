@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import SearchBar from "./search_bar";
-// import { searchShows } from "../../../actions/movie_actions";
+import { searchShows } from "../../../actions/movie_actions";
 
 const mSTP = (state, ownProps) => ({
 	shows: Object.values(state.entities.movies),
