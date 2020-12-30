@@ -11,7 +11,6 @@ class LoginForm extends React.Component {
 		this.state = {
 			email: "",
 			password: "",
-			errors: {},
 		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,14 +44,20 @@ class LoginForm extends React.Component {
 	renderErrors() {
 		return (
 			<ul>
-				{Object.keys(this.state.errors).map((error, i) => (
-					<li key={`error-${i}`}>{this.state.errors[error]}</li>
+				{Object.keys(this.props.errors).map((error, i) => (
+					<li key={`error-${i}`}>{this.props.errors[error]}</li>
 				))}
 			</ul>
 		);
 	}
 
 	render() {
+		const errors = this.props;
+		const demoUser = {
+			email: "demouser@demo.com",
+			password: "hunter12"
+		}
+		console.log(errors);
 		return (
 		
 			<div className="login-form-container">
@@ -68,17 +73,16 @@ class LoginForm extends React.Component {
 							onChange={this.update("email")}
 							placeholder="Email"
 						/>
-					
 						<input
 							type="password"
 							value={this.state.password}
 							onChange={this.update("password")}
 							placeholder="Password"
 						/>
-					
+						<strong>{errors.password}</strong>
 						<input type="submit" value="Submit" />
 						
-						<button className="sinup-form-demo">Login as demo user</button>
+						<button className="sinup-form-demo" onClick={()=> this.props.login(demoUser)}>Login as demo user</button>
 				</form>
 				{this.renderErrors()}
 			</div>
