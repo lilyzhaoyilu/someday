@@ -10,14 +10,13 @@
   align-items: center;
 }
 .splash-header-left img{
+  margin-left: 15px;
   width: 200px;
 }
 .splash-header-left input{
   width: 200px;
   height: 20px;
 }
-
-
 
 .splash-features{
   height: 45vh;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import search from "../../../util/search.png";
 class SearchBar extends Component {
 	constructor(props) {
 		super(props);
@@ -22,19 +23,19 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-			
-				<form className="navbar-search" onSubmit={this.handleSubmit}>
-					<input
-						type="text"
-						value={this.state.input}
-						placeholder="Search your favorite shows"
-						onChange={this.update()}
-					/>
-					
-					<input type="submit" value="Search" />
-				</form>
-			
-		);
+      <form className="search-bar" onSubmit={this.handleSubmit}>
+        <div className="input-container">
+          <img src={search}></img>
+          <input
+            type="text"
+            value={this.state.input}
+            placeholder="Search your favorite shows"
+            onChange={this.update()}
+          />
+			<button>search</button>
+        </div>
+      </form>
+    );
 	}
 }
 

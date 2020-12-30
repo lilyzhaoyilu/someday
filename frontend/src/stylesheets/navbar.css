@@ -15,3 +15,78 @@
 .navbar-logo img{
   height: 100%;
 }
+
+.search-bar {
+  margin-top: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  right: -16px;
+  width: 400px;
+  height: 30px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: lightgray;
+  z-index: 1;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  height: 35px;
+}
+.search-bar input {
+  background-color: transparent;
+  outline: none;
+  width: 350px;
+  height: 25px;
+  border: none;
+}
+.search-bar img{
+  margin-bottom: 5px;
+  padding: 10px;
+  height: 25px;
+  width: 25px;
+}
+.search-bar button{
+  height: 30px;
+  margin-bottom: 5px;
+  border: 1px solid lightgray;
+}
+
+.search-bar button:hover {
+  cursor: pointer;
+  background-color: #f1f7da;
+}
+
+.splash-link{
+  margin-right: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.splash-link-child {
+  margin-left: 30px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+#login:hover{
+    color: #007A5A;
+}
+
+#signup{
+  background-color: #007A5A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  height: 50px;
+  width: 150px;
+}
+#signup:hover {
+  background-color: rgb(9, 138, 37);
+  transition: background 0.5s;
+  cursor: pointer;
+}
