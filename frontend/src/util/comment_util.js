@@ -33,6 +33,6 @@ export const getUserComments = (userId) => (
 )
 
 //* get /api/watchedList/:watchedList_id/comment get all watchedlist comments_reducer
-export const getHistorylistComments = (historylistId) =>(
+export const getHistorylistComments = (historylistId) => (
   axios.get(`/api/watchedList/${historylistId}/comment`)
 )
