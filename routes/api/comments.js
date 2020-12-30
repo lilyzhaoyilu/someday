@@ -46,7 +46,7 @@ router.get("/comment/:id", (req, res) => {
 
 //create comment
 router.post(
-  "/todoList",
+  "/comment",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { isValid, errors } = validateComment(req.body);
