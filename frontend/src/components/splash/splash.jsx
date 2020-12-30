@@ -34,11 +34,10 @@ class Splash extends React.Component {
 
         <div className="splash-features">
           <div className="splash-features-title">features</div>
-          <li>add the shows you love in the list</li>
-          <li>search the shows you want to watch</li>
-          <li>list of features</li>
-          <li>list of features</li>
-          <li>list of features</li>
+          <li>Search movies and TV shows</li>
+          <li>Add them to your lists</li>
+          <li>Keep track of the shows you enjoy</li>
+          <li>Comment on movies and TV shows</li>
         </div>
 
 				<div className="splash-trending-movies">
