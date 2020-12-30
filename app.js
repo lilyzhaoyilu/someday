@@ -27,7 +27,9 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("./api/todoLists", todoLists);
 app.use("./api/watchLists", watchedLists);
-app.use("./api/")
+app.use("")
+app.use("./api/movies", movies);
+app.use("./api/comments", comments)
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
