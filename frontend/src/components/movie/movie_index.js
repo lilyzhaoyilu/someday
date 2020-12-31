@@ -3,8 +3,6 @@ import MovieIndexItem from './movie_index_item';
 
 export default class MovieIndex extends Component {
 
-
-
   render() {
     const { movies } = this.props;
     if (movies) {
