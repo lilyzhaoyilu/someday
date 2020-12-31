@@ -8,17 +8,18 @@ export const updateProfile = (userData) => {
 
 //* Get / api / users /: id - look up other users profile
 
-export const getThisUser = (userId) => {
-  return axios.get(`/api/users/${userId}`);
+export const getThisUser = (user_id) => {
+  return axios.get(`/api/users/${user_id}`);
 }
 
-//* Get / api / users - list other users
+// //* Get / api / users - list other users
 
-export const getAllUsers = () => {
-  return axios.get(`/api/users/`);
-}
+// export const getAllUsers = () => {
+//   return axios.get(`/api/users/`);
+// }
 
 //* get /api/users/current
-export const getCurrentUser = () => {
-  return axios.get(`/api/users/update`);
-}
+// export const getCurrentUser = () => {
+//   return axios.get(`/api/users/current`);
+// }
+
