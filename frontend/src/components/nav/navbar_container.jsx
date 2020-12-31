@@ -1,9 +1,15 @@
 import { connect } from "react-redux";
-import { logout } from "../../actions/session_actions";
+import { logout, eraseSessionErrors } from "../../actions/session_actions";
 import NavBar from "./navbar";
 
 
 const mapStateToProps = (state) => ({
 	loggedIn: state.session.isAuthenticated,
 });
-export default connect(mapStateToProps, { logout })(NavBar);
+
+const mdtp = dispatch => ({
+	logout: () => dispatch(logout()),
+	eraseSessionErrors: () => dispatch(eraseSessionErrors())
+});
+
+export default connect(mapStateToProps, mdtp)(NavBar);

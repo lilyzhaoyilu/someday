@@ -1,3 +1,3 @@
 export default ({ demoUser, login }) => {
-	return <button onClick={() => login(demoUser)}>Demo Login</button>;
+	return <button className="sinup-form-demo" onClick={() => login(demoUser)}>Demo Login</button>;
 };

@@ -14,6 +14,7 @@ class NavBar extends React.PureComponent {
 	logoutUser(e) {
 		e.preventDefault();
 		this.props.logout();
+		this.props.eraseSessionErrors();
 	}
 
 	// getLinks() {
@@ -62,6 +63,10 @@ class NavBar extends React.PureComponent {
 				<Link className="navbar-logo" to="/splash">
 				<img src={Logo}></img>
 				</Link>
+
+				<Link to="">My Page</Link>
+				
+				<Link to="">Shows</Link>
 
 				<SearchBarContainer />
 

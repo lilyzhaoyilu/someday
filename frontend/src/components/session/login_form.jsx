@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import Logo from '../../util/somedaylogo.svg';
-
+import DemoButtonContainer from './demo_button/demo_button_container';
 
 
 class LoginForm extends React.Component {
@@ -33,8 +33,7 @@ class LoginForm extends React.Component {
 			email: this.state.email,
 			password: this.state.password,
 		};
-		this.props.login(user);
-		this.props.history.push("/");
+		this.props.login(user).then(() =>this.props.history.push("/"));
 	}
 	//remove session errors before unmount
 	componentWillUnmount() {
@@ -52,40 +51,39 @@ class LoginForm extends React.Component {
 	}
 
 	render() {
-		const errors = this.props;
-		const demoUser = {
-			email: "demouser@demo.com",
-			password: "hunter12"
-		}
 		return (
-		
-			<div className="login-form-container">
-				
-				<div><Link to="/splash"><img className="login-form-logo" src={Logo}></img></Link></div>
-				
-				<div ><Link className="login-form-signup" to="/signup">Sign up instead</Link></div>
-				<form className="login-form" onSubmit={this.handleSubmit}>
-
-						<input
-							type="text"
-							value={this.state.email}
-							onChange={this.update("email")}
-							placeholder="Email"
-						/>
-						<input
-							type="password"
-							value={this.state.password}
-							onChange={this.update("password")}
-							placeholder="Password"
-						/>
-						<strong>{errors.password}</strong>
-						<input type="submit" value="Submit" />
-						
-						<button className="sinup-form-demo" onClick={()=> this.props.login(demoUser)}>Login as demo user</button>
-				</form>
-				{this.renderErrors()}
-			</div>
-		);
+      <div className="login-form-container">
+        <div>
+          <Link to="/splash">
+            <img className="login-form-logo" src={Logo}></img>
+          </Link>
+        </div>
+        <div className="session-link">
+          <h3>Don't have an account?</h3>
+          <Link to="/signup">
+            Sign Up
+          </Link>
+        </div>
+        <form className="login-form" onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            value={this.state.email}
+            onChange={this.update("email")}
+            placeholder="Email"
+          />
+          <input
+            type="password"
+            value={this.state.password}
+            onChange={this.update("password")}
+            placeholder="Password"
+          />
+          <input type="submit" value="Submit" />
+          {/* <button className="sinup-form-demo">Login as demo user</button> */}
+          <DemoButtonContainer />
+        </form>
+        {this.renderErrors()}
+      </div>
+    );
 	}
 }
 

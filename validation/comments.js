@@ -6,11 +6,11 @@ module.exports = function validateComment(data) {
 
   data.text = validText(data.text) ? data.text : '';
 
-  if(!Validator.isLength(data.text, {min: 5, max: 140})) {
+  if (!Validator.isLength(data.text, { min: 5, max: 140 })) {
     errors.text = 'Comments must be between 5 and 140 characters';
   }
 
-  if(Validator.isEmpty(data.text)) {
+  if (Validator.isEmpty(data.text)) {
     errors.text = 'Comment can not be empty.'
   }
 
