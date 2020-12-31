@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import PopularMoviesIndexItem from './popular_movies_index_item';
+import PopularMoviesIndexItem from './popular_movies_index_item_container';
 
 export default class PopularMoviesIndex extends Component {
-  componentDidMount(){
-    this.props.fetchPopularMovies()
+  componentDidMount() {
+    setTimeout(() => this.props.fetchPopularMovies(), 1000)
+
   }
 
   render() {
@@ -12,10 +13,12 @@ export default class PopularMoviesIndex extends Component {
       <div>
         <ul>
           {movies.map((movie, i) => {
-            if(i < 8){
-              return(
-                <PopularMoviesIndexItem 
-                movie={movie} key={movie.id} imgUrl={movie.i.imageUrl} name={movie.l} year={movie.y} />
+            if (i < 4) {
+              return (
+                <PopularMoviesIndexItem
+                  showId={movie.id}
+                  key={movie.id}
+                />
               )
             }
           })}

@@ -5,6 +5,7 @@ import CommentErrorsReducer from './comment_errors_reducer';
 import MovieErrorsReducer from './movie_errors_reducer';
 import WatchlistErrorsReducer from './watchlist_errors_reducer';
 import HistorylistErrorsReducer from './historylist_errors_reducer';
+import ShowErrorsReducer from './show_errors_reducer';
 
 export default combineReducers({
   session: SessionErrorsReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   comment: CommentErrorsReducer,
   movie: MovieErrorsReducer,
   watchlist: WatchlistErrorsReducer,
-  historylist: HistorylistErrorsReducer
+  historylist: HistorylistErrorsReducer,
+  show: ShowErrorsReducer
 });

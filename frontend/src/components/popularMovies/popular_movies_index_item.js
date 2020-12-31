@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
 
-export default class PopularMoviesIndexItem extends Component {
+export default class PopularmoviesIndexItem extends Component {
+  componentDidMount() {
+    setTimeout(() => this.props.fetchMovieData(this.props.showId), 500)
+
+
+  }
+
   render() {
-    const { movie, key, imgUrl, name, year } = this.props
-    return (
+    const { show } = this.props
+    return (show.image) ? (
       <div>
-        <li>
-          <img src={imgUrl} alt={name} style={{ width: '100px', height: 'auto' }} />
-          <h3>{name}</h3>
-          <p>{year}</p>
-        </li>
+        <p>{show.title}</p>
+        <img src={show.image.url} style={{ width: '100px', height: 'auto' }} />
       </div>
-    )
+    ) : null;
+
   }
 }

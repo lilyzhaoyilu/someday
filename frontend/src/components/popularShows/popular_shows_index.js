@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import PopularShowsIndexItem from './popular_shows_index_item';
+import PopularShowsIndexItem from './popular_shows_index_item_container';
 
 export default class PopularShowsIndex extends Component {
   componentDidMount() {
-    this.props.fetchPopularTv()
+    // this.props.fetchPopularTv()
+    setTimeout(() => this.props.fetchPopularTv(), 2000)
+
   }
 
   render() {
@@ -12,10 +14,10 @@ export default class PopularShowsIndex extends Component {
       <div>
         <ul>
           {shows.map((show, i) => {
-            if (i < 8) {
+            if (i < 4) {
               return (
                 <PopularShowsIndexItem
-                  show={show}
+                  showId={show.id}
                   key={show.id}
 
                 />

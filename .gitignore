@@ -9,3 +9,4 @@ frontend/src/util/keys/keys_dev.js
 frontend/src/util/keys/keys_dev.js
 config/keys_dev.js
 frontend/.eslintcache
+frontend/.env
