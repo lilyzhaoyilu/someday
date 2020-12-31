@@ -1,6 +1,6 @@
 # Someday
 
-### Someday
+### [Someday Live](https://somedaymern.herokuapp.com/)
 
 Someday is a collaborative MERN project, using MongoDB, Express, React, and NodeJS. It helps users to keep track of the movies and TV shows that they have watched and want to watch. 
 
@@ -47,9 +47,7 @@ User Profile Page
 ![User Profile Page](https://github.com/lilyzhaoyilu/someday/blob/main/assets/userpage.png)
 
 ## Group Members and Work Breakdown
-Website wireframes - Lily   
-Sample state - Michael   
-Sample database /sample schema - Rex   
-API routes - Rex   
-Frontend routes -Michael   
-Sam helps Michael and Rex   
+Lead - [Lily Zhaoyi Lu](https://github.com/lilyzhaoyilu)   
+Backend Lead - [Rex Gao](https://github.com/rexgao22)   
+Frontend Lead - [Michael Chen](https://github.com/atlasneiko)   
+Flex - [Samuel Wong](https://github.com/Requiem-of-Zero)   
