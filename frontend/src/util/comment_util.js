@@ -29,7 +29,7 @@ export const getWatchlistComments = (watchlistId) => (
 //* Get / api / user/ :id / comments - display all comments from one user,
 
 export const getUserComments = (userId) => (
-  axios.get(`/api/user/${userId}/comments/`)
+  axios.get(`/api/comments/user/${userId}/comments/`)
 )
 
 //* get /api/watchedList/:watchedList_id/comment get all watchedlist comments_reducer

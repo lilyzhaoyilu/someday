@@ -21,8 +21,8 @@ class CommentForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    // debugger;
-    this.props.postComment(this.state);
+    let copy = Object.assign({}, this.state)
+    this.props.postComment(copy);
   }
 
 

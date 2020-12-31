@@ -14,7 +14,8 @@ router.get("/movie/:movie_id/comment", (req, res) => {
 });
 
 //get all user's comments
-router.get("/user/:user_id/comment", (req, res) => {
+router.get("/user/:user_id/comments", (req, res) => {
+  // console.log("comment userid", req)
   Comment.find({ user: req.params.user_id })
     .sort({ data: -1 })
     .then((comments) => res.json(comments))
@@ -50,18 +51,21 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { isValid, errors } = validateComment(req.body);
-    debugger;
+    
+
     if (!isValid) {
       return res.status(400).json(errors);
     }
-
+    
+    // console.log(req);
+    //TODO: need to add movie, reply, todolist and watchlist based on the routes or id...?
     const newComment = new Comment({
       text: req.body.text,
       user: req.user.id,
-      movie: req.movie.id,
-      reply: req.reply.id,
-      todoList: req.todoList.id,
-      watchedList: req.watchedList.id,
+      movie: req.body.movieId ? req.body.movieId : null,
+      // reply: req.body.reply.id ? req.reply.id : null,
+      // todoList: req.todoList.id ? req.todoList.id : null,
+      // watchedList: req.body.watchedList.id ? req.watchedList.id : null,
     });
     newComment.save().then((comment) => res.json(comment));
   }

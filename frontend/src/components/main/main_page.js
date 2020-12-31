@@ -6,11 +6,11 @@ import NavBarContainer from '../nav/navbar_container';
 import MovieIndexContainer from '../movie/movie_index_container';
 import { Switch, Route } from 'react-router-dom';
 import CommentForm from '../comments/comment_form/comment_form_container';
-
+import UserComment from '../comments/user_comment/user_comment_container'
 
 
 export default () => {
-  console.log('mainpage');
+  // console.log('mainpage');
   return (
     <div>
       <Switch>
@@ -18,10 +18,12 @@ export default () => {
       </Switch>
       <Switch>
         <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
-        <CommentForm />
       </Switch>
+
+
+        <CommentForm /> 
+        <UserComment /> 
     </div>
   )
 }
-
-/// comment form should be in movie index, temprorarly here
+///  <CommentForm />  and <UserComment /> should be in movie index, temprorarly here for developing purpose
