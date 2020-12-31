@@ -3,7 +3,7 @@ import PopularMoviesIndexItem from './popular_movies_index_item_container';
 
 export default class PopularMoviesIndex extends Component {
   componentDidMount() {
-    setTimeout(() => this.props.fetchPopularMovies(), 1000)
+    this.props.fetchPopularMovies()
 
   }
 
