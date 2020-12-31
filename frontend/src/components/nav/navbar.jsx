@@ -68,7 +68,7 @@ class NavBar extends React.PureComponent {
 
 				<SearchBarContainer />
 
-				{/* {this.getLinks()} */}
+				<div>current: {this.props.currentUser}</div>
 				<button onClick={this.logoutUser}>Logout</button>
 			</div>
 		);

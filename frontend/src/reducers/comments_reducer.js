@@ -4,6 +4,10 @@ import {
   REMOVE_COMMENT 
 } from '../actions/comment_actions';
 
+import {
+  RECEIVE_USER_LOGOUT,
+} from '../actions/session_actions';
+
 export default function(oldState={}, action) {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState)
@@ -18,6 +22,8 @@ export default function(oldState={}, action) {
     case REMOVE_COMMENT:
       delete newState[action.commentId]
       return newState
+    case RECEIVE_USER_LOGOUT:
+      return {};
     default:
       return oldState
   }

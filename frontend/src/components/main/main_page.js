@@ -6,8 +6,10 @@ import NavBarContainer from '../nav/navbar_container';
 import MovieIndexContainer from '../movie/movie_index_container';
 import { Switch, Route } from 'react-router-dom';
 import CommentForm from '../comments/comment_form/comment_form_container';
-import UserComment from '../comments/user_comment/user_comment_container'
+import UserComment from '../comments/user_comment/user_comment_container';
 
+
+// import ProfileShow from '../profile/profile_show_container';
 
 export default () => {
   // console.log('mainpage');
@@ -21,6 +23,7 @@ export default () => {
       </Switch>
 
 
+      {/* <ProfileShow /> */}
       <CommentForm />
       <UserComment />
     </div>
