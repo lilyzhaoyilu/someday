@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import DemoButtonContainer from "../session/demo_button/demo_button_container";
-import MyProfileContainer from './my_profile/my_profile_container';
 import SearchBarContainer from "./search_bar/search_bar_container";
 import Logo from '../../util/somedaylogo.svg';
 
@@ -64,7 +63,7 @@ class NavBar extends React.PureComponent {
 				<img src={Logo}></img>
 				</Link>
 
-				<MyProfileContainer/>
+				<Link to="">My Page</Link>
 				
 				<Link to="">Shows</Link>
 
