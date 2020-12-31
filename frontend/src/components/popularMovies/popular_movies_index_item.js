@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 
 export default class PopularmoviesIndexItem extends Component {
   componentDidMount() {
-    console.log(this.props.index);
-    setTimeout(() => this.props.fetchMovieData(this.props.showId), this.props.index * 500)
+    setTimeout(() => this.props.fetchMovieData(this.props.showId), this.props.index * 700)
 
 
   }

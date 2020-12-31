@@ -6,7 +6,6 @@ export default class MovieIndex extends Component {
   render() {
     const { movies } = this.props;
     if (movies) {
-      console.log(movies)
       return (
         <div>
           <ul>

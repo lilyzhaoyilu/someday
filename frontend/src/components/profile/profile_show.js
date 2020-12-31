@@ -7,7 +7,6 @@ class ProfileShow extends Component {
 
   componentDidMount() {
     this.props.fetchThisUser(this.props.match.params.userId)
-    console.log(this.props);
   }
 
   render() {
@@ -19,7 +18,7 @@ class ProfileShow extends Component {
           <label> Username:
             <strong>{user.handle}</strong>
           </label>
-          <label> Email: 
+          <label> Email:
             <strong>{user.email}</strong>
           </label>
           <label> User Created On:
@@ -27,8 +26,8 @@ class ProfileShow extends Component {
           </label>
           {/* favorite movie added from history list */}
         </div>
-        <WatchlistIndexContainer/>
-        <HistorylistIndexContainer/>
+        <WatchlistIndexContainer />
+        <HistorylistIndexContainer />
       </div>
     ) : null;
   }
