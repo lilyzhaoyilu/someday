@@ -14,21 +14,22 @@ class MediaPage extends Component {
     };
   }
   componentDidMount() {
-    this.props.fetchShowData(this.props.movie_id).then((result) => {
+  
+    this.props.fetchMovieData(this.props.movieId).then((result) => {
       this.setState({
-        title: result.title.title,
-        year: result.title.year,
-        imgUrl: result.title.image.url,
-        rating: result.ratings.rating,
-        releaseDate: result.releaseDate,
-        tags: result.genres,
-        plotOutline: result.plotOutline.text,
+        title: result.show.data.title.title,
+        year: result.show.data.title.year,
+        imgUrl: result.show.data.title.image.url,
+        rating: result.show.data.ratings.rating,
+        releaseDate: result.show.data.releaseDate,
+        tags: result.show.data.genres,
+        plotOutline: result.show.data.plotOutline.text,
       });
     });
   }
   componentDidUpdate(prevProps) {
     if (this.props.movie_id !== prevProps.movie_id) {
-      this.props.fetchShowData(this.props.movie_id).then((result) => {
+      this.props.fetchMovieData(this.props.movie_id).then((result) => {
         this.setState({
           title: result.title.title,
           imgUrl: result.title.image.url,
