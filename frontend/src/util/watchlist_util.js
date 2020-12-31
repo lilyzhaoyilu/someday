@@ -21,11 +21,11 @@ export const getMyWatchlist = (user_id) => {
 }
 
 //* get /api/todoLists/todoList -get all todolists
-export const getAllWatchlists = () =>(
+export const getAllWatchlists = () => (
   axios.get(`/api/todoLists/todoList`)
 )
 
 //* get /api/todoLists/todoList/:id get this todoList
-export const getThisWatchlist = (id) =>(
+export const getThisWatchlist = (id) => (
   axios.get(`/api/todoLists/todoList/${id}`)
 )
