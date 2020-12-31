@@ -88,14 +88,14 @@ class SignupForm extends React.Component {
           />
 
           <input
-            type="password*"
+            type="password"
             value={this.state.password}
             onChange={this.update("password")}
             placeholder="Password*"
           />
 
           <input
-            type="password*"
+            type="password"
             value={this.state.password2}
             onChange={this.update("password2")}
             placeholder="Confirm Password*"
