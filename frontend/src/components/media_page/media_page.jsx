@@ -7,7 +7,9 @@ class MediaPage extends Component {
       title: "",
       year: "",
       imgUrl: "",
-      rating: "",
+      author: "",
+      rating: null,
+      ratingCount: null,
       releaseDate: "",
       tags: [],
       plotOutline: "",
@@ -20,7 +22,9 @@ class MediaPage extends Component {
         title: result.show.data.title.title,
         year: result.show.data.title.year,
         imgUrl: result.show.data.title.image.url,
+        author: result.show.data.plotSummary.author,
         rating: result.show.data.ratings.rating,
+        ratingCount: result.show.data.ratings.ratingCount,
         releaseDate: result.show.data.releaseDate,
         tags: result.show.data.genres,
         plotOutline: result.show.data.plotOutline.text,
@@ -31,29 +35,52 @@ class MediaPage extends Component {
     if (this.props.movie_id !== prevProps.movie_id) {
       this.props.fetchMovieData(this.props.movie_id).then((result) => {
         this.setState({
-          title: result.title.title,
-          imgUrl: result.title.image.url,
-          rating: result.ratings.rating,
-          releaseDate: result.releaseDate,
-          tags: result.genres,
-          plotOutline: result.plotOutline.text,
+          title: result.show.data.title.title,
+          year: result.show.data.title.year,
+          imgUrl: result.show.data.title.image.url,
+          author: result.show.data.plotSummary.author,
+          rating: result.show.data.ratings.rating,
+          ratingCount: result.show.data.ratings.ratingCount,
+          releaseDate: result.show.data.releaseDate,
+          tags: result.show.data.genres,
+          plotOutline: result.show.data.plotOutline.text,
         });
       });
     }
   }
 
   render() {
+    
     return (
-      <section>
-        <div>
-          <img src={this.state.imgUrl} />
-          <h3>{this.state.title}</h3>
-          <div>
-            <span>{this.state.rating}</span>
-            <span>{this.state.tags}</span>
+      <section className="wrapper">
+        <div className="content">
+          <h1>
+            <span>{this.state.title}</span>
+            <span>{`(${this.state.year})`}</span>
+          </h1>
+          <div className="sub-wrapper">
+            <div className="details">
+              <img src={this.state.imgUrl} />
+              <div className="info">
+                <span>Author: {this.state.author}</span>
+                <span>
+                  Genres:{" "}
+                  {this.state.tags.map((tag, idx) => (
+                    <span className="tag-arr" key={idx}>
+                      {tag}
+                    </span>
+                  ))}
+                </span>
+                <span>Release Date: {this.state.releaseDate}</span>
+              </div>
+              <div className="ratings">
+                <span>Rating: {this.state.rating}</span>
+                <span>Rating Count{this.state.ratingCount}</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <span>{this.state.releaseDate}</span>
+          <div className="plot">
+            <h3>Plot Summary</h3>
             <span>{this.state.plotOutline}</span>
           </div>
         </div>

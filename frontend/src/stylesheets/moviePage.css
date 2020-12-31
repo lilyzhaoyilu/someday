@@ -1,0 +1,47 @@
+.wrapper {
+    color: #111;
+    width: 1040px;
+
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-left: 16px;
+}
+.details{
+    display: flex;
+    margin-bottom: 15px;
+}
+.content h1{
+    font-size: 26px;
+    display: block;
+    font-weight: bold;
+    color: #494949;
+    margin: 0;
+    padding: 0 0 15px 0;
+    line-height: 1.1;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.details img{
+    width: 250px;
+    height: 350px;
+}
+.tag-arr{
+    padding-right: 5px;
+}
+.ratings{
+    display:flex;
+    flex-direction: column;
+}
+.plot{
+    display:flex;
+    flex-direction: column;
+}
+.plot h3{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
