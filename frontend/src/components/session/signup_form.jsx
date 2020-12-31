@@ -56,6 +56,10 @@ class SignupForm extends React.Component {
 	}
 
 	render() {
+		const demoUser = {
+			email: "demouser@demo.com",
+			password: "hunter12"
+		}
 		return (
 			<div className="signup-form-container">
 				<div>
@@ -108,7 +112,7 @@ class SignupForm extends React.Component {
 					<input type="submit" value="Sign Up" />
 					{this.renderErrors()}
 
-					<button className="sinup-form-demo">Login as demo user</button>
+					<button className="sinup-form-demo" onClick={() => this.props.login(demoUser)}>Login as demo user</button>
 
 				</form>
 			</div>
