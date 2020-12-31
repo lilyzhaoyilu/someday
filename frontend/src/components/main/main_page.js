@@ -15,17 +15,19 @@ export default () => {
   // console.log('mainpage');
   return (
     <div>
-        <Route path='/' component={NavBarContainer} />
+      <Route>
       <Switch>
         <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
         <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
       </Switch>
-
+      <Route path='/*' component={NavBarContainer} />
+      
         {/* <ProfileShow /> DOESNOTWORK */}
         <Link to='/mediapage/tt0944947'>click here to see the sample movie</Link>
         <br></br>
         <CommentForm /> 
         <UserComment /> 
+      </Route>
     </div>
   )
 }
