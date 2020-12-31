@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
-import {fetchShowData} from "../../actions/movie_actions";
+import { fetchMovieData } from "../../actions/movie_actions";
 import MediaPage from "./media_page";
 
-const mapStateToProps = (state, ownProps) => ({
-    movieId: ownProps.id,
-});
+const mapStateToProps = (state, ownProps) => {
+    
+    return { movieId: ownProps.match.params.movieId };
+    
+};
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchShowData: (movieId) => {
-        return dispatch(fetchShowData(movieId));
-    },
+  fetchMovieData: (movieId) => {
+    return dispatch(fetchMovieData(movieId));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MediaPage);
