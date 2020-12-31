@@ -4,7 +4,7 @@ import PopularShowsIndexItem from './popular_shows_index_item_container';
 export default class PopularShowsIndex extends Component {
   componentDidMount() {
     // this.props.fetchPopularTv()
-    setTimeout(() => this.props.fetchPopularTv(), 5000)
+    setTimeout(() => this.props.fetchPopularTv(), 4000)
 
   }
 

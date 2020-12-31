@@ -7,7 +7,7 @@ const mstp = (state, ownProps) => {
   return {
     show: state.entities.shows[ownProps.showId],
     showId: ownProps.showId,
-    index: ownProps.indexz
+    index: ownProps.index
   }
 };
 
