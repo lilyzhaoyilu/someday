@@ -16,7 +16,7 @@ export const deleteWatchlist = (id) => {
 }
 
 //* Get / api / users /: id / todolist - display user's todolists
-export const getMyWatchlist = (user_id) => {
+export const getMyWatchlists = (user_id) => {
   return axios.get(`/api/todoLists/user/${user_id}/todoList`)
 }
 

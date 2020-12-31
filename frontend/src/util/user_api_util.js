@@ -19,7 +19,7 @@ export const getThisUser = (user_id) => {
 // }
 
 //* get /api/users/current
-export const getCurrentUser = () => {
-  return axios.get(`/api/users/current`);
-}
+// export const getCurrentUser = () => {
+//   return axios.get(`/api/users/current`);
+// }
 
