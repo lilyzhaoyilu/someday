@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { showHistorylist } from '../../actions/historylist_actinos';
+import { showHistorylist } from '../../actions/historylist_actions';
 import HistorylistIndex from './historylist_index';
 
 const mstp = (state, ownProps) => ({
