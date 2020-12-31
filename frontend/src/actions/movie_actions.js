@@ -56,8 +56,9 @@ export const fetchAllShows = () => dispatch => (
   APIUTIL.fetchAllShows()
     .then(
       shows => {
-        console.log(shows);
-        return dispatch(receiveMovies(shows))
+        // console.log(shows);
+        return dispatch(receiveShows(shows))
+
       },
       err => dispatch(receiveErrors(err))
     )
