@@ -1,7 +1,7 @@
 import {
   RECEIVE_HISTORYLIST,
   RECEIVE_HISTORYLIST_ERRORS
-} from '../actions/historylist_actions'
+} from '../actions/historylist_actinos'
 
 export default (state = [], action) => {
   switch (action.type) {
