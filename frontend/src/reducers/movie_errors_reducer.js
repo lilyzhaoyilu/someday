@@ -1,16 +1,16 @@
 import {
-  RECEIVE_A_SHOW,
-  RECEIVE_SHOWS,
-  RECEIVE_SHOW_ERRORS
+  RECEIVE_A_MOVIE,
+  RECEIVE_MOVIES,
+  RECEIVE_MOVIE_ERRORS
 } from '../actions/movie_actions';
 
 export default (state = [], action) => {
   switch (action.type) {
-    case RECEIVE_A_SHOW:
+    case RECEIVE_A_MOVIE:
       return [];
-    case RECEIVE_SHOWS:
+    case RECEIVE_MOVIES:
       return [];
-    case RECEIVE_SHOW_ERRORS:
+    case RECEIVE_MOVIE_ERRORS:
       return action.errors;
     default:
       return state;
