@@ -11,11 +11,11 @@ export default class WatchlistIndex extends Component {
     const { watchlists } = this.props;
     return watchlists ? (
       <div>
-        <h1>hi</h1>
-        {/* <ul>
-          {watchlists.map(watchlist => <WatchlistIndexItem 
-          watchlist={watchlist} key={watchlist.id}/>)}
-        </ul> */}
+        <p>watchlists</p>
+        <ul>
+          {watchlists.map(watchlist => <WatchlistIndexItem
+            watchlist={watchlist} key={watchlist.id} />)}
+        </ul>
       </div>
     ) : null;
   }
