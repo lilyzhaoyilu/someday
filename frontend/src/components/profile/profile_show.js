@@ -7,7 +7,6 @@ class ProfileShow extends Component {
 
   componentDidMount() {
     this.props.fetchThisUser(this.props.match.params.userId)
-    console.log(this.props);
   }
 
   render() {
@@ -19,16 +18,16 @@ class ProfileShow extends Component {
           <label> Username:
             <strong>{user.handle}</strong>
           </label>
-          <label> Email: 
+          <label> Email:
             <strong>{user.email}</strong>
           </label>
           <label> User Created On:
-            <p>{user.date.toLocaleDateString(undefined, options)}</p>
+            <p>{user.date.slice(0, 10)}</p>
           </label>
           {/* favorite movie added from history list */}
         </div>
-        <WatchlistIndexContainer/>
-        <HistorylistIndexContainer/>
+        <WatchlistIndexContainer userId={user._id} />
+        {/* <HistorylistIndexContainer userId={user._id} /> */}
       </div>
     ) : null;
   }

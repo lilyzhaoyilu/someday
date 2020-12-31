@@ -10,8 +10,9 @@ export default (state = {}, action) => {
       return { ...state, [action.watchlist.id]: action.watchlist }
     case RECEIVE_THESE_WATCHLISTS:
       //* fetch all watchlists of one user
+      console.log(action.watchlists.data);
       const newState = {};
-      action.watchlists.forEach(watchlist => { newState[watchlist.id] = watchlist });
+      action.watchlists.data.forEach(watchlist => { newState[watchlist.id] = watchlist });
       return { ...state, ...newState };
     case DELETE_WATCHLIST:
       return { ...state, [action.watchlistId]: undefined };

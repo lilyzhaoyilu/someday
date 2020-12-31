@@ -14,7 +14,7 @@ router.get("/todoList", (req, res) => {
     .catch((err) => res.status(400).json(err));
 });
 
-//get all users todolists
+//get all of this user's todolists
 router.get("/user/:user_id/todoList", (req, res) => {
   TodoList.find({ user: req.params.user_id })
     .then((todoLists) => res.json(todoLists))
