@@ -35,6 +35,7 @@ export const showHistorylist = (userId) => dispatch => (
       err => dispatch(receiveErrors(err))
     )
 )
+
 export const showUserHistorylist = (userId) => dispatch => (
   APIUTIL.showUserHistorylist(userId)
     .then(
