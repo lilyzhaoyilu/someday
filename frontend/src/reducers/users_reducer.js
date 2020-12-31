@@ -1,13 +1,12 @@
-import {
-  FETCH_THIS_USER,
-  FETCH_ALL_USER,
-  FETCH_USERS
+import { 
+  FETCH_THIS_USER, 
+  FETCH_ALL_USER 
 } from '../actions/user_actions';
 
-export default function (oldState = {}, action) {
+export default function( oldState={}, action) {
   Object.freeze(oldState);
-
-  switch (action.type) {
+  
+  switch(action.type) {
     case FETCH_THIS_USER:
       return {
         ...oldState,
@@ -15,10 +14,6 @@ export default function (oldState = {}, action) {
       }
     case FETCH_ALL_USER:
       return action.users
-    case FETCH_USERS:
-      const newState = {}
-      action.users.forEach(user => newState[user._id] = user)
-      return { ...oldState, ...newState }
     default:
       return oldState
   }

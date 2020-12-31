@@ -1,37 +1,30 @@
 import axios from 'axios';
-
-//* get /api/watchedLists/watchedList -get all watchedLists
-
-export const getAllHistoryLists = () => (
-  axios.get(`/api/watchedLists/watchedList`)
-)
-
-//* POST / api / watchedList - create a watchedList
+//* POST / api / watchedlist - create watchedlist
 
 export const postHistorylist = (listData) => (
-  axios.post('/api/watchedLists/watchedList/', listData)
+  axios.post('/api/watchedlist/', listData)
 )
 
-//* PATCH / api / watchedList /: id - update watchedList(add or delete movie)
+//* PATCH / api / watchedlist /: id - update watchedlist(add or delete movie)
 
 export const updateHistorylist = listData => (
-  axios.patch(`/api/watchedLists/watchedList/${listData.id}`, listData)
+  axios.patch(`/api/watchedlist/${listData.id}`, listData)
 )
 
-//* DELETE / api / watchedList /: id - delete the watchedList
+//* DELETE / api / watchedlist /: id - delete the watchedlist
 
-export const deleteHistorylist = id => (
-  axios.delete(`/api/watchedLists/watchedList/${id}`)
+export const deleteHistorylist = listId => (
+  axios.delete(`/api/watchedlist/${listId}`)
 )
 
-//* Get / api / users /: id / watchedList / - show this user's history list
+//* Get / api / users /: id / watchedlist / - show this user's history list
 //TODO change name
-export const showMyHistorylists = user_id => (
-  axios.get(`/api/watchedLists/user/${user_id}/watchedList`)
+export const showMyHistorylist = userId => (
+  axios.get(`/api/users/${userId}/watchedList`)
 )
 
-//* Get /api/watchedList/:id -show one watchedList
+//* Get /api/watchedList/:id -show one watchedlist
 
-export const showHistorylist = id => (
-  axios.get(`/api/watchedLists/watchedList/${id}`)
+export const showHistorylist = listId => (
+  axios.get(`/api/watchedlist/${listId}`)
 )
