@@ -46,7 +46,7 @@ router.get("/comment/:id", (req, res) => {
 
 //create comment
 router.post(
-  "/todoList",
+  "/comment",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { isValid, errors } = validateComment(req.body);
@@ -60,6 +60,8 @@ router.post(
       user: req.user.id,
       movie: req.movie.id,
       reply: req.reply.id,
+      todoList: req.todoList.id,
+      watchedList: req.watchedList.id,
     });
     newComment.save().then((comment) => res.json(comment));
   }
