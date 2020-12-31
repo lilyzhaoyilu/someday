@@ -19,7 +19,7 @@ class UserComment extends Component {
 
 
     return (
-      <div>usercomments
+      <div className='user'>usercomments here
        {CommentsObjects.map(comment => (<li key={`comment-${comment._id}`}>{comment.text} {displayCreatedAt(comment.date)}</li>))}
       </div>
     )
