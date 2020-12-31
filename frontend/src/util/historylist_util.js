@@ -19,7 +19,7 @@ export const deleteHistorylist = listId => (
 
 //* Get / api / users /: id / watchedlist / - show this user's history list
 //TODO change name
-export const showMyHistorylist = userId => (
+export const showMyHistorylists = userId => (
   axios.get(`/api/watchedLists/users/${userId}/watchedList`)
 )
 
