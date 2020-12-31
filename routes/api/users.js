@@ -87,8 +87,8 @@ router.post("/login", (req, res) => {
 });
 //show other user profile
 router.get(
-  "/:user_id", (req, res) => {
-    User.findById({ id: req.params.user_id })
+  "/:userId", (req, res) => {
+    User.findById( req.params.userId )
       .then((user) => res.json(user))
       .catch((err) => res.status(400).json(err));
   });

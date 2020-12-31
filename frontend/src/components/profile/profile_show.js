@@ -4,8 +4,10 @@ import HistorylistIndexContainer from '../historylist/historylist_index_containe
 import WatchlistIndexContainer from '../watchlist/watchlist_index_container';
 
 class ProfileShow extends Component {
+
   componentDidMount() {
     this.props.fetchThisUser(this.props.match.params.userId)
+    console.log(this.props);
   }
 
   render() {
@@ -23,6 +25,7 @@ class ProfileShow extends Component {
           <label> User Created On:
             <p>{user.date.toLocaleDateString(undefined, options)}</p>
           </label>
+          {/* favorite movie added from history list */}
         </div>
         <WatchlistIndexContainer/>
         <HistorylistIndexContainer/>
