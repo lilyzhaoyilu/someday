@@ -4,7 +4,8 @@ export default class PopularShowsIndexItem extends Component {
   componentDidMount() {
     // console.log(this.props.showId);
     // this.props.fetchShowData(this.props.showId)
-    setTimeout(() => this.props.fetchShowData(this.props.showId), 500)
+    console.log(this.props.index);
+    setTimeout(() => this.props.fetchShowData(this.props.showId), this.props.index * 1000)
 
   }
 
