@@ -17,9 +17,12 @@ export default () => {
     <div>
       <Route>
       <Switch>
+
         <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
         <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
+
       </Switch>
+
       <Route path='/*' component={NavBarContainer} />
       
         {/* <ProfileShow /> DOESNOTWORK */}
@@ -28,6 +31,7 @@ export default () => {
         <CommentForm /> 
         <UserComment /> 
       </Route>
+
     </div>
   )
 }

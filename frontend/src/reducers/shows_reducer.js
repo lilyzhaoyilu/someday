@@ -13,7 +13,7 @@ export default (oldState = {}, action) => {
 
     case RECEIVE_POPULAR_SHOWS:
       newState = {};
-      action.shows.data.slice(0, 4).forEach(show => {
+      action.shows.data.slice(0, 8).forEach(show => {
         const showId = show.split('/')[2]
         newState[showId] = { id: showId }
       });

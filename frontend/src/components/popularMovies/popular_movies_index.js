@@ -13,11 +13,12 @@ export default class PopularMoviesIndex extends Component {
       <div>
         <ul>
           {movies.map((movie, i) => {
-            if (i < 4) {
+            if (i < 8) {
               return (
                 <PopularMoviesIndexItem
                   showId={movie.id}
                   key={movie.id}
+                  idx={i}
                 />
               )
             }

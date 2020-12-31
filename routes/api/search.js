@@ -4,13 +4,12 @@ const moogoose = require("mongoose");
 const TodoList = require("../../models/TodoList");
 const WatchedList = require("../../models/WatchedList");
 
-router.get("/search/list", (req, res) => {
+router.get("/search/todoList", (req, res) => {
   let search = req.body.list;
   let regSearch = new RegExp(search, 'i')
   const tList = TodoList.find({ name: regSearch });
-  const wList = WatchedList.find({ name: regSearch });
-  if (tList != null || wList != null) {
-    Promise.all([tList, wList]).then((values) => {
+  if (tList != null ) {
+    tList.then((values) => {
       res.status(200).json(values);
     });
   } else {
@@ -18,6 +17,19 @@ router.get("/search/list", (req, res) => {
   }
 });
 
+router.get("/search/watchedList", (req, res) => {
+  let search = req.body.list;
+  let regSearch = new RegExp(search, "i");
+
+  const wList = WatchedList.find({ name: regSearch });
+  if (wList != null) {
+    wList.then((values) => {
+      res.status(200).json(values);
+    });
+  } else {
+    res.json({ search: "no match result" });
+  }
+});
 // router.get("/search/movie", (req, res) => {
 //   const searchQuery = req.body.searchQuery;
 //   if (searchQuery != null) {
