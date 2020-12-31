@@ -17,12 +17,12 @@ export default () => {
         <Route path='/' component={NavBarContainer} />
       </Switch>
       <Switch>
-        <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
+        <Route path='/search-result' exact component={MovieIndexContainer} />
       </Switch>
 
 
-        <CommentForm /> 
-        <UserComment /> 
+      <CommentForm />
+      <UserComment />
     </div>
   )
 }
