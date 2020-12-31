@@ -47,7 +47,7 @@ User Profile Page
 ![User Profile Page](https://github.com/lilyzhaoyilu/someday/blob/main/assets/userpage.png)
 
 ## Group Members and Work Breakdown
-Lead - [Lily Zhaoyi Lu](https://github.com/lilyzhaoyilu)
-Backend Lead - [Rex Gao](https://github.com/rexgao22)
-Frontend Lead - [Michael Chen](https://github.com/atlasneiko)
-Flex - [Samuel Wong](https://github.com/Requiem-of-Zero)
+Lead - [Lily Zhaoyi Lu](https://github.com/lilyzhaoyilu)   
+Backend Lead - [Rex Gao](https://github.com/rexgao22)   
+Frontend Lead - [Michael Chen](https://github.com/atlasneiko)   
+Flex - [Samuel Wong](https://github.com/Requiem-of-Zero)   
