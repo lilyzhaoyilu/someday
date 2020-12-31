@@ -18,13 +18,16 @@ export default () => {
         <Route path='/' component={NavBarContainer} />
       </Switch>
       <Switch>
+
         <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
         <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
+
       </Switch>
 
-        {/* <ProfileShow /> */}
-        <CommentForm /> 
-        <UserComment /> 
+
+      {/* <ProfileShow /> */}
+      <CommentForm />
+      <UserComment />
     </div>
   )
 }
