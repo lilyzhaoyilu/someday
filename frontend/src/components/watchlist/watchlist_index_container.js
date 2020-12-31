@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
-import { getMyWatchlist } from '../../actions/watchlist_actions';
+import { getMyWatchlists } from '../../actions/watchlist_actions';
 import WatchlistIndex from './watchlist_index';
 
 const mstp = (state, ownProps) => ({
-  watchlists: Object.values(state.entities.watchlists[ownProps.match.params.userId])
+  watchlists: Object.values(state.entities.watchlists),
+  userId: ownProps.userId
 });
 
 const mdtp = dispatch => ({
-  getMyWatchlist: userId => dispatch(getMyWatchlist(userId))
+  getMyWatchlists: userId => dispatch(getMyWatchlists(userId))
 });
 
 export default connect(mstp, mdtp)(WatchlistIndex);
