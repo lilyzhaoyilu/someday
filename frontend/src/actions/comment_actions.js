@@ -1,7 +1,7 @@
 import * as APIUTIL from '../util/comment_util'
 
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
-export const RECEIVE_COMMENTS = 'RECEIVE_MY_COMMENTS';
+export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 

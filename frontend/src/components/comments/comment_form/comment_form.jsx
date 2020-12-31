@@ -23,6 +23,9 @@ class CommentForm extends Component {
     e.preventDefault();
     let copy = Object.assign({}, this.state)
     this.props.postComment(copy);
+    this.setState({
+      text: '',
+    })
   }
 
 
