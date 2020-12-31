@@ -25,8 +25,6 @@ const receiveErrors = (errors) => ({
   errors
 })
 
-
-
 export const fetchShowData = (movieId) => dispatch => (
   APIUTIL.fetchShowData(movieId)
     .then(
