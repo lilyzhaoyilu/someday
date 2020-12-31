@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //* get /api/watchedLists/watchedList -get all watchedLists
 
-export const getALLWatchedList = () =>(
+export const getAllHistoryLists = () => (
   axios.get(`/api/watchedLists/watchedList`)
 )
 
@@ -26,7 +26,7 @@ export const deleteHistorylist = id => (
 
 //* Get / api / users /: id / watchedList / - show this user's history list
 //TODO change name
-export const showMyHistorylist = user_id => (
+export const showMyHistorylists = user_id => (
   axios.get(`/api/watchedLists/user/${user_id}/watchedList`)
 )
 
