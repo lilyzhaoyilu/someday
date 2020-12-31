@@ -15,7 +15,7 @@ const remove_comment = commentId => ({
   commentId
 })
 
-const receiveMyComments = comments => ({
+const receiveComments = comments => ({
   type: RECEIVE_COMMENTS,
   comments
 })
@@ -33,18 +33,51 @@ export const postComment = comment => dispatch => (
     )
 )
 
-export const getUserComments = userId => dispatch => (
-  APIUTIL.getUserComments(userId)
-    .then(
-      comments => dispatch(receiveMyComments(comments)),
-      err => dispatch(receiveErrors(err))
-    )
-)
-
 export const deleteComment = commentId => dispatch => (
   APIUTIL.deleteComment(commentId)
     .then(
       () => dispatch => dispatch(remove_comment(commentId)),
+      err => dispatch(receiveErrors(err))
+    )
+)
+
+export const getMovieComments = movieId => dispatch => (
+  APIUTIL.getMovieComments(movieId)
+    .then(
+      comments => dispatch(receiveComments(comments)),
+      err => dispatch(receiveErrors(err))
+    )
+)
+
+export const getWatchlistComments = listId => dispatch => (
+  APIUTIL.getWatchlistComments(listId)
+    .then(
+      comments => dispatch(receiveComments(comments)),
+      err => dispatch(receiveErrors(err))
+    )
+)
+
+export const getUserComments = userId => dispatch => (
+  APIUTIL.getUserComments(userId)
+    .then(
+      comments => dispatch(receiveComments(comments)),
+      err => dispatch(receiveErrors(err))
+    )
+)
+
+
+export const getHistorylistComments = listId => dispatch => (
+  APIUTIL.getHistorylistComments(listId)
+    .then(
+      comments => dispatch(receiveComments(comments)),
+      err => dispatch(receiveErrors(err))``
+    )
+)
+
+export const getThisComment = commentId => dispatch => (
+  APIUTIL.getThisComment(commentId)
+    .then(
+      comment => dispatch(receiveComment(comment)),
       err => dispatch(receiveErrors(err))
     )
 )
