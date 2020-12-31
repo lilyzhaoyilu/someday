@@ -28,3 +28,7 @@ export const showMyHistorylists = userId => (
 export const showHistorylist = listId => (
   axios.get(`/api/watchedLists/watchedList/${listId}`)
 )
+
+export const getAllHistorylists = () => (
+  axios.get(`/api/watchedLists/watchedList`)
+)

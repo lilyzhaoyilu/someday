@@ -43,10 +43,18 @@ export const showMyHistorylists = (userId) => dispatch => (
     )
 )
 
-export const showHistorylist = (userId) => dispatch => (
-  APIUTIL.showMyHistorylists(userId)
+export const showHistorylist = (listId) => dispatch => (
+  APIUTIL.showHistorylist(listId)
     .then(
       list => dispatch(receiveHistorylist(list)),
+      err => dispatch(receiveErrors(err))
+    )
+)
+
+export const getAllHistorylists = () => dispatch => (
+  APIUTIL.getAllHistorylists()
+    .then(
+      lists => dispatch(receiveHistorylists(lists)),
       err => dispatch(receiveErrors(err))
     )
 )
