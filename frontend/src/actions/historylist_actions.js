@@ -44,7 +44,7 @@ export const showMyHistorylists = (userId) => dispatch => (
 )
 
 export const showHistorylist = (userId) => dispatch => (
-  APIUTIL.showMyHistorylist(userId)
+  APIUTIL.showMyHistorylists(userId)
     .then(
       list => dispatch(receiveHistorylist(list)),
       err => dispatch(receiveErrors(err))
