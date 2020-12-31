@@ -23,12 +23,12 @@ class ProfileShow extends Component {
             <strong>{user.email}</strong>
           </label>
           <label> User Created On:
-            <p>{user.date.toLocaleDateString(undefined, options)}</p>
+            <p>{user.date.slice(0,10)}</p>
           </label>
           {/* favorite movie added from history list */}
         </div>
-        <WatchlistIndexContainer/>
-        <HistorylistIndexContainer/>
+        {/* <WatchlistIndexContainer/>
+        <HistorylistIndexContainer/> */}
       </div>
     ) : null;
   }
