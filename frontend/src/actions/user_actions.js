@@ -1,9 +1,7 @@
 import * as USERAPI from '../util/user_api_util'
-import * as SEARCHAPI from '../util/search_api_util'
 import { receiveCurrentUser } from './session_actions'
 
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS"
-export const FETCH_USERS = 'RECEIVE_USERS'
 export const FETCH_THIS_USER = "FETCH_THIS_USER";
 export const FETCH_ALL_USER = "FETCH_ALL_USER";
 
@@ -16,11 +14,6 @@ const receiveErrors = errors => ({
 const receiveThisUser = user => ({
   type: FETCH_THIS_USER,
   user
-})
-
-const receiveUsers = users => ({
-  type: FETCH_USERS,
-  users
 })
 
 const receiveAllUsers = users => ({
@@ -49,14 +42,6 @@ export const fetchThisUser = userId => dispatch => (
   USERAPI.getThisUser(userId)
     .then(
       user => dispatch(receiveThisUser(user)),
-      err => dispatch(receiveErrors(err))
-    )
-)
-
-export const searchUsers = handle => dispatch => (
-  SEARCHAPI.searchUsers(handle)
-    .then(
-      users => dispatch(receiveUsers(users)),
       err => dispatch(receiveErrors(err))
     )
 )
