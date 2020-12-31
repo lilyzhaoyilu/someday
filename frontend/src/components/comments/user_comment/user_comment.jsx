@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import moment from 'moment';
-
+import CommentDetail from '../comment_detail/comment_detail_container'
 class UserComment extends Component {
 
   componentDidMount() {
@@ -13,14 +13,9 @@ class UserComment extends Component {
 
     const CommentsObjects = Object.values(this.props.comments);
 
-    const displayCreatedAt = (time) => {
-      let display = moment(time);
-      return display.format("MMM D YYYY hh:mm a");}
-
-
     return (
       <div className='user'>usercomments here
-       {CommentsObjects.map(comment => (<li key={`comment-${comment._id}`}>{comment.text} {displayCreatedAt(comment.date)}</li>))}
+       {CommentsObjects.map(comment => (<CommentDetail key={comment._id} comment={comment} />))}
       </div>
     )
   }

@@ -20,7 +20,7 @@ export default () => {
         <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
       </Switch>
 
-
+        {/* <MovieIndexContainer /> */}
         <CommentForm /> 
         <UserComment /> 
     </div>
