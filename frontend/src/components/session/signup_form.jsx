@@ -104,7 +104,7 @@ class SignupForm extends React.Component {
           <textarea
             value={this.state.about}
             onChange={this.update("about")}
-            placeholder="Tell us about you"
+            placeholder="Tell us about yourself."
           />
 
           <input type="submit" value="Sign Up" />
