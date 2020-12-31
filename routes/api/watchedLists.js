@@ -5,7 +5,6 @@ const passport = require("passport");
 const WatchedList = require("../../models/WatchedList");
 const validateList = require("../../validation/list");
 
-//* get all watchedLists
 router.get("/watchedList", (req, res) => {
   WatchedList.find()
     .sort({ data: -1 })
@@ -13,21 +12,18 @@ router.get("/watchedList", (req, res) => {
     .catch((err) => res.status(400).json(err));
 });
 
-//* get one user's watchedLists
 router.get("/user/:user_id/watchedList", (req, res) => {
   WatchedList.find({ user: req.params.user_id })
     .then((watchedLists) => res.json(watchedLists))
     .catch((err) => res.status(400).json(err));
 });
 
-//* get one specific watchedList
 router.get("/watchedList/:id", (req, res) => {
   WatchedList.findById(req.params.id)
     .then((watchedList) => res.json(watchedList))
     .catch((err) => res.status(400).json(err));
 });
 
-//* create a watchedList
 router.post(
   "/watchedList",
   passport.authenticate("jwt", { session: false }),
@@ -48,7 +44,6 @@ router.post(
   }
 );
 
-//* update a watchedList
 router.patch(
   "/watchedList/:id",
   passport.authenticate("jwt", { session: false }),
@@ -80,7 +75,7 @@ router.patch(
   }
 );
 
-//* detele a todoList
+//detele todoList
 router.delete(
   "/watchedList/:id",
   passport.authenticate("jwt", { session: false }),
