@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import ListPostForm from './list_post_form'
 import { postWatchlist } from '../../actions/watchlist_actions'
-import {postWatchlist}
+
 const mstp = (state, ownProps) => {
-  console.log("userId", state.session.user.id);
+  // console.log("userId", state.session.user.id);
 
   return {
     formType: "Watchlist",

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { showHistorylist } from '../../actions/historylist_actions';
+import { showMyHistorylists } from '../../actions/historylist_actions';
 import HistorylistIndex from './historylist_index';
 
 const mstp = (state, ownProps) => ({
@@ -8,7 +8,7 @@ const mstp = (state, ownProps) => ({
 });
 
 const mdtp = dispatch => ({
-  showHistorylist: userId => dispatch(showHistorylist(userId))
+  showMyHistorylists: userId => dispatch(showMyHistorylists(userId))
 });
 
 export default connect(mstp, mdtp)(HistorylistIndex)

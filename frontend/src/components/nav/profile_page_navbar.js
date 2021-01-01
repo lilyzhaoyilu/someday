@@ -7,7 +7,7 @@ export default class ProfilePageNavbar extends Component {
   render() {
     return (
       <div className="profile-links">
-        <Link className='profile-nav-btn' to=''>Watch List</Link>
+        <Link className='profile-nav-btn' to=''>My Want-to Watch</Link>
         <Link className='profile-nav-btn' to=''>Watched List</Link>
       </div>
     )

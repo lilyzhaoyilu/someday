@@ -3,7 +3,7 @@ import HistorylistIndexItem from './historylist_index_item';
 
 export default class HistorylistIndex extends Component {
   componentDidMount() {
-    this.props.showHistorylist(this.props.userId)
+    this.props.showMyHistorylists(this.props.userId)
   }
 
   render() {
