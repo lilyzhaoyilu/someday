@@ -8,9 +8,9 @@ export default class WatchlistIndex extends Component {
 
   render() {
     const { watchlists } = this.props;
-    console.log(watchlists);
     return (
       <div>
+        <h1>Watchlists:</h1>
         <ul>
           {watchlists
             .filter(list => list.user === this.props.userId)

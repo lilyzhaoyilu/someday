@@ -10,6 +10,7 @@ export default class HistorylistIndex extends Component {
     const { historylists } = this.props;
     return historylists ? (
       <div>
+        <h1>Historylists:</h1>
         <ul>
           {historylists
             .filter(list => list.user === this.props.userId)
