@@ -19,6 +19,7 @@ class CommentDetail extends Component {
       <li>
         {displayCreatedAt(comment.date)}
         {comment.text} 
+        {comment.user}
   
       
       </li>
