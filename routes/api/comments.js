@@ -76,7 +76,7 @@ router.post(
       // reply: req.body.reply.id ? req.reply.id : null,
       // todoList: req.todoList.id ? req.todoList.id : null,
       // watchedList: req.body.watchedList.id ? req.watchedList.id : null,
-    });
+    }); 
     // console.log(newComment);
     newComment.save().then((comment) => res.json(comment));
   }

@@ -14,7 +14,7 @@ router.get("/todoList", (req, res) => {
     .catch((err) => res.status(400).json(err));
 });
 
-//get all users todolists
+//get all todolists of specific user
 router.get("/user/:user_id/todoList", (req, res) => {
   TodoList.find({ user: req.params.user_id })
     .then((todoLists) => res.json(todoLists))
@@ -41,8 +41,8 @@ router.post(
 
     const newTodoList = new TodoList({
       name: req.body.name,
-      user: req.user.id,
-      movie: req.movie.id,
+      user: req.body.id,
+      movie: req.body.id,
     });
     newTodoList.save().then((todoList) => res.json(todoList));
   }

@@ -16,37 +16,38 @@ class ProfileShow extends Component {
     const { user } = this.props;
     const displayCreatedAt = (time) => {
       let display = moment(time);
-      return display.format("MMM D YYYY");}
-      return user ? (
-        <div>
-        <ProfileNavbar/>
+      return display.format("MMM D YYYY");
+    }
+    return user ? (
+      <div>
+        <ProfileNavbar />
         <div className="profile-show-wrapper">
           <div className='profile-info'>
-            <ProfilePageNavbar/>
+            <ProfilePageNavbar />
             <WatchlistIndexContainer userId={user._id} />
             <HistorylistIndexContainer userId={user._id} />
             <h1>My Comments</h1>
-            <UserCommentContainer/>
+            <UserCommentContainer />
           </div>
           <div className="user-info">
-          <h1>My Info</h1>
+            <h1>My Info</h1>
             <div className="username">
-              <label>Username: 
+              <label>Username:
                 <strong>{user.handle}</strong>
               </label>
             </div>
             <div className="email">
-              <label>Email: 
+              <label>Email:
                 <strong>{user.email}</strong>
               </label>
             </div>
             <div className="user-created">
-              <label>User Created On: 
+              <label>User Created On:
                 <strong>{displayCreatedAt(user.date)}</strong>
               </label>
             </div>
             <div className="about-me">
-              <label>About me: 
+              <label>About me:
                 <p></p>
               </label>
             </div>
@@ -54,6 +55,8 @@ class ProfileShow extends Component {
           </div>
         </div>
 
+        <WatchlistIndexContainer userId={user._id} />
+        <HistorylistIndexContainer userId={user._id} />
       </div>
     ) : null;
   }

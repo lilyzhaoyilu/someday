@@ -36,7 +36,7 @@ router.post(
 
     const newWatchedList = new WatchedList({
       name: req.body.name,
-      user: req.user.id,
+      user: req.body.user,
       movie: req.body.movie,
     });
 

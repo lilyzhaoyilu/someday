@@ -3,16 +3,17 @@ import HistorylistIndexItem from './historylist_index_item';
 
 export default class HistorylistIndex extends Component {
   componentDidMount() {
-    this.props.showHistorylist(this.props.userId)
+    this.props.showMyHistorylists(this.props.userId)
   }
 
   render() {
-    const { historylist } = this.props;
-    return historylist ? (
+    const { historylists } = this.props;
+    console.log("historylist idx", historylists);
+    return historylists ? (
       <div>
         <ul>
-          {historylist.map(watched => <HistorylistIndexItem
-            key={watched.id} watched={watched} />)}
+          {historylists.map(watched => <HistorylistIndexItem
+            key={watched._id} watched={watched} />)}
         </ul>
       </div>
     ) : null;

@@ -7,11 +7,12 @@ export default class HistorylistIndexItem extends Component {
     return watched ? (
       <div>
         <li>
-          <MovieIndexItem 
+          <p>{watched.movie.id}</p>
+          {/* <MovieIndexItem 
           key={watched.apiId} 
           watched={watched}
           imgUrl={watched.imgUrl}
-          name={watched.name}/>
+          name={watched.name}/> */}
         </li>
       </div>
     ) : null;

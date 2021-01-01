@@ -2,7 +2,7 @@ import * as APIUTIL from '../util/historylist_util'
 
 export const RECEIVE_HISTORYLIST = 'RECEIVE_HISTORYLIST';
 export const RECEIVE_HISTORYLIST_ERRORS = 'RECEIVE_HISTORYLIST_ERRORS';
-export const RECEIVE_HISOTRYLISTS = 'RECEIVE_HISTORYLISTS'
+export const RECEIVE_HISTORYLISTS = 'RECEIVE_HISTORYLISTS'
 
 const receiveHistorylist = historylist => ({
   type: RECEIVE_HISTORYLIST,

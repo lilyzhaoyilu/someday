@@ -10,28 +10,28 @@
 	align-items: center;
 }
 
-.splash-header-left img{
-  margin-left: 15px;
-  width: 200px;
-
+.splash-header-left img {
+	margin-left: 15px;
+	width: 200px;
 }
 .splash-header-left input {
 	width: 200px;
 	height: 20px;
 }
 
-
-.splash-features{
-  height: 45vh;
-  background-color:#edf4ed;
+.splash-features {
+	height: 45vh;
+	background-color: #edf4ed;
 }
 
 .splash-trending-movies {
 	height: 45vh;
 }
 .splash-trending-movies div ul {
+	width: 80%;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .splash-trending-tvshows {
@@ -40,6 +40,8 @@
 }
 
 .splash-trending-tvshows div ul {
+	width: 80%;
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 }

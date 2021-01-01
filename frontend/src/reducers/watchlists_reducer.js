@@ -7,9 +7,8 @@ import {
 export default (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_THIS_WATCHLIST:
-      return { ...state, [action.watchlist.id]: action.watchlist }
+      return { ...state, [action.watchlist.data._id]: action.watchlist.data }
     case RECEIVE_THESE_WATCHLISTS:
-      //* fetch all watchlists of one user
       const newState = {};
       action.watchlists.data.forEach(watchlist => { newState[watchlist.id] = watchlist });
       return { ...state, ...newState };
