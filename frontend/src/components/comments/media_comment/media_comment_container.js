@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
 import { withRouter} from 'react-router-dom';
-import { postComment } from '../../../actions/comment_actions';
-import CommentForm from './comment_form.jsx';
 
+
+
+import MediaComment from './media_comment';
+import {getMovieComments} from '../../../actions/comment_actions';
 const mstp = (state, ownProps) => {
   // console.log(ownProps);
   return {
@@ -12,9 +14,11 @@ const mstp = (state, ownProps) => {
   // currentPageUserId: ownProps. it should really be this one to fetch the user's comment based on current URL...
   }
 }
+
 const mdtp = dispatch => ({
-  
-  postComment: comment => dispatch(postComment(comment)),
+  getMovieComments: (movieId) => dispatch(getMovieComments(movieId)),
 })
 
-export default  withRouter(connect(mstp, mdtp)(CommentForm));
+
+
+export default withRouter(connect(mstp, mdtp)(MediaComment));

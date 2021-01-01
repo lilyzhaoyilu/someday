@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import MediaComment from '../comments/media_comment/media_comment_container';
+import CommentForm from '../comments/comment_form/comment_form_container'
 class MediaPage extends Component {
   constructor(props) {
     super(props);
@@ -15,8 +16,8 @@ class MediaPage extends Component {
       plotOutline: "",
     };
   }
-  componentDidMount() {
   
+  componentDidMount() {
     this.props.fetchMovieData(this.props.movieId).then((result) => {
       this.setState({
         title: result.show.data.title.title,
@@ -84,6 +85,14 @@ class MediaPage extends Component {
             <span>{this.state.plotOutline}</span>
           </div>
         </div>
+
+
+
+         <MediaComment />
+
+
+          <CommentForm />
+
       </section>
     );
   }
