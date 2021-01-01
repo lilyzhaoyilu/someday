@@ -28,8 +28,8 @@ class ProfileShow extends Component {
           {/* favorite movie added from history list */}
         </div>
 
-        <WatchlistIndexContainer userId={user._id} />
-        <HistorylistIndexContainer userId={user._id} />
+        {/* <WatchlistIndexContainer userId={user._id} />
+        <HistorylistIndexContainer userId={user._id} /> */}
       </div>
     ) : null;
   }
