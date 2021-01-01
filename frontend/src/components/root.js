@@ -7,7 +7,9 @@ import '../stylesheets/reset.css';
 import '../stylesheets/splash.css';
 import '../stylesheets/sign.css';
 import '../stylesheets/navbar.css';
-import '../stylesheets/moviePage.css';
+import '../stylesheets/profile-navbar.css';
+import '../stylesheets/profile.css';
+import '../stylesheets/profile-page.css';
 
 
 
