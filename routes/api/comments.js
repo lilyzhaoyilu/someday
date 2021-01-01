@@ -68,6 +68,7 @@ router.post(
     // console.log(req.body);
     // console.log(req.params);
     // const movieId = mongoose.Types.ObjectId('tt0944947');
+    // console.log(movieId);
     const newComment = new Comment({
       text: req.body.text,
       user: req.user.id,
