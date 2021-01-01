@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieIndexItem from '../movie/movie_index_item';
+import MovieImage from '../movie_image/img_container';
 
 export default class WatchlistIndexItem extends Component {
   render() {
@@ -11,9 +12,9 @@ export default class WatchlistIndexItem extends Component {
 
         <p>{`watchlist: ${this.props.watchlist.name}`}</p>
         {moviesArr.map(movie =>
-          <li key={`watch-item-${movie}`}>
-            <p>{movie}</p>
-          </li>
+          <span key={`watch-item-${movie}`}>
+            <MovieImage movieId={movie}/>
+          </span>
           // <p>{movie}</p>
           // <MovieIndexItem 
           // key={movie.apiId}

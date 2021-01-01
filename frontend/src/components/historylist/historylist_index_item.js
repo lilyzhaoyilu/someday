@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieIndexItem from '../movie/movie_index_item';
+import MovieImage from '../movie_image/img_container';
 
 export default class HistorylistIndexItem extends Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export default class HistorylistIndexItem extends Component {
       <li>
         <p>{`historylist: ${watched.name}`}</p>
         <ul>
-          {watched.movie.map(movieId => <li key={`historyIndexMovie-${movieId}`}>{movieId}</li>)}
+          {watched.movie.map(movieId => <span key={`historyIndexMovie-${movieId}`}><MovieImage movieId={movieId}/></span>)}
           {/* <MovieIndexItem 
           key={watched.apiId} 
           watched={watched}
