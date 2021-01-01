@@ -7,6 +7,12 @@ class UserComment extends Component {
     this.props.getUserComments(this.props.currentUserId);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.currentUserId !== prevProps.currentUserId) {
+      this.props.getUserComments(this.props.currentUserId);
+    }
+  }
+
   render() {
     
   

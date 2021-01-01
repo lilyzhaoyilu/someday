@@ -16,8 +16,8 @@ class MediaPage extends Component {
       plotOutline: "",
     };
   }
-  componentDidMount() {
   
+  componentDidMount() {
     this.props.fetchMovieData(this.props.movieId).then((result) => {
       this.setState({
         title: result.show.data.title.title,
