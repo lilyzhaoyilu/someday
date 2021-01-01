@@ -25,6 +25,10 @@
     flex-direction: column;
     padding-left: 25px;
     padding-right: 25px;
+
+}
+.info span{
+    padding-bottom: 10px;
 }
 .details img{
     width: 250px;
@@ -36,6 +40,10 @@
 .ratings{
     display:flex;
     flex-direction: column;
+
+}
+.ratings span{
+    padding-bottom: 10px;
 }
 .plot{
     display:flex;
@@ -44,4 +52,37 @@
 .plot h3{
     margin-bottom: 10px;
     font-weight: bold;
+}
+
+.media-button{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+}
+
+.media-button button{
+    margin-top: 10px;
+}
+
+.list-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 60px;
+}
+
+.list-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(43, 41, 41, 0.75);
 }

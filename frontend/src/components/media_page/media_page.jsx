@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import Modal from "react-modal";
 import MediaComment from '../comments/media_comment/media_comment_container';
 import CommentForm from '../comments/comment_form/comment_form_container'
+
 class MediaPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isOpen: false,
       title: "",
       year: "",
       imgUrl: "",
@@ -15,6 +18,7 @@ class MediaPage extends Component {
       tags: [],
       plotOutline: "",
     };
+    this.toggleModal = this.toggleModal.bind(this);
   }
   
   componentDidMount() {
@@ -50,8 +54,16 @@ class MediaPage extends Component {
     }
   }
 
+  toggleModal(e){
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+
   render() {
-    
+    const ratingCount = this.state.ratingCount
+      ? this.state.ratingCount.toLocaleString("en-US")
+      : this.state.ratingCount;
     return (
       <section className="wrapper">
         <div className="content">
@@ -76,7 +88,7 @@ class MediaPage extends Component {
               </div>
               <div className="ratings">
                 <span>Rating: {this.state.rating}</span>
-                <span>Rating Count{this.state.ratingCount}</span>
+                <span>{ratingCount} people rated</span>
               </div>
             </div>
           </div>
@@ -86,13 +98,36 @@ class MediaPage extends Component {
           </div>
         </div>
 
-
-
+        <div className="media-button">
+          <button onClick={this.toggleModal}>Add to TodoList</button>
+          <Modal
+            isOpen={this.state.isOpen}
+            onRequestClose={this.toggleModal}
+            contentLabel="My Todo List"
+            className="list-modal"
+            overlayClassName="list-overlay "
+            closeTimeoutMS={500}
+            ariaHideApp={false}
+          >
+            <div>My Todo Lists.</div>
+            <button onClick={this.toggleModal}>Close modal</button>
+          </Modal>
+          <button onClick={this.toggleModal}>Add to WatchedList</button>
+          <Modal
+            isOpen={this.state.isOpen}
+            onRequestClose={this.toggleModal}
+            contentLabel="My Watch List"
+            className="list-modal"
+            overlayClassName="list-overlay "
+            closeTimeoutMS={500}
+            ariaHideApp={false}
+          >
+            <div>My Watch Lists.</div>
+            <button onClick={this.toggleModal}>Close modal</button>
+          </Modal>
+        </div>
          <MediaComment />
-
-
           <CommentForm />
-
       </section>
     );
   }
