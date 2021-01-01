@@ -7,10 +7,13 @@ export default class WatchlistIndexItem extends Component {
     let moviesArr = Object.values(movie)
     console.log("wii", moviesArr);
     return movie ? (
-      <li>
+      <div>
+
         <p>{`watchlist: ${this.props.watchlist.name}`}</p>
         {moviesArr.map(movie =>
-          <p>{movie}</p>
+          <li key={`watch-item-${movie}`}>
+            <p>{movie}</p>
+          </li>
           // <p>{movie}</p>
           // <MovieIndexItem 
           // key={movie.apiId}
@@ -19,7 +22,8 @@ export default class WatchlistIndexItem extends Component {
           // name={movie.name}/>
         )
         }
-      </li>
+
+      </div>
     ) : null;
   }
 }

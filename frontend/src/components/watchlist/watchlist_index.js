@@ -14,7 +14,9 @@ export default class WatchlistIndex extends Component {
         <ul>
           {watchlists
             .filter(list => list.user === this.props.userId)
-            .map(watchlist => <WatchlistIndexItem watchlist={watchlist} key={watchlist.id} />)}
+            .map(watchlist => <WatchlistIndexItem
+              watchlist={watchlist}
+              key={watchlist._id} />)}
         </ul>
       </div>
     )

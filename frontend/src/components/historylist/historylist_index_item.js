@@ -5,8 +5,7 @@ export default class HistorylistIndexItem extends Component {
   constructor(props) {
     super(props);
     this.state = { historylist: this.props.historylists[Math.floor(Math.random() * this.props.historylists.length)] }
-    // console.log("history i i s", this.state);
-    // console.log("history i i p", this.props);
+
   }
   // componentDidMount() {
   //   this.state.historylist.forEach(
