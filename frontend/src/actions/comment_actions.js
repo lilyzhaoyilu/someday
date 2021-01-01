@@ -66,13 +66,22 @@ export const getUserComments = userId => dispatch => (
 )
 
 
-export const getHistorylistComments = listId => dispatch => (
-  APIUTIL.getHistorylistComments(listId)
-    .then(
-      comments => dispatch(receiveComments(comments)),
-      err => dispatch(receiveErrors(err))``
-    )
-)
+// export const getMovieComments = movieId => dispatch => (
+//   APIUTIL.getMovieComments(movieId)
+//     .then(
+//       comments => dispatch(receiveComments(comments)),
+//       err => dispatch(receiveErrors(err))
+//     )
+// )
+
+
+// export const deleteComment = commentId => dispatch => (
+//   APIUTIL.deleteComment(commentId)
+//     .then(
+//       comments => dispatch(receiveComments(comments)),
+//       err => dispatch(receiveErrors(err))``
+//     )
+// )
 
 export const getThisComment = commentId => dispatch => (
   APIUTIL.getThisComment(commentId)

@@ -1,5 +1,6 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
+import { Link, withRouter } from "react-router-dom";
 // import LoginFormContainer from '../session/login_form_container';
 // import SignupFormContainer from '../session/signup_form_container';
 import NavBarContainer from '../nav/navbar_container';
@@ -14,9 +15,7 @@ export default () => {
   // console.log('mainpage');
   return (
     <div>
-      <Switch>
-        <Route path='/' component={NavBarContainer} />
-      </Switch>
+      <Route>
       <Switch>
 
         <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
@@ -24,10 +23,15 @@ export default () => {
 
       </Switch>
 
+      <Route path='/*' component={NavBarContainer} />
+      
+        {/* <ProfileShow /> DOESNOTWORK */}
+        <Link to='/mediapage/tt0944947'>click here to see the sample movie</Link>
+        <br></br>
+        <CommentForm /> 
+        <UserComment /> 
+      </Route>
 
-      {/* <ProfileShow /> */}
-      <CommentForm />
-      <UserComment />
     </div>
   )
 }
