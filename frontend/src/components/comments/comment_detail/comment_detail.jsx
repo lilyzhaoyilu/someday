@@ -3,6 +3,9 @@ import moment from 'moment';
 
 class CommentDetail extends Component {
 
+  // componentDidMount(){
+  //   this.props.fetchThisUser(this.props.comment.user)
+  // }
   
 
   render() {
@@ -12,6 +15,12 @@ class CommentDetail extends Component {
       let display = moment(time);
       return display.format("MMM D YYYY");}
 
+    const userId = comment.user
+    const displayUsername = () => {
+      if(this.props.users && this.props.users[userId]){
+        return this.props.users[userId].email
+      }
+    }
 
 
     return (
@@ -19,7 +28,7 @@ class CommentDetail extends Component {
       <li>
         {displayCreatedAt(comment.date)}
         {comment.text} 
-        {comment.user}
+        {displayUsername()}
   
       
       </li>
