@@ -4,7 +4,7 @@ import PopularShowsIndexItem from './popular_shows_index_item_container';
 export default class PopularShowsIndex extends Component {
   componentDidMount() {
     // this.props.fetchPopularTv()
-    setTimeout(() => this.props.fetchPopularTv(), 2000)
+    setTimeout(() => this.props.fetchPopularTv(), 4000)
 
   }
 
@@ -14,12 +14,12 @@ export default class PopularShowsIndex extends Component {
       <div>
         <ul>
           {shows.map((show, i) => {
-            if (i < 4) {
+            if (i < 8) {
               return (
                 <PopularShowsIndexItem
                   showId={show.id}
                   key={show.id}
-
+                  index={i}
                 />
               )
             }

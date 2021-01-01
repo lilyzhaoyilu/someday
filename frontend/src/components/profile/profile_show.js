@@ -11,7 +11,6 @@ class ProfileShow extends Component {
 
   componentDidMount() {
     this.props.fetchThisUser(this.props.match.params.userId)
-    console.log(this.props);
   }
 
   render() {

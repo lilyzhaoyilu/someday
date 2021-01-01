@@ -3,7 +3,7 @@ import PopularMoviesIndexItem from './popular_movies_index_item_container';
 
 export default class PopularMoviesIndex extends Component {
   componentDidMount() {
-    setTimeout(() => this.props.fetchPopularMovies(), 1000)
+    this.props.fetchPopularMovies()
 
   }
 
@@ -13,11 +13,12 @@ export default class PopularMoviesIndex extends Component {
       <div>
         <ul>
           {movies.map((movie, i) => {
-            if (i < 4) {
+            if (i < 8) {
               return (
                 <PopularMoviesIndexItem
                   showId={movie.id}
                   key={movie.id}
+                  idx={i}
                 />
               )
             }

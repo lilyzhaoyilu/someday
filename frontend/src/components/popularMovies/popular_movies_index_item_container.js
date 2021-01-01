@@ -6,7 +6,8 @@ const mstp = (state, ownProps) => {
   // console.log(ownProps.showId);
   return {
     show: state.entities.movies[ownProps.showId],
-    showId: ownProps.showId
+    showId: ownProps.showId,
+    index: ownProps.idx
   }
 };
 
