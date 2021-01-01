@@ -11,7 +11,7 @@ const validateComment = require("../../validation/comments");
 
 //get all comments from one movie
 router.get("/movie/:movie_id/comment", (req, res) => {
-  console.log(req.params);
+  // console.log(req.params);
   Comment.find({ movie: req.params.movie_id })
     .sort({ data: -1 })
     .then((comments) => res.json(comments))
@@ -21,7 +21,7 @@ router.get("/movie/:movie_id/comment", (req, res) => {
 //get all user's comments
 router.get("/user/:user_id/comments", (req, res) => {
   debugger;
-  console.log("comment userid", req.params);
+  // console.log("comment userid", req.params);
   Comment.find({ user: req.params.user_id })
     .sort({ data: -1 })
     .then((comments) => res.json(comments))
@@ -65,8 +65,8 @@ router.post(
     
     // to see the request before being sent to the backend
     //TODO: need to add movie, reply, todolist and watchlist based on the routes or id...?
-    console.log(req.body);
-    console.log(req.params);
+    // console.log(req.body);
+    // console.log(req.params);
     // const movieId = mongoose.Types.ObjectId('tt0944947');
     const newComment = new Comment({
       text: req.body.text,
@@ -76,7 +76,7 @@ router.post(
       // todoList: req.todoList.id ? req.todoList.id : null,
       // watchedList: req.body.watchedList.id ? req.watchedList.id : null,
     });
-    console.log(newComment);
+    // console.log(newComment);
     newComment.save().then((comment) => res.json(comment));
   }
 );
