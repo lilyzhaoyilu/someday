@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getAllWatchlists } from '../../actions/watchlist_actions';
+import { getMyWatchlists } from '../../actions/watchlist_actions';
 import WatchlistIndex from './watchlist_index';
 
 const mstp = (state, ownProps) => ({
@@ -8,7 +8,7 @@ const mstp = (state, ownProps) => ({
 });
 
 const mdtp = dispatch => ({
-  getAllWatchlists: () => dispatch(getAllWatchlists())
+  getMyWatchlists: (userId) => dispatch(getMyWatchlists(userId)),
 });
 
 export default connect(mstp, mdtp)(WatchlistIndex);

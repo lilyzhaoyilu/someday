@@ -11,8 +11,9 @@ export default class HistorylistIndex extends Component {
     return historylists ? (
       <div>
         <ul>
-          {historylists.map(watched => <HistorylistIndexItem
-            key={watched._id} watched={watched} />)}
+          {historylists
+            .filter(list => list.user === this.props.userId)
+            .map(watched => <HistorylistIndexItem key={watched._id} watched={watched} />)}
         </ul>
       </div>
     ) : null;

@@ -23,13 +23,13 @@ export default class HistorylistIndexItem extends Component {
         <p>{`historylist: ${watched.name}`}</p>
         <ul>
           {watched.movie.map(movieId => <li key={`historyIndexMovie-${movieId}`}>{movieId}</li>)}
-        </ul>
-
-        {/* <MovieIndexItem 
+          {/* <MovieIndexItem 
           key={watched.apiId} 
           watched={watched}
           imgUrl={watched.imgUrl}
           name={watched.name}/> */}
+        </ul>
+
       </li>
     ) : null;
   }
