@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const moogoose = require("mongoose");
+const mongoose = require("mongoose");
 const passport = require("passport");
 const Comment = require("../../models/Comment");
 const validateComment = require("../../validation/comments");
@@ -11,7 +11,7 @@ const validateComment = require("../../validation/comments");
 
 //get all comments from one movie
 router.get("/movie/:movie_id/comment", (req, res) => {
-  console.log(req);
+  console.log(req.params);
   Comment.find({ movie: req.params.movie_id })
     .sort({ data: -1 })
     .then((comments) => res.json(comments))
@@ -21,7 +21,7 @@ router.get("/movie/:movie_id/comment", (req, res) => {
 //get all user's comments
 router.get("/user/:user_id/comments", (req, res) => {
   debugger;
-  console.log("comment userid", req);
+  console.log("comment userid", req.params);
   Comment.find({ user: req.params.user_id })
     .sort({ data: -1 })
     .then((comments) => res.json(comments))
@@ -57,23 +57,26 @@ router.post(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { isValid, errors } = validateComment(req.body);
-    // to see the request before being sent to the backend
-    console.log("showingup");
-    console.log(req.body);
-
+    
+    
     if (!isValid) {
       return res.status(400).json(errors);
     }
     
+    // to see the request before being sent to the backend
     //TODO: need to add movie, reply, todolist and watchlist based on the routes or id...?
+    console.log(req.body);
+    console.log(req.params);
+    // const movieId = mongoose.Types.ObjectId('tt0944947');
     const newComment = new Comment({
       text: req.body.text,
       user: req.user.id,
-      movie: req.body.movieId ? req.body.movieId : null,
+      movie: req.body.movie_id,
       // reply: req.body.reply.id ? req.reply.id : null,
       // todoList: req.todoList.id ? req.todoList.id : null,
       // watchedList: req.body.watchedList.id ? req.watchedList.id : null,
     });
+    console.log(newComment);
     newComment.save().then((comment) => res.json(comment));
   }
 );

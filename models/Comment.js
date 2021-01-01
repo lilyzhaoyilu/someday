@@ -7,7 +7,7 @@ const CommentSchema = new Schema({
     ref: "users",
   },
   movie: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: "movies",
     default: null,
   },

@@ -21,7 +21,8 @@ class CommentForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    let completeCommentPost = Object.assign({}, this.state, {movie: this.props.currentMovieId, user: this.props.currentUserId});
+    // user is taken care of in backend api
+    let completeCommentPost = Object.assign({}, this.state, {movie_id: this.props.currentMovieId});
     console.log(completeCommentPost);
     this.props.postComment(completeCommentPost);
     this.setState({
