@@ -3,17 +3,18 @@ import WatchlistIndexItem from './watchlist_index_item';
 
 export default class WatchlistIndex extends Component {
   componentDidMount() {
-    this.props.getMyWatchlists(this.props.userId)
+    this.props.getAllWatchlists(this.props.userId)
   }
 
   render() {
     const { watchlists } = this.props;
+    console.log(watchlists);
     return (
       <div>
-        <ul>
+        {/* <ul>
           {watchlists.map(watchlist => <WatchlistIndexItem
             watchlist={watchlist} key={watchlist.id} />)}
-        </ul>
+        </ul> */}
       </div>
     )
   }

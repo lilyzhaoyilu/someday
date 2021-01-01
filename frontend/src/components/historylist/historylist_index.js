@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HistorylistIndexItem from './historylist_index_item';
+import HistorylistIndexItem from './historylist_index_item_container';
 
 export default class HistorylistIndex extends Component {
   componentDidMount() {

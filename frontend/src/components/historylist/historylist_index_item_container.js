@@ -7,6 +7,7 @@ import HistorylistItem from './historylist_index_item';
 const mstp = (state, ownProps) => ({
   historylists: Object.values(state.entities.historylists),
   movies: state.entities.movies,
+  watched: ownProps.watched
 });
 
 const mdtp = dispatch => ({

@@ -14,7 +14,7 @@ class ListFrom extends Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-
+		console.log(this.state);
 		this.props.action(this.state);
 	}
 

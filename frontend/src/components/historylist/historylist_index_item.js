@@ -4,8 +4,9 @@ import MovieIndexItem from '../movie/movie_index_item';
 export default class HistorylistIndexItem extends Component {
   constructor(props) {
     super(props);
-    console.log("history i i", this.props.historylists);
-    // this.state = { historylist: this.props.historylists[Math.floor(Math.random() * this.props.historylists.length)] }
+    this.state = { historylist: this.props.historylists[Math.floor(Math.random() * this.props.historylists.length)] }
+    // console.log("history i i s", this.state);
+    // console.log("history i i p", this.props);
   }
   // componentDidMount() {
   //   this.state.historylist.forEach(
@@ -15,17 +16,21 @@ export default class HistorylistIndexItem extends Component {
 
   render() {
     const { watched } = this.props
+    //TODO will add movie info soon!
     return watched ? (
-      <div>
-        <li>
-          <p>{watched.movie.id}</p>
-          {/* <MovieIndexItem 
+
+      <li>
+        <p>{`historylist: ${watched.name}`}</p>
+        <ul>
+          {watched.movie.map(movieId => <li key={`historyIndexMovie-${movieId}`}>{movieId}</li>)}
+        </ul>
+
+        {/* <MovieIndexItem 
           key={watched.apiId} 
           watched={watched}
           imgUrl={watched.imgUrl}
           name={watched.name}/> */}
-        </li>
-      </div>
+      </li>
     ) : null;
   }
 }
