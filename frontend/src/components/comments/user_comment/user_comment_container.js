@@ -1,17 +1,22 @@
 import { connect } from 'react-redux';
-
+import { Link, withRouter } from "react-router-dom";
 import UserComment from './user_comment';
 
 import {getUserComments} from '../../../actions/comment_actions';
-const mstp = (state, ownProps) => ({
+import {fetchMovieData} from '../../../actions/movie_actions';
+const mstp = (state, ownProps) => {
+// console.log(ownProps)[]
+  return{
+  users: state.entities.users,
   comments: state.entities.comments,
   currentUserId: state.session.user.id,
-  // currentPageUserId: ownProps. it should really be this one to fetch the user's comment based on current URL...
-})
+  currentPageUserId: ownProps.match.params.userId,
+}}
 const mdtp = dispatch => ({
   getUserComments: (userId) => dispatch(getUserComments(userId)),
+  fetchMovieData: (movieId) => dispatch(fetchMovieData(movieId)),
 })
 
 
 
-export default connect(mstp, mdtp)(UserComment);
+export default withRouter(connect(mstp, mdtp)(UserComment));

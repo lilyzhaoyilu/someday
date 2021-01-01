@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import CommentDetail from '../comment_detail/comment_detail_container'
+import React, { Component } from 'react';
+import CommentDetailForMedia from './comment_detail_for_media/comment_detail_for_media_container';
 class MediaComment extends Component {
 
   componentDidMount() {
@@ -28,7 +28,7 @@ class MediaComment extends Component {
 
     return (
       <div className='media-comments'>media comments here
-       {commentsObjects.map(comment => (<CommentDetail key={comment._id} comment={comment} />))}
+       {commentsObjects.map(comment => (<CommentDetailForMedia key={comment._id} comment={comment} />))}
        
       </div>
     )

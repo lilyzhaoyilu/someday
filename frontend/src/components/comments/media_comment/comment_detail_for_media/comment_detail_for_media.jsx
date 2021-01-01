@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment';
-
-class CommentDetail extends Component {
+import { Link, withRouter } from "react-router-dom";
+class CommentDetailForMedia extends Component {
 
   // componentDidMount(){
   //   this.props.fetchThisUser(this.props.comment.user)
@@ -18,7 +18,7 @@ class CommentDetail extends Component {
     const userId = comment.user
     const displayUsername = () => {
       if(this.props.users && this.props.users[userId]){
-        return this.props.users[userId].email
+        return (<Link to={`/profile/${userId}`}>{this.props.users[userId].email}</Link>)
       }
     }
 
@@ -38,4 +38,4 @@ class CommentDetail extends Component {
 }
 
 
-export default CommentDetail;
+export default CommentDetailForMedia;

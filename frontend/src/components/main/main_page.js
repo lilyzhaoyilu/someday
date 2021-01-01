@@ -27,9 +27,7 @@ export default () => {
       
         {/* <ProfileShow /> DOESNOTWORK */}
         <Link to='/mediapage/tt0944947'>click here to see the sample movie</Link>
-        <br></br>
-        <CommentForm /> 
-        <UserComment /> 
+       
       </Route>
 
     </div>
