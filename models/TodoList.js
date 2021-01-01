@@ -11,11 +11,10 @@ const TodoListSchema = new Schema({
         ref: 'users',
     },
     movie: [{
-        type: Schema.Types.ObjectId,
-        ref: 'movies',
+        type: String,
         required: true
     }],
-    date:{
+    date: {
         type: Date,
         default: Date.now
     }

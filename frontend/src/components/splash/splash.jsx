@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter, Link } from "react-router-dom";
 
 import SearchBarContainer from "../nav/search_bar/search_bar_container";
-
 import Logo from "../../util/somedaylogo.svg";
 import MovieIndex from "../popularMovies/popular_movies_index_container";
 import PopularShowsIndex from "../popularShows/popular_shows_index_container";

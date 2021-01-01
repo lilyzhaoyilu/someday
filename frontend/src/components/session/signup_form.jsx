@@ -1,8 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import Logo from "../../util/somedaylogo.svg";
-import DemoButtonContainer from './demo_button/demo_button_container';
-
+import DemoButtonContainer from "./demo_button/demo_button_container";
 
 class SignupForm extends React.Component {
 	constructor(props) {
@@ -37,8 +36,9 @@ class SignupForm extends React.Component {
 			about: this.state.about,
 		};
 
-		this.props.signup(user);
-		this.props.login(user).then(() =>this.props.history.push("/"));
+		this.props.signup(user).then(this.props.login(user));
+
+		// setTimeout(() =>this.props.login(user), 500)
 	}
 
 	renderErrors() {
@@ -58,62 +58,60 @@ class SignupForm extends React.Component {
 
 	render() {
 		return (
-      <div className="signup-form-container">
-        <div>
-          <Link to="/">
-            <img className="login-form-logo" src={Logo}></img>
-          </Link>
-        </div>
+			<div className="signup-form-container">
+				<div>
+					<Link to="/">
+						<img className="login-form-logo" src={Logo}></img>
+					</Link>
+				</div>
 
-        <div className="session-link">
-          <h3>Have an account?</h3>
-          <Link to="/login">
-            Login
-          </Link>
-        </div>
+				<div className="session-link">
+					<h3>Have an account?</h3>
+					<Link to="/login">Login</Link>
+				</div>
 
-        <form onSubmit={this.handleSubmit} className="signup-form">
-          <input
-            type="text"
-            value={this.state.email}
-            onChange={this.update("email")}
-            placeholder="Email*"
-          />
+				<form onSubmit={this.handleSubmit} className="signup-form">
+					<input
+						type="text"
+						value={this.state.email}
+						onChange={this.update("email")}
+						placeholder="Email*"
+					/>
 
-          <input
-            type="text"
-            value={this.state.handle}
-            onChange={this.update("handle")}
-            placeholder="Handle"
-          />
+					<input
+						type="text"
+						value={this.state.handle}
+						onChange={this.update("handle")}
+						placeholder="Handle"
+					/>
 
-          <input
-            type="password"
-            value={this.state.password}
-            onChange={this.update("password")}
-            placeholder="Password*"
-          />
+					<input
+						type="password"
+						value={this.state.password}
+						onChange={this.update("password")}
+						placeholder="Password*"
+					/>
 
-          <input
-            type="password"
-            value={this.state.password2}
-            onChange={this.update("password2")}
-            placeholder="Confirm Password*"
-          />
+					<input
+						type="password"
+						value={this.state.password2}
+						onChange={this.update("password2")}
+						placeholder="Confirm Password*"
+					/>
 
-          <textarea
-            value={this.state.about}
-            onChange={this.update("about")}
-            placeholder="Tell us about yourself."
-          />
+					<textarea
+						value={this.state.about}
+						onChange={this.update("about")}
+						placeholder="Tell us about yourself."
+					/>
 
-          <input type="submit" value="Sign Up" />
-          {this.renderErrors()}
+					<input type="submit" value="Sign Up" />
+					{this.renderErrors()}
 
-          <DemoButtonContainer />
-        </form>
-      </div>
-    );
+					<DemoButtonContainer />
+				</form>
+			</div>
+		);
 	}
 }
 
