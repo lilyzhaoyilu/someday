@@ -3,7 +3,6 @@ import ListPostForm from './list_post_form'
 import { postHistorylist } from '../../actions/historylist_actions'
 
 const mstp = (state, ownProps) => {
-  console.log("userId", state.session.user.id);
 
   return {
     formType: "Historylist",

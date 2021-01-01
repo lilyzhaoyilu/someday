@@ -3,7 +3,7 @@ import axios from 'axios';
 //* /api/dotoLists/todoList -get all todoLists
 
 export const getAllWatchlists = () => (
-  axios.get(`/api/dotoLists/todoList`)
+  axios.get(`/api/todoLists/todoList`)
 )
 
 //* POST / api / todoList - create todo - list
@@ -28,5 +28,5 @@ export const getMyWatchlists = (userId) => {
 
 //* get /api/dotoLists/todoList/id -get specific todoList
 export const getThisWatchList = (listId) => {
-  return axios.get(`/api/dotoLists/todoList/${listId}`)
+  return axios.get(`/api/todoLists/todoList/${listId}`)
 }

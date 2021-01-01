@@ -13,7 +13,6 @@ import WatchlistPostForm from '../list_form/watchlist_form_container';
 import ProfileShow from '../profile/profile_show_container';
 
 export default () => {
-  // console.log('mainpage');
   return (
     <div>
       <Route>

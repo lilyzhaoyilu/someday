@@ -3,7 +3,6 @@ import { fetchShowData } from '../../actions/show_actions';
 import PopularShowsIndexItem from './popular_shows_index_item';
 
 const mstp = (state, ownProps) => {
-  // console.log(ownProps.showId);
   return {
     show: state.entities.shows[ownProps.showId],
     showId: ownProps.showId,

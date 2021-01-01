@@ -7,7 +7,6 @@ class MediaComment extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log(prevProps);
     if (this.props.currentMovieId !== prevProps.currentMovieId) {
       this.props.getMovieComments(this.props.currentMovieId);
     }
