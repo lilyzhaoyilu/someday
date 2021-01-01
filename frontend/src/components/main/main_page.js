@@ -7,6 +7,7 @@ import MovieIndexContainer from '../movie/movie_index_container';
 import { Switch, Route } from 'react-router-dom';
 import CommentForm from '../comments/comment_form/comment_form_container';
 import UserComment from '../comments/user_comment/user_comment_container';
+import HistorylistPostForm from "../list_form/historylist_form_container";
 
 import ProfileShow from '../profile/profile_show_container';
 
@@ -28,6 +29,8 @@ export default () => {
       {/* <ProfileShow /> */}
       <CommentForm />
       <UserComment />
+      <HistorylistPostForm movieId="tt7126948" />
+
     </div>
   )
 }
