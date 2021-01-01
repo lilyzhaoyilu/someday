@@ -8,11 +8,11 @@ export default class WatchlistIndexItem extends Component {
     return movies ? (
       <div>
         <li>
-          {moviesArr.map(movie => <MovieIndexItem 
+          {/* {moviesArr.map(movie => <MovieIndexItem 
           key={movie.apiId}
           movie={movie}
           imgUrl={movie.imgUrl}
-          name={movie.name}/>)}
+          name={movie.name}/>)} */}
         </li>
       </div>
     ) : null;

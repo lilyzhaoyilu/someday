@@ -8,7 +8,6 @@ export default class WatchlistIndex extends Component {
 
   render() {
     const { watchlists } = this.props;
-    console.log(watchlists)
     return (
       <div>
         <ul>

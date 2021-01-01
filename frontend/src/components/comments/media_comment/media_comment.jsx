@@ -3,12 +3,10 @@ import CommentDetail from '../comment_detail/comment_detail_container'
 class MediaComment extends Component {
 
   componentDidMount() {
-    console.log("didmount media");
     this.props.getMovieComments(this.props.currentMovieId);
   }
 
   componentDidUpdate(prevProps) {
-    console.log(prevProps);
     if (this.props.currentMovieId !== prevProps.currentMovieId) {
       this.props.getMovieComments(this.props.currentMovieId);
     }

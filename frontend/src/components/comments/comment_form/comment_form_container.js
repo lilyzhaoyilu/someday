@@ -4,7 +4,6 @@ import { postComment } from '../../../actions/comment_actions';
 import CommentForm from './comment_form.jsx';
 
 const mstp = (state, ownProps) => {
-  // console.log(ownProps);
   return {
   comments: state.entities.comments,
   currentUserId: state.session.user.id,

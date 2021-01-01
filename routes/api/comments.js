@@ -11,7 +11,6 @@ const validateComment = require("../../validation/comments");
 
 //get all comments from one movie
 router.get("/movie/:movie_id/comment", (req, res) => {
-  // console.log(req.params);
   Comment.find({ movie: req.params.movie_id })
     .sort({ data: -1 })
     .then((comments) => res.json(comments))
@@ -21,7 +20,6 @@ router.get("/movie/:movie_id/comment", (req, res) => {
 //get all user's comments
 router.get("/user/:user_id/comments", (req, res) => {
   debugger;
-  // console.log("comment userid", req.params);
   Comment.find({ user: req.params.user_id })
     .sort({ data: -1 })
     .then((comments) => res.json(comments))

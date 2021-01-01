@@ -11,7 +11,6 @@ import {
 export default function(oldState={}, action) {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState)
-  // console.log(action);
   switch (action.type) {
     case RECEIVE_COMMENT:
       Object.assign(newState,{[action.comment.data._id]: action.comment.data})

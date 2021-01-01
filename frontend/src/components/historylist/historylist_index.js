@@ -8,7 +8,6 @@ export default class HistorylistIndex extends Component {
 
   render() {
     const { historylists } = this.props;
-    console.log("historylist idx", historylists);
     return historylists ? (
       <div>
         <ul>

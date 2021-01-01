@@ -6,7 +6,6 @@ import { withRouter} from 'react-router-dom';
 import MediaComment from './media_comment';
 import {getMovieComments} from '../../../actions/comment_actions';
 const mstp = (state, ownProps) => {
-  // console.log(ownProps);
   return {
   comments: state.entities.comments,
   currentUserId: state.session.user.id,
