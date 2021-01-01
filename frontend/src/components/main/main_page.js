@@ -26,7 +26,10 @@ export default () => {
       <Route path='/*' component={NavBarContainer} />
       
         {/* <ProfileShow /> DOESNOTWORK */}
-        <Link to='/mediapage/tt0944947'>click here to see the sample movie</Link>
+        These below are for development purpose<br></br>
+        <Link to='/mediapage/tt0944947'>click here to see the sample game of throne</Link><br></br>
+        <Link to='/mediapage/tt2674426'>click here to see the sample me before you</Link>
+
        
       </Route>
 
