@@ -17,7 +17,7 @@ export const deleteComment = (commentId) => (
 //*get /api/movie/:movieId/comment get all comments
 
 export const getMovieComments = (movieId) => (
-  axios.get(`api/movie/${movieId}/comment`)
+  axios.get(`/api/comments/movie/${movieId}/comment`)
 )
 
 //* get /api/todoList/:todoListId/comment, get all comments for todoList

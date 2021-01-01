@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import MovieIndexItem from './movie_index_item';
+// import MediaComment from '../comments/media_comment/media_comment_container'
+
+
 
 export default class MovieIndex extends Component {
 
@@ -23,6 +26,7 @@ export default class MovieIndex extends Component {
               }
             })}
           </ul>
+          
         </div>
       )
 

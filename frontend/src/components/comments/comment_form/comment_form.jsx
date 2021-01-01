@@ -21,8 +21,9 @@ class CommentForm extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    let copy = Object.assign({}, this.state)
-    this.props.postComment(copy);
+    let completeCommentPost = Object.assign({}, this.state, {movie: this.props.currentMovieId, user: this.props.currentUserId});
+    console.log(completeCommentPost);
+    this.props.postComment(completeCommentPost);
     this.setState({
       text: '',
     })
