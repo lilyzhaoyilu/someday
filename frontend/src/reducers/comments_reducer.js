@@ -17,8 +17,9 @@ export default function(oldState={}, action) {
       Object.assign(newState,{[action.comment.data._id]: action.comment.data})
       return newState;
     case RECEIVE_COMMENTS:
-      action.comments.data.forEach(comment => Object.assign(newState,{[comment._id]: comment})); 
-      return newState;
+      let tempState = {};
+      action.comments.data.forEach(comment => Object.assign(tempState,{[comment._id]: comment})); 
+      return tempState;
     case REMOVE_COMMENT:
       delete newState[action.commentId]
       return newState

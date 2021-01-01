@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
-import moment from 'moment';
 import CommentDetail from '../comment_detail/comment_detail_container'
-class UserComment extends Component {
+class MediaComment extends Component {
 
   componentDidMount() {
-    this.props.getUserComments(this.props.currentUserId);
+    console.log("didmount media");
+    this.props.getMovieComments(this.props.currentMovieId);
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.currentUserId !== prevProps.currentUserId) {
-      this.props.getUserComments(this.props.currentUserId);
+    console.log(prevProps);
+    if (this.props.currentMovieId !== prevProps.currentMovieId) {
+      this.props.getMovieComments(this.props.currentMovieId);
     }
   }
+
+
+
 
   render() {
     
@@ -20,7 +24,7 @@ class UserComment extends Component {
     const CommentsObjects = Object.values(this.props.comments);
 
     return (
-      <div className='user'>usercomments here
+      <div className='media-comments'>media comments here
        {CommentsObjects.map(comment => (<CommentDetail key={comment._id} comment={comment} />))}
       </div>
     )
@@ -28,4 +32,4 @@ class UserComment extends Component {
 }
 
 
-export default UserComment;
+export default MediaComment;

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
+import MediaComment from '../comments/media_comment/media_comment_container';
+import CommentForm from '../comments/comment_form/comment_form_container'
+
 class MediaPage extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +20,7 @@ class MediaPage extends Component {
     };
     this.toggleModal = this.toggleModal.bind(this);
   }
+  
   componentDidMount() {
     this.props.fetchMovieData(this.props.movieId).then((result) => {
       this.setState({
@@ -93,6 +97,7 @@ class MediaPage extends Component {
             <span>{this.state.plotOutline}</span>
           </div>
         </div>
+
         <div className="media-button">
           <button onClick={this.toggleModal}>Add to TodoList</button>
           <Modal
@@ -121,6 +126,8 @@ class MediaPage extends Component {
             <button onClick={this.toggleModal}>Close modal</button>
           </Modal>
         </div>
+         <MediaComment />
+          <CommentForm />
       </section>
     );
   }
