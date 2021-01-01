@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import CommentDetail from '../comment_detail/comment_detail_container'
+import React, { Component } from 'react';
+import CommentDetailForMedia from './comment_detail_for_media/comment_detail_for_media_container';
 class MediaComment extends Component {
 
   componentDidMount() {
@@ -16,14 +16,19 @@ class MediaComment extends Component {
 
 
   render() {
-    
-  
+    const commentsObjects = Object.values(this.props.comments);
 
-    const CommentsObjects = Object.values(this.props.comments);
+    
+    let commentUsersSet = new Set();
+    commentsObjects.forEach(comment => (commentUsersSet.add(comment.user)))
+    const commentUsers = [...commentUsersSet];
+    commentUsers.forEach((userId) =>this.props.fetchThisUser(userId))
+
 
     return (
       <div className='media-comments'>media comments here
-       {CommentsObjects.map(comment => (<CommentDetail key={comment._id} comment={comment} />))}
+       {commentsObjects.map(comment => (<CommentDetailForMedia key={comment._id} comment={comment} />))}
+       
       </div>
     )
   }

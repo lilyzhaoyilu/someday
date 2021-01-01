@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import { withRouter} from 'react-router-dom';
 
 
-
 import MediaComment from './media_comment';
 import {getMovieComments} from '../../../actions/comment_actions';
+import { fetchThisUser } from '../../../actions/user_actions';
 const mstp = (state, ownProps) => {
   return {
   comments: state.entities.comments,
@@ -16,6 +16,7 @@ const mstp = (state, ownProps) => {
 
 const mdtp = dispatch => ({
   getMovieComments: (movieId) => dispatch(getMovieComments(movieId)),
+  fetchThisUser: (userId) => dispatch(fetchThisUser(userId)),
 })
 
 
