@@ -9,7 +9,7 @@ export default class MyProfile extends Component {
   render() {
     const { currentUser } = this.props;
     return (
-      <div className='my-profile'>
+      <div>
         <Link to={`/profile/${currentUser.id}`}>
           My Profile
         </Link>
