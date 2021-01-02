@@ -59,7 +59,7 @@ router.patch(
     //   name: req.body.name,
     //   user: req.user.id,
     //   movie: req.body.movie,
-    // });
+    // }); 
     WatchedList.findOneAndUpdate({ _id: req.params.id }, { name: req.body.name, movie: req.body.movie }, { new: true })
       .then((watchedList) => res.json(watchedList))
       // .then(() => {

@@ -8,7 +8,7 @@ export const postHistorylist = (listData) => (
 //* PATCH / api / watchedlist /: id - update watchedlist(add or delete movie)
 
 export const updateHistorylist = listData => (
-  axios.patch(`/api/watchedLists/watchedList/${listData.id}`, listData)
+  axios.patch(`/api/watchedLists/watchedList/${listData._id}`, listData)
 )
 
 //* DELETE / api / watchedlist /: id - delete the watchedlist
