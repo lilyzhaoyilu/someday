@@ -17,7 +17,7 @@ class ProfileShow extends Component {
     }
     return user ? (
       <div>
-        <ProfileNavbar />
+        {/* <ProfileNavbar /> */}
         <div className="profile-show-wrapper">
           <div className='profile-info'>
       
