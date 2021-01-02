@@ -38,10 +38,11 @@ export default class MediaHistoryList extends Component {
       this.props.updateHistorylist(list);
     })
   }
+  
   render() {
     const { historylists } = this.props;
     const { checked } = this.state;
-    console.log(`CHECKED: ${checked}`);
+    // console.log(`CHECKED: ${checked}`);
     return historylists ? (
       <div>
         <h1>Historylists:</h1>
@@ -49,8 +50,8 @@ export default class MediaHistoryList extends Component {
           <ul>
             {historylists
               .filter((list) => list.user === this.props.userId)
-              .map((watched) => (
-                <li>
+              .map((watched, idx) => (
+                <li key={idx}>
                   <input
                     type="checkbox"
                     value={watched}
@@ -62,7 +63,7 @@ export default class MediaHistoryList extends Component {
                 </li>
               ))}
           </ul>
-          <button>add</button>
+          <button>add to lists</button>
         </form>
       </div>
     ) : null;

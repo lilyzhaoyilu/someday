@@ -48,25 +48,8 @@ router.patch(
   "/watchedList/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { isValid, errors } = validateList(req.body);
-
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
-
-    // const newWatchedList = new WatchedList({
-    //   _id: req.params.id,
-    //   name: req.body.name,
-    //   user: req.user.id,
-    //   movie: req.body.movie,
-    // }); 
     WatchedList.findOneAndUpdate({ _id: req.params.id }, { name: req.body.name, movie: req.body.movie }, { new: true })
       .then((watchedList) => res.json(watchedList))
-      // .then(() => {
-      //   res.status(201).json({
-      //     message: "Watched List updated successfully!",
-      //   });
-      // })
       .catch((error) => {
         res.status(400).json({
           error: error,
