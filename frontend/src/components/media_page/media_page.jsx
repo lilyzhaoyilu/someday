@@ -117,7 +117,10 @@ class MediaPage extends Component {
             closeTimeoutMS={500}
             ariaHideApp={false}
           >
-            <MediaWatchList userId={this.props.userId} />
+            <MediaWatchList
+              userId={this.props.userId}
+              movieId={this.props.movieId}
+            />
             <button onClick={this.toggleModal}>Close</button>
           </Modal>
           <button onClick={this.toggleModal2}>Add to WatchedList</button>
@@ -130,7 +133,10 @@ class MediaPage extends Component {
             closeTimeoutMS={500}
             ariaHideApp={false}
           >
-            <MediaHistoryList userId={this.props.userId} />
+            <MediaHistoryList
+              userId={this.props.userId}
+              movieId={this.props.movieId}
+            />
             <button onClick={this.toggleModal2}>Close</button>
           </Modal>
         </div>

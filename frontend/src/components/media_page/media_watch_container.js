@@ -5,6 +5,7 @@ import MediaWatchList from "./media_watchList";
 const mstp = (state, ownProps) => ({
   watchlists: Object.values(state.entities.watchlists),
   userId: ownProps.userId,
+  movieId: ownProps.movieId,
 });
 
 const mdtp = (dispatch) => ({

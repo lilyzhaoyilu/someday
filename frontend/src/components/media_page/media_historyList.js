@@ -7,6 +7,7 @@ export default class MediaHistoryList extends Component {
       checked: []
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,17 @@ export default class MediaHistoryList extends Component {
        });
      }
   }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.state.checked.forEach((listId) =>{
+      
+      const list = this.props.historylists.find((list)=> list._id === listId)
+      list.movie.push(this.props.movieId)
+      console.log(list);
+      this.props.updateHistorylist(list);
+    })
+  }
   render() {
     const { historylists } = this.props;
     const { checked } = this.state;
@@ -33,7 +45,7 @@ export default class MediaHistoryList extends Component {
     return historylists ? (
       <div>
         <h1>Historylists:</h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <ul>
             {historylists
               .filter((list) => list.user === this.props.userId)
