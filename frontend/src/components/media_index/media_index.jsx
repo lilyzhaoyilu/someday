@@ -69,7 +69,7 @@ class MediaIndex extends React.Component {
 						console.log("rendering");
 						if (media.hasOwnProperty("image")) {
 							return (
-								<div key={media.key}>
+								<li key={media.key}>
 									<Link to={`/mediaPage/${media.id}`}>
 										<img
 											src={media.image.url}
@@ -78,7 +78,7 @@ class MediaIndex extends React.Component {
 										/>
 										<h3>{media.title}</h3>
 									</Link>
-								</div>
+								</li>
 							);
 						}
 					})}

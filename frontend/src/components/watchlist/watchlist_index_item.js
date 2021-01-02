@@ -6,14 +6,13 @@ export default class WatchlistIndexItem extends Component {
   render() {
     const { movie } = this.props.watchlist
     let moviesArr = Object.values(movie)
-    console.log("wii", moviesArr);
     return movie ? (
       <div>
 
         <p>{`watchlist: ${this.props.watchlist.name}`}</p>
         {moviesArr.map(movie =>
           <span key={`watch-item-${movie}`}>
-            <MovieImage movieId={movie}/>
+            <MovieImage movieId={movie} />
           </span>
           // <p>{movie}</p>
           // <MovieIndexItem 
