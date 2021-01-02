@@ -40,10 +40,14 @@ class CommentDetailForUser extends Component {
     return (
       
       <li>
-        <img src={this.displayMovieImage()} width="50px"></img>
-        {this.displayUsername()}
-        {this.displayCreatedAt(comment.date)}
-        {comment.text} 
+        <div className="comment-wrapper">
+          <div className="comment-img">
+            <img src={this.displayMovieImage()} width="50px"></img>
+          </div>
+          {this.displayUsername()}
+          {this.displayCreatedAt(comment.date)}
+          {comment.text} 
+        </div>
         
       
       </li>
