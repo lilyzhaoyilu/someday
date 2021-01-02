@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import Modal from "react-modal";
 import MediaComment from '../comments/media_comment/media_comment_container';
 import CommentForm from '../comments/comment_form/comment_form_container';
-import HistorylistIndex from "../historylist/historylist_index_container";
-import WatchlistIndex from "../watchlist/watchlist_index_container";
+import MediaHistoryList from "./media_history_container";
+import MediaWatchList from "./media_watch_container";
 class MediaPage extends Component {
   constructor(props) {
     super(props);
@@ -117,7 +117,7 @@ class MediaPage extends Component {
             closeTimeoutMS={500}
             ariaHideApp={false}
           >
-            <WatchlistIndex userId={this.props.userId} />
+            <MediaWatchList userId={this.props.userId} />
             <button onClick={this.toggleModal}>Close</button>
           </Modal>
           <button onClick={this.toggleModal2}>Add to WatchedList</button>
@@ -130,7 +130,7 @@ class MediaPage extends Component {
             closeTimeoutMS={500}
             ariaHideApp={false}
           >
-            <HistorylistIndex userId={this.props.userId} />
+            <MediaHistoryList userId={this.props.userId} />
             <button onClick={this.toggleModal2}>Close</button>
           </Modal>
         </div>
