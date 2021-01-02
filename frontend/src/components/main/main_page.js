@@ -18,23 +18,24 @@ export default () => {
   return (
     <div>
       <Route>
-        <Switch>
 
-          <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
-          <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
-        </Switch>
 
         <Route path='/*' component={NavBarContainer} />
 
         {/* <ProfileShow /> DOESNOTWORK */}
 
-        These below are for development purpose<br></br>
+        These below are for development purpose<br />
         <Link to='/mediapage/tt0944947'>click here to see the sample game of throne</Link><br></br>
         <Link to='/mediapage/tt2674426'>click here to see the sample me before you</Link>
+        <Switch>
 
+          <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
+          <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
+          <ProtectedRoute path='/show-index' component={ShowInfinite} />
+          <ProtectedRoute path='/movie-index' component={MovieInfinite} />
+        </Switch>
 
       </Route>
-      <MovieInfinite />
     </div>
   )
 }
