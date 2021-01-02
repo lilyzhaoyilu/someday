@@ -26,7 +26,7 @@ export default () => {
         </Switch>
 
 
-        {/* <ProfileShow /> DOESNOTWORK */}
+       
 
         These below are for development purpose<br></br>
         <Link to='/mediapage/tt0944947'>click here to see the sample game of throne</Link><br></br>
