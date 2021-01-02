@@ -18,13 +18,13 @@ export default () => {
   return (
     <div>
       <Route>
-        <Route path='/' component={NavBarContainer} />
         <Switch>
 
           <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
           <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
         </Switch>
 
+        <Route path='/*' component={NavBarContainer} />
 
         {/* <ProfileShow /> DOESNOTWORK */}
 
@@ -32,10 +32,9 @@ export default () => {
         <Link to='/mediapage/tt0944947'>click here to see the sample game of throne</Link><br></br>
         <Link to='/mediapage/tt2674426'>click here to see the sample me before you</Link>
 
-     
 
       </Route>
-        <MovieInfinite />
+      <MovieInfinite />
     </div>
   )
 }

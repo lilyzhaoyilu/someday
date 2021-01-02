@@ -8,18 +8,11 @@ class CommentDetailForUser extends Component {
     this.displayMovieImage = this.displayMovieImage.bind(this);
     this.displayCreatedAt = this.displayCreatedAt.bind(this);
     this.displayUsername = this.displayUsername.bind(this);
-    this.displayMovieTitle = this.displayMovieTitle.bind(this);
   }
 
   displayMovieImage() {
     if(this.props.movies[this.props.comment.movie]){
-      return <Link to={`/mediapage/${this.props.comment.movie}`}><img src={this.props.movies[this.props.comment.movie].image.url} ></img></Link> 
-    }
-  }
-
-  displayMovieTitle() {
-    if(this.props.movies[this.props.comment.movie]){
-      return  <Link to={`/mediapage/${this.props.comment.movie}`}>{this.props.movies[this.props.comment.movie].title}</Link>
+      return this.props.movies[this.props.comment.movie].image.url
     }
   }
 
@@ -34,7 +27,7 @@ class CommentDetailForUser extends Component {
     if(this.props.users && this.props.users[userId]){
       const displayedName = this.props.users[userId].handle ? this.props.users[userId].handle : this.props.users[userId].email;
       // const displayedName = this.props.users[userId].email;
-      return (<Link to={`/profile/${userId}`}>{`${displayedName} commented on `}</Link>)
+      return (<Link to={`/profile/${userId}`}>{ displayedName}</Link>)
     }
   }
 
@@ -46,19 +39,17 @@ class CommentDetailForUser extends Component {
 
     return (
       
-      <li className='comment-user-container'>
-        {this.displayMovieImage()}
-        <div className="comment-detail-user-right">
-          <div>
+      <li>
+        <div className="comment-wrapper">
+          <div className="comment-img">
+            <img src={this.displayMovieImage()} width="50px"></img>
+          </div>
+          {this.displayUsername()}
           {this.displayCreatedAt(comment.date)}
-          </div>
-
-          <div className="comment-detail-user-subtitle">
-          {this.displayUsername()}{this.displayMovieTitle()}
-          </div>
-          
-        {comment.text}
-        </div>       
+          {comment.text} 
+        </div>
+        
+      
       </li>
      
     )
