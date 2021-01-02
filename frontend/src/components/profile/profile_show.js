@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom'
 import ProfileNavbar from '../nav/profile_navbar';
 import ProfileLists from './profile_lists';
 import moment from 'moment';
-import UserCommentContainer from '../comments/user_comment/user_comment_container';
 class ProfileShow extends Component {
   componentDidMount() {
     this.props.fetchThisUser(this.props.match.params.userId)
@@ -20,8 +19,11 @@ class ProfileShow extends Component {
         <ProfileNavbar />
         <div className="profile-show-wrapper">
           <div className='profile-info'>
-      
-         
+            <ProfilePageNavbar />
+            {/* <WatchlistIndexContainer userId={user._id} /> */}
+            {/* <HistorylistIndexContainer userId={user._id} /> */}
+            <h1>My Comments</h1>
+            <UserCommentContainer />
           </div>
           <ProfileLists user={user}/>
           <div className="user-info">
