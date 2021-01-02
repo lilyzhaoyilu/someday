@@ -11,8 +11,8 @@ import UserComment from '../comments/user_comment/user_comment_container';
 import HistorylistPostForm from "../list_form/historylist_form_container";
 import WatchlistPostForm from '../list_form/watchlist_form_container';
 import ProfileShow from '../profile/profile_show_container';
-// import Movie_Infinite from '../media_index/movie_index_container'
-import Show_infinite from '../media_index/movie_index_container'
+import MovieInfinite from '../media_index/movie_index_container'
+import ShowInfinite from '../media_index/show_index_container'
 
 export default () => {
   return (
@@ -34,7 +34,7 @@ export default () => {
 
 
       </Route>
-      <Show_infinite />
+      <MovieInfinite />
     </div>
   )
 }

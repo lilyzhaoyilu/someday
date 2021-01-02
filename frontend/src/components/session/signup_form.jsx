@@ -59,6 +59,7 @@ class SignupForm extends React.Component {
 	render() {
 		return (
 			<div className="signup-form-container">
+				{console.log(this.state)}
 				<div>
 					<Link to="/">
 						<img className="login-form-logo" src={Logo}></img>
