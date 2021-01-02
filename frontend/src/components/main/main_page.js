@@ -15,7 +15,8 @@ import ProfileShow from '../profile/profile_show_container';
 export default () => {
   return (
     <div>
-      <Route>
+      
+        <Route path='/' component={NavBarContainer} />
         <Switch>
 
           <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
@@ -23,7 +24,6 @@ export default () => {
 
         </Switch>
 
-        <Route path='/*' component={NavBarContainer} />
 
         {/* <ProfileShow /> DOESNOTWORK */}
 
@@ -34,7 +34,7 @@ export default () => {
         <WatchlistPostForm movieId="tt10539608" />
        
 
-      </Route>
+     
 
     </div>
   )
