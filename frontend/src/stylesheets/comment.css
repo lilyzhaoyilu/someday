@@ -1,3 +1,7 @@
+
+/* comments on user's profile page  */
+
+
 .comment-user-container{
   display: flex;
   flex-direction: row;
@@ -20,4 +24,23 @@
   /* max-height: 100%; */
   /* height: 100px; */
   width: 90px;
+}
+
+
+
+
+/* comments on media page  */
+
+.media-comments li{
+  list-style-type: none;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between; */
+}
+
+.media-comment-subtitle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
