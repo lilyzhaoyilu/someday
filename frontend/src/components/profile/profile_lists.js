@@ -34,8 +34,8 @@ export default class ProfileLists extends Component {
           <button className='profile-nav-btn' onClick={() => this.handleWatchClick()}>My Want-to Watch</button>
           <button className='profile-nav-btn' onClick={() => this.handleHistoryClick()}>Watched List</button>
         </div>
-        {/* {watchlist ? <WatchlistIndex userId={user._id} /> : null}
-        {historylist ? <HistorylistIndex userId={user._id} /> : null} */}
+        {watchlist ? <WatchlistIndex userId={user._id} /> : null}
+        {historylist ? <HistorylistIndex userId={user._id} /> : null}
         {profile ? <UserComment /> : null}
       </div>
     )
