@@ -11,8 +11,8 @@ import '../stylesheets/moviePage.css';
 import '../stylesheets/profile-navbar.css';
 import '../stylesheets/profile.css';
 import '../stylesheets/profile-page.css';
-
-
+import '../stylesheets/comment.css'
+ 
 
 
 const Root = ({ store }) => {
