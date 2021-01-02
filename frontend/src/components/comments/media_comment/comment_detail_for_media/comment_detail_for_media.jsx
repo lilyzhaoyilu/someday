@@ -3,32 +3,52 @@ import moment from 'moment';
 import { Link, withRouter } from "react-router-dom";
 class CommentDetailForMedia extends Component {
 
-  // componentDidMount(){
-  //   this.props.fetchThisUser(this.props.comment.user)
-  // }
-  
+  constructor(props) {
+    super(props);
+    this.displayCreatedAt = this.displayCreatedAt.bind(this);
+    this.displayUsername = this.displayUsername.bind(this);
+  }
+
+  displayUsername = () => {
+    const userId = this.props.comment.user;
+    
+    if(userId && this.props.users[userId]){
+      const displayedName = this.props.users[userId].handle ? this.props.users[userId].handle : this.props.users[userId].email;
+      // const displayedName = this.props.users[userId].email;
+      return (<Link to={`/profile/${userId}`}>{`${displayedName}`}</Link>)
+    }
+  }
+
+  displayCreatedAt = (time) => {
+    let display = moment(time);
+    return display.format("MMM D YYYY");
+  }
 
   render() {
     
     const {comment} = this.props;
-    const displayCreatedAt = (time) => {
-      let display = moment(time);
-      return display.format("MMM D YYYY");}
+    // const displayCreatedAt = (time) => {
+    //   let display = moment(time);
+    //   return display.format("MMM D YYYY");}
 
-    const userId = comment.user
-    const displayUsername = () => {
-      if(this.props.users && this.props.users[userId]){
-        return (<Link to={`/profile/${userId}`}>{this.props.users[userId].email}</Link>)
-      }
-    }
+    // const userId = comment.user
+    // const displayUsername = () => {
+    //   if(this.props.users && this.props.users[userId]){
+    //     return (<Link to={`/profile/${userId}`}>{this.props.users[userId].email}</Link>)
+    //   }
+    // }
 
 
     return (
       
       <li>
-        {displayCreatedAt(comment.date)}
-        {comment.text} 
-        {displayUsername()}
+        <div className="media-comment-subtitle">
+        {this.displayUsername()}
+        {this.displayCreatedAt(comment.date)}
+        </div>
+
+        <div>{comment.text}</div>
+        
   
       
       </li>

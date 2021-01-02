@@ -18,6 +18,13 @@ class ProfileShow extends Component {
       <div>
         <ProfileNavbar />
         <div className="profile-show-wrapper">
+          <div className='profile-info'>
+            <ProfilePageNavbar />
+            {/* <WatchlistIndexContainer userId={user._id} /> */}
+            {/* <HistorylistIndexContainer userId={user._id} /> */}
+            <h1>My Comments</h1>
+            <UserCommentContainer />
+          </div>
           <ProfileLists user={user}/>
           <div className="user-info">
             <h1>{`${user.handle}'s Info`}</h1>
