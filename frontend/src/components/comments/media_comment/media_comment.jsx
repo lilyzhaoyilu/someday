@@ -26,7 +26,7 @@ class MediaComment extends Component {
 
 
     return (
-      <div className='media-comments'>media comments here
+      <div className='media-comments'>Comments ···({commentsObjects.length} comments)
        {commentsObjects.map(comment => (<CommentDetailForMedia key={comment._id} comment={comment} />))}
        
       </div>
