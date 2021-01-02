@@ -11,9 +11,9 @@ class MovieImage extends Component {
     }
     componentDidMount() {
         this.props.fetchMovieData(this.props.movieId).then((result) => {
-          setTimeout(id => this.setState({ 
+          setTimeout(() => this.setState({ 
               title: result.show.data.title.title,
-              imgUrl: result.show.data.title.image.url}),1000)
+              imgUrl: result.show.data.title.image.url}),5000)
             // this.setState({ imgUrl: result.show.data.title.image.url})
         })
     }
@@ -21,9 +21,9 @@ class MovieImage extends Component {
     componentDidUpdate(prevProps) {
       if(this.props.movieId !== prevProps.movieId){
         this.props.fetchMovieData(this.props.movieId).then(result => {
-          setTimeout(id => this.setState({
+          setTimeout(() => this.setState({
             title: result.show.data.title.title,
-            imgUrl: result.show.data.title.image.url}), 1000)
+            imgUrl: result.show.data.title.image.url}), 5000)
         })
       }
     }

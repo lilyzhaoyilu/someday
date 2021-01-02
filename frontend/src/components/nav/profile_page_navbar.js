@@ -4,11 +4,31 @@ import { Link } from 'react-router-dom';
 import React, { Component } from 'react'
 
 export default class ProfilePageNavbar extends Component {
+  // componentDidMount() {
+  //   this.props.fetchThisUser(this.props.currentUserId)
+  // }
+
+  handleWatchClick(){
+    this.setState({
+      watchlist: true,
+      profile: false,
+      historylist: false
+    })
+  }
+
+  handleHistoryClick(){
+    this.setState({
+      watchlist: false,
+      profile: false,
+      historylist: true
+    })
+  }
+
   render() {
     return (
       <div className="profile-links">
-        <Link className='profile-nav-btn' to=''>My Want-to Watch</Link>
-        <Link className='profile-nav-btn' to=''>Watched List</Link>
+        <button className='profile-nav-btn' onClick={() => this.handleWatchClick()}>My Want-to Watch</button>
+        <button className='profile-nav-btn' onClick={() => this.handleHistoryClick()}>Watched List</button>
       </div>
     )
   }
