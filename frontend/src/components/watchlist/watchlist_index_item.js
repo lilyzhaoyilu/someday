@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
 import MovieIndexItem from '../movie/movie_index_item';
+import MovieImage from '../movie_image/img_container';
 
 export default class WatchlistIndexItem extends Component {
   render() {
-    const { movies } = this.props.watchlist
-    let moviesArr = Object.values(movies)
-    return movies ? (
+    const { movie } = this.props.watchlist
+    let moviesArr = Object.values(movie)
+    console.log("wii", moviesArr);
+    return movie ? (
       <div>
-        <li>
-          {moviesArr.map(movie => <MovieIndexItem 
-          key={movie.apiId}
-          movie={movie}
-          imgUrl={movie.imgUrl}
-          name={movie.name}/>)}
-        </li>
+
+        <p>{`watchlist: ${this.props.watchlist.name}`}</p>
+        {moviesArr.map(movie =>
+          <span key={`watch-item-${movie}`}>
+            <MovieImage movieId={movie}/>
+          </span>
+          // <p>{movie}</p>
+          // <MovieIndexItem 
+          // key={movie.apiId}
+          // movie={movie}
+          // imgUrl={movie.imgUrl}
+          // name={movie.name}/>
+        )
+        }
+
       </div>
     ) : null;
   }

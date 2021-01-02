@@ -8,7 +8,7 @@ const mstp = (state, ownProps) => ({
 });
 
 const mdtp = dispatch => ({
-  getMyWatchlists: userId => dispatch(getMyWatchlists(userId))
+  getMyWatchlists: (userId) => dispatch(getMyWatchlists(userId)),
 });
 
 export default connect(mstp, mdtp)(WatchlistIndex);

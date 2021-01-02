@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HistorylistIndexItem from './historylist_index_item';
+import HistorylistIndexItem from './historylist_index_item_container';
 
 export default class HistorylistIndex extends Component {
   componentDidMount() {
@@ -8,12 +8,13 @@ export default class HistorylistIndex extends Component {
 
   render() {
     const { historylists } = this.props;
-    console.log("historylist idx", historylists);
     return historylists ? (
       <div>
+        <h1>Historylists:</h1>
         <ul>
-          {historylists.map(watched => <HistorylistIndexItem
-            key={watched._id} watched={watched} />)}
+          {historylists
+            .filter(list => list.user === this.props.userId)
+            .map(watched => <HistorylistIndexItem key={watched._id} watched={watched} />)}
         </ul>
       </div>
     ) : null;

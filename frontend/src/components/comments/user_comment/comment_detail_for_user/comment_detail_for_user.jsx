@@ -33,7 +33,6 @@ class CommentDetailForUser extends Component {
     // debugger;
     if(this.props.users && this.props.users[userId]){
       const displayedName = this.props.users[userId].handle ? this.props.users[userId].handle : this.props.users[userId].email;
-      // console.log(displayedName);
       // const displayedName = this.props.users[userId].email;
       return (<Link to={`/profile/${userId}`}>{`${displayedName} commented on `}</Link>)
     }

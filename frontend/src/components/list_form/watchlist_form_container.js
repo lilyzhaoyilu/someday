@@ -3,7 +3,6 @@ import ListPostForm from './list_post_form'
 import { postWatchlist } from '../../actions/watchlist_actions'
 
 const mstp = (state, ownProps) => {
-  // console.log("userId", state.session.user.id);
 
   return {
     formType: "Watchlist",

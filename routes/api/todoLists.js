@@ -41,8 +41,8 @@ router.post(
 
     const newTodoList = new TodoList({
       name: req.body.name,
-      user: req.body.id,
-      movie: req.body.id,
+      user: req.body.user,
+      movie: req.body.movie,
     });
     newTodoList.save().then((todoList) => res.json(todoList));
   }

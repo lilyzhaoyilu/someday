@@ -5,7 +5,6 @@ import UserComment from './user_comment';
 import {getUserComments} from '../../../actions/comment_actions';
 import {fetchMovieData} from '../../../actions/movie_actions';
 const mstp = (state, ownProps) => {
-// console.log(ownProps)[]
   return{
   users: state.entities.users,
   comments: state.entities.comments,

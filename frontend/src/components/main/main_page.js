@@ -13,7 +13,6 @@ import WatchlistPostForm from '../list_form/watchlist_form_container';
 import ProfileShow from '../profile/profile_show_container';
 
 export default () => {
-  // console.log('mainpage');
   return (
     <div>
       <Route>
@@ -31,7 +30,8 @@ export default () => {
         These below are for development purpose<br></br>
         <Link to='/mediapage/tt0944947'>click here to see the sample game of throne</Link><br></br>
         <Link to='/mediapage/tt2674426'>click here to see the sample me before you</Link>
-
+        <HistorylistPostForm movieId="tt10539608" />
+        <WatchlistPostForm movieId="tt10539608" />
        
 
       </Route>
