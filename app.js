@@ -14,7 +14,7 @@ const search = require("./routes/api/search");
 const comments = require("./routes/api/comments");
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
+  .connect(db, { useNewUrlParser: true , useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
