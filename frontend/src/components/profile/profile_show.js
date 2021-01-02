@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import ProfileNavbar from '../nav/profile_navbar';
-import ProfilePageNavbar from '../nav/profile_page_navbar';
-import UserCommentContainer from '../comments/user_comment/user_comment_container';
-import HistorylistIndexContainer from '../historylist/historylist_index_container';
-import WatchlistIndexContainer from '../watchlist/watchlist_index_container';
+import ProfileLists from './profile_lists';
 import moment from 'moment';
 class ProfileShow extends Component {
-
   componentDidMount() {
     this.props.fetchThisUser(this.props.match.params.userId)
   }
@@ -29,8 +25,9 @@ class ProfileShow extends Component {
             <h1>My Comments</h1>
             <UserCommentContainer />
           </div>
+          <ProfileLists user={user}/>
           <div className="user-info">
-            <h1>My Info</h1>
+            <h1>{`${user.handle}'s Info`}</h1>
             <div className="username">
               <label>Username:
                 <strong>{user.handle}</strong>
