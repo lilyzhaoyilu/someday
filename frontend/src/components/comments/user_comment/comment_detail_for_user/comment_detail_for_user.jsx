@@ -8,11 +8,18 @@ class CommentDetailForUser extends Component {
     this.displayMovieImage = this.displayMovieImage.bind(this);
     this.displayCreatedAt = this.displayCreatedAt.bind(this);
     this.displayUsername = this.displayUsername.bind(this);
+    this.displayMovieTitle = this.displayMovieTitle.bind(this);
   }
 
   displayMovieImage() {
     if(this.props.movies[this.props.comment.movie]){
-      return this.props.movies[this.props.comment.movie].image.url
+      return <Link to={`/mediapage/${this.props.comment.movie}`}><img src={this.props.movies[this.props.comment.movie].image.url} ></img></Link> 
+    }
+  }
+
+  displayMovieTitle() {
+    if(this.props.movies[this.props.comment.movie]){
+      return  <Link to={`/mediapage/${this.props.comment.movie}`}>{this.props.movies[this.props.comment.movie].title}</Link>
     }
   }
 
@@ -28,7 +35,7 @@ class CommentDetailForUser extends Component {
       const displayedName = this.props.users[userId].handle ? this.props.users[userId].handle : this.props.users[userId].email;
       // console.log(displayedName);
       // const displayedName = this.props.users[userId].email;
-      return (<Link to={`/profile/${userId}`}>{ displayedName}</Link>)
+      return (<Link to={`/profile/${userId}`}>{`${displayedName} commented on `}</Link>)
     }
   }
 
@@ -40,13 +47,19 @@ class CommentDetailForUser extends Component {
 
     return (
       
-      <li>
-        <img src={this.displayMovieImage()} width="50px"></img>
-        {this.displayUsername()}
-        {this.displayCreatedAt(comment.date)}
-        {comment.text} 
-        
-      
+      <li className='comment-user-container'>
+        {this.displayMovieImage()}
+        <div className="comment-detail-user-right">
+          <div>
+          {this.displayCreatedAt(comment.date)}
+          </div>
+
+          <div className="comment-detail-user-subtitle">
+          {this.displayUsername()}{this.displayMovieTitle()}
+          </div>
+          
+        {comment.text}
+        </div>       
       </li>
      
     )

@@ -1,0 +1,23 @@
+.comment-user-container{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  width: 55vw;
+  margin: 20px;
+ 
+}
+
+.comment-detail-user-right{
+  width: 100%;
+}
+
+/* .comment-detail-user-subtitle{
+  display: flex;
+  justify-content: space-between;
+} */
+
+.comment-user-container img{
+  /* max-height: 100%; */
+  /* height: 100px; */
+  width: 90px;
+}

@@ -45,8 +45,8 @@ class UserComment extends Component {
 
 
     return (
-      <div className='user-comments'>{this.displayUsername()}
-       {commentsObjects.map(comment => (<CommentDetailForUser key={comment._id} comment={comment} />))}
+      <div className='comment-user'>{this.displayUsername()}
+       {commentsObjects.map(comment => (<CommentDetailForUser key={comment._id} comment={comment}/>))}
       </div>
     )
   }
