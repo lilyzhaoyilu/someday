@@ -1,5 +1,8 @@
 import { connect } from "react-redux";
-import { getMyWatchlists } from "../../actions/watchlist_actions";
+import {
+  getMyWatchlists,
+  updateWatchlist,
+} from "../../actions/watchlist_actions";
 import MediaWatchList from "./media_watchList";
 
 const mstp = (state, ownProps) => ({
@@ -10,6 +13,7 @@ const mstp = (state, ownProps) => ({
 
 const mdtp = (dispatch) => ({
   getMyWatchlists: (userId) => dispatch(getMyWatchlists(userId)),
+  updateWatchlist: (movieId) => dispatch(updateWatchlist(movieId)),
 });
 
 export default connect(mstp, mdtp)(MediaWatchList);

@@ -53,27 +53,16 @@ router.patch(
   "/todoList/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const { isValid, errors } = validateList(req.body);
-
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
-
-    // const newTodoList = new TodoList({
-    //   _id: req.params.id,
-    //   name: req.body.name,
-    //   user: req.user.id,
-    //   movie: req.body.movie,
-    // });
-    TodoList.findOneAndUpdate({ _id: req.params.id }, { name: req.body.name, movie: req.body.movie }, { new: true })
+    TodoList.findOneAndUpdate(
+      { _id: req.params.id },
+      { name: req.body.name, movie: req.body.movie },
+      { new: true }
+    )
       .then((todoList) => res.json(todoList))
-      // .then(() => {
-      //   res.status(201).json({
-      //     message: "Todo List updated successfully!",
-      //   });
-      // })
       .catch((error) => {
-        res.status(400).json({ error: error });
+        res.status(400).json({
+          error: error,
+        });
       });
   }
 );
