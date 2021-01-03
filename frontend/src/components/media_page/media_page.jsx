@@ -99,11 +99,17 @@ class MediaPage extends Component {
                     </span>
                   ))}
                 </span>
-                <span><FcPlanner/> Release Date: {this.state.releaseDate}</span>
+                <span>
+                  <FcPlanner /> Release Date: {this.state.releaseDate}
+                </span>
               </div>
               <div className="ratings">
-                <span><FcScatterPlot/> Rating: {this.state.rating}</span>
-                <span><HiUserGroup /> {ratingCount} people rated</span>
+                <span>
+                  <FcScatterPlot /> Rating: {this.state.rating}
+                </span>
+                <span>
+                  <HiUserGroup /> {ratingCount} people rated
+                </span>
               </div>
             </div>
           </div>
@@ -114,7 +120,9 @@ class MediaPage extends Component {
         </div>
 
         <div className="media-button">
-          <button onClick={this.toggleModal}>Add to TodoList</button>
+          <button className="list-add-button" onClick={this.toggleModal}>
+            Add to TodoList
+          </button>
           <Modal
             isOpen={this.state.isOpen}
             onRequestClose={this.toggleModal}
@@ -128,9 +136,13 @@ class MediaPage extends Component {
               userId={this.props.userId}
               movieId={this.props.movieId}
             />
-            <button onClick={this.toggleModal}>Close</button>
+            <button className="list-add-button" onClick={this.toggleModal}>
+              Close
+            </button>
           </Modal>
-          <button onClick={this.toggleModal2}>Add to WatchedList</button>
+          <button className="list-add-button" onClick={this.toggleModal2}>
+            Add to WatchedList
+          </button>
           <Modal
             isOpen={this.state.isOpen2}
             onRequestClose={this.toggleModal2}
@@ -144,7 +156,9 @@ class MediaPage extends Component {
               userId={this.props.userId}
               movieId={this.props.movieId}
             />
-            <button onClick={this.toggleModal2}>Close</button>
+            <button className="list-add-button" onClick={this.toggleModal2}>
+              Close
+            </button>
           </Modal>
         </div>
         <MediaComment />
