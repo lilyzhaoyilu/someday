@@ -24,6 +24,14 @@ export default class ProfileLists extends Component {
       historylist: true
     })
   }
+
+  handleProfileClick(){
+    this.setState({
+      watchlist: true,
+      profile: true,
+      historylist: true
+    })
+  }
   
   render() {
     const {user} = this.props;
@@ -31,6 +39,7 @@ export default class ProfileLists extends Component {
     return (
       <div className="profile-info">
         <div className="profile-links">
+          <button className="profile-nav-btn" onClick={() => this.handleProfileClick()}>My Profile Page</button>
           <button className='profile-nav-btn' onClick={() => this.handleWatchClick()}>My Want-to Watch</button>
           <button className='profile-nav-btn' onClick={() => this.handleHistoryClick()}>Watched List</button>
         </div>

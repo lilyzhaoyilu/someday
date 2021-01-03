@@ -13,11 +13,12 @@
     0 32px 64px rgba(0, 0, 0, 0.03);
 }
 
-.profile-links>a {
-  background-color: #c3f8c3;
-  border: 1px solid #5b9c5b;
+.profile-links > button {
+  background-color: #007A5A;
+  border: 1px solid #007A5A;
   border-radius: 20px;
   font-size: 25px;
+  outline: none;
 }
 
 .profile-info>h1 {
@@ -31,4 +32,12 @@
 
 .profile-nav-btn {
   padding: 3px 25px 3px 25px;
+}
+
+.profile-nav-btn:hover {
+  background-color: rgb(9, 138, 37);
+  transition: background 0.5s;
+  cursor: pointer;
+  transition: color 0.2s;
+  color: white;
 }
