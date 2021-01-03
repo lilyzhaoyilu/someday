@@ -13,7 +13,7 @@ class MovieImage extends Component {
     setTimeout(() => {
       this.props.fetchMovieData(this.props.movieId).then((result) => {
 
-        if(result && result.show.data){
+        if(result && result.show){
         this.setState({
           title: result.show.data.title.title,
           imgUrl: result.show.data.title.image.url
