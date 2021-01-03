@@ -6,7 +6,7 @@ import UserComment from '../comments/user_comment/user_comment_container';
 export default class ProfileLists extends Component {
   constructor(props) {
     super(props);
-    this.state = { profile: true, watchlist: true, historylist: true };
+    this.state = { profile: true, watchlist: true, historylist: false };
   }
 
   handleWatchClick() {
@@ -35,7 +35,7 @@ export default class ProfileLists extends Component {
           <button className='profile-nav-btn' onClick={() => this.handleHistoryClick()}>Watched List</button>
         </div>
         {watchlist ? <WatchlistIndex userId={user._id} /> : null}
-        {/* {historylist ? <HistorylistIndex userId={user._id} /> : null} */}
+        {historylist ? <HistorylistIndex userId={user._id} /> : null}
         {/* {profile ? <UserComment /> : null} */}
       </div>
     )
