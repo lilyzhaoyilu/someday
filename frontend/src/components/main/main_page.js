@@ -26,6 +26,8 @@ export default () => {
       </Switch>
       {/* <Route exact path='/profile/:userId' component={ProfileShowContainer}/> */}
       <Route exact path='/mediaPage/:movieId' component={MoviePageContainer} />
+      <ProtectedRoute path='/show-index' component={ShowInfinite} />
+      <ProtectedRoute path='/movie-index' component={MovieInfinite} />
 
 
 

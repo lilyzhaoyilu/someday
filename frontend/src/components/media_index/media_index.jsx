@@ -59,6 +59,7 @@ class MediaIndex extends React.Component {
 					hasMore={this.state.hasMore}
 					loader={<h4>Loading...</h4>}
 					height={700}
+					className="media-index"
 					endMessage={
 						<p style={{ textAlign: "center" }}>
 							<b>That's all folks!</b>

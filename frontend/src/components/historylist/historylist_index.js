@@ -38,12 +38,14 @@ export default class HistorylistIndex extends Component {
           hasMore={true}
           loader={<h4>Loading...</h4>}
           height={100}
+          classname={"historylist-index"}
         >
-          {this.state.lists.map((list, i) =>
-            <HistorylistIndexItem key={list._id} watched={list} />
-          )
-          }
-
+          <ul>
+            {this.state.lists.map((list, i) =>
+              <HistorylistIndexItem key={list._id} watched={list} />
+            )
+            }
+          </ul>
         </InfiniteScroll>
       </div>
     )
