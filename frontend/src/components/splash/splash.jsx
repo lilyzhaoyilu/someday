@@ -41,11 +41,11 @@ class Splash extends React.Component {
 					trending movies
 					<MovieIndex />
 				</div>
-
+{/* 
 				<div className="splash-trending-tvshows">
 					trending tv shows
 					<PopularShowsIndex />
-				</div>
+				</div> */}
 			</div>
 		);
 	}
