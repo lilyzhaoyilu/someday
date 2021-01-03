@@ -12,10 +12,12 @@ class MovieImage extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.props.fetchMovieData(this.props.movieId).then((result) => {
+
+        if(result){
         this.setState({
           title: result.show.data.title.title,
           imgUrl: result.show.data.title.image.url
-        })
+        })}
       })
     }, this.props.idx * 400)
   }
