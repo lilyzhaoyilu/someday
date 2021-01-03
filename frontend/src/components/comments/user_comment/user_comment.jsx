@@ -52,19 +52,19 @@ class UserComment extends Component {
 
 	displayUsername() {
 		if (this.props.currentPageUserId === this.props.currentUserId) {
-			return <span>My comments</span>;
+			return <span className="comment-user-title">My comments</span>;
 		} else {
 			const userName = this.props.users[this.props.currentPageUserId].email;
-			return <span>{userName}'s comments</span>;
+			return <span className="comment-user-title">{userName}'s comments</span>;
 		}
 	}
 
 	displayCommentNumber() {
 		const commnetNumber = Object.values(this.props.comments).length;
 		if (commnetNumber === 1) {
-			return <span>1 comment</span>;
+			return <span className="comment-user-title">1 comment</span>;
 		} else if (commnetNumber === 1) {
-			return <span>0 comment</span>;
+			return <span className="comment-user-title">0 comment</span>;
 		} else {
 			return <span>{`${commnetNumber} comments`}</span>;
 		}
@@ -90,7 +90,7 @@ class UserComment extends Component {
 					loader={<h4>Loading...</h4>}
 					height={300}
 					classname={"profile-comments-index"}
-					endMessage={<p>The End</p>}
+					endMessage={<p style={{textAlign:'center', color:'gray'}}>The End</p>}
 				>
 					{this.state.comments.map((comment) => (
 						<CommentDetailForUser key={comment._id} comment={comment} />
