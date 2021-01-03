@@ -24,28 +24,23 @@ class WatchlistIndexItem extends Component {
 
 
   render() {
-    const { movie } = this.props.watchlist
-    let moviesArr = Object.values(movie)
-    return movie ? (
-      <div>
+    const { watchlist } = this.props
+    return watchlist ? (
 
-        <p>{`watchlist: ${this.props.watchlist.name}`}</p>
-        {moviesArr.map((movie, i) =>
-          <span key={`${this.props.watchlist._id}-${movie}-${i}`}>
-            <MovieImage movieId={movie} />
-            {console.log(movie)}
-            <button onClick={this.handleRemoveMovieFromTheList(movie)}> remove movie from the list</button>
-          </span>
-          // <p>{movie}</p>
-          // <MovieIndexItem 
-          // key={movie.apiId}
-          // movie={movie}
-          // imgUrl={movie.imgUrl}
-          // name={movie.name}/>
-        )
-        }
-        
-      </div>
+      <li>
+        <p>{`watchlist: ${watchlist.name}`}</p>
+        <ul>
+          {
+            watchlist.movie.map((movieId, i) => <span key={`${watchlist._id}-${movieId}-${i}`}><MovieImage movieId={movieId} idx={i} /></span>)
+          }
+          {/* <MovieIndexItem 
+          key={watched.apiId} 
+          watched={watched}
+          imgUrl={watched.imgUrl}
+          name={watched.name}/> */}
+        </ul>
+
+      </li>
     ) : null;
   }
 }

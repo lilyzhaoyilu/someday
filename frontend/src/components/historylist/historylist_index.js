@@ -14,7 +14,6 @@ export default class HistorylistIndex extends Component {
     this.props.showMyHistorylists(this.props.userId)
       .then((res) => {
         this.setState({ lists: [this.props.historylists.filter(list => list.user === this.props.userId)[0]] })
-
       })
   }
 
@@ -30,8 +29,7 @@ export default class HistorylistIndex extends Component {
   }
 
   render() {
-    // console.log("new", this.state.lists);
-    return (
+    return (this.state.lists) ? (
       <div>
         <h1>Historylists:</h1>
         <InfiniteScroll
@@ -55,7 +53,7 @@ export default class HistorylistIndex extends Component {
           </ul>
         </InfiniteScroll>
       </div>
-    )
+    ) : null;
     // const { historylists } = this.props;
     // return historylists ? (
     //   <div>

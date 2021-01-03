@@ -21,6 +21,7 @@ export default class PopularMoviesIndex extends Component {
   }
 
   fetchMoreData = () => {
+    // console.log('fetching!');
     if (this.state.movies.length === 100) {
       this.setState({ hasMore: false });
       return;
