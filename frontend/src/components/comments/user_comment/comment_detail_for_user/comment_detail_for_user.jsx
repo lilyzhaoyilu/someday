@@ -12,7 +12,7 @@ class CommentDetailForUser extends Component {
   }
 
   displayMovieImage() {
-    if(this.props.movies[this.props.comment.movie]){
+    if(this.props.movies[this.props.comment.movie] && this.props.movies[this.props.comment.movie].image ){
       return <Link to={`/mediapage/${this.props.comment.movie}`}><img src={this.props.movies[this.props.comment.movie].image.url} ></img></Link> 
     }
   }
