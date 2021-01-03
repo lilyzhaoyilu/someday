@@ -24,24 +24,35 @@
 	background-color: #edf4ed;
 }
 
-.splash-trending-movies {
-	height: 45vh;
-}
-.splash-trending-movies div ul {
-	width: 80%;
+.splash-trendings {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 90%;
+}
+
+.splash-trending-movies {
+	background-color: pink;
+	width: 40vw;
+	/* height: 45vh; */
+}
+.splash-trending-movies div ul {
+	/* width: 80%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap; */
 }
 
 .splash-trending-tvshows {
-	height: 45vh;
-	background-color: #f7f7f7;
+	width: 40vw;
+	background-color: lightblue;
+	/* height: 45vh;
+	background-color: #f7f7f7; */
 }
 
 .splash-trending-tvshows div ul {
-	width: 80%;
+	/* width: 80%;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
+	flex-wrap: wrap; */
 }

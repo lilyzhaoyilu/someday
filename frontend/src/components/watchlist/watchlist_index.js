@@ -11,6 +11,7 @@ export default class WatchlistIndex extends Component {
   }
 
   componentDidMount() {
+    console.log("componentDidMount");
     this.props.getMyWatchlists(this.props.userId)
       .then((res) => {
         this.setState({ lists: [this.props.watchlists.filter(list => list.user === this.props.userId)[0]] })
@@ -18,6 +19,7 @@ export default class WatchlistIndex extends Component {
   }
 
   fetchMoreData() {
+    console.log("fetchMoreData");
     if (this.state.lists.length === this.props.watchlists.length) {
       this.setState({ hasMore: false });
       return;
@@ -29,11 +31,8 @@ export default class WatchlistIndex extends Component {
   }
 
   render() {
-    const { lists } = this.state;
-
-    return (
+    return (this.state.lists) ? (
       <div>
-        {console.log(this.state)}
         <h1>Watchlists:</h1>
         <InfiniteScroll
           dataLength={this.state.lists.length}
@@ -55,7 +54,7 @@ export default class WatchlistIndex extends Component {
 
         </InfiniteScroll>
       </div>
-    )
+    ) : null;
 
     // return (
     //   <div>

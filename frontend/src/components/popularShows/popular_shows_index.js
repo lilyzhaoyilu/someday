@@ -18,7 +18,6 @@ export default class PopularShowsIndex extends Component {
     this.props.fetchPopularTv().then(
       this.setState({ shows: this.props.shows.slice(0, 2) })
     )
-
   }
 
   fetchMoreData = () => {
@@ -43,7 +42,7 @@ export default class PopularShowsIndex extends Component {
           hasMore={this.state.hasMore}
           loader={<h4>Loading...</h4>}
           className="trending-show-index"
-          height={200}
+          height={300}
           endMessage={
             <p style={{ textAlign: "center" }}>
               <b>That's all folks!</b>
@@ -52,11 +51,11 @@ export default class PopularShowsIndex extends Component {
         >
 
           <ul>
-            {this.state.shows.map((show, i) => {
+            {this.state.shows.map((movie, i) => {
               return (
                 <PopularShowsIndexItem
-                  showId={show.id}
-                  key={show.id}
+                  showId={movie.id}
+                  key={movie.id}
                   idx={i}
                 />
               )
