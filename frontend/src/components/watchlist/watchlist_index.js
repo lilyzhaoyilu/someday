@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WatchlistIndexItem from './watchlist_index_item';
+import WatchlistIndexItem from './watchlist_index_item_container';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default class WatchlistIndex extends Component {
@@ -48,7 +48,7 @@ export default class WatchlistIndex extends Component {
         >
           <ul>
             {this.state.lists.map((list, i) => {
-              return (list) ? <WatchlistIndexItem key={list._id} watchlist={list} updateWatchlist={this.props.updateWatchlist} /> : null;
+              return (list) ? <WatchlistIndexItem key={list._id} watchlist={list} /> : null;
             }
             )}
           </ul>

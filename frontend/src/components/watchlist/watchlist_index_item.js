@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MovieIndexItem from '../movie/movie_index_item';
+// import MovieIndexItem from '../movie/movie_index_item';
 import MovieImage from '../movie_image/img_container';
 
 class WatchlistIndexItem extends Component {
@@ -11,9 +11,14 @@ class WatchlistIndexItem extends Component {
 
 
   handleRemoveMovieFromTheList(movieId){
-   let newWatchList = this.props.watchlist;
-   delete newWatchList[movieId];
-   this.props.updateWatchlist(Object.values(newWatchList));
+    
+   let oldWatchListObject = this.props.watchlist;
+   console.log("oldWatchlistObject", oldWatchListObject)
+   let newWatchList = oldWatchListObject.movie.filter(movie => movie !== movieId)
+   console.log("newWatchList",newWatchList);
+   let newWatchListObject = Object.assign({},oldWatchListObject, {movie: newWatchList})
+   console.log("newWatchListObject",newWatchListObject);
+   this.props.updateWatchlist(newWatchListObject);
   }
 
 
@@ -28,6 +33,7 @@ class WatchlistIndexItem extends Component {
         {moviesArr.map((movie, i) =>
           <span key={`${this.props.watchlist._id}-${movie}-${i}`}>
             <MovieImage movieId={movie} />
+            {console.log(movie)}
             <button onClick={this.handleRemoveMovieFromTheList(movie)}> remove movie from the list</button>
           </span>
           // <p>{movie}</p>
