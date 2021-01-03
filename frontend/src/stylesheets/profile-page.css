@@ -19,6 +19,10 @@
   border-radius: 20px;
   font-size: 25px;
   outline: none;
+  color: white;
+  font-family: "IBM Plex Mono",
+  monospace;
+  font-weight: 700;
 }
 
 .profile-info>h1 {
@@ -31,13 +35,13 @@
 }
 
 .profile-nav-btn {
-  padding: 3px 25px 3px 25px;
+  padding: 1px 25px 1px 25px;
 }
 
 .profile-nav-btn:hover {
   background-color: rgb(9, 138, 37);
   transition: background 0.5s;
   cursor: pointer;
-  transition: color 0.2s;
-  color: white;
+  transition: color 0.3s;
+  color: black;
 }
