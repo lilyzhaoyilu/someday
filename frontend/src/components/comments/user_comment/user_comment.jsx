@@ -4,21 +4,44 @@ import CommentDetailForUser from "./comment_detail_for_user/comment_detail_for_u
 class UserComment extends Component {
 	constructor(props) {
 		super(props);
+		this.state = { comments: [], hasMore: true };
+
+		this.fetchMoreData = this.fetchMoreData.bind(this);
 		this.displayUsername = this.displayUsername.bind(this);
 		this.displayCommentNumber = this.displayCommentNumber.bind(this);
-		this.state = { comments: [] };
 	}
 
 	componentDidMount() {
 		this.props.getUserComments(this.props.currentPageUserId).then((res) => {
 			this.setState({
-				comments: [
-					Object.values(this.props.comments)
-						.filter((comment) => comment.user === this.props.currentPageUserId)
-						.slice(0, 4),
-				],
+				comments: Object.values(this.props.comments)
+					.filter((comment) => comment.user === this.props.currentPageUserId)
+					.slice(0, 2),
 			});
+			this.props.fetchMovieData(Object.values(this.props.comments)[0].movie);
+			this.props.fetchMovieData(Object.values(this.props.comments)[1].movie);
 		});
+	}
+
+	fetchMoreData() {
+		if (
+			this.state.comments.length === Object.values(this.props.comments).length
+		) {
+			this.setState({ hasMore: false });
+			return;
+		}
+
+		this.setState({
+			comments: this.state.comments.concat(
+				Object.values(this.props.comments).filter(
+					(comment) => comment.user === this.props.currentPageUserId
+				)[this.state.comments.length]
+			),
+		});
+		console.log(Object.values(this.props.comments)[this.state.comments.length]);
+		this.props.fetchMovieData(
+			Object.values(this.props.comments)[this.state.comments.length - 1].movie
+		);
 	}
 
 	componentDidUpdate(prevProps) {
@@ -48,19 +71,31 @@ class UserComment extends Component {
 	}
 
 	render() {
-		const commentsObjects = Object.values(this.props.comments);
+		// const commentsObjects = Object.values(this.props.comments);
 
-		let commentMoviesSet = new Set();
-		commentsObjects.forEach((comment) => commentMoviesSet.add(comment.movie));
-		const commentMovies = [...commentMoviesSet];
-		commentMovies.forEach((movieId) => this.props.fetchMovieData(movieId));
+		// let commentMoviesSet = new Set();
+		// commentsObjects.forEach((comment) => commentMoviesSet.add(comment.movie));
+		// const commentMovies = [...commentMoviesSet];
+		// commentMovies.forEach((movieId) => this.props.fetchMovieData(movieId));
+
+		console.log(this.state);
 
 		return (
 			<div className="comment-user">
 				{this.displayUsername()} ···({this.displayCommentNumber()})
-				{commentsObjects.map((comment) => (
-					<CommentDetailForUser key={comment._id} comment={comment} />
-				))}
+				<InfiniteScroll
+					dataLength={this.state.comments.length}
+					next={this.fetchMoreData}
+					hasMore={this.state.hasMore}
+					loader={<h4>Loading...</h4>}
+					height={300}
+					classname={"profile-comments-index"}
+					endMessage={<p>The End</p>}
+				>
+					{this.state.comments.map((comment) => (
+						<CommentDetailForUser key={comment._id} comment={comment} />
+					))}
+				</InfiniteScroll>
 			</div>
 		);
 	}
