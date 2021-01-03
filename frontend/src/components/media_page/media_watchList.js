@@ -97,7 +97,7 @@ export default class WatchlistIndex extends Component {
                 </li>
               ))}
           </ul>
-          <button>add to lists</button>
+          <button className="list-add-button">add to lists</button>
         </form>
         <Modal
           isOpen={this.state.isDisplay}
@@ -109,7 +109,9 @@ export default class WatchlistIndex extends Component {
           ariaHideApp={false}
         >
           {msg}
-          <button onClick={this.toggleModal4}>Close</button>
+          <button className="list-add-button" onClick={this.toggleModal4}>
+            Close
+          </button>
         </Modal>
       </div>
     ) : null;
