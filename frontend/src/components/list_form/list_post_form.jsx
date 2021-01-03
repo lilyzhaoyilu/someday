@@ -28,7 +28,8 @@ class ListFrom extends Component {
 						onChange={this.update()}
 						placeholder={`${this.props.formType} Name`}
 					/>
-					<input type="submit" value={`Create ${this.props.formType}`} />
+					{/* disable the button if input.length < 1 */}
+					<button type="submit" value={`Create ${this.props.formType}`} disabled={this.state.name.length < 1 } /> 
 				</form>
 			</div>
 		);

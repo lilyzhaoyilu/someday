@@ -5,6 +5,7 @@ class UserComment extends Component {
   constructor(props) {
     super(props);
     this.displayUsername = this.displayUsername.bind(this);
+    this.displayCommentNumber = this.displayCommentNumber.bind(this);
   }
 
   componentDidMount() {
@@ -26,11 +27,17 @@ class UserComment extends Component {
     }
   }
 
-  // fetchMoviesInfo(){
-  //   const CommentsObjects = Object.values(this.props.comments);
-
-
-  // }
+  displayCommentNumber(){
+    const commnetNumber = Object.values(this.props.comments).length;
+    if(commnetNumber === 1){
+      return <span>1 comment</span>
+    }else if(commnetNumber === 1){
+      return <span>0 comment</span>
+    }
+    else{
+      return <span>{`${commnetNumber} comments`}</span>
+    }
+  }
 
   render() {
     
@@ -45,8 +52,11 @@ class UserComment extends Component {
 
 
     return (
-      <div className='user-comments'>{this.displayUsername()}
-       {commentsObjects.map(comment => (<CommentDetailForUser key={comment._id} comment={comment} />))}
+      <div className='comment-user'>
+      {this.displayUsername()} ···({this.displayCommentNumber()})
+
+      {commentsObjects.map(comment => (<CommentDetailForUser key={comment._id} comment={comment}/>))}
+
       </div>
     )
   }

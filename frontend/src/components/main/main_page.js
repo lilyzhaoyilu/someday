@@ -13,30 +13,35 @@ import WatchlistPostForm from '../list_form/watchlist_form_container';
 import ProfileShow from '../profile/profile_show_container';
 import MovieInfinite from '../media_index/movie_index_container'
 import ShowInfinite from '../media_index/show_index_container'
-
+// import ProfileShowContainer from '../profile/profile_show_container';
+import MoviePageContainer from '../media_page/media_page_cotainer';
 export default () => {
   return (
-    <div>
-      <Route>
+
+    <Route>
+      <Route path='/' component={NavBarContainer} />
+      <Switch>
+        <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
+        <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
+      </Switch>
+      {/* <Route exact path='/profile/:userId' component={ProfileShowContainer}/> */}
+      <Route exact path='/mediaPage/:movieId' component={MoviePageContainer} />
 
 
-        <Route path='/*' component={NavBarContainer} />
 
-        {/* <ProfileShow /> DOESNOTWORK */}
 
         These below are for development purpose<br />
-        <Link to='/mediapage/tt0944947'>click here to see the sample game of throne</Link><br></br>
-        <Link to='/mediapage/tt2674426'>click here to see the sample me before you</Link>
-        <Switch>
+      <Link to='/mediapage/tt0944947'>click here to see the sample game of throne</Link><br></br>
+      <Link to='/mediapage/tt2674426'>click here to see the sample me before you</Link>
 
-          <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
-          <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
-          <ProtectedRoute path='/show-index' component={ShowInfinite} />
-          <ProtectedRoute path='/movie-index' component={MovieInfinite} />
-        </Switch>
 
-      </Route>
-    </div>
+
+
+    </Route>
+
   )
 }
-///  <CommentForm />  and <UserComment /> should be in movie index, temprorarly here for developing purpose
+
+
+
+{/* ///  <CommentForm />  and <UserComment /> should be in movie index, temprorarly here for developing purpose */ }

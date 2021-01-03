@@ -13,7 +13,7 @@ export const postWatchlist = (listData) => {
 
 //* PATCH / api / todoList /: id - update todo - list(add or delete movie),
 export const updateWatchlist = (listData) => {
-  return axios.patch(`/api/todoLists/todoList/${listData}`, listData);
+  return axios.patch(`/api/todoLists/todoList/${listData._id}`, listData);
 }
 
 //* DELETE / api / todoList /: id - delete the todoList
