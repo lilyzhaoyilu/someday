@@ -97,7 +97,7 @@ class UserComment extends Component {
 					loader={<h4>Loading...</h4>}
 					height={250}
 					classname={"profile-comments-index"}
-					endMessage={<p>The End</p>}
+					endMessage={<p style={{textAlign:'center', color:'gray'}}>The End</p>}
 				>
 					{this.state.comments.map((comment) => (
 						<CommentDetailForUser key={comment._id} comment={comment} />
