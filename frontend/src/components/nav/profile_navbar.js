@@ -1,6 +1,5 @@
 import Logo from '../../util/somedaylogo.svg';
 import SearchBarContainer from './search_bar/search_bar_container';
-import MyProfileContainer from './my_profile/my_profile_container';
 import { Link } from 'react-router-dom';
 import React, { Component } from 'react'
 

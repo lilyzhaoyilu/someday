@@ -8,6 +8,7 @@ class CommentForm extends Component {
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    // this.displayCategory = this.displayCategory.bind(this);
     
   }
 
@@ -29,15 +30,23 @@ class CommentForm extends Component {
     })
   }
 
+  // displayCategory(){
+
+  // }
+
 
 
   render() {
     return (
+      <div className="comment-form">
+        {/* <div className="comment-form-title"><h3>Write comments for {this.props.title}</h3></div> */}
+        <h3>Write comments for {this.props.title}</h3>
         <form action="">
         <textarea onChange={this.update("text")}></textarea>
-        <button onClick={this.handleSubmit}>Submit</button>
+        
+        <button disabled={this.state.text.length<1} className="comment-form-submit" onClick={this.handleSubmit}>Submit</button>
         </form>
-     
+      </div>
     )
   }
 }

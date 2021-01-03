@@ -15,13 +15,13 @@ class CommentDetailForMedia extends Component {
     if(userId && this.props.users[userId]){
       const displayedName = this.props.users[userId].handle ? this.props.users[userId].handle : this.props.users[userId].email;
       // const displayedName = this.props.users[userId].email;
-      return (<Link to={`/profile/${userId}`}>{`${displayedName}`}</Link>)
+      return (<Link className="media-comment-user" to={`/profile/${userId}`}>{`${displayedName}`}</Link>)
     }
   }
 
   displayCreatedAt = (time) => {
     let display = moment(time);
-    return display.format("MMM D YYYY");
+    return <span className="media-comment-time">{display.format("MMM D YYYY")}</span>;
   }
 
   render() {

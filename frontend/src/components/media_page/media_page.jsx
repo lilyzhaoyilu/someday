@@ -141,7 +141,6 @@ class MediaPage extends Component {
           </Modal>
         </div>
         <MediaComment />
-        <CommentForm />
       </section>
     );
   }

@@ -10,6 +10,7 @@ const mstp = (state, ownProps) => {
   comments: state.entities.comments,
   currentUserId: state.session.user.id,
   currentMovieId: ownProps.match.params.movieId,
+  movies: state.entities.movies,
   // currentPageUserId: ownProps. it should really be this one to fetch the user's comment based on current URL...
   }
 }
