@@ -6,7 +6,7 @@ import { Link, withRouter } from "react-router-dom";
 import NavBarContainer from '../nav/navbar_container';
 import MovieIndexContainer from '../movie/movie_index_container';
 import { Switch, Route } from 'react-router-dom';
-import CommentForm from '../comments/comment_form/comment_form_container';
+// import CommentForm from '../comments/comment_form/comment_form_container';
 import UserComment from '../comments/user_comment/user_comment_container';
 import HistorylistPostForm from "../list_form/historylist_form_container";
 import WatchlistPostForm from '../list_form/watchlist_form_container';

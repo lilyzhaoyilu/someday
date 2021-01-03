@@ -2,7 +2,7 @@
 /* comments on user's profile page  */
 
 
-.comment-user-container{
+.user-comment{
   display: flex;
   flex-direction: row;
   list-style-type: none;
@@ -30,17 +30,84 @@
 
 
 /* comments on media page  */
+.media-comments{
+  width: 100%;
+}
+
+.media-comment-user{
+  color:#3377AA;
+}
+
+.media-comment-user:hover{
+  color:white;
+  background-color:#3377AA;
+}
+.media-comment-time{
+  color:gray;
+  margin-left: 5em;
+  opacity: 0.9;
+}
+
 
 .media-comments li{
   list-style-type: none;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: space-between; */
+  /* margin: 10px 0 10px; */
+  padding: 30px 0 30px;
+  border-bottom: 1px solid #d3d3d3;
+  /* max-width: 90%; */
+ 
+}
+
+.media-comments-title{
+  margin: 30px 0 10px;
+  color: #007722;
 }
 
 .media-comment-subtitle{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+
+
+
+/* comment_form component  */
+.comment-form h3{
+  color: #ca6445;
+  margin: 50px 0 30px;
+}
+
+.comment-form textarea{
+  width: 100%;
+  min-height:5em;
+  overflow: auto;
+  font-size: 20px;
+  outline: none;
+  border: 1px solid #d3d3d3;
+  border-radius:2px;
+}
+
+.comment-form-submit{
+  outline: none;
+  background-color: transparent;
+  border: #d3d3d3 1px solid;
+  align-self: flex-end;
+  padding: 10px 20px;
+  margin: 10px 0 0;
+}
+
+/* .comment-form-submit:disabled{
+  color:red;
+} */
+
+.comment-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* justify-content: flex-end; */
+  align-items: flex-start;
+}
+.comment-form form{
+  width: 99%;
 }
