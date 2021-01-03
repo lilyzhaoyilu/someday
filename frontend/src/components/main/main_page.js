@@ -21,7 +21,7 @@ export default () => {
     <Route>
       <Route path='/' component={NavBarContainer} />
       <Switch>
-        <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
+        {/* <Route exact path='/search-result' component={MovieIndexContainer} /> */}
         <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
       </Switch>
       {/* <Route exact path='/profile/:userId' component={ProfileShowContainer}/> */}
