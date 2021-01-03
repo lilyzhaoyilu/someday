@@ -4,6 +4,7 @@ import MediaComment from '../comments/media_comment/media_comment_container';
 import CommentForm from '../comments/comment_form/comment_form_container';
 import MediaHistoryList from "./media_history_container";
 import MediaWatchList from "./media_watch_container";
+import Loading from './loading';
 class MediaPage extends Component {
   constructor(props) {
     super(props);
@@ -72,7 +73,7 @@ class MediaPage extends Component {
     const ratingCount = this.state.ratingCount
       ? this.state.ratingCount.toLocaleString("en-US")
       : this.state.ratingCount;
-    return (
+    return this.state.imgUrl ? (
       <section className="wrapper">
         <div className="content">
           <h1>
@@ -142,7 +143,7 @@ class MediaPage extends Component {
         </div>
         <MediaComment />
       </section>
-    );
+    ):<Loading />;
   }
 }
 
