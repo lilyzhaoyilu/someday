@@ -18,13 +18,9 @@ export default class PopularMoviesIndex extends Component {
     this.props.fetchPopularMovies().then(
       this.setState({ movies: this.props.movies.slice(0, 2) })
     )
-    // .then(console.log(this.props.movies.slice(0, 2)))
-
   }
 
   fetchMoreData = () => {
-    // console.log("state", this.state.movies.length)
-    // console.log("props", this.props.movies.length);
     if (this.state.movies.length === 100) {
       this.setState({ hasMore: false });
       return;
