@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import Modal from "react-modal";
 export default class MediaHistoryList extends Component {
@@ -100,7 +101,7 @@ export default class MediaHistoryList extends Component {
                 </li>
               ))}
           </ul>
-          <button>add to lists</button>
+          <button className="list-add-button">add to lists</button>
         </form>
         <Modal
           isOpen={this.state.isDisplay}
@@ -112,7 +113,9 @@ export default class MediaHistoryList extends Component {
           ariaHideApp={false}
         >
           {msg}
-          <button onClick={this.toggleModal3}>Close</button>
+          <button className="list-add-button" onClick={this.toggleModal3}>
+            Close
+          </button>
         </Modal>
       </div>
     ) : null;
