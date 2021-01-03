@@ -10,13 +10,14 @@ export default class ProfileNavbar extends Component {
         <div className="profile-navbar">
           <div className="left">
             <Link className="navbar-logo" to="/splash">
-              <img src={Logo}/>
+              <img src={Logo} />
             </Link>
-            <Link to="">Movies</Link>
-            <Link to="">TV Shows</Link>
+            <MyProfileContainer />
+            <Link to="/movie-index">Movies</Link>
+            <Link to="/show-index">TV Shows</Link>
           </div>
           <div>
-            <SearchBarContainer/>
+            <SearchBarContainer />
           </div>
         </div>
       </div>
