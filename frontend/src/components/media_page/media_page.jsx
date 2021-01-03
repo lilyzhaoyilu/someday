@@ -5,6 +5,10 @@ import CommentForm from '../comments/comment_form/comment_form_container';
 import MediaHistoryList from "./media_history_container";
 import MediaWatchList from "./media_watch_container";
 import Loading from './loading';
+
+import { HiOutlineUser, HiUserGroup } from "react-icons/hi";
+import { FiTag } from "react-icons/fi";
+import { FcPlanner, FcScatterPlot } from "react-icons/fc";
 class MediaPage extends Component {
   constructor(props) {
     super(props);
@@ -84,20 +88,22 @@ class MediaPage extends Component {
             <div className="details">
               <img src={this.state.imgUrl} />
               <div className="info">
-                <span>Author: {this.state.author}</span>
                 <span>
-                  Genres:{" "}
+                  <HiOutlineUser /> Author: {this.state.author}
+                </span>
+                <span>
+                  <FiTag /> Genres:{" "}
                   {this.state.tags.map((tag, idx) => (
                     <span className="tag-arr" key={idx}>
                       {tag}
                     </span>
                   ))}
                 </span>
-                <span>Release Date: {this.state.releaseDate}</span>
+                <span><FcPlanner/> Release Date: {this.state.releaseDate}</span>
               </div>
               <div className="ratings">
-                <span>Rating: {this.state.rating}</span>
-                <span>{ratingCount} people rated</span>
+                <span><FcScatterPlot/> Rating: {this.state.rating}</span>
+                <span><HiUserGroup /> {ratingCount} people rated</span>
               </div>
             </div>
           </div>
@@ -143,7 +149,9 @@ class MediaPage extends Component {
         </div>
         <MediaComment />
       </section>
-    ):<Loading />;
+    ) : (
+      <Loading />
+    );
   }
 }
 

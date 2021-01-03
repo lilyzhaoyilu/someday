@@ -1,8 +1,7 @@
 .wrapper {
     color: #111;
     width: 1040px;
-
-    margin-left: 16px;
+    margin-left: 60px;
     margin-right: 16px;
     padding-left: 16px;
 }
@@ -40,6 +39,8 @@
 .ratings{
     display:flex;
     flex-direction: column;
+    border-left: 1px solid lightgray;
+    padding-left: 15px;
 
 }
 .ratings span{
