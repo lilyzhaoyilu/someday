@@ -29,10 +29,7 @@ class MediaIndex extends React.Component {
 			}
 		});
 	}
-	shouldComponentUpdate() {
-		// return false;
-		return this.state.media.length === this.state.page ? true : false;
-	}
+
 	fetchMoreData = () => {
 		if (this.state.media.length === this.props.media.length) {
 			this.setState({ hasMore: false });
