@@ -6,7 +6,7 @@ export default class WatchlistIndex extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { lists: [] }
+    this.state = { lists: [], hasMore: true }
     this.fetchMoreData = this.fetchMoreData.bind(this);
   }
 
@@ -18,6 +18,10 @@ export default class WatchlistIndex extends Component {
   }
 
   fetchMoreData() {
+    if (this.state.lists.length === this.props.watchlists.length) {
+      this.setState({ hasMore: false });
+      return;
+    }
     this.setState({
       lists: this.state.lists.concat(this.props.watchlists
         .filter(list => list.user === this.props.userId)[this.state.lists.length])
@@ -29,18 +33,22 @@ export default class WatchlistIndex extends Component {
 
     return (
       <div>
+        {console.log(this.state)}
         <h1>Watchlists:</h1>
         <InfiniteScroll
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}
-          hasMore={true}
+          hasMore={this.state.hasMore}
           loader={<h4>Loading...</h4>}
           height={100}
           classname={"historylist-index"}
+          endMessage={
+            <p>The End</p>
+          }
         >
           <ul>
-            {this.state.lists.map((list, i) => { 
-              return (list) ? <WatchlistIndexItem key={list._id} watchlist={list} /> : null; 
+            {this.state.lists.map((list, i) => {
+              return (list) ? <WatchlistIndexItem key={list._id} watchlist={list} /> : null;
             }
             )}
           </ul>

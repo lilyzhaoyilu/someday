@@ -10,8 +10,8 @@ export default class WatchlistIndexItem extends Component {
       <div>
 
         <p>{`watchlist: ${this.props.watchlist.name}`}</p>
-        {moviesArr.map(movie =>
-          <span key={`watch-item-${movie}`}>
+        {moviesArr.map((movie, i) =>
+          <span key={`${this.props.watchlist._id}-${movie}-${i}`}>
             <MovieImage movieId={movie} />
           </span>
           // <p>{movie}</p>

@@ -34,7 +34,7 @@ class MediaIndex extends React.Component {
 		return this.state.media.length === this.state.page ? true : false;
 	}
 	fetchMoreData = () => {
-		if (this.state.media.length >= 99) {
+		if (this.state.media.length === this.props.media.length) {
 			this.setState({ hasMore: false });
 			return;
 		}
