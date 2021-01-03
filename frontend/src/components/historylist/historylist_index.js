@@ -14,13 +14,11 @@ export default class HistorylistIndex extends Component {
     this.props.showMyHistorylists(this.props.userId)
       .then((res) => {
         this.setState({ lists: [this.props.historylists.filter(list => list.user === this.props.userId)[0]] })
-        console.log("componentDidMount", this.state);
 
       })
   }
 
   fetchMoreData() {
-    console.log("fetchMoreData", this.state);
     this.setState({
       lists: this.state.lists.concat(this.props.historylists
         .filter(list => list.user === this.props.userId)[this.state.lists.length])
@@ -41,10 +39,10 @@ export default class HistorylistIndex extends Component {
           classname={"historylist-index"}
         >
           <ul>
-            {this.state.lists.map((list, i) =>
-              <HistorylistIndexItem key={list._id} watched={list} />
-            )
+            {this.state.lists.map((list, i) => {
+              return list ? <HistorylistIndexItem key={list._id} watched={list} /> : null;
             }
+            )}
           </ul>
         </InfiniteScroll>
       </div>
