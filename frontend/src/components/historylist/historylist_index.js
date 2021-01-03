@@ -6,7 +6,7 @@ export default class HistorylistIndex extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { lists: [] }
+    this.state = { lists: [], hasMore: true }
     this.fetchMoreData = this.fetchMoreData.bind(this);
   }
 
@@ -19,6 +19,10 @@ export default class HistorylistIndex extends Component {
   }
 
   fetchMoreData() {
+    if (this.state.lists.length === this.props.historylists.length) {
+      this.setState({ hasMore: false });
+      return;
+    }
     this.setState({
       lists: this.state.lists.concat(this.props.historylists
         .filter(list => list.user === this.props.userId)[this.state.lists.length])
@@ -33,10 +37,15 @@ export default class HistorylistIndex extends Component {
         <InfiniteScroll
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}
-          hasMore={true}
+          hasMore={this.state.hasMore}
           loader={<h4>Loading...</h4>}
           height={100}
           classname={"historylist-index"}
+          endMessage={
+            <p >
+              The End
+            </p>
+          }
         >
           <ul>
             {this.state.lists.map((list, i) => {

@@ -22,7 +22,7 @@ export default class HistorylistIndexItem extends Component {
       <li>
         <p>{`historylist: ${watched.name}`}</p>
         <ul>
-          {watched.movie.map(movieId => <span key={`${watched._id}-${movieId}`}><MovieImage movieId={movieId} /></span>)}
+          {watched.movie.map((movieId, i) => <span key={`${watched._id}-${movieId}-${i}`}><MovieImage movieId={movieId} /></span>)}
           {/* <MovieIndexItem 
           key={watched.apiId} 
           watched={watched}
