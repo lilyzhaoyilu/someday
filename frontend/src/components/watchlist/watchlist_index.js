@@ -48,7 +48,7 @@ export default class WatchlistIndex extends Component {
         >
           <ul>
             {this.state.lists.map((list, i) => {
-              return (list) ? <WatchlistIndexItem key={list._id} watchlist={list} /> : null;
+              return (list) ? <WatchlistIndexItem key={list._id} watchlist={list} updateWatchlist={this.props.updateWatchlist} /> : null;
             }
             )}
           </ul>

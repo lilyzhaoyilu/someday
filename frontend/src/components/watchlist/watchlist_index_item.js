@@ -11,7 +11,9 @@ class WatchlistIndexItem extends Component {
 
 
   handleRemoveMovieFromTheList(movieId){
-    
+   let newWatchList = this.props.watchlist;
+   delete newWatchList[movieId];
+   this.props.updateWatchlist(Object.values(newWatchList));
   }
 
 
@@ -26,7 +28,7 @@ class WatchlistIndexItem extends Component {
         {moviesArr.map((movie, i) =>
           <span key={`${this.props.watchlist._id}-${movie}-${i}`}>
             <MovieImage movieId={movie} />
-            {/* <button> remove movie from the list</button> */}
+            <button onClick={this.handleRemoveMovieFromTheList(movie)}> remove movie from the list</button>
           </span>
           // <p>{movie}</p>
           // <MovieIndexItem 
