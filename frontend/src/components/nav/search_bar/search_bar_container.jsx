@@ -3,7 +3,8 @@ import SearchBar from "./search_bar";
 import { searchShows } from "../../../actions/movie_actions";
 
 const mSTP = (state, ownProps) => ({
-	shows: Object.values(state.entities.movies),
+	//* putting all results in movies
+	movies: Object.values(state.entities.movies),
 });
 
 const mDTP = (dispatch) => ({

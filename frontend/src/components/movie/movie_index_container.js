@@ -3,7 +3,8 @@ import { fetchAllShows } from '../../actions/movie_actions';
 import MovieIndex from './movie_index';
 
 const mstp = state => ({
-  movies: Object.values(state.entities.movies)
+  movies: Object.values(state.entities.movies),
+  loggedIn: state.session.isAuthenticated
 })
 const mdtp = dispatch => ({
   // fetchAllShows: dispatch(fetchAllShows)

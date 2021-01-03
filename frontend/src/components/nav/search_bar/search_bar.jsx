@@ -23,19 +23,19 @@ class SearchBar extends Component {
 
 	render() {
 		return (
-      <form className="search-bar" onSubmit={this.handleSubmit}>
-        <div className="input-container">
-          <img src={search}></img>
-          <input
-            type="text"
-            value={this.state.input}
-            placeholder="Search your favorite shows"
-            onChange={this.update()}
-          />
-			<button>search</button>
-        </div>
-      </form>
-    );
+			<form className="search-bar" onSubmit={this.handleSubmit}>
+				<div className="input-container">
+					<img src={search}></img>
+					<input
+						type="text"
+						value={this.state.input}
+						placeholder="Search your favorite shows"
+						onChange={this.update()}
+					/>
+					<button>search</button>
+				</div>
+			</form>
+		);
 	}
 }
 
