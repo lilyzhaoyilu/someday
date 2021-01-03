@@ -1,13 +1,17 @@
 import React, { Component } from "react";
-
+import Modal from "react-modal";
 export default class WatchlistIndex extends Component {
   constructor(props) {
     super(props);
     this.state = {
       checked: [],
+      errorList: [],
+      successList: [],
+      isDisplay: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleModal4 = this.toggleModal4.bind(this);
   }
   componentDidMount() {
     this.props.getMyWatchlists(this.props.userId);
@@ -29,17 +33,49 @@ export default class WatchlistIndex extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const errorList = [];
+    const successList = [];
     this.state.checked.forEach((listId) => {
       const list = this.props.watchlists.find((list) => list._id === listId);
-      list.movie.push(this.props.movieId);
-      console.log(list);
-      this.props.updateWatchlist(list);
+      if (list.movie.includes(this.props.movieId)) {
+        errorList.push(list.name);
+      } else {
+        list.movie.push(this.props.movieId);
+        this.props.updateWatchlist(list);
+        successList.push(list.name);
+      }
+    });
+    if (errorList.length !== 0) {
+      this.setState({
+        isDisplay: !this.state.isDisplay,
+        errorList: errorList,
+      });
+    } else {
+      this.setState({
+        isDisplay: !this.state.isDisplay,
+        successList: successList,
+      });
+    }
+  }
+  toggleModal4(e) {
+    this.setState({
+      isDisplay: !this.state.isDisplay,
     });
   }
-
   render() {
     const { watchlists } = this.props;
-    const { checked } = this.state;
+    const { checked, errorList, successList } = this.state;
+    const msg =
+      errorList.lenght === 0 ? (
+        <span>{`Movie succefully added to ${successList}`}</span>
+      ) : successList.length !== 0 ? (
+        <div>
+          <span>{`Movie succefully added to ${successList}`}</span>
+          <span>{`Movie already exist in ${errorList}`}</span>
+        </div>
+      ) : (
+        <span>{`Movie already exist in ${errorList}`}</span>
+      );
     // console.log(`CHECKED: ${checked}`);
     return watchlists ? (
       <div>
@@ -55,7 +91,7 @@ export default class WatchlistIndex extends Component {
                     value={watchlist}
                     onChange={this.handleChange}
                     id={watchlist._id}
-                    checked={this.state.checked.indexOf(watchlist._id) !== -1}
+                    checked={checked.indexOf(watchlist._id) !== -1}
                   />
                   {watchlist.name}
                 </li>
@@ -63,6 +99,18 @@ export default class WatchlistIndex extends Component {
           </ul>
           <button>add to lists</button>
         </form>
+        <Modal
+          isOpen={this.state.isDisplay}
+          onRequestClose={this.toggleModal3}
+          contentLabel="Submit Info"
+          className="list-modal"
+          overlayClassName="list-overlay "
+          closeTimeoutMS={500}
+          ariaHideApp={false}
+        >
+          {msg}
+          <button onClick={this.toggleModal4}>Close</button>
+        </Modal>
       </div>
     ) : null;
   }
