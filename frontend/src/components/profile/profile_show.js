@@ -17,12 +17,8 @@ class ProfileShow extends Component {
     }
     return user ? (
       <div>
-        <ProfileNavbar />
+        {/* <ProfileNavbar /> */}
         <div className="profile-show-wrapper">
-          <div className='profile-info'>
-      
-         
-          </div>
           <ProfileLists user={user}/>
           <div className="user-info">
             <h1>{`${user.handle}'s Info`}</h1>

@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import Logo from '../../util/somedaylogo.svg';
-import DemoButtonContainer from './demo_button/demo_button_container';
+// import DemoButtonContainer from './demo_button/demo_button_container';
 
 
 class LoginForm extends React.Component {
@@ -16,6 +16,7 @@ class LoginForm extends React.Component {
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.renderErrors = this.renderErrors.bind(this);
+		this.handleDemoLogin = this.handleDemoLogin.bind(this);
 	}
 
 	// Handle field updates (called in the render method)
@@ -35,6 +36,11 @@ class LoginForm extends React.Component {
 			password: this.state.password,
 		};
 		this.props.login(user).then(() =>this.props.history.push("/"));
+	}
+
+	handleDemoLogin(e){
+		e.preventDefault();
+		this.props.demoLogin();
 	}
 	//remove session errors before unmount
 	componentWillUnmount() {
@@ -84,7 +90,8 @@ class LoginForm extends React.Component {
           <input type="submit" value="Submit" />
 
           {/* <button className="sinup-form-demo">Login as demo user</button> */}
-          <DemoButtonContainer />
+          {/* <DemoButtonContainer /> */}
+					<button className="sinup-form-demo" onClick={this.handleDemoLogin}>Demo Login</button>
         </form>
         {this.renderErrors()}
       </div>

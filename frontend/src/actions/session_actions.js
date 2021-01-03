@@ -52,6 +52,27 @@ export const login = user => dispatch => (
     .catch(err => dispatch(receiveErrors(err.response.data)))
 )
 
+export const demoLogin = () => dispatch => {
+  const demoUser = {
+		email: "boss@boss.com",
+		password: "adminboss",
+  }
+  
+
+  return (
+  APIUTIL.login(demoUser)
+    .then(
+      res => {
+        const { token } = res.data;
+        localStorage.setItem('jwtToken', token);
+        APIUTIL.setAuthToken(token);
+        const decoded = jwt_decode(token);
+        dispatch(receiveCurrentUser(decoded))
+      }
+    )
+    .catch(err => dispatch(receiveErrors(err.response.data)))
+)}
+
 export const logout = () => dispatch => {
   localStorage.removeItem('jwtToken');
   APIUTIL.setAuthToken(false)

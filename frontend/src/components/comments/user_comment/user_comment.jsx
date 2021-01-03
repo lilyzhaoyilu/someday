@@ -41,8 +41,6 @@ class UserComment extends Component {
 
   render() {
     
-  
-
     const commentsObjects = Object.values(this.props.comments);
 
     let commentMoviesSet = new Set();
@@ -52,8 +50,8 @@ class UserComment extends Component {
 
 
     return (
-      <div className='comment-user'>
-      {this.displayUsername()} ···({this.displayCommentNumber()})
+      <div className='user-comment'>
+      <h3>{this.displayUsername()} ···({this.displayCommentNumber()})</h3>
 
       {commentsObjects.map(comment => (<CommentDetailForUser key={comment._id} comment={comment}/>))}
 
