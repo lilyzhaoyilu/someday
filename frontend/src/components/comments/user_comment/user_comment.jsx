@@ -52,19 +52,19 @@ class UserComment extends Component {
 
 	displayUsername() {
 		if (this.props.currentPageUserId === this.props.currentUserId) {
-			return <span className="comment-user-title">My comments</span>;
+			return <span>My comments</span>;
 		} else {
 			const userName = this.props.users[this.props.currentPageUserId].email;
-			return <span className="comment-user-title">{userName}'s comments</span>;
+			return <span>{userName}'s comments</span>;
 		}
 	}
 
 	displayCommentNumber() {
 		const commnetNumber = Object.values(this.props.comments).length;
 		if (commnetNumber === 1) {
-			return <span className="comment-user-title">1 comment</span>;
+			return <span>1 comment</span>;
 		} else if (commnetNumber === 1) {
-			return <span className="comment-user-title">0 comment</span>;
+			return <span>0 comment</span>;
 		} else {
 			return <span>{`${commnetNumber} comments`}</span>;
 		}
@@ -82,7 +82,7 @@ class UserComment extends Component {
 
 		return (
 			<div className="comment-user">
-				{this.displayUsername()} ···({this.displayCommentNumber()})
+				<h3 className="comment-user-title">{this.displayUsername()} ···({this.displayCommentNumber()})</h3>
 				<InfiniteScroll
 					dataLength={this.state.comments.length}
 					next={this.fetchMoreData}
