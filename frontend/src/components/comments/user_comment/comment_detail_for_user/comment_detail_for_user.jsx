@@ -12,7 +12,7 @@ class CommentDetailForUser extends Component {
   }
 
   displayMovieImage() {
-    if(this.props.movies[this.props.comment.movie]){
+    if(this.props.movies[this.props.comment.movie] && this.props.movies[this.props.comment.movie].image ){
       return <Link to={`/mediapage/${this.props.comment.movie}`}><img src={this.props.movies[this.props.comment.movie].image.url} ></img></Link> 
     }
   }
@@ -25,7 +25,7 @@ class CommentDetailForUser extends Component {
 
   displayCreatedAt = (time) => {
     let display = moment(time);
-    return display.format("MMM D YYYY");
+    return <span className="comment-user-time">{display.format("MMM D YYYY")}</span>
   }
 
   displayUsername = () => {
@@ -34,7 +34,7 @@ class CommentDetailForUser extends Component {
     if(this.props.users && this.props.users[userId]){
       const displayedName = this.props.users[userId].handle ? this.props.users[userId].handle : this.props.users[userId].email;
       // const displayedName = this.props.users[userId].email;
-      return (<Link to={`/profile/${userId}`}>{`${displayedName} commented on `}</Link>)
+      return (<Link className="comment-user-username" to={`/profile/${userId}`}>{`${displayedName}`}</Link>)
     }
   }
 
@@ -49,15 +49,19 @@ class CommentDetailForUser extends Component {
       <li className='comment-user-container'>
         {this.displayMovieImage()}
         <div className="comment-detail-user-right">
+          
           <div>
-          {this.displayCreatedAt(comment.date)}
+          {this.displayMovieTitle()}
           </div>
 
-          <div className="comment-detail-user-subtitle">
-          {this.displayUsername()}{this.displayMovieTitle()}
+          <div className="comment-detail-second">
+          {this.displayUsername()}{this.displayCreatedAt(comment.date)}
           </div>
-          
-        {comment.text}
+
+          <div className="comment-detail-text">
+            {comment.text}
+          </div>
+        
         </div>       
       </li>
      
