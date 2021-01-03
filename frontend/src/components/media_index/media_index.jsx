@@ -34,7 +34,7 @@ class MediaIndex extends React.Component {
 		return this.state.media.length === this.state.page ? true : false;
 	}
 	fetchMoreData = () => {
-		if (this.state.media.length >= 99) {
+		if (this.state.media.length === this.props.media.length) {
 			this.setState({ hasMore: false });
 			return;
 		}
@@ -59,6 +59,7 @@ class MediaIndex extends React.Component {
 					hasMore={this.state.hasMore}
 					loader={<h4>Loading...</h4>}
 					height={700}
+					className="media-index"
 					endMessage={
 						<p style={{ textAlign: "center" }}>
 							<b>That's all folks!</b>
@@ -69,7 +70,7 @@ class MediaIndex extends React.Component {
 						console.log("rendering");
 						if (media.hasOwnProperty("image")) {
 							return (
-								<div key={media.key}>
+								<li key={media.key}>
 									<Link to={`/mediaPage/${media.id}`}>
 										<img
 											src={media.image.url}
@@ -78,7 +79,7 @@ class MediaIndex extends React.Component {
 										/>
 										<h3>{media.title}</h3>
 									</Link>
-								</div>
+								</li>
 							);
 						}
 					})}

@@ -65,8 +65,8 @@ class NavBar extends React.PureComponent {
 
 				<MyProfileContainer/>
 				
-				<Link to="">Shows</Link>
-
+				<Link to="/show-index">Shows</Link>
+				<Link to="/movie-index">Movies</Link>
 				<SearchBarContainer />
 
 				<div>current: {this.props.currentUser}</div>

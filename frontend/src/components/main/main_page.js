@@ -17,31 +17,33 @@ import ShowInfinite from '../media_index/show_index_container'
 import MoviePageContainer from '../media_page/media_page_cotainer';
 export default () => {
   return (
-    
-      <Route>
-        <Route path='/' component={NavBarContainer} />
-        <Switch>
-          <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
-          <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
-        </Switch>
-        {/* <Route exact path='/profile/:userId' component={ProfileShowContainer}/> */}
-        <Route exact path= '/mediaPage/:movieId' component={MoviePageContainer} />
+
+    <Route>
+      <Route path='/' component={NavBarContainer} />
+      <Switch>
+        <ProtectedRoute path='/' exact path='/search-result' component={MovieIndexContainer} />
+        <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
+      </Switch>
+      {/* <Route exact path='/profile/:userId' component={ProfileShowContainer}/> */}
+      <Route exact path='/mediaPage/:movieId' component={MoviePageContainer} />
+      <ProtectedRoute path='/show-index' component={ShowInfinite} />
+      <ProtectedRoute path='/movie-index' component={MovieInfinite} />
 
 
-       
 
-        These below are for development purpose<br></br>
-        <Link to='/mediapage/tt0944947'>click here to see the sample game of throne</Link><br></br>
-        <Link to='/mediapage/tt2674426'>click here to see the sample me before you</Link>
 
-     
+        These below are for development purpose<br />
+      <Link to='/mediapage/tt0944947'>click here to see the sample game of throne</Link><br></br>
+      <Link to='/mediapage/tt2674426'>click here to see the sample me before you</Link>
 
-        <MovieInfinite />
-      </Route>
-   
+
+
+
+    </Route>
+
   )
 }
 
 
 
-{/* ///  <CommentForm />  and <UserComment /> should be in movie index, temprorarly here for developing purpose */}
+{/* ///  <CommentForm />  and <UserComment /> should be in movie index, temprorarly here for developing purpose */ }
