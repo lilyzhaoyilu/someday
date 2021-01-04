@@ -89,7 +89,7 @@ class UserComment extends Component {
 
 		return (
 			<div className="comment-user">
-				{this.displayUsername()} ···({this.displayCommentNumber()})
+				<h3 className="comment-user-title">{this.displayUsername()} ···({this.displayCommentNumber()})</h3>
 				<InfiniteScroll
 					dataLength={this.state.comments.length}
 					next={this.fetchMoreData}
