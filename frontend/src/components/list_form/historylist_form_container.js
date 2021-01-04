@@ -5,7 +5,7 @@ import { postHistorylist } from '../../actions/historylist_actions'
 const mstp = (state, ownProps) => {
 
   return {
-    formType: "Historylist",
+    formType: "Watched List",
     list: {
       name: "",
       user: state.session.user.id,

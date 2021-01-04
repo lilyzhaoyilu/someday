@@ -5,7 +5,7 @@ import { postWatchlist } from '../../actions/watchlist_actions'
 const mstp = (state, ownProps) => {
 
   return {
-    formType: "Watchlist",
+    formType: "Watch List",
     list: {
       name: "",
       user: state.session.user.id,
