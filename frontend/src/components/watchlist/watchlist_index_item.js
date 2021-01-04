@@ -17,30 +17,21 @@ class WatchlistIndexItem extends Component {
   }
 
 
-
-
-
-
-
-
   render() {
 
     const { watchlist } = this.state
     console.log("wii", watchlist)
     return watchlist ? (
-      < li >
-        {console.log("wii")}
-        <h5>{`···${watchlist.name}···`}</h5>
-        <ul className="list-movie-ul">
-          {watchlist.movie.map(movie => {
+      <li className="list-container">
+        <p>{watchlist.name}</p>
+        <span className="list-display">
+          {watchlist.movie.map((movie) => {
             return (
               <WatchlistItemDetail movieId={movie} listId={watchlist._id} />
-            )
+            );
           })}
-
-        </ul>
-
-      </li >
+        </span>
+      </li>
     ) : null;
   }
 }
