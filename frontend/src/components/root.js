@@ -13,6 +13,7 @@ import "../stylesheets/profile.css";
 import "../stylesheets/profile-page.css";
 import "../stylesheets/comment.css";
 import "../stylesheets/loading.css";
+import "../stylesheets/movie_img.css";
 
 const Root = ({ store }) => {
   return (

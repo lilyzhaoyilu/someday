@@ -51,10 +51,11 @@
 	display: inline-block;
 }
 
-.tooltip .tooltiptext {
+.tooltiptext {
 	visibility: hidden;
-	width: 120px;
-	background-color: #007a5a;
+	width: 90px;
+	text-align: center;
+	background-color: transparent;
 	color: #edf4ed;
 	font-family: "IBM Plex Serif", serif;
 	font-weight: 400;
@@ -68,7 +69,11 @@
 	z-index: 1;
 	top: 40%;
 	left: 50%;
-	margin-left: -60px;
+	margin-left: -45px;
+}
+
+.tooltip div {
+	background-color: #252b1f;
 }
 
 .tooltip:hover .tooltiptext {
