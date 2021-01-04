@@ -78,6 +78,7 @@
   color:gray;
   margin-left: 5em;
   opacity: 0.9;
+  cursor: default;
 }
 
 
@@ -149,4 +150,33 @@
 }
 .comment-form form{
   width: 99%;
+}
+
+.movie-title {
+  font-weight: 700;
+
+}
+
+.movie-title {
+  display: inline-block;
+  /*   border-radius: 5px; */
+  text-decoration: none;
+  color: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  /* Set up the hover */
+  /* If you aren't using autoprefix, remember to prefix the gradient for other browsers */
+  background-image: linear-gradient(#007A5A, #007A5A),
+  linear-gradient(rgb(235, 228, 228), white);
+  background-size: 0 1px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+}
+
+.movie-title:hover {
+  /* The following line makes the underline only as wide as the text */
+  /* background-size: calc(100% - 2em) 5px, auto; */
+  background-size: 100% 3px, auto;
 }
