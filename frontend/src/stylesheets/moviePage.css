@@ -56,7 +56,7 @@
 .media-button {
   display: flex;
   flex-direction: row;
-
+  font-weight: bold;
   width: 300px;
 }
 
@@ -94,15 +94,16 @@
   margin-bottom: 10px;
   position: relative;
 
-  width: 300px;
+  width: 250px;
   height: 50px;
+  font-size: 15px;
   background: #f3f0f1;
   border-radius: 32px;
   text-align: center;
   transition: all 0.1s ease-in-out;
   box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
     6px 6px 10px rgba(0, 0, 0, 0.2);
-  color: #007A5A;
+  color: #007a5a;
 }
 
 .list-add-button:active {
@@ -115,4 +116,66 @@
   opacity: 0.3;
   box-shadow: -6px -6px 10px rgba(233, 233, 233, 0.8),
     6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul.list-tags {
+  list-style: none;
+  padding: 20px;
+  max-height: 250px;
+  overflow-y: scroll;
+}
+ul.list-tags li {
+  display: inline;
+}
+ul.list-tags li label {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(139, 139, 139, 0.3);
+  color: #adadad;
+  border-radius: 25px;
+  white-space: nowrap;
+  margin: 3px 0px;
+  user-select: none;
+  transition: all 0.2s;
+}
+
+ul.list-tags li label {
+  padding: 8px 12px;
+}
+
+ul.list-tags li label::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 2px 6px 2px 2px;
+  content: "\002B";
+
+  transition: transform 0.3s ease-in-out;
+}
+
+ul.list-tags li input[type="checkbox"]:checked + label::before {
+  content: "\2713";
+  transform: rotate(-360deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+ul.list-tags li input[type="checkbox"]:checked + label {
+  border: 2px solid #007a5a;
+  background-color: #007a5a;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+ul.list-tags li input[type="checkbox"] {
+  display: absolute;
+}
+ul.list-tags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+ul.list-tags li input[type="checkbox"]:focus + label {
+  border: 2px solid #e9a1ff;
 }
