@@ -6,6 +6,7 @@ class WatchlistIndexItem extends Component {
   constructor(props) {
     super(props);
     this.state = {}
+    this.onUpdateList = this.onUpdateList.bind(this)
   }
   componentDidMount() {
     this.props.getThisWatchList(this.props.listId)
@@ -16,7 +17,11 @@ class WatchlistIndexItem extends Component {
       )
   }
 
+  onUpdateList() {
+    console.log(this.props.watchlists[this.props.watchlist._id])
+    this.setState({ watchlist: this.props.watchlists[this.props.watchlist._id] })
 
+  }
 
 
 
@@ -26,15 +31,18 @@ class WatchlistIndexItem extends Component {
   render() {
 
     const { watchlist } = this.state
-    console.log("wii", watchlist)
     return watchlist ? (
       < li >
-        {console.log("wii")}
         <h5>{`···${watchlist.name}···`}</h5>
         <ul className="list-movie-ul">
           {watchlist.movie.map(movie => {
             return (
-              <WatchlistItemDetail movieId={movie} listId={watchlist._id} />
+              <WatchlistItemDetail
+                movieId={movie}
+                listId={watchlist._id}
+                watchlist={watchlist}
+                onUpdateList={this.onUpdateList}
+              />
             )
           })}
 

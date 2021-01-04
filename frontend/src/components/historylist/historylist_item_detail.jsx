@@ -34,12 +34,11 @@ class WatchlistItemDetail extends Component {
 				(movieId) => movieId !== this.props.movieId
 			),
 		};
-		console.log(newList);
-		this.props.updateHistorylist(newList);
+		this.props
+			.updateHistorylist(newList)
+			.then(() => this.props.onUpdateList());
 	}
-
 	render() {
-		console.log("hid");
 		const { movieId } = this.props;
 		return (
 			<div className="historylist-item-detail">

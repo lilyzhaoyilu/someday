@@ -4,26 +4,36 @@ import MovieImage from '../movie_image/img_container';
 import HistoryItemDetail from './historylist_item_detail_container'
 
 export default class HistorylistIndexItem extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { historylist: this.props.historylists[Math.floor(Math.random() * this.props.historylists.length)] }
-
-  // }
+  constructor(props) {
+    super(props);
+    this.state = { historylist: this.props.historylist }
+    this.onUpdateList = this.onUpdateList.bind(this);
+  }
   // componentDidMount() {
   //   this.state.historylist.forEach(
   //     setTimeout(id => this.props.fetchMovieData(), 500)
   //   )
   // }
 
+  onUpdateList() {
+    this.setState({ historylist: this.props.historylists[this.props.historylist._id] })
+  }
   render() {
-    const { historylist } = this.props
-    return historylist ? (
+    const { historylist } = this.state
 
+
+    return historylist ? (
       <li>
         <p >{`historylist: ${historylist.name}`}</p>
         <ul className="list-movie-ul">
           {historylist.movie.map((movie, i) => {
-            return (<HistoryItemDetail movieId={movie} listId={historylist._id} key={`${historylist._id}-${movie}-${i}`} />)
+            return (
+              <HistoryItemDetail
+                movieId={movie}
+                listId={historylist._id}
+                key={`${historylist._id}-${movie}-${i}`}
+                onUpdateList={this.onUpdateList}
+              />)
           }
           )}
 

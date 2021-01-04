@@ -91,6 +91,7 @@ router.patch(
   (req, res) => {
     // debugger;
     // console.log("watchlist api req", req);
+    
     TodoList.updateOne({ _id: req.params.id }, { $pullAll: {movie: [req.body.movieId] }})
       .then(() => {
         res.status(200).json({
