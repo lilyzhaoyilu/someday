@@ -39,7 +39,7 @@ class ProfileShow extends Component {
             </div>
             <div className="about-me">
               <label>About me:
-                <p></p>
+                <strong>This user does not have a description.</strong>
               </label>
             </div>
             {/* favorite movie added from history list */}
