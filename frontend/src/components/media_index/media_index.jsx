@@ -58,6 +58,7 @@ class MediaIndex extends React.Component {
 					loader={<h4>Loading...</h4>}
 					height={700}
 					className="media-index"
+					scrollThreshold={0.4}
 					endMessage={
 						<p style={{ textAlign: "center" }}>
 							<b>That's all folks!</b>
