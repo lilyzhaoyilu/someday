@@ -19,7 +19,7 @@ export default class HistorylistIndexItem extends Component {
     return watched ? (
 
       <li>
-        <p>{`historylist: ${watched.name}`}</p>
+        <p >{`historylist: ${watched.name}`}</p>
         <ul>
           {watched.movie.map((movieId, i) => <span key={`${watched._id}-${movieId}-${i}`}><MovieImage movieId={movieId} idx={i} /></span>)}
           {/* <MovieIndexItem 
@@ -33,3 +33,4 @@ export default class HistorylistIndexItem extends Component {
     ) : null;
   }
 }
+
