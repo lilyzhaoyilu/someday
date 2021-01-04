@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 
-class MovieImage extends Component {
+class WatchlistItemDetail extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -9,6 +11,7 @@ class MovieImage extends Component {
       imgUrl: ""
     };
   }
+
   componentDidMount() {
     setTimeout(() => {
       this.props.fetchMovieData(this.props.movieId).then((result) => {
@@ -27,14 +30,22 @@ class MovieImage extends Component {
   render() {
     const { movieId } = this.props;
     return (
+      <div className="watchlist-item-detail">
       <div>
-        <h3>{this.state.title}</h3>
-        <Link to={`/mediaPage/${movieId}`}>
-          <img src={this.state.imgUrl} height='100' width='auto' />
-        </Link>
+      <Link to={`/mediaPage/${movieId}`}>
+        <img src={this.state.imgUrl} height='100' width='auto' />
+      </Link>
       </div>
-    );
+      <div>
+        {this.state.title}
+      <button>remove</button>
+
+      
+      </div>
+    </div>
+    )
   }
 }
 
-export default MovieImage;
+export default WatchlistItemDetail;
+

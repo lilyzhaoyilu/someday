@@ -33,7 +33,7 @@ export default class WatchlistIndex extends Component {
   render() {
     return (this.state.lists) ? (
       <div>
-        <h1>Watchlists:</h1>
+        <h3>Watchlists:</h3>
         <InfiniteScroll
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}

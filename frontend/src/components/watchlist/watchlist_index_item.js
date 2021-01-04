@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import MovieIndexItem from '../movie/movie_index_item';
-import MovieImage from '../movie_image/img_container';
-
+// import MovieImage from '../movie_image/img_container';
+import WatchlistItemDetail from './watchlist_item_detail_container'
 class WatchlistIndexItem extends Component {
   constructor(props) {
     super(props);
@@ -30,9 +30,12 @@ class WatchlistIndexItem extends Component {
       <li>
         <p>{`watchlist: ${watchlist.name}`}</p>
         <ul>
-          {
+
+          {watchlist.movie.map(movie => (<WatchlistItemDetail movieId={movie} />))}
+          
+          {/* {
             watchlist.movie.map((movieId, i) => <span key={`${watchlist._id}-${movieId}-${i}`}><MovieImage movieId={movieId} idx={i} /></span>)
-          }
+          } */}
           {/* <MovieIndexItem 
           key={watched.apiId} 
           watched={watched}

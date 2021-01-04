@@ -1,0 +1,4 @@
+.watchlist-item-detail{
+  display: flex;
+  flex-direction: row;
+}
