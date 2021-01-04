@@ -73,12 +73,12 @@
 }
 
 .tooltip div {
-	background-color: #252b1f;
+	background-color: #0e1821;
 }
 
 .tooltip:hover .tooltiptext {
 	visibility: visible;
 }
 .tooltip:hover img {
-	opacity: 0.7;
+	opacity: 0.3;
 }

@@ -11,7 +11,9 @@ export default class PopularShowsIndexItem extends Component {
     return (show.image) ? (
       <Link to={`/mediaPage/${show.id}`} className="tooltip">
         <span class="tooltiptext">{show.title}</span>
-        <img src={show.image.url} style={{ width: '200px', height: 'auto' }} />
+        <div>
+          <img src={show.image.url} style={{ width: '200px', height: 'auto' }} />
+        </div>
       </Link>
     ) : null;
 
