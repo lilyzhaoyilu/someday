@@ -85,8 +85,6 @@ class UserComment extends Component {
 		// const commentMovies = [...commentMoviesSet];
 		// commentMovies.forEach((movieId) => this.props.fetchMovieData(movieId));
 
-		console.log(this.state);
-
 		return (
 			<div className="comment-user">
 				<h2>{this.displayUsername()} <span className="user-cmnt-header">···({this.displayCommentNumber()})</span></h2>
@@ -94,9 +92,8 @@ class UserComment extends Component {
 					dataLength={this.state.comments.length}
 					next={this.fetchMoreData}
 					hasMore={this.state.hasMore}
-					loader={<h4>Loading...</h4>}
+					loader={<h4 style={{ height: "600px" }}>Loading...</h4>}
 					height={700}
-					classname={"profile-comments-index"}
 					scrollThreshold={0.6}
 					endMessage={
 						<p style={{ textAlign: "center", color: "gray" }}>
@@ -104,9 +101,11 @@ class UserComment extends Component {
 						</p>
 					}
 				>
-					{this.state.comments.map((comment) => (
-						<CommentDetailForUser key={comment._id} comment={comment} />
-					))}
+					<ul>
+						{this.state.comments.map((comment) => (
+							<CommentDetailForUser key={comment._id} comment={comment} />
+						))}
+					</ul>
 				</InfiniteScroll>
 			</div>
 		);

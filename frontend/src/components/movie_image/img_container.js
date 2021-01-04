@@ -7,7 +7,10 @@ const mstp = (state, ownProps) => ({
 })
 
 const mdtp = dispatch => ({
-  fetchMovieData: movieId => dispatch(fetchMovieData(movieId))
+  updateWatchlist: (watchlistObj) => dispatch(updateWatchlist(watchlistObj)),
+  fetchMovieData: movieId => dispatch(fetchMovieData(movieId)),
+  deleteWatchlistItem: (listId, movieId) => dispatch(deleteWatchlistItem(listId, movieId)),
+  getThisWatchList: (listId) => dispatch(getThisWatchList(listId)),
 })
 
 export default connect(mstp, mdtp)(MovieImage)

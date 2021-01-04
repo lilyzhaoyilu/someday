@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { fetchMovieData } from '../../actions/movie_actions';
-import {updateWatchlist,deleteWatchlistItem,getThisWatchList } from '../../actions/watchlist_actions';
+import { updateWatchlist, deleteWatchlistItem, getThisWatchList } from '../../actions/watchlist_actions';
 import WatchlistItemDetail from './watchlist_item_detail';
 
 const mstp = (state, ownProps) => ({
-  movieId: ownProps.movieId
+  listId: ownProps.listId
 });
 
 const mdtp = dispatch => ({

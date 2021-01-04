@@ -8,7 +8,9 @@ class MovieImage extends Component {
       title: "",
       imgUrl: ""
     };
+
   }
+
   componentDidMount() {
     setTimeout(() => {
       this.props.fetchMovieData(this.props.movieId).then((result) => {
