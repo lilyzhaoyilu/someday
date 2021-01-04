@@ -19,7 +19,7 @@ class CommentDetailForUser extends Component {
 
   displayMovieTitle() {
     if(this.props.movies[this.props.comment.movie]){
-      return  <Link to={`/mediapage/${this.props.comment.movie}`}>{this.props.movies[this.props.comment.movie].title}</Link>
+      return  <Link className="movie-title" to={`/mediapage/${this.props.comment.movie}`}>{this.props.movies[this.props.comment.movie].title}</Link>
     }
   }
 
