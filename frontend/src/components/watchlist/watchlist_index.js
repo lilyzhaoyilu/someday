@@ -39,7 +39,7 @@ export default class WatchlistIndex extends Component {
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}
           hasMore={this.state.hasMore}
-          loader={<h4>Loading...</h4>}
+          loader={<h4 style={{ height: "300px" }}>Loading...</h4>}
           height={400}
           classname={"historylist-index"}
           endMessage={
