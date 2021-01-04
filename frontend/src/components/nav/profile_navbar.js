@@ -1,7 +1,7 @@
 import Logo from '../../util/somedaylogo.svg';
 import SearchBarContainer from './search_bar/search_bar_container';
 import { Link } from 'react-router-dom';
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class ProfileNavbar extends Component {
   render() {
@@ -12,9 +12,10 @@ export default class ProfileNavbar extends Component {
             <Link className="navbar-logo" to="/splash">
               <img src={Logo} />
             </Link>
-            <MyProfileContainer />
-            <Link to="/movie-index">Movies</Link>
-            <Link to="/show-index">TV Shows</Link>
+            <div className="nav-links">
+              <Link to="/movie-index">Movies</Link>
+              <Link to="/show-index">TV Shows</Link>
+            </div>
           </div>
           <div>
             <SearchBarContainer />

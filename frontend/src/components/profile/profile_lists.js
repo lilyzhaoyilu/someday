@@ -6,7 +6,7 @@ import UserComment from '../comments/user_comment/user_comment_container';
 export default class ProfileLists extends Component {
   constructor(props) {
     super(props);
-    this.state = { profile: true, watchlist: true, historylist: false };
+    this.state = { profile: true, watchlist: true, historylist: true };
   }
 
   handleWatchClick() {
@@ -32,7 +32,7 @@ export default class ProfileLists extends Component {
       historylist: true
     })
   }
-
+  
   render() {
     const { user } = this.props;
     const { profile, watchlist, historylist } = this.state;

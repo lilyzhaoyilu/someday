@@ -13,8 +13,10 @@ import "../stylesheets/profile.css";
 import "../stylesheets/profile-page.css";
 import "../stylesheets/comment.css";
 import "../stylesheets/loading.css";
+import "../stylesheets/scrollbar.css";
+import '../stylesheets/lists.css';
 import "../stylesheets/movie_img.css";
-import "../stylesheets/mediaitem.css"
+import "../stylesheets/mediaitem.css";
 
 const Root = ({ store }) => {
   return (
