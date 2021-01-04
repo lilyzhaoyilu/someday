@@ -19,6 +19,25 @@
 	height: 20px;
 }
 
+.splash-features-title h4{
+	font-size: 45px;
+	font-weight: bold;
+	margin: 20px 20px 20px;
+}
+
+.splash-features-title li{
+	list-style: none;
+	margin: 20px;
+}
+
+.splash-features-about{
+	font-size: 45px;
+	font-weight: bold;
+	margin: 20px;
+	text-align: center;
+}
+
+
 .splash-features {
 	height: 45vh;
 	background-color: #edf4ed;
