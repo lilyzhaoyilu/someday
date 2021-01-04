@@ -20,11 +20,12 @@ class WatchlistIndexItem extends Component {
   onUpdateList() {
     console.log(this.props.watchlists[this.props.watchlist._id])
     this.setState({ watchlist: this.props.watchlists[this.props.watchlist._id] })
+    console.log("post", this.state)
   }
 
 
   render() {
-    const { watchlist } = this.props
+    const { watchlist } = this.state
     return watchlist ? (
       <li className='list-container'>
         <p>{watchlist.name}</p>
