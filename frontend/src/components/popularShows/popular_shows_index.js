@@ -16,9 +16,7 @@ export default class PopularShowsIndex extends Component {
 
   componentDidMount() {
     this.props.fetchPopularTv().then(
-      (res) => {
-        this.setState({ shows: this.props.shows.slice(0, 2) })
-      }
+      this.setState({ shows: this.props.shows.slice(0, 2) })
     )
   }
 
@@ -28,7 +26,7 @@ export default class PopularShowsIndex extends Component {
       return;
     }
     this.setState({
-      shows: this.props.shows.slice(0, this.state.shows.length + 3)
+      shows: this.props.shows.slice(0, this.state.shows.length + 2)
     })
 
   }
@@ -45,7 +43,6 @@ export default class PopularShowsIndex extends Component {
           loader={<h4>Loading...</h4>}
           className="trending-show-index"
           height={300}
-          scrollThreshold={0.6}
           endMessage={
             <p style={{ textAlign: "center" }}>
               <b>That's all folks!</b>
@@ -53,9 +50,8 @@ export default class PopularShowsIndex extends Component {
           }
         >
 
-          <ul className="popular-ul">
+          <ul>
             {this.state.shows.map((movie, i) => {
-              { console.log("rendering") }
               return (
                 <PopularShowsIndexItem
                   showId={movie.id}

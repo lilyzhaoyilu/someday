@@ -36,9 +36,8 @@ export default class HistorylistIndex extends Component {
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}
           hasMore={this.state.hasMore}
-          loader={<h4 style={{ height: "300px" }}>Loading...</h4>}
-          height={400}
-          scrollThreshold={0.4}
+          loader={<h4>Loading...</h4>}
+          height={200}
           classname={"historylist-index"}
           endMessage={
             <p >
