@@ -35,12 +35,12 @@ class LoginForm extends React.Component {
 			email: this.state.email,
 			password: this.state.password,
 		};
-		this.props.login(user).then(() =>this.props.history.push("/"));
+		this.props.login(user).then(() =>this.props.history.push("/show-index"));
 	}
 
 	handleDemoLogin(e){
 		e.preventDefault();
-		this.props.demoLogin();
+		this.props.demoLogin().then(() =>this.props.history.push("/show-index"));
 	}
 	//remove session errors before unmount
 	componentWillUnmount() {
