@@ -31,7 +31,7 @@ export default class WatchlistIndex extends Component {
   }
 
   render() {
-    return (this.state.lists) ? (
+    return (
 
       <div className="watchlist-index">
         <h1>Watchlists:</h1>
@@ -39,7 +39,7 @@ export default class WatchlistIndex extends Component {
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}
           hasMore={this.state.hasMore}
-          loader={<h4 style={{ height: "400px" }}>Loading...</h4>}
+          loader={<h4 style={{ height: "500px" }}>Loading...</h4>}
           height={400}
           classname={"historylist-index"}
           endMessage={
@@ -55,7 +55,7 @@ export default class WatchlistIndex extends Component {
 
         </InfiniteScroll>
       </div>
-    ) : null;
+    );
 
     // return (
     //   <div>

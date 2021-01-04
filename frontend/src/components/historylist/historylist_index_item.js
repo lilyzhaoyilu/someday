@@ -21,7 +21,7 @@ export default class HistorylistIndexItem extends Component {
 
       <li>
         <p >{`historylist: ${historylist.name}`}</p>
-        <ul>
+        <ul className="list-movie-ul">
           {historylist.movie.map((movie, i) => {
             return (<HistoryItemDetail movieId={movie} listId={historylist._id} key={`${historylist._id}-${movie}-${i}`} />)
           }

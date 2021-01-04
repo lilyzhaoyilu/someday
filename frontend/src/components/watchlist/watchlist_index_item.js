@@ -5,12 +5,19 @@ import WatchlistItemDetail from './watchlist_item_detail_container'
 class WatchlistIndexItem extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {}
+  }
+  componentDidMount() {
+    this.props.getThisWatchList(this.props.listId)
+      .then(
+        res => {
+          this.setState({ watchlist: this.props.watchlist })
+        }
+      )
   }
 
-  // componentDidUpdate(prevProps) {
-  //   this.props.getThisWatchList(this.props.watchlist)
-  // }
+
+
 
 
 
@@ -18,12 +25,13 @@ class WatchlistIndexItem extends Component {
 
   render() {
 
-    const { watchlist } = this.props
+    const { watchlist } = this.state
+    console.log("wii", watchlist)
     return watchlist ? (
       < li >
-
+        {console.log("wii")}
         <h5>{`···${watchlist.name}···`}</h5>
-        <ul>
+        <ul className="list-movie-ul">
           {watchlist.movie.map(movie => {
             return (
               <WatchlistItemDetail movieId={movie} listId={watchlist._id} />
