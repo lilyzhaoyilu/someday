@@ -3,11 +3,11 @@ import MovieIndexItem from '../movie/movie_index_item';
 import MovieImage from '../movie_image/img_container';
 
 export default class HistorylistIndexItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { historylist: this.props.historylists[Math.floor(Math.random() * this.props.historylists.length)] }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { historylist: this.props.historylists[Math.floor(Math.random() * this.props.historylists.length)] }
 
-  }
+  // }
   // componentDidMount() {
   //   this.state.historylist.forEach(
   //     setTimeout(id => this.props.fetchMovieData(), 500)
@@ -16,13 +16,12 @@ export default class HistorylistIndexItem extends Component {
 
   render() {
     const { watched } = this.props
-    //TODO will add movie info soon!
     return watched ? (
 
       <li>
         <p>{`historylist: ${watched.name}`}</p>
         <ul>
-          {watched.movie.map((movieId, i) => <span key={`${watched._id}-${movieId}-${i}`}><MovieImage movieId={movieId} /></span>)}
+          {watched.movie.map((movieId, i) => <span key={`${watched._id}-${movieId}-${i}`}><MovieImage movieId={movieId} idx={i} /></span>)}
           {/* <MovieIndexItem 
           key={watched.apiId} 
           watched={watched}

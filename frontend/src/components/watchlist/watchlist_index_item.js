@@ -4,26 +4,23 @@ import MovieImage from '../movie_image/img_container';
 
 export default class WatchlistIndexItem extends Component {
   render() {
-    const { movie } = this.props.watchlist
-    let moviesArr = Object.values(movie)
-    return movie ? (
-      <div>
+    const { watchlist } = this.props
+    return watchlist ? (
 
-        <p>{`watchlist: ${this.props.watchlist.name}`}</p>
-        {moviesArr.map((movie, i) =>
-          <span key={`${this.props.watchlist._id}-${movie}-${i}`}>
-            <MovieImage movieId={movie} />
-          </span>
-          // <p>{movie}</p>
-          // <MovieIndexItem 
-          // key={movie.apiId}
-          // movie={movie}
-          // imgUrl={movie.imgUrl}
-          // name={movie.name}/>
-        )
-        }
+      <li>
+        <p>{`watchlist: ${watchlist.name}`}</p>
+        <ul>
+          {
+            watchlist.movie.map((movieId, i) => <span key={`${watchlist._id}-${movieId}-${i}`}><MovieImage movieId={movieId} idx={i} /></span>)
+          }
+          {/* <MovieIndexItem 
+          key={watched.apiId} 
+          watched={watched}
+          imgUrl={watched.imgUrl}
+          name={watched.name}/> */}
+        </ul>
 
-      </div>
+      </li>
     ) : null;
   }
 }

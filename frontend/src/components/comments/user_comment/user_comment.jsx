@@ -18,8 +18,15 @@ class UserComment extends Component {
 					.filter((comment) => comment.user === this.props.currentPageUserId)
 					.slice(0, 2),
 			});
-			this.props.fetchMovieData(Object.values(this.props.comments)[0].movie);
-			this.props.fetchMovieData(Object.values(this.props.comments)[1].movie);
+			console.log(this.props);
+			if (this.state.comments.length === 0) {
+				return;
+			} else if (this.state.comments.length === 1) {
+				this.props.fetchMovieData(Object.values(this.state.comments)[0].movie);
+			} else {
+				this.props.fetchMovieData(Object.values(this.state.comments)[0].movie);
+				this.props.fetchMovieData(Object.values(this.state.comments)[1].movie);
+			}
 		});
 	}
 
@@ -88,9 +95,9 @@ class UserComment extends Component {
 					next={this.fetchMoreData}
 					hasMore={this.state.hasMore}
 					loader={<h4>Loading...</h4>}
-					height={300}
+					height={250}
 					classname={"profile-comments-index"}
-					endMessage={<p>The End</p>}
+					endMessage={<p style={{textAlign:'center', color:'gray'}}>The End</p>}
 				>
 					{this.state.comments.map((comment) => (
 						<CommentDetailForUser key={comment._id} comment={comment} />

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 export default class PopularShowsIndexItem extends Component {
   componentDidMount() {
-    setTimeout(() => this.props.fetchShowData(this.props.showId), this.props.index * 500)
+    this.props.fetchShowData(this.props.showId)
 
   }
 
@@ -12,7 +12,7 @@ export default class PopularShowsIndexItem extends Component {
       <Link to={`/mediaPage/${show.id}`}>
 
         <p>{show.title}</p>
-        <img src={show.image.url} style={{ width: '150px', height: 'auto' }} />
+        <img src={show.image.url} style={{ width: '250px', height: 'auto' }} />
       </Link>
     ) : null;
 

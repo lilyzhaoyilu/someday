@@ -29,16 +29,6 @@ export default () => {
       <ProtectedRoute path='/show-index' component={ShowInfinite} />
       <ProtectedRoute path='/movie-index' component={MovieInfinite} />
 
-
-
-
-        These below are for development purpose<br />
-      <Link to='/mediapage/tt0944947'>click here to see the sample game of throne</Link><br></br>
-      <Link to='/mediapage/tt2674426'>click here to see the sample me before you</Link>
-
-
-
-
     </Route>
 
   )
