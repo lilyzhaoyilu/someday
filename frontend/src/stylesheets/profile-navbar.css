@@ -1,5 +1,7 @@
 .navbar-wrapper {
   background-color: #edf4ed;
+  display: flex;
+  justify-content: space-between;
 }
 
 .profile-navbar {
