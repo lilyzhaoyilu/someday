@@ -27,15 +27,21 @@ class WatchlistItemDetail extends Component {
 	handleRemoveItemFromList(e) {
 		e.preventDefault();
 		// debugger;
-		this.props
-			.deleteWatchlistItem(this.props.listId, this.props.movieId)
-			.then(() => {
-				this.props.getThisWatchList(this.props.listId);
-			});
+
+		const newList = {
+			...this.props.watchlist,
+			movie: this.props.watchlist.movie.filter(
+				(movieId) => movieId !== this.props.movieId
+			),
+		};
+		console.log(this.props.movieId);
+		this.props.updateWatchlist(newList).then(() => {
+			this.props.onUpdateList();
+		});
 	}
 
 	render() {
-
+		console.log(this.props);
 		const { movieId } = this.props;
 		return (
 			<div className="list-item-detail">

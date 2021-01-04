@@ -3,7 +3,7 @@ import { updateWatchlist, getThisWatchList } from '../../actions/watchlist_actio
 import WatchlistIndexItem from './watchlist_index_item';
 
 const mstp = (state, ownProps) => ({
-  watchlist: state.entities.watchlists[ownProps.watchlist._id],
+  watchlists: state.entities.watchlists,
   listId: ownProps.watchlist._id
   // watchlists: Object.values(state.entities.watchlists),
   // userId: ownProps.userId
