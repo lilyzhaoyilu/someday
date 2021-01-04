@@ -24,10 +24,12 @@ class CommentForm extends Component {
     e.preventDefault();
     // user is taken care of in backend api
     let completeCommentPost = Object.assign({}, this.state, {movie_id: this.props.currentMovieId});
-    this.props.postComment(completeCommentPost);
-    this.setState({
-      text: '',
-    })
+    this.props.postComment(completeCommentPost).then(() => {
+      this.setState({
+        text: '',
+      })
+    });
+    
   }
 
   // displayCategory(){
@@ -42,7 +44,7 @@ class CommentForm extends Component {
         {/* <div className="comment-form-title"><h3>Write comments for {this.props.title}</h3></div> */}
         <h3>Write comments for {this.props.title}</h3>
         <form action="">
-        <textarea onChange={this.update("text")}></textarea>
+        <textarea onChange={this.update("text")} value={this.state.text} ></textarea>
         
         <button disabled={this.state.text.length<1} className="comment-form-submit" onClick={this.handleSubmit}>Submit</button>
         </form>
