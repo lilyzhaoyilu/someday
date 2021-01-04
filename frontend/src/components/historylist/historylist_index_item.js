@@ -23,9 +23,10 @@ export default class HistorylistIndexItem extends Component {
 
 
     return historylist ? (
-      <li>
-        <p >{`historylist: ${historylist.name}`}</p>
-        <ul className="list-movie-ul">
+      <li className="list-container">
+        <p >{historylist.name}</p>
+        <span className="list-display">
+
           {historylist.movie.map((movie, i) => {
             return (
               <HistoryItemDetail
@@ -34,10 +35,8 @@ export default class HistorylistIndexItem extends Component {
                 key={`${historylist._id}-${movie}-${i}`}
                 onUpdateList={this.onUpdateList}
               />)
-          }
-          )}
-
-        </ul>
+          })}
+        </span>
 
       </li>
     ) : null;

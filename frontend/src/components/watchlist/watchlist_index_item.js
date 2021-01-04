@@ -20,37 +20,49 @@ class WatchlistIndexItem extends Component {
   onUpdateList() {
     console.log(this.props.watchlists[this.props.watchlist._id])
     this.setState({ watchlist: this.props.watchlists[this.props.watchlist._id] })
-
   }
-
-
-
-
 
 
   render() {
-
-    const { watchlist } = this.state
+    const { watchlist } = this.props
     return watchlist ? (
-      < li >
-        <h5>{`···${watchlist.name}···`}</h5>
-        <ul className="list-movie-ul">
-          {watchlist.movie.map(movie => {
-            return (
-              <WatchlistItemDetail
-                movieId={movie}
-                listId={watchlist._id}
-                watchlist={watchlist}
-                onUpdateList={this.onUpdateList}
-              />
-            )
-          })}
+      <li className='list-container'>
+        <p>{watchlist.name}</p>
+        <span className="list-display">
+          {watchlist.movie.map(movie => (
+            <WatchlistItemDetail
+              movieId={movie}
+              listId={watchlist._id}
+              watchlist={watchlist}
+              onUpdateList={this.onUpdateList}
+            />
+          ))}
+        </span>
+      </li>
 
-        </ul>
-
-      </li >
     ) : null;
+
   }
 }
+// const { watchlist } = this.state
+// return watchlist ? (
+//   <li className="list-container">
+//     <p>{watchlist.name}</p>
+//     <span className="list-display">
+//       {watchlist.movie.map(movie => {
+//         return (
+//           <WatchlistItemDetail
+//             movieId={movie}
+//             listId={watchlist._id}
+//             watchlist={watchlist}
+//             onUpdateList={this.onUpdateList}
+//           />
+//         )
+//       })}
+//     </span>
+//   </li>
+// ) : null;
+
+
 
 export default WatchlistIndexItem;

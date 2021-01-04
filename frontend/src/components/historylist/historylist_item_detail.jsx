@@ -41,7 +41,7 @@ class WatchlistItemDetail extends Component {
 	render() {
 		const { movieId } = this.props;
 		return (
-			<div className="historylist-item-detail">
+			<div className="list-item-detail">
 				<Link to={`/mediaPage/${movieId}`} className="tooltip movie-img">
 					<span className="tooltiptext">
 						{this.state.title}

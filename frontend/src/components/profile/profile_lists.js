@@ -37,16 +37,42 @@ export default class ProfileLists extends Component {
     const { user } = this.props;
     const { profile, watchlist, historylist } = this.state;
     return (
-      <div className="profile-info">
-        <div className="profile-links">
-          <button className="profile-nav-btn" onClick={() => this.handleProfileClick()}>My Profile Page</button>
-          <button className='profile-nav-btn' onClick={() => this.handleWatchClick()}>My Want-to Watch</button>
-          <button className='profile-nav-btn' onClick={() => this.handleHistoryClick()}>Watched List</button>
+      <div className="content">
+        <ul className="nav nav-pills" role="tablist">
+          <li className="nav-item">
+            <span
+              className="nav-link active"
+              data-toggle="pill"
+              onClick={() => this.handleProfileClick()}
+            >
+              My Profile Page
+            </span>
+          </li>
+          <li className="nav-item">
+            <span
+              className="nav-link active"
+              data-toggle="pill"
+              onClick={() => this.handleWatchClick()}
+            >
+              Watch List
+            </span>
+          </li>
+          <li className="nav-item">
+            <span
+              className="nav-link active"
+              data-toggle="pill"
+              onClick={() => this.handleHistoryClick()}
+            >
+              History List
+            </span>
+          </li>
+        </ul>
+        <div className="tab-content">
+          {watchlist ? <WatchlistIndex userId={user._id} /> : null}
+          {historylist ? <HistorylistIndex userId={user._id} /> : null}
+          {profile ? <UserComment /> : null}
         </div>
-        {watchlist ? <WatchlistIndex userId={user._id} /> : null}
-        {historylist ? <HistorylistIndex userId={user._id} /> : null}
-        {profile ? <UserComment /> : null}
       </div>
-    )
+    );
   }
 }

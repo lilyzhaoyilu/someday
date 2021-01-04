@@ -1,4 +1,15 @@
-.watchlist-item-detail{
+.list-container p{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.list-display{
   display: flex;
   flex-direction: row;
+}
+
+.list-item-detail{
+  display: flex;
+  flex-direction: column;
 }
