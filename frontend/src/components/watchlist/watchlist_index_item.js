@@ -11,16 +11,15 @@ class WatchlistIndexItem extends Component {
 
 
   handleRemoveMovieFromTheList(movieId){
-    
-   let oldWatchListObject = this.props.watchlist;
-   console.log("oldWatchlistObject", oldWatchListObject)
-   let newWatchList = oldWatchListObject.movie.filter(movie => movie !== movieId)
-   console.log("newWatchList",newWatchList);
-   let newWatchListObject = Object.assign({},oldWatchListObject, {movie: newWatchList})
-   console.log("newWatchListObject",newWatchListObject);
-   this.props.updateWatchlist(newWatchListObject);
-  }
 
+    let oldWatchListObject = this.props.watchlist;
+    console.log("oldWatchlistObject", oldWatchListObject)
+    let newWatchList = oldWatchListObject.movie.filter(movie => movie !== movieId)
+    console.log("newWatchList",newWatchList);
+    let newWatchListObject = Object.assign({},oldWatchListObject, {movie: newWatchList})
+    console.log("newWatchListObject",newWatchListObject);
+    this.props.updateWatchlist(newWatchListObject);
+   }
 
 
   render() {
@@ -28,19 +27,11 @@ class WatchlistIndexItem extends Component {
     return watchlist ? (
 
       <li>
-        <p>{`watchlist: ${watchlist.name}`}</p>
+        <h5>{`···${watchlist.name}···`}</h5>
         <ul>
 
-          {watchlist.movie.map(movie => (<WatchlistItemDetail movieId={movie} />))}
+          {watchlist.movie.map(movie => (<WatchlistItemDetail movieId={movie} listId={watchlist._id}/>))}
           
-          {/* {
-            watchlist.movie.map((movieId, i) => <span key={`${watchlist._id}-${movieId}-${i}`}><MovieImage movieId={movieId} idx={i} /></span>)
-          } */}
-          {/* <MovieIndexItem 
-          key={watched.apiId} 
-          watched={watched}
-          imgUrl={watched.imgUrl}
-          name={watched.name}/> */}
         </ul>
 
       </li>

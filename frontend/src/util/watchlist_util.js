@@ -30,3 +30,9 @@ export const getMyWatchlists = (userId) => {
 export const getThisWatchList = (listId) => {
   return axios.get(`/api/todoLists/todoList/${listId}`)
 }
+
+
+//* DELETE / api / watchedlist /: id/:movieid - delete the movie inside the watchedlist
+export const deleteWatchlistItem = (listId, movieId) => {
+  return axios.delete(`/api/todoLists/todoList/${listId}/${movieId}`)
+}

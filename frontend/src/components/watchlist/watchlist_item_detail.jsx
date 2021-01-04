@@ -10,6 +10,7 @@ class WatchlistItemDetail extends Component {
       title: "",
       imgUrl: ""
     };
+    this.handleRemoveItemFromList = this.handleRemoveItemFromList.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +26,11 @@ class WatchlistItemDetail extends Component {
     }, this.props.idx * 400)
   }
 
+  handleRemoveItemFromList(e){
+    e.preventDefault();
+    this.props.deleteWatchlistItem(this.props.listId, this.props.movieId)
+  }
+
 
 
   render() {
@@ -38,7 +44,7 @@ class WatchlistItemDetail extends Component {
       </div>
       <div>
         {this.state.title}
-      <button>remove</button>
+      <button onClick={this.handleRemoveItemFromList} >remove</button>
 
       
       </div>
