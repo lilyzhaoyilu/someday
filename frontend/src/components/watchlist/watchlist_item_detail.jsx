@@ -37,13 +37,18 @@ class WatchlistItemDetail extends Component {
 	render() {
 		const { movieId } = this.props;
 		return (
-			<div className="watchlist-item-detail movie-img">
-				<Link to={`/mediaPage/${movieId}`}>
-					<div>
+			<div className="watchlist-item-detail">
+				<Link to={`/mediaPage/${movieId}`} className="tooltip movie-img">
+					<span className="tooltiptext">
 						{this.state.title}
 
-						<button onClick={this.handleRemoveItemFromList}>remove</button>
-					</div>
+						<button
+							onClick={this.handleRemoveItemFromList}
+							className="remove-from-list-btn"
+						>
+							remove
+						</button>
+					</span>
 					<div>
 						<img src={this.state.imgUrl} height="150" width="auto" />
 					</div>
