@@ -16,7 +16,9 @@ export default class PopularMoviesIndex extends Component {
 
   componentDidMount() {
     this.props.fetchPopularMovies().then(
-      this.setState({ movies: this.props.movies.slice(0, 2) })
+      res => {
+        this.setState({ movies: this.props.movies.slice(0, 2) })
+      }
     )
   }
 
@@ -27,7 +29,7 @@ export default class PopularMoviesIndex extends Component {
       return;
     }
     this.setState({
-      movies: this.props.movies.slice(0, this.state.movies.length + 2)
+      movies: this.props.movies.slice(0, this.state.movies.length + 3)
     })
 
   }
@@ -36,23 +38,24 @@ export default class PopularMoviesIndex extends Component {
   render() {
 
     return (
-      <div>
+      <div className="trending-movie-index">
         <InfiniteScroll
           dataLength={this.state.movies.length}
           next={this.fetchMoreData}
           hasMore={this.state.hasMore}
           loader={<h4>Loading...</h4>}
-          className="trending-movie-index"
-          height={200}
+          height={300}
+          scrollThreshold={0.6}
           endMessage={
             <p style={{ textAlign: "center" }}>
               <b>That's all folks!</b>
             </p>
           }
         >
-
-          <ul>
+          {/* {console.log(this.state)} */}
+          <ul className="popular-ul">
             {this.state.movies.map((movie, i) => {
+              { console.log('rendering movie') }
               return (
                 <PopularMoviesIndexItem
                   showId={movie.id}
