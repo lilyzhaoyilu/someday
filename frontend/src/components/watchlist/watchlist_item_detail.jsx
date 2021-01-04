@@ -38,7 +38,7 @@ class WatchlistItemDetail extends Component {
 
 		const { movieId } = this.props;
 		return (
-			<div className="watchlist-item-detail">
+			<div className="list-item-detail">
 				<Link to={`/mediaPage/${movieId}`} className="tooltip movie-img">
 					<span className="tooltiptext">
 						{this.state.title}

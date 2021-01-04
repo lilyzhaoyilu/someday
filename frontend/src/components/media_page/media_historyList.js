@@ -79,7 +79,7 @@ export default class MediaHistoryList extends Component {
     const msg =
       successList.length !== 0 ? (
         errorList.length !== 0 ? (
-          <div>
+          <div className= "msg-error-success">
             <span>{`Movie succefully added to ${successList}`}</span>
             <span>{`Movie already exist in ${errorList}`}</span>
           </div>

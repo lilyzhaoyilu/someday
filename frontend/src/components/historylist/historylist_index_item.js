@@ -19,15 +19,15 @@ export default class HistorylistIndexItem extends Component {
     const { historylist } = this.props
     return historylist ? (
 
-      <li>
-        <p >{`historylist: ${historylist.name}`}</p>
-        <ul className="list-movie-ul">
+      <li className= "list-container">
+        <p >{historylist.name}</p>
+        <span className="list-display">
           {historylist.movie.map((movie, i) => {
             return (<HistoryItemDetail movieId={movie} listId={historylist._id} key={`${historylist._id}-${movie}-${i}`} />)
           }
           )}
 
-        </ul>
+        </span>
 
       </li>
     ) : null;
