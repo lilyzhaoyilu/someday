@@ -62,7 +62,6 @@ class NavBar extends React.PureComponent {
 	// }
 
 	render() {
-		console.log("test",this.props.watchlists);
 		return (
       <div className="navbar">
         <Link className="navbar-logo" to="/splash">
