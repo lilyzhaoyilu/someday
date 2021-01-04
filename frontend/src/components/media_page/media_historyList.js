@@ -116,7 +116,7 @@ export default class MediaHistoryList extends Component {
                 </li>
               ))}
           </ul>
-          <button className="list-add-button">add to lists</button>
+          <button className="list-add-button">Add to Lists</button>
         </form>
         <button className="list-add-button" onClick={this.toggleModal4}>
           Add to New Watched List

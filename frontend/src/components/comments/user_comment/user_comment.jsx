@@ -95,9 +95,14 @@ class UserComment extends Component {
 					next={this.fetchMoreData}
 					hasMore={this.state.hasMore}
 					loader={<h4>Loading...</h4>}
-					height={250}
+					height={700}
 					classname={"profile-comments-index"}
-					endMessage={<p style={{textAlign:'center', color:'gray'}}>The End</p>}
+					scrollThreshold={0.6}
+					endMessage={
+						<p style={{ textAlign: "center", color: "gray" }}>
+							No more comments from this user
+						</p>
+					}
 				>
 					{this.state.comments.map((comment) => (
 						<CommentDetailForUser key={comment._id} comment={comment} />

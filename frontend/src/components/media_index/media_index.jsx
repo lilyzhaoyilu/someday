@@ -17,13 +17,14 @@ class MediaIndex extends React.Component {
 			var i = 0;
 			this.setState({ media: this.props.media.slice(0, 4) });
 			while (i < 4) {
+				if(this.state.media[i]){
 				this.props
 					.fetchMediaData(this.state.media[i].id)
 					.then((res) => {
 						console.log("request", res);
 						this.setState({ media: this.props.media.slice(0, i) });
 					})
-					.then(i++);
+					.then(i++)};
 
 				this.setState({ page: 4 });
 			}
@@ -57,6 +58,7 @@ class MediaIndex extends React.Component {
 					loader={<h4>Loading...</h4>}
 					height={700}
 					className="media-index"
+					scrollThreshold={0.4}
 					endMessage={
 						<p style={{ textAlign: "center" }}>
 							<b>That's all folks!</b>
