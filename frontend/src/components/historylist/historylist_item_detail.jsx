@@ -12,6 +12,7 @@ class WatchlistItemDetail extends Component {
 	}
 
 	componentDidMount() {
+		this.props.showHistorylist(this.props.listId);
 		setTimeout(() => {
 			this.props.fetchMovieData(this.props.movieId).then((result) => {
 				if (result && result.show) {
@@ -27,18 +28,21 @@ class WatchlistItemDetail extends Component {
 	handleRemoveItemFromList(e) {
 		e.preventDefault();
 		// debugger;
-		this.props
-			.deleteWatchlistItem(this.props.listId, this.props.movieId)
-			.then(() => {
-				this.props.getThisWatchList(this.props.listId);
-			});
+		const newList = {
+			...this.props.list,
+			movie: this.props.list.movie.filter(
+				(movieId) => movieId !== this.props.movieId
+			),
+		};
+		console.log(newList);
+		this.props.updateHistorylist(newList);
 	}
 
 	render() {
-
+		console.log("hid");
 		const { movieId } = this.props;
 		return (
-			<div className="watchlist-item-detail">
+			<div className="historylist-item-detail">
 				<Link to={`/mediaPage/${movieId}`} className="tooltip movie-img">
 					<span className="tooltiptext">
 						{this.state.title}

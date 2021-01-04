@@ -82,3 +82,13 @@
 .tooltip:hover img {
 	opacity: 0.3;
 }
+
+.remove-from-list-btn {
+	border: 0;
+	background-color: transparent;
+	margin-top: 10px;
+	color: #edf4ed;
+	text-decoration: underline;
+	font-family: "IBM Plex Sans", sans-serif;
+	font-size: 16px;
+}
