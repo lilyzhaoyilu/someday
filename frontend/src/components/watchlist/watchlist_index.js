@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WatchlistIndexItem from './watchlist_index_item';
+import WatchlistIndexItem from './watchlist_index_item_container';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export default class WatchlistIndex extends Component {
@@ -33,7 +33,7 @@ export default class WatchlistIndex extends Component {
   render() {
     return (this.state.lists) ? (
       <div>
-        <h1>Watchlists:</h1>
+        <h3>List</h3>
         <InfiniteScroll
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}

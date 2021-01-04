@@ -5,6 +5,7 @@ const passport = require("passport");
 const WatchedList = require("../../models/WatchedList");
 const validateList = require("../../validation/list");
 
+////"/api/todoLists"
 router.get("/watchedList", (req, res) => {
   WatchedList.find()
     .sort({ data: -1 })
@@ -74,5 +75,8 @@ router.delete(
       });
   }
 );
+
+
+
 
 module.exports = router;

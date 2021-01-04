@@ -32,3 +32,5 @@ export const showHistorylist = listId => (
 export const getAllHistorylists = () => (
   axios.get(`/api/watchedLists/watchedList`)
 )
+
+

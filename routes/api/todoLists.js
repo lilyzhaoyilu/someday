@@ -84,4 +84,23 @@ router.delete(
   }
 );
 
+// delete one media from the list
+router.patch(
+  "/list/:id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    // debugger;
+    // console.log("watchlist api req", req);
+    TodoList.updateOne({ _id: req.params.id }, { $pullAll: {movie: [req.body.movieId] }})
+      .then(() => {
+        res.status(200).json({
+          message: "media has been deleted!",
+        });
+      })
+      .catch((error) => {
+        res.status(400).json({ error: error });
+      });
+  }
+);
+
 module.exports = router;
