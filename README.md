@@ -2,7 +2,7 @@
 
 ### [Someday Live](https://somedaymern.herokuapp.com/)
 
-Someday is a collaborative MERN project, using MongoDB, Express, React, and NodeJS. It helps users to keep track of the movies and TV shows that they have watched and want to watch. 
+Someday is a collaborative MERN project, using MongoDB, Express, React, and NodeJS. It helps users to keep track of the movies and TV shows that they have watched and want to watch. This web application that allows users to keep track of the shows and movies that they want to watch some day. Users can create lists to keep track of the shows and movies, leave comments to them, and look at other uses comments and lists. 		
 
 ## Background and Overview
 We often have TV shows and movies that we want to watch and have watched but do not have a simple tool to keep track of them, and Someday is here for that. In Someday, you can keep track the TV shows and movies that you want to and have already watched easily.
@@ -28,13 +28,25 @@ The backend is mainly used to store user related data. The separation of fronten
 The frontend part will mainly be handled by using React and Redux. 
 
 ##### Challenges
+* the media database
+Since we are offering a search function of all movies and TV shows, we need to deal with handle a big amount of data. This challenges both the backend and frontend to consider their time complexity and query times when coding. Since the page is media-rich which may cause a longer loading time, we also implemented things like a loading page to make a smoothier user experience.
 
-* the media database/API
-Since we are offering a search function of all movies and TV shows, we need to deal with handle a big amount of data. This challenges both the backend and frontend to consider their time complexity and query times when coding. 
-Also, since we are using a API for gathering all the data, we need try to minimize our API requests numbers. 
+* API throttling 
+Since we are using a API for gathering all the media-related data, we need try to minimize our API requests numbers. We used techniques like implementing thorttling and infinite scrolls to reduce the API request per second. 
 
 * Implementing effective search
 * Utilizing MongoDB database 
+
+## Sample App Screenshot
+
+##### List of user comments
+![comment list](https://github.com/lilyzhaoyilu/someday/blob/main/assets/commentshowcase.png)
+
+##### media page with features
+![media page with features](https://github.com/lilyzhaoyilu/someday/blob/main/assets/mediapageshowcase.png)
+
+
+
 
 ## WireFrames and Mocks
 Login, sign up, and Splash
