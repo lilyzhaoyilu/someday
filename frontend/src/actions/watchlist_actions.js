@@ -49,14 +49,7 @@ export const deleteWatchlist = (watchlistId) => dispatch => (
       err => dispatch(receiveErrors(err))
     )
 )
-////
-export const deleteWatchlistItem = (listId, movieId) => dispatch => (
-  APIUTIL.deleteWatchlistItem(listId, movieId)
-    .then(
-      () => dispatch(receiveThisWatchlist(listId)),
-      err => dispatch(receiveErrors(err))
-    )
-)
+
 
 
 export const getMyWatchlists = (userId) => dispatch => (
@@ -82,3 +75,15 @@ export const getThisWatchList = (listId) => dispatch => (
       err => dispatch(receiveErrors(err))
     )
 )
+
+
+////
+export const deleteWatchlistItem = (listId, movieId) => dispatch => {
+  // debugger;
+  return (
+  APIUTIL.deleteWatchlistItem(listId, movieId)
+    // .then(
+    //   (listId) => dispatch(receiveThisWatchlist(listId)),
+    //   err => dispatch(receiveErrors(err)))
+    )
+  }

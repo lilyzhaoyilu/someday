@@ -28,7 +28,8 @@ class WatchlistItemDetail extends Component {
 
   handleRemoveItemFromList(e){
     e.preventDefault();
-    this.props.deleteWatchlistItem(this.props.listId, this.props.movieId)
+    // debugger;
+    this.props.deleteWatchlistItem(this.props.listId, this.props.movieId).then(()=>{this.props.getThisWatchList(this.props.listId)})
   }
 
 

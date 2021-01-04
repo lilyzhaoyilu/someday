@@ -5,21 +5,15 @@ import WatchlistItemDetail from './watchlist_item_detail_container'
 class WatchlistIndexItem extends Component {
   constructor(props) {
     super(props);
-    this.handleRemoveMovieFromTheList = this.handleRemoveMovieFromTheList.bind(this);
+    
   }
 
+  // componentDidUpdate(prevProps) {
+  //   this.props.getThisWatchList(this.props.watchlist)
+  // }
 
 
-  handleRemoveMovieFromTheList(movieId){
 
-    let oldWatchListObject = this.props.watchlist;
-    console.log("oldWatchlistObject", oldWatchListObject)
-    let newWatchList = oldWatchListObject.movie.filter(movie => movie !== movieId)
-    console.log("newWatchList",newWatchList);
-    let newWatchListObject = Object.assign({},oldWatchListObject, {movie: newWatchList})
-    console.log("newWatchListObject",newWatchListObject);
-    this.props.updateWatchlist(newWatchListObject);
-   }
 
 
   render() {

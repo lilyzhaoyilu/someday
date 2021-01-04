@@ -5,6 +5,7 @@ const passport = require("passport");
 const WatchedList = require("../../models/WatchedList");
 const validateList = require("../../validation/list");
 
+////"/api/todoLists"
 router.get("/watchedList", (req, res) => {
   WatchedList.find()
     .sort({ data: -1 })
@@ -76,22 +77,6 @@ router.delete(
 );
 
 
-// delete one media from the list
-router.delete(
-  "/watchedList/:id/:movieId",
-  passport.authenticate("jwt", { session: false }),
-  (req, res) => {
-    console.log("watchlist api req", req);
-    WatchedList.updateOne({ _id: req.params.id }, { $pullAll: {movie: [req.params.deletemovie] }})
-      .then(() => {
-        res.status(200).json({
-          message: "media has been deleted!",
-        });
-      })
-      .catch((error) => {
-        res.status(400).json({ error: error });
-      });
-  }
-);
+
 
 module.exports = router;
