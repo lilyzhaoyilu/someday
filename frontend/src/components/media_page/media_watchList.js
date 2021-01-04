@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
+import ListForm from "../list_form/watchlist_form_container"
 export default class WatchlistIndex extends Component {
   constructor(props) {
     super(props);
@@ -8,9 +9,11 @@ export default class WatchlistIndex extends Component {
       errorList: [],
       successList: [],
       isDisplay: false,
+      isOpen: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.toggleModal3 = this.toggleModal3.bind(this);
     this.toggleModal4 = this.toggleModal4.bind(this);
   }
   componentDidMount() {
@@ -19,14 +22,14 @@ export default class WatchlistIndex extends Component {
 
   handleChange(e) {
     const { checked } = this.state;
-    const { id } = e.target;
-    if (checked.indexOf(id) === -1) {
+    const { value } = e.target;
+    if (checked.indexOf(value) === -1) {
       this.setState({
-        checked: [...checked, id],
+        checked: [...checked, value],
       });
     } else {
       this.setState({
-        checked: checked.filter((checkedId) => checkedId !== id),
+        checked: checked.filter((checkedId) => checkedId !== value),
       });
     }
   }
@@ -57,48 +60,81 @@ export default class WatchlistIndex extends Component {
       });
     }
   }
+
+  toggleModal3(e) {
+    this.setState({
+      isOpen: !this.state.isOpen,
+    });
+  }
+
   toggleModal4(e) {
     this.setState({
       isDisplay: !this.state.isDisplay,
     });
   }
+
   render() {
     const { watchlists } = this.props;
     const { checked, errorList, successList } = this.state;
     const msg =
-      errorList.lenght === 0 ? (
-        <span>{`Movie succefully added to ${successList}`}</span>
-      ) : successList.length !== 0 ? (
-        <div>
+      successList.length !== 0 ? (
+        errorList.length !== 0 ? (
+          <div>
+            <span>{`Movie succefully added to ${successList}`}</span>
+            <span>{`Movie already exist in ${errorList}`}</span>
+          </div>
+        ) : (
           <span>{`Movie succefully added to ${successList}`}</span>
+        )
+      ) : errorList.length !== 0 ? (
+        <div>
           <span>{`Movie already exist in ${errorList}`}</span>
         </div>
       ) : (
-        <span>{`Movie already exist in ${errorList}`}</span>
+        <span>No List is selected</span>
       );
     // console.log(`CHECKED: ${checked}`);
     return watchlists ? (
       <div>
         <h1>Watchlists:</h1>
         <form onSubmit={this.handleSubmit}>
-          <ul>
+          <ul className="list-tags">
             {watchlists
               .filter((list) => list.user === this.props.userId)
               .map((watchlist, idx) => (
                 <li key={idx}>
-                  <input
-                    type="checkbox"
-                    value={watchlist}
-                    onChange={this.handleChange}
-                    id={watchlist._id}
-                    checked={checked.indexOf(watchlist._id) !== -1}
-                  />
-                  {watchlist.name}
+                  <div>
+                    <input
+                      type="checkbox"
+                      value={watchlist._id}
+                      onChange={this.handleChange}
+                      id={idx}
+                      checked={checked.indexOf(watchlist._id) !== -1}
+                    />
+                    <label for={idx}>{watchlist.name}</label>
+                  </div>
                 </li>
               ))}
           </ul>
           <button className="list-add-button">add to lists</button>
         </form>
+        <button className="list-add-button" onClick={this.toggleModal3}>
+          Add to New Todo List
+        </button>
+        <Modal
+          isOpen={this.state.isOpen}
+          onRequestClose={this.toggleModal3}
+          contentLabel="create New Watch List"
+          className="list-modal"
+          overlayClassName="list-overlay "
+          closeTimeoutMS={500}
+          ariaHideApp={false}
+        >
+          <ListForm movieId={this.props.movieId} />
+          <button className="list-add-button" onClick={this.toggleModal3}>
+            Close
+          </button>
+        </Modal>
         <Modal
           isOpen={this.state.isDisplay}
           onRequestClose={this.toggleModal3}
