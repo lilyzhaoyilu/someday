@@ -5,7 +5,7 @@ import WatchlistItemDetail from './watchlist_item_detail_container'
 class WatchlistIndexItem extends Component {
   constructor(props) {
     super(props);
-    
+
   }
 
   // componentDidUpdate(prevProps) {
@@ -17,18 +17,22 @@ class WatchlistIndexItem extends Component {
 
 
   render() {
+
     const { watchlist } = this.props
     return watchlist ? (
+      < li >
 
-      <li>
         <h5>{`···${watchlist.name}···`}</h5>
         <ul>
+          {watchlist.movie.map(movie => {
+            return (
+              <WatchlistItemDetail movieId={movie} listId={watchlist._id} />
+            )
+          })}
 
-          {watchlist.movie.map(movie => (<WatchlistItemDetail movieId={movie} listId={watchlist._id}/>))}
-          
         </ul>
 
-      </li>
+      </li >
     ) : null;
   }
 }

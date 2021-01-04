@@ -25,15 +25,7 @@ class MovieImage extends Component {
     }, this.props.idx * 400)
   }
 
-  handleRemoveItemFromList(e) {
-    e.preventDefault();
-    // debugger;
-    this.props
-      .deleteWatchlistItem(this.props.listId, this.props.movieId)
-      .then(() => {
-        this.props.getThisWatchList(this.props.listId);
-      });
-  }
+
 
   render() {
     const { movieId } = this.props;

@@ -36,7 +36,7 @@ export default class HistorylistIndex extends Component {
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}
           hasMore={this.state.hasMore}
-          loader={<h4 style={{ height: "300px" }}>Loading...</h4>}
+          loader={<h4 style={{ height: "400px" }}>Loading...</h4>}
           height={400}
           scrollThreshold={0.4}
           classname={"historylist-index"}
@@ -48,7 +48,7 @@ export default class HistorylistIndex extends Component {
         >
           <ul>
             {this.state.lists.map((list, i) => {
-              return list ? <HistorylistIndexItem key={list._id} watched={list} /> : null;
+              return (list) ? <HistorylistIndexItem key={list._id} historylist={list} /> : null;
             }
             )}
           </ul>
