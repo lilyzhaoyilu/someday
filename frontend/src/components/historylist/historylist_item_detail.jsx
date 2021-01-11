@@ -34,9 +34,7 @@ class WatchlistItemDetail extends Component {
 				(movieId) => movieId !== this.props.movieId
 			),
 		};
-		this.props
-			.updateHistorylist(newList)
-			.then(() => this.props.onUpdateList());
+		this.props.updateHistorylist(newList).then(() => this.props.onUpdateList());
 	}
 	render() {
 		const { movieId } = this.props;
@@ -54,7 +52,7 @@ class WatchlistItemDetail extends Component {
 						</button>
 					</span>
 					<div>
-						<img src={this.state.imgUrl} height="150" width="auto" />
+						<img src={this.state.imgUrl} height="300" width="auto" />
 					</div>
 				</Link>
 			</div>
