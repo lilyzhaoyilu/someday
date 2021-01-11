@@ -31,22 +31,24 @@ class MediaPage extends Component {
 
   componentDidMount() {
     this.props.fetchMovieData(this.props.movieId).then((result) => {
+      if(result.show){
       this.setState({
         title: result.show.data.title.title,
         year: result.show.data.title.year,
         imgUrl: result.show.data.title.image.url,
-        author: result.show.data.plotSummary.author,
+        author: ("loading..." || result.show.data.plotSummary.author),
         rating: result.show.data.ratings.rating,
         ratingCount: result.show.data.ratings.ratingCount,
         releaseDate: result.show.data.releaseDate,
         tags: result.show.data.genres,
         plotOutline: result.show.data.plotOutline.text,
-      });
+      })};
     });
   }
   componentDidUpdate(prevProps) {
     if (this.props.movie_id !== prevProps.movie_id) {
       this.props.fetchMovieData(this.props.movie_id).then((result) => {
+        if(result.show){
         this.setState({
           title: result.show.data.title.title,
           year: result.show.data.title.year,
@@ -57,7 +59,7 @@ class MediaPage extends Component {
           releaseDate: result.show.data.releaseDate,
           tags: result.show.data.genres,
           plotOutline: result.show.data.plotOutline.text,
-        });
+        })};
       });
     }
   }
