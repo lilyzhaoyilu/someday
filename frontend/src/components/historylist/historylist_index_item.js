@@ -21,7 +21,6 @@ export default class HistorylistIndexItem extends Component {
   render() {
     const { historylist } = this.state
 
-
     return historylist ? (
       <li className="list-container">
         <p >{historylist.name}</p>

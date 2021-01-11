@@ -19,24 +19,23 @@
 	height: 20px;
 }
 
-.splash-features-title h4{
+.splash-features-title h4 {
 	font-size: 45px;
 	font-weight: bold;
 	margin: 20px 20px 20px;
 }
 
-.splash-features-title li{
+.splash-features-title li {
 	list-style: none;
 	margin: 20px;
 }
 
-.splash-features-about{
+.splash-features-about {
 	font-size: 45px;
 	font-weight: bold;
 	margin: 20px;
 	text-align: center;
 }
-
 
 .splash-features {
 	height: 45vh;
@@ -93,6 +92,9 @@
 
 .tooltip div {
 	background-color: #0e1821;
+}
+.tooltip .tooltiptext {
+	transition: all 0.5 linear;
 }
 
 .tooltip:hover .tooltiptext {

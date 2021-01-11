@@ -36,7 +36,7 @@ class MediaPage extends Component {
         title: result.show.data.title.title,
         year: result.show.data.title.year,
         imgUrl: result.show.data.title.image.url,
-        author: ("loading..." || result.show.data.plotSummary.author),
+          author: ("loading..." || result.show.data.plotSummary.author),
         rating: result.show.data.ratings.rating,
         ratingCount: result.show.data.ratings.ratingCount,
         releaseDate: result.show.data.releaseDate,

@@ -57,7 +57,7 @@ class WatchlistItemDetail extends Component {
 						</button>
 					</span>
 					<div>
-						<img src={this.state.imgUrl} height="150" width="auto" />
+						<img src={this.state.imgUrl} height="300" width="auto" />
 					</div>
 				</Link>
 			</div>
