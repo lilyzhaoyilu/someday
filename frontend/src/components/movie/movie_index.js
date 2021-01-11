@@ -36,7 +36,7 @@ export default class MovieIndex extends Component {
           )}
           <ul>
             {movies.map(movie => {
-              if (movie.id.slice(0, 2) === 'tt') {
+              if (movie.id.slice(0, 2) === 'tt' ) {
                 return (
                   <MovieIndexItem
                     key={movie.id}

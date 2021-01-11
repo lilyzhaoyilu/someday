@@ -22,45 +22,6 @@ class NavBar extends React.PureComponent {
 		this.props.logout();
 	}
 
-	// getLinks() {
-	// 	let navLinks;
-
-	// 	if (this.props.location.pathname === "/login") {
-	// 		navLinks = (
-	// 			<div>
-	// 				<Link to="/signup">Signup</Link>
-	// 				<DemoButtonContainer />
-	// 			</div>
-	// 		);
-	// 	} else if (this.props.location.pathname === "/signup") {
-	// 		navLinks = (
-	// 			<div>
-	// 				<Link to="/login">Login</Link>
-	// 				<DemoButtonContainer />
-	// 			</div>
-	// 		);
-	// 	} else {
-	// 		navLinks = (
-	// 			<div>
-	// 				<Link to="/signup">Signup</Link>
-	// 				<Link to="/login">Login</Link>
-	// 				<DemoButtonContainer />
-	// 			</div>
-	// 		);
-	// 	}
-
-	// 	if (this.props.loggedIn) {
-	// 		return (
-	// 			<div>
-	// 				<Link to={"/profile"}>Profile</Link>
-	// 				<button onClick={this.logoutUser}>Logout</button>
-	// 			</div>
-	// 		);
-	// 	} else {
-	// 		return navLinks;
-	// 	}
-	// }
-
 	render() {
 		return (
       <div className="navbar">
