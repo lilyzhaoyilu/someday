@@ -4,7 +4,7 @@ export const RECEIVE_MOVIES = "RECEIVE_MOVIES";
 export const RECEIVE_POPULAR_MOVIES = "RECEIVE_POPULAR_MOVIES"
 export const RECEIVE_A_MOVIE = 'RECEIVE_A_MOVIE';
 export const RECEIVE_MOVIE_ERRORS = 'RECEIVE_SHOW_ERRORS';
-export const CLEAR_MOVIES = "CLEAR_MOVIES";
+
 const receiveAMovie = (show) => ({
   type: RECEIVE_A_MOVIE,
   show
@@ -24,9 +24,7 @@ const receiveErrors = (errors) => ({
   type: RECEIVE_MOVIE_ERRORS,
   errors
 })
-export const clearMovies = () => ({
-  type: CLEAR_MOVIES
-})
+
 
 
 export const fetchMovieData = (movieId) => dispatch => (

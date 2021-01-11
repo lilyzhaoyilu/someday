@@ -1,4 +1,4 @@
-import { RECEIVE_A_MOVIE, RECEIVE_MOVIES, RECEIVE_POPULAR_MOVIES, CLEAR_MOVIES } from '../actions/movie_actions';
+import { RECEIVE_A_MOVIE, RECEIVE_MOVIES, RECEIVE_POPULAR_MOVIES } from '../actions/movie_actions';
 
 export default (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -22,8 +22,6 @@ export default (oldState = {}, action) => {
       newState = {};
       action.shows.data.d.forEach(show => newState[show.id] = show)
       return { ...oldState, ...newState }
-    case CLEAR_MOVIES:
-      return {};
     default:
       return oldState
   }

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import SearchBar from "./search_bar";
-import { searchShows, clearMovies } from "../../../actions/movie_actions";
+import { searchShows } from "../../../actions/movie_actions";
 
 const mSTP = (state, ownProps) => ({
 	//* putting all results in movies
@@ -9,7 +9,6 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = (dispatch) => ({
 	searchShows: (input) => dispatch(searchShows(input)),
-	clearMovies: () => dispatch(clearMovies()),
 });
 
 export default connect(mSTP, mDTP)(SearchBar);
