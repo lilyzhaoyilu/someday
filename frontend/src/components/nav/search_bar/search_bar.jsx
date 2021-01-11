@@ -10,8 +10,10 @@ class SearchBar extends Component {
 
 	handleSubmit(e) {
 		e.preventDefault();
-		this.props.searchShows(this.state.input);
-		this.props.history.push("/search-result", this.props.movies);
+		this.props.clearMovies();
+		this.props
+			.searchShows(this.state.input)
+			.then((res) => this.props.history.push("/search-result"));
 	}
 
 	update() {
