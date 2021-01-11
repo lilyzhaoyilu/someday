@@ -11,6 +11,14 @@ import SearchBarContainer from '../nav/search_bar/search_bar_container'
 
 
 export default class MovieIndex extends Component {
+  // componentDidUpdate(prevState) {
+  //   if (prevState !== this.nextState) {
+  //     setState
+  //   } 
+  // }
+  componentWillUnmount() {
+    this.props.clearMovies()
+  }
 
   render() {
     const { movies } = this.props;
@@ -36,7 +44,7 @@ export default class MovieIndex extends Component {
           )}
           <ul>
             {movies.map(movie => {
-              if (movie.id.slice(0, 2) === 'tt') {
+              if (movie.id.slice(0, 2) === 'tt' && movie.i) {
                 return (
                   <MovieIndexItem
                     key={movie.id}
