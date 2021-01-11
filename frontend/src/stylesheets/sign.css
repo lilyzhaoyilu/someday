@@ -4,6 +4,7 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	position: relative;
 }
 
 .signup-form-logo {
@@ -64,6 +65,7 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	position: relative;
 }
 
 .login-form-logo {
@@ -98,4 +100,12 @@
 	text-align: center;
 	color: red;
 	line-height: 1.3em;
+}
+
+.close-icon {
+	font-size: 1.8em;
+	color: #007a5a;
+	position: absolute;
+	right: 0;
+	top: -10px;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import Logo from "../../util/somedaylogo.svg";
 import DemoButtonContainer from "./demo_button/demo_button_container";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 class SignupForm extends React.Component {
 	constructor(props) {
@@ -67,6 +68,9 @@ class SignupForm extends React.Component {
 	render() {
 		return (
 			<div className="signup-form-container">
+				<Link to="/splash">
+					<AiOutlineCloseCircle className="close-icon" />
+				</Link>
 				<div>
 					<Link to="/">
 						<img className="login-form-logo" src={Logo}></img>

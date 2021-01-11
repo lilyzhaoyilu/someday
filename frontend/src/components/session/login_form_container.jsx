@@ -6,6 +6,8 @@ import {
 } from "../../actions/session_actions";
 import LoginForm from "./login_form";
 
+
+
 const mapStateToProps = (state) => ({
 	errors: state.errors.session,
 	loggedIn: state.session.isAuthenticated,

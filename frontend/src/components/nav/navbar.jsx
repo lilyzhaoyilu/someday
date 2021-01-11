@@ -21,6 +21,7 @@ class NavBar extends React.PureComponent {
 		e.preventDefault();
 		this.props.logout();
 	}
+	
 
 	// getLinks() {
 	// 	let navLinks;

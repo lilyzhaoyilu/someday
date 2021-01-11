@@ -10,9 +10,10 @@ export default class PopularmoviesIndexItem extends Component {
 
   render() {
     const { show } = this.props
-    return (show) ? (
+    return (show.image) ? (
       <Link to={`/mediaPage/${show.id}`} className="tooltip">
-        <span class="tooltiptext">{show.title}</span>
+        {console.log(show)}
+        <span className="tooltiptext">{show.title}</span>
         <div>
           <img src={show.image.url} style={{ width: '200px', height: 'auto' }} />
         </div>
