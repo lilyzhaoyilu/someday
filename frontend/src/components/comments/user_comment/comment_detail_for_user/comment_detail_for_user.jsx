@@ -9,6 +9,7 @@ class CommentDetailForUser extends Component {
     this.displayCreatedAt = this.displayCreatedAt.bind(this);
     this.displayUsername = this.displayUsername.bind(this);
     this.displayMovieTitle = this.displayMovieTitle.bind(this);
+    this.handleDeleteComment = this.handleDeleteComment.bind(this);
   }
 
   displayMovieImage() {
@@ -23,12 +24,12 @@ class CommentDetailForUser extends Component {
     }
   }
 
-  displayCreatedAt = (time) => {
+  displayCreatedAt  (time){
     let display = moment(time);
     return <span className="comment-user-time">{display.format("MMM D YYYY")}</span>
   }
 
-  displayUsername = () => {
+  displayUsername  () {
     const userId = this.props.currentPageUserId;
     // debugger;
     if(this.props.users && this.props.users[userId]){
@@ -38,12 +39,18 @@ class CommentDetailForUser extends Component {
     }
   }
 
+  handleDeleteComment (e){
+    e.preventDefault();
+    // debugger;
+    this.props.deleteComment(this.props.comment._id)
+  }
+
   
 
   render() {
     
     const {comment} = this.props;
-
+    // console.log("comment detail for user", comment)
     return (
       
       <li className='comment-user-container'>
@@ -60,6 +67,10 @@ class CommentDetailForUser extends Component {
 
           <div className="comment-detail-text">
             {comment.text}
+          </div>
+
+          <div className="comment-button">
+            <button className="comment-button-delete" onClick={this.handleDeleteComment}>delete this comment</button>
           </div>
         
         </div>       

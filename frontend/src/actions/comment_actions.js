@@ -33,13 +33,15 @@ export const postComment = comment => dispatch => (
     )
 )
 
-export const deleteComment = commentId => dispatch => (
+export const deleteComment = commentId => dispatch => {
+  // debugger;
+  return(
   APIUTIL.deleteComment(commentId)
     .then(
-      () => dispatch => dispatch(remove_comment(commentId)),
+      () => dispatch(remove_comment(commentId)),
       err => dispatch(receiveErrors(err))
     )
-)
+)}
 
 export const getMovieComments = movieId => dispatch => (
   APIUTIL.getMovieComments(movieId)

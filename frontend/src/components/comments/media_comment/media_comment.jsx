@@ -9,12 +9,14 @@ class MediaComment extends Component {
   }
 
   componentDidMount() {
+    
     this.props.getMovieComments(this.props.currentMovieId);
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.currentMovieId !== prevProps.currentMovieId) {
       this.props.getMovieComments(this.props.currentMovieId);
+     
     }
   }
 

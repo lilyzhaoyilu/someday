@@ -9,7 +9,7 @@ export const postComment = commentData => (
 //* DELETE / api / comment /: id - delete user comments,
 
 export const deleteComment = (commentId) => (
-  axios.delete(`/api/comment/${commentId}`)
+  axios.delete(`/api/comments/${commentId}`)
 )
 
 //TODO need work from here 
