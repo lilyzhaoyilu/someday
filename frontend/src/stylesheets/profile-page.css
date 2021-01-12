@@ -9,7 +9,7 @@
   display: flex;
 }
 .nav-item{
- 
+  cursor: pointer;
 }
 .nav-pills .nav-link{
   margin-left: 50px;
