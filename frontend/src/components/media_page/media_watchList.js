@@ -80,7 +80,7 @@ export default class WatchlistIndex extends Component {
       successList.length !== 0 ? (
         errorList.length !== 0 ? (
           <div>
-            <span>{`Movie succefully added to ${successList}`}</span>
+            <span>{`Movie successfully added to ${successList}`}</span>
             <span>{`Movie already exist in ${errorList}`}</span>
           </div>
         ) : (

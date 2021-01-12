@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
-import MediaComment from '../comments/media_comment/media_comment_container';
-import CommentForm from '../comments/comment_form/comment_form_container';
+import MediaComment from "../comments/media_comment/media_comment_container";
+import CommentForm from "../comments/comment_form/comment_form_container";
 import MediaHistoryList from "./media_history_container";
 import MediaWatchList from "./media_watch_container";
-import Loading from './loading';
+import Loading from "./loading";
 
 import { HiOutlineUser, HiUserGroup } from "react-icons/hi";
 import { FiTag } from "react-icons/fi";
@@ -31,35 +31,51 @@ class MediaPage extends Component {
 
   componentDidMount() {
     this.props.fetchMovieData(this.props.movieId).then((result) => {
-      if(result.show){
-      this.setState({
-        title: result.show.data.title.title,
-        year: result.show.data.title.year,
-        imgUrl: result.show.data.title.image.url,
-          author: ("loading..." || result.show.data.plotSummary.author),
-        rating: result.show.data.ratings.rating,
-        ratingCount: result.show.data.ratings.ratingCount,
-        releaseDate: result.show.data.releaseDate,
-        tags: result.show.data.genres,
-        plotOutline: result.show.data.plotOutline.text,
-      })};
+      if (result.show) {
+        if (result.show.data.hasOwnProperty('plotSummary')) {
+          this.setState({
+            title: result.show.data.title.title,
+            year: result.show.data.title.year,
+            imgUrl: result.show.data.title.image.url,
+            author: result.show.data.plotSummary.author,
+            rating: result.show.data.ratings.rating,
+            ratingCount: result.show.data.ratings.ratingCount,
+            releaseDate: result.show.data.releaseDate,
+            tags: result.show.data.genres,
+            plotOutline: result.show.data.plotOutline.text,
+          });
+        } else {
+          this.setState({
+            title: result.show.data.title.title,
+            year: result.show.data.title.year,
+            imgUrl: result.show.data.title.image.url,
+            author: "Unknown",
+            rating: result.show.data.ratings.rating,
+            ratingCount: result.show.data.ratings.ratingCount,
+            releaseDate: result.show.data.releaseDate,
+            tags: result.show.data.genres,
+            plotOutline: result.show.data.plotOutline.text,
+          });
+        }
+      }
     });
   }
   componentDidUpdate(prevProps) {
     if (this.props.movie_id !== prevProps.movie_id) {
       this.props.fetchMovieData(this.props.movie_id).then((result) => {
-        if(result.show){
-        this.setState({
-          title: result.show.data.title.title,
-          year: result.show.data.title.year,
-          imgUrl: result.show.data.title.image.url,
-          author: result.show.data.plotSummary.author,
-          rating: result.show.data.ratings.rating,
-          ratingCount: result.show.data.ratings.ratingCount,
-          releaseDate: result.show.data.releaseDate,
-          tags: result.show.data.genres,
-          plotOutline: result.show.data.plotOutline.text,
-        })};
+        if (result.show) {
+          this.setState({
+            title: result.show.data.title.title,
+            year: result.show.data.title.year,
+            imgUrl: result.show.data.title.image.url,
+            author: result.show.data.plotSummary.author,
+            rating: result.show.data.ratings.rating,
+            ratingCount: result.show.data.ratings.ratingCount,
+            releaseDate: result.show.data.releaseDate,
+            tags: result.show.data.genres,
+            plotOutline: result.show.data.plotOutline.text,
+          });
+        }
       });
     }
   }
