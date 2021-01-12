@@ -28,7 +28,9 @@ export default class MovieIndex extends Component {
           {(this.props.loggedIn) ? (<NavBar />) : (
             <div className="splash-header">
               <div className="splash-header-left">
-                <img src={Logo}></img>
+                <Link to="/splash">
+                  <img src={Logo}></img>
+                </Link>
                 <SearchBarContainer />
               </div>
               <div className="splash-link">

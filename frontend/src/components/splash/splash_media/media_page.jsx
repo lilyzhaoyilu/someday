@@ -69,7 +69,9 @@ class MediaPage extends Component {
 			<section className="wrapper">
 				<div className="splash-header">
 					<div className="splash-header-left">
-						<img src={Logo}></img>
+						<Link to="/splash">
+							<img src={Logo}></img>
+						</Link>
 						<SearchBarContainer />
 					</div>
 					<div className="splash-link">
