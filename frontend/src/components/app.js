@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { AuthRoute, ProtectedRoute } from '../util/route_util'
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
 import MovieIndexContainer from './movie/movie_index_container';
 
@@ -14,7 +13,6 @@ import SplashContainer from './splash/splash_container';
 import MoviePageContainer from './splash/splash_media/media_page_cotainer';
 const App = () => (
   <div>
-
     <Switch>
       <AuthRoute exact path='/splash' component={SplashContainer} />
       <AuthRoute exact path='/login' component={LoginFormContainer} />
@@ -27,6 +25,6 @@ const App = () => (
       <ProtectedRoute path='/' component={MainPage} />
     </Switch>
   </div>
-)
+);
 
 export default App;
