@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { withRouter, Link } from "react-router-dom";
 import Loading from "./loading";
-
+import Logo from "../../../util/somedaylogo.svg";
+import SearchBarContainer from "../../nav/search_bar/search_bar_container";
 import { HiOutlineUser, HiUserGroup } from "react-icons/hi";
 import { FiTag } from "react-icons/fi";
 import { FcPlanner, FcScatterPlot } from "react-icons/fc";
@@ -65,6 +67,21 @@ class MediaPage extends Component {
 			: this.state.ratingCount;
 		return this.state.imgUrl ? (
 			<section className="wrapper">
+				<div className="splash-header">
+					<div className="splash-header-left">
+						<img src={Logo}></img>
+						<SearchBarContainer />
+					</div>
+					<div className="splash-link">
+						{/* <Link to="/">try demo need to do</Link> */}
+						<Link id="login" className="splash-link-child" to="/login">
+							login
+						</Link>
+						<Link id="signup" className="splash-link-child" to="/signup">
+							Sign Up
+						</Link>
+					</div>
+				</div>
 				<div className="content">
 					<h1>
 						<span>{this.state.title}</span>
