@@ -5,15 +5,16 @@ export default class MovieIndexItem extends Component {
   render() {
     const { movie, imgUrl, name, year } = this.props
     return (
-      <div>
-        <li>
-          <Link to={`/mediaPage/${movie.id}`}>
-            <img src={imgUrl} alt={name} style={{ width: '100px', height: 'auto' }} />
-            <h3>{name}</h3>
-            <p>{year}</p>
-          </Link>
-        </li>
+      <Link to={`/mediaPage/${movie.id}`} className="tooltip search-result-item" >
+      
+        
+        <span className="tooltiptext">{name}
+        <br></br>{year}</span>
+        <div>
+            <img src={imgUrl} alt={name} style={{ width: '200px', height: '300px' }} />    
+     
       </div>
+      </Link>
     )
   }
 }
