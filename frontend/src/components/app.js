@@ -11,7 +11,7 @@ import MainPage from './main/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import SplashContainer from './splash/splash_container';
-import MoviePageContainer from './media_page/media_page_cotainer';
+import MoviePageContainer from './splash/splash_media/media_page_cotainer';
 const App = () => (
   <div>
 
