@@ -1,16 +1,28 @@
 .media-index {
-	overflow: hidden; /* Hide scrollbars */
+  overflow: hidden; /* Hide scrollbars */
+  display: flex;
 }
 
 .historylist-index {
-	background-color: red;
-	overflow: auto;
-	/* this will hide the scrollbar in mozilla based browsers */
-	overflow: -moz-scrollbars-none;
-	/* this will hide the scrollbar in internet explorers */
-	-ms-overflow-style: none;
+  background-color: red;
+  overflow: auto;
+  /* this will hide the scrollbar in mozilla based browsers */
+  overflow: -moz-scrollbars-none;
+  /* this will hide the scrollbar in internet explorers */
+  -ms-overflow-style: none;
 }
 .historylist-index ::-webkit-scrollbar {
-	width: 0;
-	display: none;
+  width: 0;
+  display: none;
 }
+
+/* .medias-container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.media-display {
+  display: flex;
+  flex-direction: row;
+} */
