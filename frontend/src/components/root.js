@@ -18,6 +18,7 @@ import '../stylesheets/lists.css';
 import "../stylesheets/movie_img.css";
 import "../stylesheets/mediaitem.css";
 import "../stylesheets/list_form.css";
+import "../stylesheets/media-index.css"
 
 const Root = ({ store }) => {
   return (
