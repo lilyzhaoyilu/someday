@@ -37,12 +37,16 @@ class SignupForm extends React.Component {
 		};
 
 		this.props.signup(user).then((res) => {
-			if (this.props.loggedIn) {
-				this.props.push("/show-index");
-			} else {
-				this.setState({ errors: this.props.errors });
-				console.log(this.state.errors);
-			}
+			this.props
+				.login({ email: user.email, password: user.password })
+				.then((res) => {
+					if (this.props.loggedIn) {
+						this.props.push("/show-index");
+					} else {
+						this.setState({ errors: this.props.errors });
+						console.log(this.state.errors);
+					}
+				});
 		});
 
 		// .then(this.props.login(user));
