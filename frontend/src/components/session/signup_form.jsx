@@ -16,6 +16,7 @@ class SignupForm extends React.Component {
 			errors: {},
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleClose = this.handleClose.bind(this);
 		this.clearedErrors = false;
 	}
 
@@ -37,16 +38,24 @@ class SignupForm extends React.Component {
 		};
 
 		this.props.signup(user).then((res) => {
-			this.props
-				.login({ email: user.email, password: user.password })
-				.then((res) => {
-					if (this.props.loggedIn) {
-						this.props.push("/show-index");
-					} else {
-						this.setState({ errors: this.props.errors });
-					}
-				});
+			if (res.type === "RECEIVE_SESSION_ERRORS") {
+				this.setState({ errors: this.props.errors });
+			} else {
+				this.props
+					.login({ email: user.email, password: user.password })
+					.then((res) => {
+						if (this.props.loggedIn) {
+							this.props.push("/show-index");
+						} else {
+							this.setState({ errors: this.props.errors });
+						}
+					});
+			}
 		});
+	}
+
+	handleClose() {
+		this.props.history.goBack();
 	}
 
 	renderErrors() {
@@ -65,11 +74,13 @@ class SignupForm extends React.Component {
 	}
 
 	render() {
+		console.log(this.props.history);
 		return (
 			<div className="signup-form-container">
-				<Link to="/splash">
-					<AiOutlineCloseCircle className="close-icon" />
-				</Link>
+				<AiOutlineCloseCircle
+					className="close-icon"
+					onClick={this.handleClose}
+				/>
 				<div>
 					<Link to="/">
 						<img className="login-form-logo" src={Logo}></img>

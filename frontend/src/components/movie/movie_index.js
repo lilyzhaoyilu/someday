@@ -25,18 +25,20 @@ export default class MovieIndex extends Component {
     if (movies) {
       return (
         <div>
-          {(!this.props.loggedIn) ? (<NavBar />) : (
+          {(this.props.loggedIn) ? (<NavBar />) : (
             <div className="splash-header">
               <div className="splash-header-left">
-                <img src={Logo}></img>
+                <Link to="/splash">
+                  <img src={Logo}></img>
+                </Link>
                 <SearchBarContainer />
               </div>
               <div className="splash-link">
                 {/* <Link to="/">try demo need to do</Link> */}
-                <Link id="login" className="splash-link-child" to="login">
+                <Link id="login" className="splash-link-child" to="/login">
                   login
 						</Link>
-                <Link id="signup" className="splash-link-child" to="signup">
+                <Link id="signup" className="splash-link-child" to="/signup">
                   Sign Up
 						</Link>
               </div>

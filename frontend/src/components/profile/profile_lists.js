@@ -54,7 +54,7 @@ export default class ProfileLists extends Component {
               data-toggle="pill"
               onClick={() => this.handleWatchClick()}
             >
-              Watch List
+              My Watch Lists
             </span>
           </li>
           <li className="nav-item">
@@ -63,7 +63,7 @@ export default class ProfileLists extends Component {
               data-toggle="pill"
               onClick={() => this.handleHistoryClick()}
             >
-              History List
+              My History Lists
             </span>
           </li>
         </ul>

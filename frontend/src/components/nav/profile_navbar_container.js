@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 import { getMyWatchlists } from "../../actions/watchlist_actions";
 import { showMyHistorylists } from "../../actions/historylist_actions";
-import ProfileNavbar from "./profile_navbar";
+import NavBar from "./navbar";
 
 const mapStateToProps = (state) => ({
 	loggedIn: state.session.isAuthenticated,
@@ -12,11 +12,9 @@ const mapStateToProps = (state) => ({
 	watchlists: state.entities.watchlists,
 	historylists: state.entities.historylists,
 });
-
 const mapDispatchToProps = (dispatch) => ({
 	getMyWatchlists: (userId) => dispatch(getMyWatchlists(userId)),
 	showMyHistorylists: (userId) => dispatch(showMyHistorylists(userId)),
-  logout: () => dispatch(logout()),
+	logout: () => dispatch(logout()),
 });
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileNavbar);
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

@@ -21,15 +21,13 @@ export default () => {
 
     <Route>
       <Switch>
-        <Route exact path='/profile/:userId' component={ProfileNavbarContainer}/>
+        <Route exact path='/profile/:userId' component={ProfileNavbarContainer} />
         <Route path='/' component={NavBarContainer} />
       </Switch>
       <Switch>
-        {/* <Route exact path='/search-result' component={MovieIndexContainer} /> */}
         <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
+        <Route exact path='/mediaPage/:movieId' component={MoviePageContainer} />
       </Switch>
-      {/* <Route exact path='/profile/:userId' component={ProfileShowContainer}/> */}
-      <Route exact path='/mediaPage/:movieId' component={MoviePageContainer} />
       <ProtectedRoute path='/show-index' component={ShowInfinite} />
       <ProtectedRoute path='/movie-index' component={MovieInfinite} />
 

@@ -48,7 +48,10 @@
 .plot {
   display: flex;
   flex-direction: column;
+  line-height: 1.5;
+  margin-top: 50px;
 }
+
 .plot h3 {
   margin-bottom: 10px;
   font-weight: bold;
