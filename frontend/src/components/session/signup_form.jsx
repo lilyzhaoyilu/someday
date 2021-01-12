@@ -16,6 +16,7 @@ class SignupForm extends React.Component {
 			errors: {},
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleClose = this.handleClose.bind(this);
 		this.clearedErrors = false;
 	}
 
@@ -53,6 +54,10 @@ class SignupForm extends React.Component {
 		});
 	}
 
+	handleClose() {
+		this.props.history.goBack();
+	}
+
 	renderErrors() {
 		return (
 			<ul>
@@ -69,11 +74,13 @@ class SignupForm extends React.Component {
 	}
 
 	render() {
+		console.log(this.props.history);
 		return (
 			<div className="signup-form-container">
-				<Link to="/splash">
-					<AiOutlineCloseCircle className="close-icon" />
-				</Link>
+				<AiOutlineCloseCircle
+					className="close-icon"
+					onClick={this.handleClose}
+				/>
 				<div>
 					<Link to="/">
 						<img className="login-form-logo" src={Logo}></img>

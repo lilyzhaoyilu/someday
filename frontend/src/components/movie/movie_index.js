@@ -33,10 +33,10 @@ export default class MovieIndex extends Component {
               </div>
               <div className="splash-link">
                 {/* <Link to="/">try demo need to do</Link> */}
-                <Link id="login" className="splash-link-child" to="login">
+                <Link id="login" className="splash-link-child" to="/login">
                   login
 						</Link>
-                <Link id="signup" className="splash-link-child" to="signup">
+                <Link id="signup" className="splash-link-child" to="/signup">
                   Sign Up
 						</Link>
               </div>

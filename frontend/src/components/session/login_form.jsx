@@ -17,6 +17,7 @@ class LoginForm extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.renderErrors = this.renderErrors.bind(this);
 		this.handleDemoLogin = this.handleDemoLogin.bind(this);
+		this.handleClose = this.handleClose.bind(this);
 	}
 
 	// Handle field updates (called in the render method)
@@ -26,7 +27,9 @@ class LoginForm extends React.Component {
 				[field]: e.currentTarget.value,
 			});
 	}
-
+	handleClose() {
+		this.props.history.goBack();
+	}
 	// Handle form submission
 	handleSubmit(e) {
 		e.preventDefault();
@@ -75,9 +78,10 @@ class LoginForm extends React.Component {
 	render() {
 		return (
 			<div className="login-form-container">
-				<Link to="/splash">
-					<AiOutlineCloseCircle className="close-icon" />
-				</Link>
+				<AiOutlineCloseCircle
+					className="close-icon"
+					onClick={this.handleClose}
+				/>
 				<div>
 					<Link to="/splash">
 						<img className="login-form-logo" src={Logo}></img>
