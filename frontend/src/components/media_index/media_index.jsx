@@ -56,7 +56,7 @@ class MediaIndex extends React.Component {
           dataLength={this.state.media.length}
           next={this.fetchMoreData}
           hasMore={this.state.hasMore}
-          loader={<h4>Loading...</h4>}
+          loader={<h4 style={{ height: "750px", position: "absolute"}}>Loading...</h4>}
           height={700}
           className="media-index"
           scrollThreshold={0.4}
@@ -70,13 +70,15 @@ class MediaIndex extends React.Component {
             console.log("rendering");
             if (media.hasOwnProperty("image")) {
               return (
-                <span key={media.key}>
-                  <Link to={`/mediaPage/${media.id}`}>
+                <span key={media.key} className="media-item">
+                  <Link to={`/mediaPage/${media.id}`} className="media-link">
                     <img
                       src={media.image.url}
                       alt={media.title}
                       style={{ width: "200px", height: "auto" }}
                     />
+                  </Link>
+                  <Link to={`/mediaPage/${media.id}`} className="media-link">
                     <h3>{media.title}</h3>
                   </Link>
                 </span>
