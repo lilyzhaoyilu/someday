@@ -77,7 +77,7 @@ export default class MediaHistoryList extends Component {
             <span>{`Movie already exist in ${errorList}`}</span>
           </div>
         ) : (
-          <span>{`Movie succefully added to ${successList}`}</span>
+          <span>{`Movie successfully added to ${successList}`}</span>
         )
       ) : errorList.length !== 0 ? (
         <div>

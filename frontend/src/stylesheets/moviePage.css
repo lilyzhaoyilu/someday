@@ -59,6 +59,8 @@
   flex-direction: row;
   font-weight: bold;
   width: 300px;
+  margin-left: 150px;
+  margin-bottom: 50px;
 }
 
 .media-button button {
