@@ -3,8 +3,8 @@ import { withRouter, Link } from "react-router-dom";
 
 import SearchBarContainer from "../nav/search_bar/search_bar_container";
 import Logo from "../../util/somedaylogo.svg";
-import MovieIndex from "../popularMovies/popular_movies_index_container";
-import PopularShowsIndex from "../popularShows/popular_shows_index_container";
+import MovieIndex from "./splash_movies/popular_movies_index_container";
+import PopularShowsIndex from "./splash_shows/popular_shows_index_container";
 class Splash extends React.Component {
 	constructor(props) {
 		super(props);
@@ -32,10 +32,11 @@ class Splash extends React.Component {
 				<div className="splash-features">
 					<div className="splash-features-title">
 						<h4>Features</h4>
-					<li>Search movies and TV shows</li>
-					<li>Add them to your lists</li>
-					<li>Keep track of the shows you enjoy</li>
-					<li>Comment on movies and TV shows</li></div>
+						<li>Search movies and TV shows</li>
+						<li>Add them to your lists</li>
+						<li>Keep track of the shows you enjoy</li>
+						<li>Comment on movies and TV shows</li>
+					</div>
 				</div>
 				<div className="splash-trendings">
 					<div className="splash-trending-movies">
@@ -48,9 +49,7 @@ class Splash extends React.Component {
 						<PopularShowsIndex />
 					</div>
 				</div>
-				<div className="splash-features-about">
-					
-				</div>
+				<div className="splash-features-about"></div>
 			</div>
 		);
 	}
