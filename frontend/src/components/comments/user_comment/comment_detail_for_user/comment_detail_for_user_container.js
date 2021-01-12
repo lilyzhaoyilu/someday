@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CommentDetailForUser from './comment_detail_for_user';
 import { Link, withRouter } from "react-router-dom";
+import {deleteComment,getUserComments} from "../../../../actions/comment_actions";
 // import {getUserComments} from '../../../actions/comment_actions';
 const mstp = (state, ownProps) => ({
   users: state.entities.users,
@@ -10,7 +11,8 @@ const mstp = (state, ownProps) => ({
   currentPageUserId: ownProps.match.params.userId
 })
 const mdtp = dispatch => ({
-  // fetchThisUser: (userId) => dispatch(fetchThisUser(userId)),
+  getUserComments: (userId) => dispatch(getUserComments(userId)),
+  deleteComment: (commentId) => dispatch(deleteComment(commentId)),
 })
 
 

@@ -7,6 +7,7 @@ class CommentDetailForMedia extends Component {
     super(props);
     this.displayCreatedAt = this.displayCreatedAt.bind(this);
     this.displayUsername = this.displayUsername.bind(this);
+    this.handleDeleteComment = this.handleDeleteComment.bind(this);
   }
 
   displayUsername = () => {
@@ -23,6 +24,24 @@ class CommentDetailForMedia extends Component {
     let display = moment(time);
     return <span className="media-comment-time">{display.format("MMM D YYYY")}</span>;
   }
+
+  
+  handleDeleteComment (e){
+    e.preventDefault();
+    // debugger;
+    let movieId = this.props.comment.movie;
+    this.props.deleteComment(this.props.comment._id)
+    // .then((movieId) => {this.props.getMovieComments(movieId)})
+  }
+
+  displayDeleteButton(e){
+    if(this.props.comment.user === this.props.currentUserId){
+      return (    <div className="comment-button">
+      <button className="comment-button-delete" onClick={this.handleDeleteComment}>delete this comment</button>
+    </div>)
+    }
+  }
+
 
   render() {
     
@@ -48,7 +67,8 @@ class CommentDetailForMedia extends Component {
         </div>
 
         <div>{comment.text}</div>
-        
+    
+        {this.displayDeleteButton()}
   
       
       </li>

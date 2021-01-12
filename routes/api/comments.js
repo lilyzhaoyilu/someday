@@ -82,9 +82,10 @@ router.post(
 
 //detele comment
 router.delete(
-  "/comment/:id",
+  "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    console.log("routes comment", req);
     Comment.deleteOne({ _id: req.params.id })
       .then(() => {
         res.status(200).json({
