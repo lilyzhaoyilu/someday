@@ -6,61 +6,27 @@ import SearchBarContainer from "./search_bar/search_bar_container";
 import Logo from "../../util/somedaylogo.svg";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 class NavBar extends React.PureComponent {
-	constructor(props) {
-		super(props);
-		this.logoutUser = this.logoutUser.bind(this);
-		// this.getLinks = this.getLinks.bind(this);
-	}
+  constructor(props) {
+    super(props);
+    this.logoutUser = this.logoutUser.bind(this);
+    // this.getLinks = this.getLinks.bind(this);
+  }
 
-	componentDidMount() {
-		this.props.getMyWatchlists(this.props.userId);
-		this.props.showMyHistorylists(this.props.userId);
-	}
+  componentDidMount() {
+    this.props.getMyWatchlists(this.props.userId);
+    this.props.showMyHistorylists(this.props.userId);
+  }
 
-	logoutUser(e) {
-		e.preventDefault();
-		this.props.logout();
-	}
-	
-
-	// getLinks() {
-	// 	let navLinks;
-
-	// 	if (this.props.location.pathname === "/login") {
-	// 		navLinks = (
-	// 			<div>
-	// 				<Link to="/signup">Signup</Link>
-	// 				<DemoButtonContainer />
-	// 			</div>
-	// 		);
-	// 	} else if (this.props.location.pathname === "/signup") {
-	// 		navLinks = (
-	// 			<div>
-	// 				<Link to="/login">Login</Link>
-	// 				<DemoButtonContainer />
-	// 			</div>
-	// 		);
-	// 	} else {
-	// 		navLinks = (
-	// 			<div>
-	// 				<Link to="/signup">Signup</Link>
-	// 				<Link to="/login">Login</Link>
-	// 				<DemoButtonContainer />
-	// 			</div>
-	// 		);
-	// 	}
-
-	// 	if (this.props.loggedIn) {
-	// 		return (
-	// 			<div>
-	// 				<Link to={"/profile"}>Profile</Link>
-	// 				<button onClick={this.logoutUser}>Logout</button>
-	// 			</div>
-	// 		);
-	// 	} else {
-	// 		return navLinks;
-	// 	}
-	// }
+  componentDidUpdate(prevProps) {
+    if (this.props.userId !== prevProps.userId) {
+      this.props.getMyWatchlists(this.props.userId);
+      this.props.showMyHistorylists(this.props.userId);
+    }
+  }
+  logoutUser(e) {
+    e.preventDefault();
+    this.props.logout();
+  }
 
 	render() {
 		return (
@@ -68,7 +34,7 @@ class NavBar extends React.PureComponent {
 				<Link className="navbar-logo" to={`/profile/${this.props.currUserId}`}>
 					<img src={Logo}></img>
 				</Link>
-
+        
 				<MyProfileContainer />
 
 				<Link to="/show-index">Shows</Link>
