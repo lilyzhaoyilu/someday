@@ -44,14 +44,9 @@ class SignupForm extends React.Component {
 						this.props.push("/show-index");
 					} else {
 						this.setState({ errors: this.props.errors });
-						console.log(this.state.errors);
 					}
 				});
 		});
-
-		// .then(this.props.login(user));
-
-		// setTimeout(() =>this.props.login(user), 500)
 	}
 
 	renderErrors() {
