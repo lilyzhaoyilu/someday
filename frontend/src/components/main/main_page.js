@@ -14,14 +14,14 @@ import ProfileShow from '../profile/profile_show_container';
 import MovieInfinite from '../media_index/movie_index_container'
 import ShowInfinite from '../media_index/show_index_container'
 // import ProfileShowContainer from '../profile/profile_show_container';
-import ProfileNavbarContainer from '../nav/profile_navbar_container';
+import ProfileNavbar from '../nav/profile_navbar';
 import MoviePageContainer from '../media_page/media_page_cotainer';
 export default () => {
   return (
 
     <Route>
       <Switch>
-        <Route exact path='/profile/:userId' component={ProfileNavbarContainer}/>
+        <Route exact path='/profile/:userId' component={ProfileNavbar}/>
         <Route path='/' component={NavBarContainer} />
       </Switch>
       <Switch>
