@@ -74,7 +74,8 @@
   color:#3377AA;
 }
 
-.media-comment-user:hover, .comment-user-username:hover{
+.media-comment-user:hover, .comment-user-username:hover, 
+.comment-button-delete:hover{
   color:white;
   background-color:#3377AA;
 }
@@ -183,4 +184,20 @@
   /* The following line makes the underline only as wide as the text */
   /* background-size: calc(100% - 2em) 5px, auto; */
   background-size: 100% 3px, auto;
+}
+
+
+.comment-button{
+  position: relative;
+}
+
+.comment-button-delete{
+  position: absolute;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  margin: 10px 0 0 ;
+  padding: 0px 0 0;
+  right: 0;
+  font-style: italic;
 }

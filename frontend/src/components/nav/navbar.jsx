@@ -28,45 +28,45 @@ class NavBar extends React.PureComponent {
     this.props.logout();
   }
 
-  render() {
-    return (
-      <div className="navbar">
-        <Link className="navbar-logo" to="/splash">
-          <img src={Logo}></img>
-        </Link>
+	render() {
+		return (
+			<div className="navbar">
+				<Link className="navbar-logo" to={`/profile/${this.props.currUserId}`}>
+					<img src={Logo}></img>
+				</Link>
+        
+				<MyProfileContainer />
 
-        <MyProfileContainer />
-
-        <Link to="/show-index">Shows</Link>
-        <Link to="/movie-index">Movies</Link>
-        <SearchBarContainer />
-        <div className="user-dropdown">
-          <span className="user-dropdown-header">Account</span>
-          <div className="user-dropdown-content">
-            <header>{this.props.currentUser}</header>
-            <div className="all-list">
-              <div className="todoLists">
-                <div className="list">
-                  {Object.values(this.props.watchlists).length}
-                </div>
-                <span>Todo List</span>
-              </div>
-              <div className="watchLists">
-                <div className="list">
-                  {Object.values(this.props.historylists).length}
-                </div>
-                <span>Watch List</span>
-              </div>
-            </div>
-            <div className="logout-button" onClick={this.logoutUser}>
-              <RiLogoutBoxRLine className="logout-icon" />
-              <span>Log Out</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+				<Link to="/show-index">Shows</Link>
+				<Link to="/movie-index">Movies</Link>
+				<SearchBarContainer />
+				<div className="user-dropdown">
+					<span className="user-dropdown-header">Account</span>
+					<div className="user-dropdown-content">
+						<header>{this.props.currentUser}</header>
+						<div className="all-list">
+							<div className="todoLists">
+								<div className="list">
+									{Object.values(this.props.watchlists).length}
+								</div>
+								<span>Todo List</span>
+							</div>
+							<div className="watchLists">
+								<div className="list">
+									{Object.values(this.props.historylists).length}
+								</div>
+								<span>Watch List</span>
+							</div>
+						</div>
+						<div className="logout-button" onClick={this.logoutUser}>
+							<RiLogoutBoxRLine className="logout-icon" />
+							<span>Log Out</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default withRouter(NavBar);

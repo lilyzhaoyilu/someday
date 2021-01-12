@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import Logo from "../../util/somedaylogo.svg";
 import DemoButtonContainer from "./demo_button/demo_button_container";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 class SignupForm extends React.Component {
 	constructor(props) {
@@ -14,7 +15,6 @@ class SignupForm extends React.Component {
 			about: "",
 			errors: {},
 		};
-
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.clearedErrors = false;
 	}
@@ -36,7 +36,20 @@ class SignupForm extends React.Component {
 			about: this.state.about,
 		};
 
-		this.props.signup(user).then(this.props.login(user));
+		this.props.signup(user).then((res) => {
+			this.props
+				.login({ email: user.email, password: user.password })
+				.then((res) => {
+					if (this.props.loggedIn) {
+						this.props.push("/show-index");
+					} else {
+						this.setState({ errors: this.props.errors });
+						console.log(this.state.errors);
+					}
+				});
+		});
+
+		// .then(this.props.login(user));
 
 		// setTimeout(() =>this.props.login(user), 500)
 	}
@@ -59,7 +72,9 @@ class SignupForm extends React.Component {
 	render() {
 		return (
 			<div className="signup-form-container">
-				{console.log(this.state)}
+				<Link to="/splash">
+					<AiOutlineCloseCircle className="close-icon" />
+				</Link>
 				<div>
 					<Link to="/">
 						<img className="login-form-logo" src={Logo}></img>
@@ -78,27 +93,36 @@ class SignupForm extends React.Component {
 						onChange={this.update("email")}
 						placeholder="Email*"
 					/>
-
+					<div className="error-div">
+						<p>{this.state.errors.email}</p>
+					</div>
 					<input
 						type="text"
 						value={this.state.handle}
 						onChange={this.update("handle")}
 						placeholder="Handle"
 					/>
-
+					<div className="error-div">
+						<p>{this.state.errors.handle}</p>
+					</div>
 					<input
 						type="password"
 						value={this.state.password}
 						onChange={this.update("password")}
 						placeholder="Password*"
 					/>
-
+					<div className="error-div">
+						<p>{this.state.errors.password}</p>
+					</div>
 					<input
 						type="password"
 						value={this.state.password2}
 						onChange={this.update("password2")}
 						placeholder="Confirm Password*"
 					/>
+					<div className="error-div">
+						<p>{this.state.errors.password2}</p>
+					</div>
 
 					<textarea
 						value={this.state.about}
@@ -107,7 +131,7 @@ class SignupForm extends React.Component {
 					/>
 
 					<input type="submit" value="Sign Up" />
-					{this.renderErrors()}
+					{/* {this.renderErrors()} */}
 
 					<DemoButtonContainer />
 				</form>

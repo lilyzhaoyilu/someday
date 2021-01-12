@@ -13,7 +13,7 @@ export default class HistorylistIndex extends Component {
   componentDidMount() {
     this.props.showMyHistorylists(this.props.userId)
       .then((res) => {
-        this.setState({ lists: [this.props.historylists.filter(list => list.user === this.props.userId)[0]] })
+        this.setState({ lists: [this.props.historylists.filter(list => list.user === this.props.userId)[1]] })
       })
   }
 
@@ -36,7 +36,7 @@ export default class HistorylistIndex extends Component {
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}
           hasMore={this.state.hasMore}
-          loader={<h4 style={{ height: "400px" }}>Loading...</h4>}
+          loader={<h4 style={{ height: "700px" }}>Loading...</h4>}
           height={400}
           scrollThreshold={0.4}
           classname={"historylist-index"}

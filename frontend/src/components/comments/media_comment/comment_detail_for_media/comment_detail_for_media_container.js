@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 import CommentDetailForMedia from './comment_detail_for_media';
-
-// import {getUserComments} from '../../../actions/comment_actions';
+import {deleteComment} from "../../../../actions/comment_actions";
+import {getMovieComments} from '../../../../actions/comment_actions';
 const mstp = (state, ownProps) => ({
-  users: state.entities.users
+  users: state.entities.users,
   // comments: state.entities.comments,
-  // currentUserId: state.session.user.id,
+  currentUserId: state.session.user.id,
   // currentPageUserId: ownProps. it should really be this one to fetch the user's comment based on current URL...
 })
 const mdtp = dispatch => ({
   // fetchThisUser: (userId) => dispatch(fetchThisUser(userId)),
+  getMovieComments: (movieId) => dispatch(getMovieComments(movieId)),
+  deleteComment: (commentId) => dispatch(deleteComment(commentId)),
 })
 
 
