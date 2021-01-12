@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import Modal from "react-modal";
 import ListForm from "../list_form/historylist_form_container";
@@ -50,17 +49,11 @@ export default class MediaHistoryList extends Component {
         successList.push(list.name);
       }
     });
-    if (errorList.length !== 0) {
-      this.setState({
-        isDisplay: !this.state.isDisplay,
-        errorList: errorList,
-      });
-    } else {
-      this.setState({
-        isDisplay: !this.state.isDisplay,
-        successList: successList,
-      });
-    }
+    this.setState({
+      isDisplay: !this.state.isDisplay,
+      successList: successList,
+      errorList: errorList,
+    });
   }
 
   toggleModal3(e) {
@@ -79,8 +72,8 @@ export default class MediaHistoryList extends Component {
     const msg =
       successList.length !== 0 ? (
         errorList.length !== 0 ? (
-          <div className= "msg-error-success">
-            <span>{`Movie succefully added to ${successList}`}</span>
+          <div className="msg-error-success">
+            <span>{`Movie successfully added to ${successList}`}</span>
             <span>{`Movie already exist in ${errorList}`}</span>
           </div>
         ) : (
@@ -130,7 +123,7 @@ export default class MediaHistoryList extends Component {
           closeTimeoutMS={500}
           ariaHideApp={false}
         >
-          <ListForm movieId = {this.props.movieId}/>
+          <ListForm movieId={this.props.movieId} />
           <button className="list-add-button" onClick={this.toggleModal4}>
             Close
           </button>

@@ -1,29 +1,35 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import DemoButtonContainer from "../session/demo_button/demo_button_container";
-import MyProfileContainer from './my_profile/my_profile_container';
+import MyProfileContainer from "./my_profile/my_profile_container";
 import SearchBarContainer from "./search_bar/search_bar_container";
 import Logo from "../../util/somedaylogo.svg";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 class NavBar extends React.PureComponent {
-	constructor(props) {
-		super(props);
-		this.logoutUser = this.logoutUser.bind(this);
-		// this.getLinks = this.getLinks.bind(this);
-	}
+  constructor(props) {
+    super(props);
+    this.logoutUser = this.logoutUser.bind(this);
+    // this.getLinks = this.getLinks.bind(this);
+  }
 
-	componentDidMount() {
-		this.props.getMyWatchlists(this.props.userId);
-		this.props.showMyHistorylists(this.props.userId);
-	}
-	
-	logoutUser(e) {
-		e.preventDefault();
-		this.props.logout();
-	}
+  componentDidMount() {
+    this.props.getMyWatchlists(this.props.userId);
+    this.props.showMyHistorylists(this.props.userId);
+  }
 
-	render() {
-		return (
+  componentDidUpdate(prevProps) {
+    if (this.props.userId !== prevProps.userId) {
+      this.props.getMyWatchlists(this.props.userId);
+      this.props.showMyHistorylists(this.props.userId);
+    }
+  }
+  logoutUser(e) {
+    e.preventDefault();
+    this.props.logout();
+  }
+
+  render() {
+    return (
       <div className="navbar">
         <Link className="navbar-logo" to="/splash">
           <img src={Logo}></img>
@@ -60,7 +66,7 @@ class NavBar extends React.PureComponent {
         </div>
       </div>
     );
-	}
+  }
 }
 
 export default withRouter(NavBar);
