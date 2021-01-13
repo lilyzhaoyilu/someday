@@ -8,6 +8,7 @@
   right: 50%;
   transform: translate(-50%, -50%);
   top: 480px;
+  box-sizing: border-box;
 }
 
 .media-item {
@@ -24,19 +25,21 @@
   align-items: center;
   border-radius: 15px;
   z-index: 5;
-  box-shadow: 5px 5px lightgray;
+  
   margin-right: 100px;
   margin-bottom: 29px;
   transition: all 0.5s linear;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
 }
 .media-item:hover {
-  box-shadow: 10px 10px darkgray;
+  box-shadow: 8px 8px lightgray;
 }
 
 .media-link {
 }
 .media-item img {
   display: block;
+;
 }
 
 .media-item h3 {
