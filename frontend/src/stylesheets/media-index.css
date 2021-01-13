@@ -3,6 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 70%;
+  max-width: 1300px;
   position: absolute;
   left: 50%;
   right: 50%;
