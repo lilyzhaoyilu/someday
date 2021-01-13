@@ -3,6 +3,7 @@ import {
 	signup,
 	login,
 	eraseSessionErrors,
+	demoLogin,
 } from "../../actions/session_actions";
 import SignupForm from "./signup_form";
 
@@ -18,6 +19,7 @@ const mapDispatchToProps = (dispatch) => {
 		signup: (user) => dispatch(signup(user)),
 		login: (user) => dispatch(login(user)),
 		eraseSessionErrors: () => dispatch(eraseSessionErrors()),
+		demoLogin: () => dispatch(demoLogin()),
 	};
 };
 

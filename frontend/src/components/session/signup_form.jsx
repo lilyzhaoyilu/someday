@@ -16,6 +16,7 @@ class SignupForm extends React.Component {
 			errors: {},
 		};
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleDemoLogin = this.handleDemoLogin.bind(this);
 		this.handleClose = this.handleClose.bind(this);
 		this.clearedErrors = false;
 	}
@@ -45,7 +46,7 @@ class SignupForm extends React.Component {
 					.login({ email: user.email, password: user.password })
 					.then((res) => {
 						if (this.props.loggedIn) {
-							this.props.push("/show-index");
+							this.props.history.push("/show-index");
 						} else {
 							this.setState({ errors: this.props.errors });
 						}
@@ -72,7 +73,10 @@ class SignupForm extends React.Component {
 	componentWillUnmount() {
 		this.props.eraseSessionErrors();
 	}
-
+	handleDemoLogin(e) {
+		e.preventDefault();
+		this.props.demoLogin().then(() => this.props.history.push("/show-index"));
+	}
 	render() {
 		console.log(this.props.history);
 		return (
@@ -139,7 +143,9 @@ class SignupForm extends React.Component {
 					<input type="submit" value="Sign Up" />
 					{/* {this.renderErrors()} */}
 
-					<DemoButtonContainer />
+					<button className="sinup-form-demo" onClick={this.handleDemoLogin}>
+						Demo Login
+					</button>
 				</form>
 			</div>
 		);
