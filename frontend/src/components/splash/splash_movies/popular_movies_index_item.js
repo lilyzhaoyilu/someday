@@ -11,7 +11,7 @@ export default class PopularmoviesIndexItem extends Component {
   render() {
     const { show } = this.props
     return (show && show.image) ? (
-      <Link to={`/media_page/${show.id}`} className="tooltip">
+      <Link to={`/media_page/${show.id}`} className="tooltip movie-item">
         {console.log(show)}
         <span className="tooltiptext">{show.title}</span>
         <div>
