@@ -48,17 +48,13 @@ export default class WatchlistIndex extends Component {
         successList.push(list.name);
       }
     });
-    if (errorList.length !== 0) {
+
       this.setState({
         isDisplay: !this.state.isDisplay,
         errorList: errorList,
-      });
-    } else {
-      this.setState({
-        isDisplay: !this.state.isDisplay,
         successList: successList,
       });
-    }
+  
   }
 
   toggleModal3(e) {
