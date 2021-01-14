@@ -26,7 +26,7 @@ class SearchBar extends Component {
 	render() {
 		return (
 			<form className="search-bar" onSubmit={this.handleSubmit}>
-				<div className="input-container">
+				<div className="search-container">
 					<img src={search}></img>
 					<input
 						type="text"

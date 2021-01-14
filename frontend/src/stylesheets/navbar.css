@@ -59,7 +59,7 @@
 	box-shadow: lightgray;
 	/* z-index: 1; */
 }
-.input-container {
+.search-container {
 	display: flex;
 	align-items: center;
 	/* z-index: 1; */
