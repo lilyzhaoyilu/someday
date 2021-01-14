@@ -15,13 +15,17 @@ class ProfileShow extends Component {
       let display = moment(time);
       return display.format("MMM D YYYY");
     }
+    const randomId = Math.floor(Math.random() * 13)
     return user ? (
       <div>
         {/* <ProfileNavbar /> */}
         <div className="profile-show-wrapper">
           <ProfileLists user={user}/>
           <div className="user-info">
-            <h1>{`${user.handle}'s Info`}</h1>
+            <div className="profile-pic">
+              <h1>{`${user.handle}'s Info`}</h1>
+              <img src={`https://robohash.org/${randomId}?set=set2`} className="user-pic"/>
+            </div>
             <div className="username">
               <label>Username:
                 <strong>{user.handle}</strong>
