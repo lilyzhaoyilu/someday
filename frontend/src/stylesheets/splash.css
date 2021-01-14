@@ -4,6 +4,9 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	min-width: 1300px;
+	width: 80%;
+	margin: 0 auto;
 }
 .splash-header-left {
 	display: flex;
@@ -124,9 +127,8 @@
 	font-size: 16px;
 }
 
-
 /* /////////extra search result item */
-.search-result-item{
+.search-result-item {
 	margin: 20px;
 	padding: 20px;
 }

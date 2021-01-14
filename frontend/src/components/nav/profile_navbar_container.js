@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 import { getMyWatchlists } from "../../actions/watchlist_actions";
 import { showMyHistorylists } from "../../actions/historylist_actions";
-import NavBar from "./navbar";
+import NavBar from "./profile_navbar";
 
 const mapStateToProps = (state) => ({
 	loggedIn: state.session.isAuthenticated,

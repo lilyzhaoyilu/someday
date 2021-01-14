@@ -1,58 +1,59 @@
 .navbar-wrapper {
-  background-color: #edf4ed;
-  display: flex;
-  justify-content: space-between;
+	background-color: #edf4ed;
+	display: flex;
+	justify-content: space-between;
 }
 
 .profile-navbar {
-  display: flex;
-  height: 10vh;
-  flex-direction: row;
-  background-color: #edf4ed;
-  justify-content: space-between;
-  width: 98%;
-  align-items: center;
+	display: flex;
+	height: 10vh;
+	flex-direction: row;
+	background-color: #edf4ed;
+	justify-content: space-between;
+	width: 70%;
+	min-width: 1300px;
+	align-items: center;
+	position: relative;
+	margin: 0 auto;
 }
 
 .left {
-  display: flex;
-  height: 10vh;
-  flex-direction: row;
-  background-color: #edf4ed;
-  align-items: center;
+	display: flex;
+	height: 10vh;
+	flex-direction: row;
+	background-color: #edf4ed;
+	align-items: center;
 }
 
 .nav-links > a {
-  margin-right: 20px;
-  font-size: 20px;
-  /*   border-radius: 5px; */
-  text-decoration: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
+	margin-right: 20px;
+	font-size: 20px;
+	/*   border-radius: 5px; */
+	text-decoration: none;
+	padding-top: 5px;
+	padding-bottom: 5px;
 
-  /* Set up the hover */
-  /* If you aren't using autoprefix, remember to prefix the gradient for other browsers */
-  background-image: linear-gradient(#007A5A, #007A5A),
-  linear-gradient(transparent, transparent);
-  background-size: 0 1px,
-  auto;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  transition: all .2s ease-out;
+	/* Set up the hover */
+	/* If you aren't using autoprefix, remember to prefix the gradient for other browsers */
+	background-image: linear-gradient(#007a5a, #007a5a),
+		linear-gradient(transparent, transparent);
+	background-size: 0 1px, auto;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	transition: all 0.2s ease-out;
 }
 
 .navbar-logo {
-  margin-right: 20px;
+	margin-right: 20px;
 }
 
-
 .nav-links > a:hover {
-  /* The following line makes the underline only as wide as the text */
-  /* background-size: calc(100% - 2em) 5px, auto; */
-  background-size: 100% 3px, auto;
+	/* The following line makes the underline only as wide as the text */
+	/* background-size: calc(100% - 2em) 5px, auto; */
+	background-size: 100% 3px, auto;
 }
 
 .my-profile {
-  margin-right: 20px;
-  font-size: 20px;
+	margin-right: 20px;
+	font-size: 20px;
 }
