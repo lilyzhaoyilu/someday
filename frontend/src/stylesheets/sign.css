@@ -1,199 +1,199 @@
 .signup-form-container {
-  margin: 50px 30vw 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
+	margin: 50px 30vw 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
 }
 
 .signup-form-logo {
-  width: 100%;
+	width: 100%;
 }
 
 .signup-form {
-  display: flex;
-  flex-direction: column;
-  width: 40vw;
-  min-width: 200px;
-  padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	width: 40vw;
+	min-width: 200px;
+	padding-top: 20px;
 }
 
 .signup-form-title {
-  width: 20vw;
+	width: 20vw;
 }
 
 
 .signup-form textarea,
 .sinup-form-demo {
-  margin: 1vh;
-  height: 5vh;
-  border-radius: 4px;
-  border: 1px solid black;
+	margin: 1vh;
+	height: 5vh;
+	border-radius: 4px;
+	border: 1px solid black;
 }
 
 .sinup-form-demo {
-  background-color: #007a5a;
-  border: none;
-  outline: none;
-  color: white;
-  font-weight: 800;
+	background-color: #007a5a;
+	border: none;
+	outline: none;
+	color: white;
+	font-weight: 800;
 }
 
 
 .session-link {
-  margin-top: 12px;
-  font-size: 16px;
-  display: flex;
-  flex-direction: row;
+	margin-top: 12px;
+	font-size: 16px;
+	display: flex;
+	flex-direction: row;
 }
 .session-link a {
-  color: blue;
-  text-align: center;
-  margin-top: 10px;
-  padding: 10px;
+	color: blue;
+	text-align: center;
+	margin-top: 10px;
+	padding: 10px;
 }
 .session-link h3 {
-  margin-top: 18px;
-  margin-bottom: 10px;
+	margin-top: 18px;
+	margin-bottom: 10px;
 }
 
 /* login below */
 .login-form-container {
-  margin: 50px 30vw 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
+	margin: 50px 30vw 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
 }
 
 .login-form-logo {
-  width: 100%;
+	width: 100%;
 }
 
 .login-form {
-  display: flex;
-  flex-direction: column;
-  width: 40vw;
-  min-width: 200px;
-  padding-top: 20px;
+	display: flex;
+	flex-direction: column;
+	width: 40vw;
+	min-width: 200px;
+	padding-top: 20px;
 }
 
 .error-div {
-  height: 25px;
-  text-align: center;
-  color: red;
-  line-height: 1.3em;
+	height: 25px;
+	text-align: center;
+	color: red;
+	line-height: 1.3em;
 }
 
 .close-icon {
-  font-size: 1.8em;
-  color: #007a5a;
-  position: absolute;
-  right: 0;
-  top: -10px;
-  cursor: pointer;
+	font-size: 1.8em;
+	color: #007a5a;
+	position: absolute;
+	right: 0;
+	top: -10px;
+	cursor: pointer;
 }
 
 .input-container {
-  position: relative;
-  display: inline-block;
-  margin: 30px 10px;
+	position: relative;
+	display: inline-block;
+	margin: 30px 10px;
 }
 
 .gate {
-  display: inline-block;
-  margin: 1vh;
-  height: 5vh;
-  width: 100%;
-  padding: 10px 0 10px 15px;
-  font-size: 25px;
-  font-weight: 400;
-  color: #377d6a;
-  background: #efefef;
-  border: 1px solid black;
-  border-radius: 3px;
-  outline: 0;
-  text-indent: 65px;
-  transition: all 0.3s ease-in-out;
+	display: inline-block;
+	margin: 1vh;
+	height: 5vh;
+	width: 100%;
+	padding: 10px 0 10px 15px;
+	font-size: 25px;
+	font-weight: 400;
+	color: #377d6a;
+	background: #efefef;
+	border: 1px solid black;
+	border-radius: 3px;
+	outline: 0;
+	text-indent: 65px;
+	transition: all 0.3s ease-in-out;
 }
 
 .gate::-webkit-input-placeholder {
-  color: #efefef;
-  text-indent: 0;
-  font-weight: 300;
+	color: #efefef;
+	text-indent: 0;
+	font-weight: 300;
 }
 
 .gate + label {
-    display: inline-block;
-    position: absolute;
-    top: -17px;
-    left: 0;
-    padding: 10px 15px;
-    text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
-    background: #7ab893;
-    color: white;
-    transition: all 0.4s ease-in-out;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    transform-origin: left bottom;
-    z-index: 99;
-    width: 92px;
-    height: 49px;
-    line-height: 3rem;
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+	left: 0;
+	padding: 10px 15px;
+	text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+	background: #7ab893;
+	color: white;
+	transition: all 0.4s ease-in-out;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	transform-origin: left bottom;
+	z-index: 99;
+	width: 92px;
+	height: 49px;
+	line-height: 3rem;
 }
 .gate + label:before,
 .gate + label:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 3px;
-  background: #377d6a;
-  transform-origin: left bottom;
-  transition: all 0.4s ease-in-out;
-  pointer-events: none;
-  z-index: -1;
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-radius: 3px;
+	background: #377d6a;
+	transform-origin: left bottom;
+	transition: all 0.4s ease-in-out;
+	pointer-events: none;
+	z-index: -1;
 }
 
 .gate + label:before {
-  background: rgba(3, 36, 41, 0.2);
-  z-index: -2;
-  right: 10%;
+	background: rgba(3, 36, 41, 0.2);
+	z-index: -2;
+	right: 10%;
 }
 
 span:nth-child(2) .gate {
-  text-indent: 85px;
+	text-indent: 85px;
 }
 
 span:nth-child(2) .gate:focus,
 span:nth-child(2) .gate:active {
-  text-indent: 0;
+	text-indent: 0;
 }
 
 .gate:focus,
 .gate:active {
-  color: #377d6a;
-  text-indent: 0;
-  background: #fff;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
+	color: #377d6a;
+	text-indent: 0;
+	background: #fff;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
 }
 
 .gate:focus::-webkit-input-placeholder,
 .gate:active::-webkit-input-placeholder {
-  color: #aaa;
+	color: #aaa;
 }
 
 .gate:focus + label,
 .gate:active + label {
-  transform: rotate(-66deg);
-  border-radius: 3px;
+	transform: rotate(-66deg);
+	border-radius: 3px;
 }
 .gate:focus + label:before,
 .gate:active + label:before {
-  transform: rotate(10deg);
+	transform: rotate(10deg);
 }

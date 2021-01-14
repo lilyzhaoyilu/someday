@@ -1,4 +1,3 @@
-
 /* comments on user's profile page  */
 /* .user-comment{
   display: flex;
@@ -9,29 +8,28 @@
  
 } */
 
-.user-comment{
-  width: 53vw;
-  margin: 40px 0 40px;
+.user-comment {
+	width: 53vw;
+	margin: 40px 0 40px;
 }
 
-.user-comment h3{
-  padding: 0px 0 20px;
+.user-comment h3 {
+	padding: 0px 0 20px;
 }
 
-.comment-user-container{
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
+.comment-user-container {
+	display: flex;
+	flex-direction: row;
+	list-style-type: none;
 }
 
-.comment-detail-user-right{
-  width: 100%;
-  padding: 0 15px 0;
- 
+.comment-detail-user-right {
+	width: 100%;
+	padding: 0 15px 0;
 }
 
-.comment-user-title{
-  padding: 10px 0 20px;
+.comment-user-title {
+	padding: 10px 0 20px;
 }
 
 /* .comment-detail-user-right div{
@@ -43,161 +41,148 @@
   justify-content: space-between;
 } */
 
-.comment-user-container img{
-  /* max-height: 100%; */
-  /* height: 100px; */
-  width: 100px;
+.comment-user-container img {
+	/* max-height: 100%; */
+	/* height: 100px; */
+	width: 100px;
 }
 
-.comment-detail-text{
-  padding: 20px 0 0;
+.comment-detail-text {
+	padding: 20px 0 0;
 }
-.comment-detail-second{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 5px 0 0;
+.comment-detail-second {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 5px 0 0;
 }
 
-
-
-
-
-
+.comment-user h2 {
+	margin: 15px;
+}
 
 /* comments on media page  */
-.media-comments{
-  width: 100%;
+.media-comments {
+	width: 100%;
 }
 
-.media-comment-user, .comment-user-username{
-  color:#3377AA;
+.media-comment-user,
+.comment-user-username {
+	color: #3377aa;
 }
 
-.media-comment-user:hover, .comment-user-username:hover, 
-.comment-button-delete:hover{
-  color:white;
-  background-color:#3377AA;
+.media-comment-user:hover,
+.comment-user-username:hover,
+.comment-button-delete:hover {
+	color: white;
+	background-color: #3377aa;
 }
-.media-comment-time, .comment-user-time{
-  color:gray;
-  margin-left: 5em;
-  opacity: 0.9;
-  cursor: default;
-}
-
-
-.media-comments li{
-  list-style-type: none;
-  /* margin: 10px 0 10px; */
-  padding: 30px 0 30px;
-  border-bottom: 1px solid #d3d3d3;
-  /* max-width: 90%; */
- 
+.media-comment-time,
+.comment-user-time {
+	color: gray;
+	margin-left: 5em;
+	opacity: 0.9;
+	cursor: default;
 }
 
-.media-comments-title{
-  margin: 30px 0 10px;
-  color: #007722;
+.media-comments li {
+	list-style-type: none;
+	/* margin: 10px 0 10px; */
+	padding: 30px 0 30px;
+	border-bottom: 1px solid #d3d3d3;
+	/* max-width: 90%; */
 }
 
-.media-comment-subtitle{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.media-comments-title {
+	margin: 30px 0 10px;
+	color: #007722;
 }
 
-
-
-
-
-
-
-
-
-
+.media-comment-subtitle {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 
 /* comment_form component  */
-.comment-form h3{
-  color: #ca6445;
-  margin: 50px 0 30px;
+.comment-form h3 {
+	color: #ca6445;
+	margin: 50px 0 30px;
 }
 
-.comment-form textarea{
-  width: 100%;
-  min-height:5em;
-  overflow: auto;
-  font-size: 20px;
-  outline: none;
-  border: 1px solid #d3d3d3;
-  border-radius:2px;
+.comment-form textarea {
+	width: 100%;
+	min-height: 5em;
+	overflow: auto;
+	font-size: 20px;
+	outline: none;
+	border: 1px solid #d3d3d3;
+	border-radius: 2px;
 }
 
-.comment-form-submit{
-  outline: none;
-  background-color: transparent;
-  border: #d3d3d3 1px solid;
-  align-self: flex-end;
-  padding: 10px 20px;
-  margin: 10px 0 0;
+.comment-form-submit {
+	outline: none;
+	background-color: transparent;
+	border: #d3d3d3 1px solid;
+	align-self: flex-end;
+	padding: 10px 20px;
+	margin: 10px 0 0;
 }
 
 /* .comment-form-submit:disabled{
   color:red;
 } */
 
-.comment-form{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  /* justify-content: flex-end; */
-  align-items: flex-start;
+.comment-form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	/* justify-content: flex-end; */
+	align-items: flex-start;
 }
-.comment-form form{
-  width: 99%;
-}
-
-.movie-title {
-  font-weight: 700;
-
+.comment-form form {
+	width: 99%;
 }
 
 .movie-title {
-  display: inline-block;
-  /*   border-radius: 5px; */
-  text-decoration: none;
-  color: black;
-  padding-top: 5px;
-  padding-bottom: 5px;
+	font-weight: 700;
+}
 
-  /* Set up the hover */
-  /* If you aren't using autoprefix, remember to prefix the gradient for other browsers */
-  background-image: linear-gradient(#007A5A, #007A5A),
-  linear-gradient(rgb(235, 228, 228), white);
-  background-size: 0 1px, auto;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  transition: all .2s ease-out;
+.movie-title {
+	display: inline-block;
+	/*   border-radius: 5px; */
+	text-decoration: none;
+	color: black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	/* Set up the hover */
+	/* If you aren't using autoprefix, remember to prefix the gradient for other browsers */
+	background-image: linear-gradient(#007a5a, #007a5a),
+		linear-gradient(rgb(235, 228, 228), white);
+	background-size: 0 1px, auto;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	transition: all 0.2s ease-out;
 }
 
 .movie-title:hover {
-  /* The following line makes the underline only as wide as the text */
-  /* background-size: calc(100% - 2em) 5px, auto; */
-  background-size: 100% 3px, auto;
+	/* The following line makes the underline only as wide as the text */
+	/* background-size: calc(100% - 2em) 5px, auto; */
+	background-size: 100% 3px, auto;
 }
 
-
-.comment-button{
-  position: relative;
+.comment-button {
+	position: relative;
 }
 
-.comment-button-delete{
-  position: absolute;
-  outline: none;
-  background-color: transparent;
-  border: none;
-  margin: 10px 0 0 ;
-  padding: 0px 0 0;
-  right: 0;
-  font-style: italic;
+.comment-button-delete {
+	position: absolute;
+	outline: none;
+	background-color: transparent;
+	border: none;
+	margin: 10px 0 0;
+	padding: 0px 0 0;
+	right: 0;
+	font-style: italic;
 }

@@ -44,7 +44,7 @@ export default class MovieIndex extends Component {
               </div>
             </div>
           )}
-          <ul>
+          <ul className="search-result">
             {movies.map(movie => {
               if (movie.id.slice(0, 2) === 'tt' && movie.i) {
                 return (

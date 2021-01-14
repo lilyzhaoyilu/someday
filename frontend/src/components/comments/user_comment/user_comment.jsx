@@ -18,7 +18,7 @@ class UserComment extends Component {
 					.filter((comment) => comment.user === this.props.currentPageUserId)
 					.slice(0, 2),
 			});
-			
+
 			if (this.state.comments.length === 0) {
 				return;
 			} else if (this.state.comments.length === 1) {
@@ -30,39 +30,31 @@ class UserComment extends Component {
 		});
 	}
 
-
-
-
 	componentDidUpdate(prevProps) {
 		if (this.props.currentPageUserId !== prevProps.currentPageUserId) {
 			this.props.getUserComments(this.props.currentPageUserId);
 		}
-	
 
-		
 		// if(Object.values(prevProps.comments).length != Object.keys(this.props.comments).length){
 		// 	this.props.getUserComments(this.props.currentPageUserId)
-		
-			// .then((res) => {
-			// 	this.setState({
-			// 		comments: Object.values(this.props.comments)
-			// 			.filter((comment) => comment.user === this.props.currentPageUserId)
-			// 			.slice(0, 2),
-			// 	});
-			
-			// 	if (this.state.comments.length === 0) {
-			// 		return;
-			// 	} else if (this.state.comments.length === 1) {
-			// 		this.props.fetchMovieData(Object.values(this.state.comments)[0].movie);
-			// 	} else {
-			// 		this.props.fetchMovieData(Object.values(this.state.comments)[0].movie);
-			// 		this.props.fetchMovieData(Object.values(this.state.comments)[1].movie);
-				// }
-			// }
-			;
-		}
 
-	
+		// .then((res) => {
+		// 	this.setState({
+		// 		comments: Object.values(this.props.comments)
+		// 			.filter((comment) => comment.user === this.props.currentPageUserId)
+		// 			.slice(0, 2),
+		// 	});
+
+		// 	if (this.state.comments.length === 0) {
+		// 		return;
+		// 	} else if (this.state.comments.length === 1) {
+		// 		this.props.fetchMovieData(Object.values(this.state.comments)[0].movie);
+		// 	} else {
+		// 		this.props.fetchMovieData(Object.values(this.state.comments)[0].movie);
+		// 		this.props.fetchMovieData(Object.values(this.state.comments)[1].movie);
+		// }
+		// }
+	}
 
 	fetchMoreData() {
 		if (
@@ -84,8 +76,6 @@ class UserComment extends Component {
 			Object.values(this.props.comments)[this.state.comments.length - 1].movie
 		);
 	}
-
-
 
 	displayUsername() {
 		if (this.props.currentPageUserId === this.props.currentUserId) {
@@ -117,13 +107,18 @@ class UserComment extends Component {
 
 		return (
 			<div className="comment-user">
-				<h2>{this.displayUsername()} <span className="user-cmnt-header">···({this.displayCommentNumber()})</span></h2>
+				<h2>
+					{this.displayUsername()}{" "}
+					<span className="user-cmnt-header">
+						···({this.displayCommentNumber()})
+					</span>
+				</h2>
 				<InfiniteScroll
 					dataLength={this.state.comments.length}
 					next={this.fetchMoreData}
 					hasMore={this.state.hasMore}
-					loader={<h4 style={{ height: "600px" }}>Loading...</h4>}
-					height={700}
+					loader={<h4 style={{ height: "600px" }}>Keep scrolling...</h4>}
+					height={500}
 					scrollThreshold={0.6}
 					endMessage={
 						<p style={{ textAlign: "center", color: "gray" }}>
@@ -133,7 +128,11 @@ class UserComment extends Component {
 				>
 					<ul>
 						{this.state.comments.map((comment) => (
-							<CommentDetailForUser key={comment._id} comment={comment} userId={this.props.currentPageUserId} />
+							<CommentDetailForUser
+								key={comment._id}
+								comment={comment}
+								userId={this.props.currentPageUserId}
+							/>
 						))}
 					</ul>
 				</InfiniteScroll>
