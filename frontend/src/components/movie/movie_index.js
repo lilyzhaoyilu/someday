@@ -54,6 +54,7 @@ export default class MovieIndex extends Component {
                     imgUrl={movie.i.imageUrl}
                     name={movie.l}
                     year={movie.y}
+                    loggedIn={this.props.loggedIn}
                   />
                 )
               }
