@@ -23,7 +23,7 @@
 	width: 20vw;
 }
 
-.signup-form input,
+
 .signup-form textarea,
 .sinup-form-demo {
 	margin: 1vh;
@@ -39,6 +39,7 @@
 	color: white;
 	font-weight: 800;
 }
+
 
 .session-link {
 	margin-top: 12px;
@@ -127,7 +128,7 @@
 .gate + label {
 	display: inline-block;
 	position: absolute;
-	top: 15px;
+	top: -18px;
 	left: 0;
 	padding: 10px 15px;
 	text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
