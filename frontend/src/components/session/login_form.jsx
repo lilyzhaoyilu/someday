@@ -77,51 +77,64 @@ class LoginForm extends React.Component {
 
 	render() {
 		return (
-			<div className="login-form-container">
-				<AiOutlineCloseCircle
-					className="close-icon"
-					onClick={this.handleClose}
-				/>
-				<div>
-					<Link to="/splash">
-						<img className="login-form-logo" src={Logo}></img>
-					</Link>
-				</div>
+      <div className="login-form-container">
+        <AiOutlineCloseCircle
+          className="close-icon"
+          onClick={this.handleClose}
+        />
+        <div>
+          <Link to="/splash">
+            <img className="login-form-logo" src={Logo}></img>
+          </Link>
+        </div>
 
-				<div className="session-link">
-					<h3>Don't have an account?</h3>
-					<Link to="/signup">Sign Up</Link>
-				</div>
-				<form className="login-form" onSubmit={this.handleSubmit}>
-					<input
-						type="text"
-						value={this.state.email}
-						onChange={this.update("email")}
-						placeholder="Email"
-					/>
-					<div className="error-div">
-						<p>{this.state.errors.email}</p>
-					</div>
-					<input
-						type="password"
-						value={this.state.password}
-						onChange={this.update("password")}
-						placeholder="Password"
-					/>
-					{/* {this.renderErrors()} */}
-					<div className="error-div">
-						<p>{this.state.errors.password}</p>
-					</div>
-					<input type="submit" value="Submit" />
+        <div className="session-link">
+          <h3>Don't have an account?</h3>
+          <Link to="/signup">Sign Up</Link>
+        </div>
+        <form className="login-form" onSubmit={this.handleSubmit}>
+          <span className="input-container">
+            <input
+              type="text"
+              value={this.state.email}
+              onChange={this.update("email")}
+              placeholder="Email"
+              id="email"
+              className="gate"
+            />
+            <label for="email">Email</label>
+          </span>
 
-					{/* <button className="sinup-form-demo">Login as demo user</button> */}
-					{/* <DemoButtonContainer /> */}
-					<button className="sinup-form-demo" onClick={this.handleDemoLogin}>
-						Demo Login
-					</button>
-				</form>
-			</div>
-		);
+          <div className="error-div">
+            <p>{this.state.errors.email}</p>
+          </div>
+
+          <span className="input-container">
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              placeholder="Password"
+              id="password"
+              className="gate"
+            />
+            <label for="password">Password</label>
+          </span>
+
+          {/* {this.renderErrors()} */}
+          <div className="error-div">
+            <p>{this.state.errors.password}</p>
+          </div>
+          <button className="sinup-form-demo">Login</button>
+
+          {/* <button className="sinup-form-demo">Login as demo user</button> */}
+          {/* <DemoButtonContainer /> */}
+          <button className="sinup-form-demo" onClick={this.handleDemoLogin}>
+            Demo Login
+          </button>
+        </form>
+      </div>
+    );
 	}
 }
 
