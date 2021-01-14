@@ -23,7 +23,7 @@
   width: 20vw;
 }
 
-.signup-form input,
+
 .signup-form textarea,
 .sinup-form-demo {
   margin: 1vh;
@@ -32,7 +32,6 @@
   border: 1px solid black;
 }
 
-
 .sinup-form-demo {
   background-color: #007a5a;
   border: none;
@@ -40,6 +39,7 @@
   color: white;
   font-weight: 800;
 }
+
 
 .session-link {
   margin-top: 12px;
