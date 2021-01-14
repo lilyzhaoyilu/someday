@@ -43,6 +43,8 @@
 .splash-features {
 	height: 45vh;
 	background-color: #edf4ed;
+	/* width: 85%; */
+	margin: 0 auto;
 }
 
 .splash-trendings {
@@ -57,8 +59,18 @@
 }
 
 .splash-trending-movies > h3 {
-	padding: 10px;
+	padding: 20px;
 	cursor: default;
+	font-weight: 700;
+	font-size: 24px;
+	text-shadow:0 6px 1px rgba(0,0,0,.1),
+							0 0 5px rgba(0,0,0,.1),
+							0 1px 3px rgba(0,0,0,.3),
+							0 3px 5px rgba(0,0,0,.2),
+							0 5px 10px rgba(0,0,0,.25),
+							0 10px 10px rgba(0,0,0,.2),
+							0 20px 20px rgba(0,0,0,.15);
+
 }
 
 .splash-trending-tvshows {
@@ -66,8 +78,18 @@
 }
 
 .splash-trending-tvshows > h3 {
-	padding: 10px;
+	padding: 20px;
 	cursor: default;
+	font-weight: 700;
+	font-size: 24px;
+	text-shadow:0 6px 1px rgba(0,0,0,.1),
+							0 0 5px rgba(0,0,0,.1),
+							0 1px 3px rgba(0,0,0,.3),
+							0 3px 5px rgba(0,0,0,.2),
+							0 5px 10px rgba(0,0,0,.25),
+							0 10px 10px rgba(0,0,0,.2),
+							0 20px 20px rgba(0,0,0,.15);
+
 }
 
 .popular-ul {
@@ -115,6 +137,7 @@
 }
 .tooltip:hover img {
 	opacity: 0.3;
+	transition: opacity 0.2s;
 }
 
 .remove-from-list-btn {
