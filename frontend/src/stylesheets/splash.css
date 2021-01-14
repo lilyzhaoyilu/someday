@@ -50,11 +50,21 @@
 }
 
 .splash-trending-movies {
-	width: 40vw;
+	width: 100%;
+}
+
+.splash-trending-movies > h3 {
+	padding: 10px;
+	cursor: default;
 }
 
 .splash-trending-tvshows {
-	width: 40vw;
+	width: 100%;
+}
+
+.splash-trending-tvshows > h3 {
+	padding: 10px;
+	cursor: default;
 }
 
 .popular-ul {

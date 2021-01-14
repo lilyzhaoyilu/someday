@@ -1,3 +1,15 @@
 .movie-img {
 	margin: 0 20px;
 }
+
+.movie-item {
+	margin-top: 20px;
+}
+
+trending-head {
+	margin: 0 auto;
+}
+
+.tooltiptext {
+	font-family: "IBM Plex Mono", monospace;
+}
