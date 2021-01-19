@@ -88,7 +88,7 @@ router.delete(
 router.patch(
   "/list/:id",
   passport.authenticate("jwt", { session: false }),
-  (req, res) => {
+   (req, res) => {
     // debugger;
     // console.log("watchlist api req", req);
     

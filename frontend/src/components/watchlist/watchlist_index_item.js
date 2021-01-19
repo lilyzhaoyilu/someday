@@ -18,9 +18,9 @@ class WatchlistIndexItem extends Component {
   }
 
   onUpdateList() {
-    console.log(this.props.watchlists[this.props.watchlist._id])
+    // console.log(this.props.watchlists[this.props.watchlist._id])
     this.setState({ watchlist: this.props.watchlists[this.props.watchlist._id] })
-    console.log("post", this.state)
+    // console.log("post", this.state)
   }
 
 

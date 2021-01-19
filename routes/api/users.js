@@ -75,7 +75,7 @@ router.post("/login", (req, res) => {
         jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
           res.json({
             success: true,
-            token: "Bearer " + token
+            token: "Bearer " + token,
           });
         });
       } else {
@@ -89,7 +89,7 @@ router.post("/login", (req, res) => {
 router.get(
   "/:user_id", (req, res) => {
 
-    User.findById( req.params.user_id )
+    User.findById(req.params.user_id)
       .then((user) => res.json(user))
       .catch((err) => res.status(400).json(err));
   });
