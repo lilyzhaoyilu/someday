@@ -16,6 +16,8 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import SplashContainer from './splash/splash_container';
 import MoviePageContainer from './splash/splash_media/media_page_cotainer';
+import MoviePageContainerLoggedin from './media_page/media_page_cotainer';
+
 const App = () => (
   <div>
     <Switch>
@@ -27,9 +29,9 @@ const App = () => (
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
       <Route exact path='/search-result' component={MovieIndexContainer} />
-      <AuthRoute exact path='/media_page/:movieId' component={MoviePageContainer} />
       <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
-      <ProtectedRoute exact path='/mediaPage/:movieId' component={MoviePageContainer} />
+      <ProtectedRoute exact path='/mediaPage/:movieId' component={MoviePageContainerLoggedin} />
+      <AuthRoute exact path='/media_page/:movieId' component={MoviePageContainer} />
       <ProtectedRoute path='/show-index' component={ShowInfinite} />
       <ProtectedRoute path='/movie-index' component={MovieInfinite} />
     </Switch>
