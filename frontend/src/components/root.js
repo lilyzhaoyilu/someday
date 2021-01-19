@@ -18,9 +18,9 @@ import '../stylesheets/lists.css';
 import "../stylesheets/movie_img.css";
 import "../stylesheets/mediaitem.css";
 import "../stylesheets/list_form.css";
-import "../stylesheets/media-index.css"
-import "../stylesheets/search_result.css"
-
+import "../stylesheets/media-index.css";
+import "../stylesheets/search_result.css";
+import "../stylesheets/about.css";
 const Root = ({ store }) => {
   return (
     <Provider store={store}>
