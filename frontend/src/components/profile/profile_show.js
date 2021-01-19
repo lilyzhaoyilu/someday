@@ -28,24 +28,25 @@ class ProfileShow extends Component {
             </div>
             <div className="username">
               <label>Username:
-                <strong>{user.handle}</strong>
+                <strong> {user.handle}</strong>
               </label>
             </div>
             <div className="email">
               <label>Email:
-                <strong>{user.email}</strong>
+                <strong> {user.email}</strong>
               </label>
             </div>
             <div className="user-created">
-              <label>User Created On:
-                <strong>{displayCreatedAt(user.date)}</strong>
+              <label>User Created On: 
+                <strong> {displayCreatedAt(user.date)}</strong>
               </label>
             </div>
             <div className="about-me">
               <label>About me:
-                <strong>This user does not have a description.</strong>
+                <strong> This user does not have a description.</strong>
               </label>
             </div>
+
             {/* favorite movie added from history list */}
           </div>
         </div>

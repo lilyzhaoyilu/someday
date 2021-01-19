@@ -79,3 +79,7 @@
   flex-direction: column;
   margin-left: 60px;
 }
+
+.profile-pic {
+  align-items: center;
+}
