@@ -17,9 +17,10 @@ import SignupFormContainer from './session/signup_form_container';
 import SplashContainer from './splash/splash_container';
 import MoviePageContainer from './splash/splash_media/media_page_cotainer';
 import MoviePageContainerLoggedin from './media_page/media_page_cotainer';
-
+import About from './about/about'
 const App = () => (
   <div>
+   
     <Switch>
       <ProtectedRoute exact path='/profile/:userId' component={ProfileNavbarContainer} />
       <ProtectedRoute path='/' component={NavBarContainer} />
@@ -37,6 +38,7 @@ const App = () => (
       <ProtectedRoute path='/' component={MovieInfinite} />
       <AuthRoute path='/' component={SplashContainer} />
     </Switch>
+    <Route path='*' component={About}></Route>
   </div>
 )
 
