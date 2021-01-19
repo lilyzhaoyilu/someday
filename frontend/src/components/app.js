@@ -29,11 +29,13 @@ const App = () => (
       <AuthRoute exact path='/login' component={LoginFormContainer} />
       <AuthRoute exact path='/signup' component={SignupFormContainer} />
       <Route exact path='/search-result' component={MovieIndexContainer} />
-      <ProtectedRoute path='/profile/:userId' component={ProfileShow} />
+      <ProtectedRoute exact path='/profile/:userId' component={ProfileShow} />
       <ProtectedRoute exact path='/mediaPage/:movieId' component={MoviePageContainerLoggedin} />
       <AuthRoute exact path='/media_page/:movieId' component={MoviePageContainer} />
-      <ProtectedRoute path='/show-index' component={ShowInfinite} />
-      <ProtectedRoute path='/movie-index' component={MovieInfinite} />
+      <ProtectedRoute exact path='/show-index' component={ShowInfinite} />
+      <ProtectedRoute exact path='/movie-index' component={MovieInfinite} />
+      <ProtectedRoute path='/' component={MovieInfinite} />
+      <AuthRoute path='/' component={SplashContainer} />
     </Switch>
   </div>
 )
