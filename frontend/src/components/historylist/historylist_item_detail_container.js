@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { fetchMovieData } from '../../actions/movie_actions';
 import { updateHistorylist, showHistorylist } from '../../actions/historylist_actions';
 import HistorylistItemDetail from './historylist_item_detail';
-console.log("historylist_detail");
+// console.log("historylist_detail");
 
 const mstp = (state, ownProps) => {
   return {

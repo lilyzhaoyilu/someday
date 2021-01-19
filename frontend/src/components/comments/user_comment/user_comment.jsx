@@ -71,7 +71,7 @@ class UserComment extends Component {
 				)[this.state.comments.length]
 			),
 		});
-		console.log(Object.values(this.props.comments)[this.state.comments.length]);
+		// console.log(Object.values(this.props.comments)[this.state.comments.length]);
 		this.props.fetchMovieData(
 			Object.values(this.props.comments)[this.state.comments.length - 1].movie
 		);

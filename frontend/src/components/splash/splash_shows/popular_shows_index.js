@@ -55,7 +55,7 @@ export default class PopularShowsIndex extends Component {
 
           <ul className="popular-ul">
             {this.state.shows.map((movie, i) => {
-              { console.log("rendering") }
+              // { console.log("rendering") }
               return (
                 <PopularShowsIndexItem
                   showId={movie.id}

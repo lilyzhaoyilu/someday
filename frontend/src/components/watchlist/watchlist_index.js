@@ -11,7 +11,7 @@ export default class WatchlistIndex extends Component {
   }
 
   componentDidMount() {
-    console.log("componentDidMount");
+    // console.log("componentDidMount");
     this.props.getMyWatchlists(this.props.userId)
       .then((res) => {
         this.setState({ lists: [this.props.watchlists.filter(list => list.user === this.props.userId)[0]] })
@@ -19,7 +19,7 @@ export default class WatchlistIndex extends Component {
   }
 
   fetchMoreData() {
-    console.log("fetchMoreData");
+    // console.log("fetchMoreData");
     if (this.state.lists.length === this.props.watchlists.length) {
       this.setState({ hasMore: false });
       return;

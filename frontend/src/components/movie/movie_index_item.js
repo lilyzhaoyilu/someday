@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default class MovieIndexItem extends Component {
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const { movie, imgUrl, name, year, loggedIn } = this.props
     return loggedIn ? (
       <Link to={`/mediaPage/${movie.id}`} className="tooltip search-result-item" >
