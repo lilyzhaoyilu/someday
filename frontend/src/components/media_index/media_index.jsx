@@ -21,7 +21,7 @@ class MediaIndex extends React.Component {
           this.props
             .fetchMediaData(this.state.media[i].id)
             .then((res) => {
-              console.log("request", res);
+              // console.log("request", res);
               this.setState({ media: this.props.media.slice(0, i) });
             })
             .then(i++);
@@ -67,7 +67,7 @@ class MediaIndex extends React.Component {
           }
         >
           {this.state.media.map((media, i) => {
-            console.log("rendering");
+            // console.log("rendering");
             if (media.hasOwnProperty("image")) {
               return (
                 <span key={media.key} className="media-item">

@@ -31,7 +31,7 @@ export const updateHistorylist = (historylist) => dispatch => (
   APIUTIL.updateHistorylist(historylist)
     .then(
       list => {
-        console.log(list);
+        // console.log(list);
         dispatch(receiveHistorylist(list))
       },
       err => dispatch(receiveErrors(err))

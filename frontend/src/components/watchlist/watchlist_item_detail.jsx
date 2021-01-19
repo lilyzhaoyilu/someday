@@ -34,14 +34,14 @@ class WatchlistItemDetail extends Component {
 				(movieId) => movieId !== this.props.movieId
 			),
 		};
-		console.log(this.props.movieId);
+		// console.log(this.props.movieId);
 		this.props.updateWatchlist(newList).then(() => {
 			this.props.onUpdateList();
 		});
 	}
 
 	render() {
-		console.log(this.props);
+		// console.log(this.props);
 		const { movieId } = this.props;
 		return (
 			<div className="list-item-detail">

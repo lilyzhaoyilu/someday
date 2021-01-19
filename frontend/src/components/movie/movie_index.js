@@ -25,7 +25,7 @@ export default class MovieIndex extends Component {
     if (movies) {
       return (
         <div>
-          {(this.props.loggedIn) ? (<NavBar />) : (
+          {(this.props.loggedIn) ? (null) : (
             <div className="splash-header">
               <div className="splash-header-left">
                 <Link to="/splash">

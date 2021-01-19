@@ -43,7 +43,7 @@ class LoginForm extends React.Component {
 				this.props.history.push("/show-index");
 			} else {
 				this.setState({ errors: this.props.errors });
-				console.log(this.state.errors);
+				// console.log(this.state.errors);
 			}
 		});
 		// .then((res) => this.props.history.push("/show-index"));
