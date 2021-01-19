@@ -1,46 +1,70 @@
 .about-modal {
-  position: fixed;
-  bottom: calc(5em + 5px);
-  right: 1vw;
-  background: #fff;
-  overflow: none;
-  border-radius: 4px;
-  outline: none;
-  z-index: 1000;
-  margin: 10px 0 0 10px;
-  padding: 10px 0 0 10px;
+	position: fixed;
+	bottom: calc(5em + 5px);
+	right: 1vw;
+	background: #fff;
+	overflow: none;
+	border-radius: 4px;
+	outline: none;
+	z-index: 1000;
+	margin: 10px 0 0 10px;
+	padding: 10px 10px 0 10px;
 }
-
 
 .about {
-  display: block;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  position: fixed;
-  right: 1vw;
-  bottom: 1vw;
-  z-index: 1000;
+	display: block;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	position: fixed;
+	right: 1vw;
+	bottom: 1vw;
+	z-index: 1000;
 }
 
-.about-button-us{
-    background:none;
-    border:none;
-    margin:0;
-    padding:0;
-    cursor: pointer;
-    background: #f3f0f1;
-    border-radius: 10px;
-    height: 5em;
-    width: 5em;
+.about-button-us {
+	background: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	background: #007a5a;
+	opacity: 0.9;
+	border-radius: 10px;
+	height: 5em;
+	width: 5em;
+}
+
+.about-button-us:hover {
+	opacity: 1;
+}
+
+#created-by {
+	margin: 10px auto;
+	display: block;
 }
 
 .about-button:active {
-  opacity: 1;
-  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
-    inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+	opacity: 1;
+	box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+		inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 }
 .about-button:hover {
-  opacity: 0.3;
-  box-shadow: -6px -6px 10px rgba(233, 233, 233, 0.8),
-    6px 6px 10px rgba(0, 0, 0, 0.2);
+	opacity: 0.3;
+	box-shadow: -6px -6px 10px rgba(233, 233, 233, 0.8),
+		6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+.about-item {
+	display: flex;
+	margin-bottom: 15px;
+	transition: all 0.5;
+}
+
+.about-item a {
+	line-height: 1.8em;
+}
+.about-img {
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	margin-right: 5px;
 }
