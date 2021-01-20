@@ -20,7 +20,7 @@ import MoviePageContainerLoggedin from './media_page/media_page_cotainer';
 import About from './about/about'
 const App = () => (
   <div>
-   
+
     <Switch>
       <ProtectedRoute exact path='/profile/:userId' component={ProfileNavbarContainer} />
       <ProtectedRoute path='/' component={NavBarContainer} />
@@ -35,7 +35,7 @@ const App = () => (
       <AuthRoute exact path='/media_page/:movieId' component={MoviePageContainer} />
       <ProtectedRoute exact path='/show-index' component={ShowInfinite} />
       <ProtectedRoute exact path='/movie-index' component={MovieInfinite} />
-      <ProtectedRoute path='/' component={MovieInfinite} />
+      <ProtectedRoute path='/' component={ShowInfinite} />
       <AuthRoute path='/' component={SplashContainer} />
     </Switch>
     <Route path='*' component={About}></Route>

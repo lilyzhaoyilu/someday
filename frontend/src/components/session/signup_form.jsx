@@ -75,7 +75,7 @@ class SignupForm extends React.Component {
 	}
 	handleDemoLogin(e) {
 		e.preventDefault();
-		this.props.demoLogin().then(() => this.props.history.push("/show-index"));
+		this.props.demoLogin().then(() => this.props.history.push("/"));
 	}
 	render() {
 		// console.log(this.props.history);
