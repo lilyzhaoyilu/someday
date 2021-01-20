@@ -36,7 +36,7 @@ const App = () => (
       <ProtectedRoute exact path='/show-index' component={ShowInfinite} />
       <ProtectedRoute exact path='/movie-index' component={MovieInfinite} />
       <ProtectedRoute path='/' component={MovieInfinite} />
-      <AuthRoute path='/' component={SplashContainer} />
+      <AuthRoute path='/*' component={SplashContainer} />
     </Switch>
     <Route path='*' component={About}></Route>
   </div>
