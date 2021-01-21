@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CommentDetailForMedia from './comment_detail_for_media/comment_detail_for_media_container';
 import CommentForm from '../comment_form/comment_form_container';
+
 class MediaComment extends Component {
 
   constructor(props){
@@ -9,7 +10,6 @@ class MediaComment extends Component {
   }
 
   componentDidMount() {
-    
     this.props.getMovieComments(this.props.currentMovieId);
   }
 
@@ -29,6 +29,8 @@ class MediaComment extends Component {
 
 
 
+
+
   render() {
     const commentsObjects = Object.values(this.props.comments);
 
@@ -41,7 +43,7 @@ class MediaComment extends Component {
 
     return (
       <div className='media-comments'>
-        <h3 className='media-comments-title'>{this.displayMediaTitle()}'s Comments ···({commentsObjects.length} comments)</h3>
+        <h3 className='media-comments-title'>{this.displayMediaTitle()}'s Comments ···({commentsObjects.length} {commentsObjects.length > 1 ? `comments` : `comment`})</h3>
        {commentsObjects.map(comment => (<CommentDetailForMedia key={comment._id} comment={comment} />))}
        
        <CommentForm title={this.displayMediaTitle()}/>
