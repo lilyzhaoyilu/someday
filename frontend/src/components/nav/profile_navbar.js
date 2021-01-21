@@ -28,6 +28,10 @@ export default class ProfileNavbar extends Component {
   }
 
   render() {
+    const watchLength = Object.values(this.props.watchlists).length;
+    const historyLength = Object.values(this.props.historylists).length;
+    const watchMsg = watchLength <= 1 ? "Watch List" : "Watch Lists"
+    const historyMsg = historyLength <= 1 ? "History List" : "History Lists";
     return (
       <div className="navbar-wrapper">
         <div className="profile-navbar">
@@ -46,16 +50,12 @@ export default class ProfileNavbar extends Component {
                 <header>{this.props.currentUser}</header>
                 <div className="all-list">
                   <div className="todoLists">
-                    <div className="list">
-                      {Object.values(this.props.watchlists).length}
-                    </div>
-                    <span>Todo List</span>
+                    <div className="list">{watchLength}</div>
+                    <span>{watchMsg}</span>
                   </div>
                   <div className="watchLists">
-                    <div className="list">
-                      {Object.values(this.props.historylists).length}
-                    </div>
-                    <span>Watch List</span>
+                    <div className="list">{historyLength}</div>
+                    <span>{historyMsg}</span>
                   </div>
                 </div>
                 <div className="logout-button" onClick={this.logoutUser}>
@@ -67,6 +67,6 @@ export default class ProfileNavbar extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
