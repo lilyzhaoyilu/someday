@@ -15,10 +15,11 @@ export const getThisUser = (userId) => {
 //* Get / api / users - list other users
 
 export const getAllUsers = () => {
-  return axios.get(`/api/users/`);
+  return axios.get(`/api/users/all`);
 }
 
 //* get /api/users/current
 export const getCurrentUser = () => {
   return axios.get(`/api/users/update`);
 }
+

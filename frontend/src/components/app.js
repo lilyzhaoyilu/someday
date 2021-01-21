@@ -35,7 +35,7 @@ const App = () => (
       <AuthRoute exact path='/media_page/:movieId' component={MoviePageContainer} />
       <ProtectedRoute exact path='/show-index' component={ShowInfinite} />
       <ProtectedRoute exact path='/movie-index' component={MovieInfinite} />
-      <ProtectedRoute path='/' component={MovieInfinite} />
+      <ProtectedRoute path='/' component={MainPage} />
       <AuthRoute path='/*' component={SplashContainer} />
     </Switch>
     <Route path='*' component={About}></Route>

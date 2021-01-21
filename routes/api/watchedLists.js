@@ -8,7 +8,7 @@ const validateList = require("../../validation/list");
 ////"/api/todoLists"
 router.get("/watchedList", (req, res) => {
   WatchedList.find()
-    .sort({ data: -1 })
+    .sort({ date: -1 })
     .then((watchedLists) => res.json(watchedLists))
     .catch((err) => res.status(400).json(err));
 });

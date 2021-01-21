@@ -27,7 +27,7 @@ class SearchBar extends Component {
 		return (
 			<form className="search-bar" onSubmit={this.handleSubmit}>
 				<div className="search-input">
-					<label>Search for stuff</label>
+					<label htmlFor="search">Search for stuff</label>
 					<input
 						id="search"
 						type="text"

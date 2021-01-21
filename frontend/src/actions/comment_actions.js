@@ -35,13 +35,14 @@ export const postComment = comment => dispatch => (
 
 export const deleteComment = commentId => dispatch => {
   // debugger;
-  return(
-  APIUTIL.deleteComment(commentId)
-    .then(
-      () => dispatch(remove_comment(commentId)),
-      err => dispatch(receiveErrors(err))
-    )
-)}
+  return (
+    APIUTIL.deleteComment(commentId)
+      .then(
+        () => dispatch(remove_comment(commentId)),
+        err => dispatch(receiveErrors(err))
+      )
+  )
+}
 
 export const getMovieComments = movieId => dispatch => (
   APIUTIL.getMovieComments(movieId)
@@ -89,6 +90,14 @@ export const getThisComment = commentId => dispatch => (
   APIUTIL.getThisComment(commentId)
     .then(
       comment => dispatch(receiveComment(comment)),
+      err => dispatch(receiveErrors(err))
+    )
+)
+
+export const getAllComments = () => dispatch => (
+  APIUTIL.getAllComments()
+    .then(
+      comments => dispatch(receiveComments(comments)),
       err => dispatch(receiveErrors(err))
     )
 )

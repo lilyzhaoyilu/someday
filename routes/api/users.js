@@ -100,4 +100,14 @@ router.patch('/update', passport.authenticate('jwt', { session: false }), (req, 
     .catch((err) => res.status(400).json(err));
 
 });
+
+// get all users
+router.get("/all", (req, res) => {
+  User.find()
+    .sort({ date: -1 })
+    .then((users) => res.json(users))
+    .catch((err) => res.status(400).json(err))
+})
+
+
 module.exports = router;

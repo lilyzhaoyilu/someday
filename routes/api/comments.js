@@ -12,7 +12,7 @@ const validateComment = require("../../validation/comments");
 //get all comments from one movie
 router.get("/movie/:movie_id/comment", (req, res) => {
   Comment.find({ movie: req.params.movie_id })
-    .sort({ data: -1 })
+    .sort({ date: -1 })
     .then((comments) => res.json(comments))
     .catch((err) => res.status(400).json(err));
 });
@@ -21,7 +21,7 @@ router.get("/movie/:movie_id/comment", (req, res) => {
 router.get("/user/:user_id/comments", (req, res) => {
   debugger;
   Comment.find({ user: req.params.user_id })
-    .sort({ data: -1 })
+    .sort({ date: -1 })
     .then((comments) => res.json(comments))
     .catch((err) => res.status(400).json(err));
 });
@@ -29,7 +29,7 @@ router.get("/user/:user_id/comments", (req, res) => {
 //get all todolist comments
 router.get("/todoList/:todoList_id/comment", (req, res) => {
   Comment.find({ todoList: req.params.todolist_id })
-    .sort({ data: -1 })
+    .sort({ date: -1 })
     .then((comments) => res.json(comments))
     .catch((err) => res.status(400).json(err));
 });
@@ -37,10 +37,19 @@ router.get("/todoList/:todoList_id/comment", (req, res) => {
 //get all watchedlist comments
 router.get("/watchedList/:watchedList_id/comment", (req, res) => {
   Comment.find({ watchedList: req.params.watchedlist_id })
-    .sort({ data: -1 })
+    .sort({ date: -1 })
     .then((comments) => res.json(comments))
     .catch((err) => res.status(400).json(err));
 });
+
+//get all comments 
+router.get("/all", (req, res) => {
+  Comment.find()
+    .sort({ date: -1 })
+    .then((comments) => res.json(comments))
+    .catch((err) => res.status(400).json(err))
+})
+
 
 //get specific comment
 router.get("/comment/:id", (req, res) => {
@@ -49,18 +58,19 @@ router.get("/comment/:id", (req, res) => {
     .catch((err) => res.status(400).json(err));
 });
 
+
 //create comment
 router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { isValid, errors } = validateComment(req.body);
-    
-    
+
+
     if (!isValid) {
       return res.status(400).json(errors);
     }
-    
+
     // to see the request before being sent to the backend
     //TODO: need to add movie, reply, todolist and watchlist based on the routes or id...?
     // console.log(req.body);
@@ -74,7 +84,7 @@ router.post(
       // reply: req.body.reply.id ? req.reply.id : null,
       // todoList: req.todoList.id ? req.todoList.id : null,
       // watchedList: req.body.watchedList.id ? req.watchedList.id : null,
-    }); 
+    });
     // console.log(newComment);
     newComment.save().then((comment) => res.json(comment));
   }
