@@ -12,6 +12,10 @@ export const deleteComment = (commentId) => (
   axios.delete(`/api/comments/${commentId}`)
 )
 
+export const patchComment = (commentId, commentPatch) => (
+  axios.patch(`/api/comments/${commentId}`, commentPatch)
+)
+
 //TODO need work from here 
 
 //*get /api/movie/:movieId/comment get all comments for movie

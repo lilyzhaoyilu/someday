@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import CommentDetailForMedia from './comment_detail_for_media';
 import {deleteComment} from "../../../../actions/comment_actions";
-import {getMovieComments} from '../../../../actions/comment_actions';
+import {getMovieComments, patchComment} from '../../../../actions/comment_actions';
 const mstp = (state, ownProps) => ({
   users: state.entities.users,
   // comments: state.entities.comments,
@@ -12,6 +12,7 @@ const mdtp = dispatch => ({
   // fetchThisUser: (userId) => dispatch(fetchThisUser(userId)),
   getMovieComments: (movieId) => dispatch(getMovieComments(movieId)),
   deleteComment: (commentId) => dispatch(deleteComment(commentId)),
+  patchComment: (commentId, commentPatch) => dispatch(patchComment(commentId, commentPatch))
 })
 
 

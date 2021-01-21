@@ -10,7 +10,7 @@ const receiveComment = comment => ({
   comment
 })
 
-const remove_comment = commentId => ({
+const removeComment = commentId => ({
   type: REMOVE_COMMENT,
   commentId
 })
@@ -35,14 +35,18 @@ export const postComment = comment => dispatch => (
 
 export const deleteComment = commentId => dispatch => {
   // debugger;
-  return (
-    APIUTIL.deleteComment(commentId)
-      .then(
-        () => dispatch(remove_comment(commentId)),
-        err => dispatch(receiveErrors(err))
-      )
-  )
-}
+  return(
+  APIUTIL.deleteComment(commentId)
+    .then(
+      () => dispatch(removeComment(commentId)),
+      err => dispatch(receiveErrors(err))
+    )
+)}
+
+export const patchComment = (commentId, commentPatch) => dispatch => {
+  return(
+  APIUTIL.patchComment(commentId, commentPatch)
+)}
 
 export const getMovieComments = movieId => dispatch => (
   APIUTIL.getMovieComments(movieId)

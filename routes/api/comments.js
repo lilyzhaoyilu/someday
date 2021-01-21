@@ -95,7 +95,7 @@ router.delete(
   "/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    console.log("routes comment", req);
+    // console.log("routes comment", req);
     Comment.deleteOne({ _id: req.params.id })
       .then(() => {
         res.status(200).json({
@@ -107,5 +107,21 @@ router.delete(
       });
   }
 );
+
+//patch comment
+router.patch(  "/:id",
+passport.authenticate("jwt", { session: false }),
+(req, res) => {
+  // console.log("patch routes comment", req);
+  Comment.update({ _id: req.params.id }, {$set: req.body})
+    .then(() => {
+      res.status(200).json({
+        message: "Comment Patched!",
+      });
+    })
+    .catch((error) => {
+      res.status(400).json({ error: error });
+    });
+})
 
 module.exports = router;

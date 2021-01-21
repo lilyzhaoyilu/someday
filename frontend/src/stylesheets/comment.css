@@ -186,3 +186,20 @@
 	right: 0;
 	font-style: italic;
 }
+
+
+
+
+
+/* edit feature */
+.media-comments-detail-edit{
+	width: 95%;
+	font: inherit;
+	overflow: auto;
+	min-height: 2em;
+	word-break: break-all;
+}
+
+/* .media-comments-detail-container input{
+	maxLength: 144;
+} */
