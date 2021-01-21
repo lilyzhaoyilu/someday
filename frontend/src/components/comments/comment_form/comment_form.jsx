@@ -13,10 +13,11 @@ class CommentForm extends Component {
   }
 
   update(field) {
-		return (e) =>
+		return (e) =>{
+      if (e.currentTarget.value.length < 144){
 			this.setState({
 				[field]: e.currentTarget.value,
-			});
+			})}};
 	}
 
 
@@ -46,7 +47,7 @@ class CommentForm extends Component {
         <form action="">
         <textarea onChange={this.update("text")} value={this.state.text} ></textarea>
         
-        <button disabled={this.state.text.length<1} className="comment-form-submit" onClick={this.handleSubmit}>Submit</button>
+        <button disabled={this.state.text.length<1 || this.state.text.length> 144} className="comment-form-submit" onClick={this.handleSubmit}>Submit</button>
         </form>
       </div>
     )
