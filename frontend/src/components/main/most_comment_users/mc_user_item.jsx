@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 export default ({ user }) => {
+	console.log("hello");
 	let date = user.date.slice(0, 10).split("-");
 	[date[0], date[1], date[2]] = [date[1], date[2], date[0]];
 	date = date.join("/");

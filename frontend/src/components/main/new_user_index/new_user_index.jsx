@@ -1,3 +1,4 @@
+import UserItem from "./new_user_item";
 import React, { Component } from "react";
 
 class NewUserIndex extends Component {
@@ -9,15 +10,19 @@ class NewUserIndex extends Component {
 	componentDidMount() {
 		this.props
 			.fetchAllUsers()
-			.then((res) => this.setState({ users: res.users }));
+			.then((res) => this.setState({ users: res.users.data }));
 	}
 	render() {
-		return (
+		return this.state.hasOwnProperty("users") ? (
 			<div>
-				{console.log("users", this.state)}
-				<h1>hi</h1>
+				{/* {console.log("users", this.state.users)} */}
+				<ul>
+					{this.state.users.map((user) => {
+						return <UserItem user={user} key={user._id} />;
+					})}
+				</ul>
 			</div>
-		);
+		) : null;
 	}
 }
 
