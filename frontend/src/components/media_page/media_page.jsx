@@ -97,7 +97,7 @@ class MediaPage extends Component {
       : this.state.ratingCount;
     return this.state.imgUrl ? (
       <section className="wrapper">
-        <div className="content">
+        <div className="media-content">
           <h1>
             <span>{this.state.title}</span>
             <span>{`(${this.state.year})`}</span>

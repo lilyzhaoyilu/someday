@@ -9,14 +9,19 @@
   display: flex;
   margin-bottom: 15px;
 }
-.content h1 {
-  
+.media-content {
+  width: 900px;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px;
+}
+.media-content h1 {
   font-size: 30px;
   display: block;
   font-weight: bold;
   color: #494949;
   margin: 0;
-  padding: 15px 0 15px 0;
+  padding: 15px 0 32px 0;
   line-height: 1.1;
 }
 
@@ -41,6 +46,7 @@
   flex-direction: column;
   border-left: 1px solid lightgray;
   padding-left: 15px;
+  width: 280px;
 }
 .ratings span {
   padding-bottom: 10px;
@@ -61,8 +67,8 @@
   display: flex;
   flex-direction: row;
   font-weight: bold;
-  width: 300px;
-  margin-left: 150px;
+  width: 350px;
+  margin-left: 92px;
   margin-bottom: 50px;
 }
 
@@ -70,7 +76,10 @@
   margin-top: 25px;
   margin-right: 25px;
 }
-
+.media-button button:first-child {
+  margin-top: 25px;
+  margin-right: 45px;
+}
 .list-modal {
   position: fixed;
   top: 50%;
