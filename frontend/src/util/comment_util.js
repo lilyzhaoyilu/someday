@@ -41,3 +41,9 @@ export const getHistorylistComments = (historylistId) => (
 export const getThisComment = commentId => (
   axios.get(`/api/comments/comment/${commentId}`)
 )
+
+//* get /api/comments/all get all comments 
+
+export const getAllComments = () =>(
+  axios.get(`/api/comments/all`)
+)

@@ -6,7 +6,7 @@ const Movie = require('../../models/Movie')
 //get all the movie (includes other users)
 router.get("/movie", (req, res) => {
   Movie.find()
-    .sort({ data: -1 })
+    .sort({ date: -1 })
     .then((movies) => res.json(Object.values(movies).slice(req.index, req.index + 10)))
     // .then((movies) => res.json(movies))
     .catch((err) => res.status(400).json(err));
