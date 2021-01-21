@@ -46,6 +46,9 @@ export const deleteComment = commentId => dispatch => {
 export const patchComment = (commentId, commentPatch) => dispatch => {
   return(
   APIUTIL.patchComment(commentId, commentPatch)
+  .then(
+    err => dispatch(receiveErrors(err))
+  )
 )}
 
 export const getMovieComments = movieId => dispatch => (
