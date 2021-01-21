@@ -139,7 +139,7 @@ class MediaPage extends Component {
 
         <div className="media-button">
           <button className="list-add-button" onClick={this.toggleModal}>
-            Add to TodoList
+            Add to WatchList
           </button>
           <Modal
             isOpen={this.state.isOpen}
@@ -159,7 +159,7 @@ class MediaPage extends Component {
             </button>
           </Modal>
           <button className="list-add-button" onClick={this.toggleModal2}>
-            Add to WatchedList
+            Add to HistoryList
           </button>
           <Modal
             isOpen={this.state.isOpen2}
