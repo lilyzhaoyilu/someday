@@ -18,3 +18,24 @@
 	margin-bottom: 50px;
 	margin-top: 30px;
 }
+
+.missing-pic {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 20px;
+	margin-bottom: 50px;
+	margin-top: 30px;
+	min-width: 202px;
+	height: 300px;
+	background-color: #04bd8c;
+}
+.missing-pic:hover {
+	background-color: #007a5a;
+}
+.missing-pic .tooltiptext {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

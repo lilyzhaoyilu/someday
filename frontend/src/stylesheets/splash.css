@@ -63,14 +63,10 @@
 	cursor: default;
 	font-weight: 700;
 	font-size: 24px;
-	text-shadow:0 6px 1px rgba(0,0,0,.1),
-							0 0 5px rgba(0,0,0,.1),
-							0 1px 3px rgba(0,0,0,.3),
-							0 3px 5px rgba(0,0,0,.2),
-							0 5px 10px rgba(0,0,0,.25),
-							0 10px 10px rgba(0,0,0,.2),
-							0 20px 20px rgba(0,0,0,.15);
-
+	text-shadow: 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+		0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+		0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+		0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .splash-trending-tvshows {
@@ -82,14 +78,10 @@
 	cursor: default;
 	font-weight: 700;
 	font-size: 24px;
-	text-shadow:0 6px 1px rgba(0,0,0,.1),
-							0 0 5px rgba(0,0,0,.1),
-							0 1px 3px rgba(0,0,0,.3),
-							0 3px 5px rgba(0,0,0,.2),
-							0 5px 10px rgba(0,0,0,.25),
-							0 10px 10px rgba(0,0,0,.2),
-							0 20px 20px rgba(0,0,0,.15);
-
+	text-shadow: 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+		0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+		0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+		0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
 .popular-ul {
@@ -131,7 +123,9 @@
 .tooltip .tooltiptext {
 	transition: all 0.5 linear;
 }
-
+.missing-pic:hover .tooltiptext {
+	visibility: visible;
+}
 .tooltip:hover .tooltiptext {
 	visibility: visible;
 }
@@ -148,6 +142,16 @@
 	text-decoration: underline;
 	font-family: "IBM Plex Sans", sans-serif;
 	font-size: 16px;
+}
+.reload-btn {
+	background-color: transparent;
+	color: #edf4ed;
+	text-decoration: underline;
+	font-family: "IBM Plex Sans", sans-serif;
+	font-size: 24px;
+	border: 0;
+	position: relative;
+	top: -30px;
 }
 
 /* /////////extra search result item */
