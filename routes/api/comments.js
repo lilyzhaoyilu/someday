@@ -43,7 +43,7 @@ router.get("/watchedList/:watchedList_id/comment", (req, res) => {
 });
 
 //get all comments 
-router.get("/all", (req, res) => {
+router.get("/", (req, res) => {
   Comment.find()
     .sort({ date: -1 })
     .then((comments) => res.json(comments))

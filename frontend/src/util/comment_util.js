@@ -44,6 +44,6 @@ export const getThisComment = commentId => (
 
 //* get /api/comments/all get all comments 
 
-export const getAllComments = () =>(
-  axios.get(`/api/comments/all`)
+export const getAllComments = () => (
+  axios.get(`/api/comments/`)
 )
