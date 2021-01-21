@@ -97,3 +97,11 @@ export const getThisComment = commentId => dispatch => (
       err => dispatch(receiveErrors(err))
     )
 )
+
+export const getAllComments = () => dispatch => (
+  APIUTIL.getAllComments()
+    .then(
+      comments => dispatch(receiveComments(comments)),
+      err => dispatch(receiveErrors(err))
+    )
+)

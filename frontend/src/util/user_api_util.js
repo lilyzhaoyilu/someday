@@ -22,3 +22,4 @@ export const getAllUsers = () => {
 export const getCurrentUser = () => {
   return axios.get(`/api/users/update`);
 }
+

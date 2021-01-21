@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 //get all the todolist (includes other users)
 router.get("/todoList", (req, res) => {
   TodoList.find()
-    .sort({ data: -1 })
+    .sort({ date: -1 })
     .then((todoLists) => res.json(todoLists))
     .catch((err) => res.status(400).json(err));
 });
@@ -88,11 +88,11 @@ router.delete(
 router.patch(
   "/list/:id",
   passport.authenticate("jwt", { session: false }),
-   (req, res) => {
+  (req, res) => {
     // debugger;
     // console.log("watchlist api req", req);
-    
-    TodoList.updateOne({ _id: req.params.id }, { $pullAll: {movie: [req.body.movieId] }})
+
+    TodoList.updateOne({ _id: req.params.id }, { $pullAll: { movie: [req.body.movieId] } })
       .then(() => {
         res.status(200).json({
           message: "media has been deleted!",
