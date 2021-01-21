@@ -37,7 +37,11 @@ class About extends Component {
 							className="about-img"
 							src="https://www.lilylu.me/images/avatar.jpg"
 						/>
-						<a href="https://www.lilylu.me" target="_blank">
+						<a 	
+							href="https://www.linkedin.com/in/lilyzhaoyilu/" 
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							Lily Zhaoyi Lu
 						</a>
 					</div>
@@ -48,7 +52,8 @@ class About extends Component {
 						/>
 						<a
 							href="https://www.linkedin.com/in/rex-gao-61a9a5139/"
-							target="_blank"
+							target="_blank" 
+							rel="noopener noreferrer"
 						>
 							Rex Gao
 						</a>
@@ -60,7 +65,8 @@ class About extends Component {
 						/>
 						<a
 							href="https://www.linkedin.com/in/michael-chen-a41770115/"
-							target="_blank"
+							target="_blank" 
+							rel="noopener noreferrer"
 						>
 							Michael Chen
 						</a>
@@ -69,9 +75,14 @@ class About extends Component {
 						<img
 							className="about-img"
 							target="_blank"
-							src="https://media-exp1.licdn.com/dms/image/C5635AQFQW9PdiMBP0w/profile-framedphoto-shrink_800_800/0/1610332035138?e=1611180000&v=beta&t=QRNuNuPchaKu_4wg1E6z9DSb7IaYLRsujsYUGxmWf00"
+							src="https://media-exp1.licdn.com/dms/image/C5635AQFQW9PdiMBP0w/profile-framedphoto-shrink_200_200/0/1610332035138?e=1611338400&v=beta&t=WNzuGf2SZUZnHF-CdcdODV5VYcJ11HK_BFk26cqoNBc"
 						/>
-						<a href="https://www.linkedin.com/in/samdubyoo/">Samuel Wong</a>
+						<a 
+							href="https://www.linkedin.com/in/samdubyoo/"
+							target="_blank"
+							rel="noopener noreferrer">
+								Samuel Wong
+						</a>
 					</div>
 				</Modal>
 			</div>
