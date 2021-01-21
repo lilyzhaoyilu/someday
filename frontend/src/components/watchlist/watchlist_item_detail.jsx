@@ -9,6 +9,7 @@ class WatchlistItemDetail extends Component {
 			imgUrl: "",
 		};
 		this.handleRemoveItemFromList = this.handleRemoveItemFromList.bind(this);
+		this.handleReload = this.handleReload.bind(this);
 	}
 
 	componentDidMount() {
@@ -21,7 +22,7 @@ class WatchlistItemDetail extends Component {
 					});
 				}
 			});
-		}, this.props.idx * 400);
+		}, this.props.idx * 600);
 	}
 
 	handleRemoveItemFromList(e) {
@@ -39,11 +40,21 @@ class WatchlistItemDetail extends Component {
 			this.props.onUpdateList();
 		});
 	}
+	handleReload() {
+		this.props.fetchMovieData(this.props.movieId).then((result) => {
+			if (result && result.show) {
+				this.setState({
+					title: result.show.data.title.title,
+					imgUrl: result.show.data.title.image.url,
+				});
+			}
+		});
+	}
 
 	render() {
 		// console.log(this.props);
 		const { movieId } = this.props;
-		return (
+		return this.state.imgUrl ? (
 			<div className="list-item-detail">
 				<Link to={`/mediaPage/${movieId}`} className="tooltip movie-img">
 					<span className="tooltiptext">
@@ -60,6 +71,19 @@ class WatchlistItemDetail extends Component {
 						<img src={this.state.imgUrl} height="300" width="auto" />
 					</div>
 				</Link>
+			</div>
+		) : (
+			<div className="missing-pic">
+				<div className="tooltip movie-img">
+					<span className="tooltiptext">
+						{/* {this.state.title} */}
+
+						<button onClick={this.handleReload} className="reload-btn">
+							Reload
+						</button>
+					</span>
+					<div></div>
+				</div>
 			</div>
 		);
 	}
