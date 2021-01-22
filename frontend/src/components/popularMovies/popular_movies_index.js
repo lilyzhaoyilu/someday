@@ -39,6 +39,7 @@ export default class PopularMoviesIndex extends Component {
 
     return (
       <div className="trending-movie-index">
+        <h1 className="trending-title">trendeing movies</h1>
         <InfiniteScroll
           dataLength={this.state.movies.length}
           next={this.fetchMoreData}
