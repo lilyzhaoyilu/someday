@@ -204,18 +204,34 @@
 	margin: 10px 0 0;
 	padding: 0px 0 0;
 	right: 0;
+	/* bottom: 0; */
 	font-style: italic;
+	/* margin-bottom: 5px; */
+}
+
+.comment-button-delete svg{
+	width: 1.5em;
+	height: 1.5em;
 }
 
 /* edit feature */
-.media-comments-detail-edit {
+.media-comments-detail-edit{
 	width: 95%;
 	font: inherit;
 	overflow: auto;
 	min-height: 2em;
 	word-break: break-all;
+
 }
 
-/* .media-comments-detail-container input{
-	maxLength: 144;
-} */
+.media-comments-detail-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.media-comments-detail-container:hover{
+	font-weight: bold;
+	cursor: pointer;
+	
+}
