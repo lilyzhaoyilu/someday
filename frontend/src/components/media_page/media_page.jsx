@@ -106,36 +106,40 @@ class MediaPage extends Component {
             <span>{this.state.title}</span>
             <span>{`(${this.state.year})`}</span>
           </h1>
-          <div className="sub-wrapper">
-            <div className="details">
-              <img src={this.state.imgUrl} />
-              <div className="info">
-                <span>
-                  <HiOutlineUser /> Author: {this.state.author}
-                </span>
-                <span>
-                  <FiTag /> Genres:{" "}
-                  {this.state.tags.map((tag, idx) => (
-                    <span className="tag-arr" key={idx}>
-                      {tag}
-                    </span>
-                  ))}
-                </span>
-                <span>
-                  <FcPlanner /> Release Date: {this.state.releaseDate}
-                </span>
-              </div>
-              <div className="media-page-side">
-                <span>
-                  <FcScatterPlot /> Rating: {this.state.rating}
-                </span>
-                <span>
-                  <HiUserGroup /> {ratingCount} people rated
-                </span>
-                <UserAlsoAdded movieId={this.props.movieId} movieTitle={this.state.title} />
-              </div>
+         
+          <div className="details">
+            <div className="media-page-details-left-side">
+            <img src={this.state.imgUrl} />
+            <div className="info">
+              <span>
+                <HiOutlineUser /> Author: {this.state.author}
+              </span>
+              <span>
+                <FiTag /> Genres:{" "}
+                {this.state.tags.map((tag, idx) => (
+                  <span className="tag-arr" key={idx}>
+                    {tag}
+                  </span>
+                ))}
+              </span>
+              <span>
+                <FcPlanner /> Release Date: {this.state.releaseDate}
+              </span>
+            </div>
+            </div>
+
+
+            <div className="media-page-details-right-side">
+              <span>
+                <FcScatterPlot /> Rating: {this.state.rating}
+              </span>
+              <span>
+                <HiUserGroup /> {ratingCount} people rated
+              </span>
+              <UserAlsoAdded movieId={this.props.movieId} movieTitle={this.state.title} />
             </div>
           </div>
+      
         
         
           <div className="plot">

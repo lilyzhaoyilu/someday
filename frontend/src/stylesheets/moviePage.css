@@ -8,6 +8,8 @@
 .details {
   display: flex;
   margin-bottom: 15px;
+  width: 90%;
+  justify-content: space-between;
 }
 .media-content {
   width: 90vw;
