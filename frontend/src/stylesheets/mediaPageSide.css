@@ -1,13 +1,33 @@
-.media-page-side {
+.media-page-details-right-side {
   display: flex;
   flex-direction: column;
   border-left: 1px solid lightgray;
-  padding-left: 15px;
+  padding-left: 20px;
   /* width: 280px; */
 }
-.media-page-side span {
+.media-page-details-right-side span {
   padding-bottom: 10px;
 }
 .media-page-user-also-added{
   list-style-type: none;
+  margin-top: 40px;
+}
+.media-page-user-also-added li{
+  margin: 5px 0 0 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.media-page-user-also-added-subtitle{
+  margin: 10px 0 10px 0px;
+  color: #007722;
+  font-weight: bold;
+}
+
+.media-page-user-also-added-username{
+  color:#666;
+}
+
+.media-page-details-left-side{
+  display: flex;
+  flex-direction: row;
 }

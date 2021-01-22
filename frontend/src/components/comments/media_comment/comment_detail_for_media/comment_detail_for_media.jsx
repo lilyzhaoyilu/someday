@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import moment from 'moment';
 import { Link, withRouter } from "react-router-dom";
 import { RIETextArea } from "riek";
+import {FiEdit3, FiTrash2} from 'react-icons/fi';
 
 class CommentDetailForMedia extends Component {
 
@@ -17,6 +18,7 @@ class CommentDetailForMedia extends Component {
     this.handleSubmitEditedComment = this.handleSubmitEditedComment.bind(this);
     this.displayEdit = this.displayEdit.bind(this);
     this.commentEditLengthValidation = this.commentEditLengthValidation.bind(this);
+    // this.handleClickEditButton = this.handleClickEditButton.bind(this);
     // this.displayEditComment = this.displayEditComment.bind(this);
   }
 
@@ -47,7 +49,7 @@ class CommentDetailForMedia extends Component {
     if(this.props.comment.user === this.props.currentUserId){
       return (
       <div className="comment-button">
-      <button className="comment-button-delete" onClick={this.handleDeleteComment}>delete this comment</button>
+      <button className="comment-button-delete" onClick={this.handleDeleteComment}><FiTrash2 /></button>
       </div>
     )
     }
@@ -68,6 +70,10 @@ class CommentDetailForMedia extends Component {
   displayEdit(e){
     // console.log(this.state.comment)
     if(this.props.comment.user === this.props.currentUserId){
+
+
+
+
       return (
         <div className="media-comments-detail-container">
           <RIETextArea value={this.state.comment}
@@ -75,7 +81,13 @@ class CommentDetailForMedia extends Component {
           propName="text"
           change={this.handleSubmitEditedComment}
           validate={this.commentEditLengthValidation}
+          // editProps={maxLength="144"}
           />
+
+          
+
+          {/* <FiEdit3 /> */}
+          {/* <button onClick={this.handleClickEditButton}></button> */}
         </div>
     )
     }else{
@@ -83,13 +95,18 @@ class CommentDetailForMedia extends Component {
     }
   }
 
+  // handleClickEditButton(){
+  //   let editEletment = document.getElementById("media-comments-detail");
+  //   editEletment.classList.remove("media-comments-detail-container");
+  //   editEletment.classList.add("media-comments-detail-edit");
+  // }
+
 
   handleSubmitEditedComment(commentObj) {
     // console.log('cccccccc ' + commentObj);
     // console.log(this.props.comment);
     this.props.patchComment(this.props.comment._id, commentObj)
   }
-
 
   render() {
     

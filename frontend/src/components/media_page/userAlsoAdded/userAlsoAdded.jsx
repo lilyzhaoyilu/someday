@@ -30,8 +30,9 @@ class UserAlsoAdded extends Component {
           } else {
             this.props.fetchThisUser(listOnwerId).then(() => (listOnwer = this.props.users[listOnwerId].handle))
           }
+          // {this.props.movieTitle} 
 
-          return (<li>{listOnwer} added {this.props.movieTitle} to {(list.name)}</li>)
+          return (<li><span>{(list.name)}</span> <Link className="media-page-user-also-added-username" to={`/profile/${listOnwerId}`}>{listOnwer}</Link> </li>)
         })
       )
     }
@@ -42,7 +43,8 @@ class UserAlsoAdded extends Component {
 
     return (<div className="media-page-user-also-added">
 
-      They also added {this.props.movieTitle} to their lists {this.displayUsersAlsoAdded()}
+      <div className="media-page-user-also-added-subtitle">{this.props.movieTitle} is also in these lists</div>
+      {this.displayUsersAlsoAdded()}
 
     </div>)
   }

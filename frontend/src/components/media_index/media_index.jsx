@@ -76,7 +76,7 @@ class MediaIndex extends React.Component {
 						// console.log("rendering");
 						if (media.hasOwnProperty("image")) {
 							return (
-								<span key={media.key + i} className="media-item">
+								<span key={media.key} className="media-item">
 									<Link to={`/mediaPage/${media.id}`} className="media-link">
 										<img
 											src={media.image.url}

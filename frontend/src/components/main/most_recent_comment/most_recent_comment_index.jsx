@@ -40,7 +40,7 @@ class MostRecentCommentIndex extends Component {
 					imgUrl: this.props.media[this.props.movieId].image.url,
 				});
 			}
-		}, this.props.idx + 1 * 1000);
+		}, this.props.idx + 1 * 500);
 		this.props.fetchThisUser(this.props.comment.user).then((res) => {
 			this.setState({ ...this.state, username: res.user.data.handle });
 		});
