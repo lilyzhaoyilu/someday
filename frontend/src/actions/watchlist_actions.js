@@ -4,6 +4,8 @@ export const RECEIVE_THIS_WATCHLIST = 'RECEIVE_THIS_WATCHLIST';
 export const DELETE_WATCHLIST = 'DELETE_WATCHLIST';
 export const RECEIVE_WATCHLIST_ERRORS = 'RECEIVE_WATCHLIST_ERRORS';
 export const RECEIVE_THESE_WATCHLISTS = 'RECEIVE_THESE_WATCHLISTS';
+export const RECEIVE_LISTS_AS_ARRAYW = 'RECEIVE_LISTS_AS_ARRAYW';
+
 
 const receiveThisWatchlist = watchlist => ({
   type: RECEIVE_THIS_WATCHLIST,
@@ -18,6 +20,11 @@ const receiveTheseWatchlists = watchlists => ({
 const removeWatchlist = watchlistId => ({
   type: DELETE_WATCHLIST,
   watchlistId
+})
+
+const receiveListsAsArrayW = lists => ({
+  type: RECEIVE_LISTS_AS_ARRAYW,
+  lists
 })
 
 
@@ -88,3 +95,12 @@ export const deleteWatchlistItem = (listId, movieId) => dispatch => {
       )
   )
 }
+
+
+export const getWatchlistsBasedOnMovieId = (movieId) => dispatch => (
+  APIUTIL.getWatchListBasedOnMovieId(movieId)
+    .then(
+      watchlists => dispatch(receiveListsAsArrayW(watchlists)),
+      err => dispatch(receiveErrors(err))
+    )
+)

@@ -33,4 +33,8 @@ export const getAllHistorylists = () => (
   axios.get(`/api/watchedLists/watchedList`)
 )
 
-
+//get the lists based on movieId inside their movie array
+export const getHistoryListBasedOnMovieId = (movieId) => {
+  // debugger;
+  return axios.get(`/api/watchedLists/${movieId}`)
+}

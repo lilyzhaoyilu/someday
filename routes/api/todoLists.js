@@ -6,6 +6,9 @@ const TodoList = require("../../models/TodoList");
 const validateList = require("../../validation/list");
 const jwt = require('jsonwebtoken');
 
+///"/api/todoLists"
+
+
 //get all the todolist (includes other users)
 router.get("/todoList", (req, res) => {
   TodoList.find()
@@ -103,5 +106,14 @@ router.patch(
       });
   }
 );
+
+//get list by the matching an movie id in the movie array
+router.get("/:movieId", (req, res) => {
+  TodoList.find({movie: {$all:[req.params.movieId]}})
+    
+    .then((watchedLists) => res.json(watchedLists))
+    .catch((err) => res.status(400).json(err));
+});
+
 
 module.exports = router;
