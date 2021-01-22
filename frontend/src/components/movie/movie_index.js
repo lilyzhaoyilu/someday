@@ -63,7 +63,7 @@ export default class MovieIndex extends Component {
     } else {
       return (
         <div className="no-result">
-          <div className="no-result-text">No Matching result, Click me to browse</div>
+          <div className="no-result-text">No Matching Result, Click Me to Browse</div>
           <Link to="/show-index" className="no-result-link">
             <div className="sign-search">
               <span className="fast-flicker">S</span>ome

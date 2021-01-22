@@ -29,28 +29,33 @@ export default class HistorylistIndex extends Component {
   }
 
   render() {
-    return (this.state.lists) ? (
+    
+    let listLength = this.props.historylists.filter(
+      (list) => list.user === this.props.userId
+    ).length;
+    let loadMsg = "Loading..."
+    if(listLength === 0){
+      loadMsg = "No List yet"
+    }
+    return this.state.lists ? (
       <div className="historylist-index">
-        <h2>Historylists ···({this.props.historylists.filter(list => list.user === this.props.userId).length} historylists)</h2>
+        <h2>Historylists ···({listLength} historylists)</h2>
         <InfiniteScroll
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}
           hasMore={this.state.hasMore}
-          loader={<h4 style={{ height: "700px" }}>Loading...</h4>}
+          loader={<h4 style={{ height: "700px" }}>{loadMsg}</h4>}
           height={400}
           scrollThreshold={0.4}
           className={"historylist-index"}
-          endMessage={
-            <p >
-              The End
-            </p>
-          }
+          endMessage={<p>The End</p>}
         >
           <ul>
             {this.state.lists.map((list, i) => {
-              return (list) ? <HistorylistIndexItem key={list._id} historylist={list} /> : null;
-            }
-            )}
+              return list ? (
+                <HistorylistIndexItem key={list._id} historylist={list} />
+              ) : null;
+            })}
           </ul>
         </InfiniteScroll>
       </div>
