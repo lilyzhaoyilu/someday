@@ -45,7 +45,7 @@
 }
 .recet-item img {
 	height: auto;
-	width: 100px;
+	width: 150px;
 	transition: transform 0.3s ease-out;
 }
 .recet-item img:hover {

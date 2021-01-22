@@ -21,6 +21,12 @@
 	display: flex;
 	flex-direction: row;
 	list-style-type: none;
+	box-shadow: 2px 2px 3px grey;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	overflow: hidden;
+	padding: 20px;
+	padding-left: 43px;
 }
 
 .comment-detail-user-right {
@@ -32,6 +38,12 @@
 	padding: 10px 0 20px;
 }
 
+.user-comment-index {
+	border-radius: 5px;
+	border: 1px black solid;
+	width: 96%;
+	margin: 0 auto;
+}
 /* .comment-detail-user-right div{
   padding: 0 0 10px;
 } */
@@ -44,7 +56,12 @@
 .comment-user-container img {
 	/* max-height: 100%; */
 	/* height: 100px; */
-	width: 100px;
+	width: 150px;
+	transition: box-shadow 0.3s ease-out;
+}
+
+.comment-user-container img:hover {
+	box-shadow: 5px 5px 5px gray;
 }
 
 .comment-detail-text {
@@ -59,6 +76,7 @@
 
 .comment-user h2 {
 	margin: 15px;
+	margin-left: 0;
 }
 
 /* comments on media page  */
@@ -188,12 +206,8 @@
 	font-style: italic;
 }
 
-
-
-
-
 /* edit feature */
-.media-comments-detail-edit{
+.media-comments-detail-edit {
 	width: 95%;
 	font: inherit;
 	overflow: auto;

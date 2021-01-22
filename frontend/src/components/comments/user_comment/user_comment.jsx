@@ -120,6 +120,7 @@ class UserComment extends Component {
 					loader={<h4 style={{ height: "600px" }}>Keep scrolling...</h4>}
 					height={500}
 					scrollThreshold={0.6}
+					className={"user-comment-index"}
 					endMessage={
 						<p style={{ textAlign: "center", color: "gray" }}>
 							No more comments from this user
