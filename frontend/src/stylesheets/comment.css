@@ -68,13 +68,14 @@
 }
 
 .media-comment-user,
-.comment-user-username {
+.comment-user-username{
 	color: #3377aa;
 }
 
 .media-comment-user:hover,
 .comment-user-username:hover,
-.comment-button-delete:hover {
+.comment-button-delete:hover,
+.media-page-user-also-added-username:hover {
 	color: white;
 	background-color: #3377aa;
 }
