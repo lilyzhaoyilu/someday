@@ -5,6 +5,7 @@ class About extends Component {
 		super(props);
 		this.state = {
 			isOpen: false,
+			color: true
 		};
 		this.toggleModal = this.toggleModal.bind(this);
 	}
@@ -12,13 +13,15 @@ class About extends Component {
 	toggleModal(e) {
 		this.setState({
 			isOpen: !this.state.isOpen,
+			color: !this.state.color
 		});
 	}
 
 	render() {
+		let colorClass = this.state.color ? "green-button" : "yellow-button"
 		return (
 			<div className="about">
-				<button className="about-button-us" onClick={this.toggleModal}>
+				<button className={`about-button-us ${colorClass}`} onClick={this.toggleModal}>
 					About us
 				</button>
 
