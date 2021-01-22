@@ -14,14 +14,16 @@ class NewUserIndex extends Component {
 	}
 	render() {
 		return this.state.hasOwnProperty("users") ? (
-			<div className="new-user-index">
-				{/* {console.log("users", this.state.users)} */}
-				<h3>New User to Someday</h3>
-				<ul>
-					{this.state.users.map((user, i) => {
-						return <UserItem user={user} key={user._id} idx={i} />;
-					})}
-				</ul>
+			<div >
+				<h3 id="new-user-title">New User</h3>
+				<div className="new-user-index">
+					{/* {console.log("users", this.state.users)} */}
+					<ul>
+						{this.state.users.map((user, i) => {
+							return <UserItem user={user} key={user._id} idx={i} />;
+						})}
+					</ul>
+				</div>
 			</div>
 		) : null;
 	}

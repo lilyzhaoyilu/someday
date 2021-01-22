@@ -42,18 +42,20 @@ class NewUserIndex extends Component {
 	}
 	render() {
 		return this.state.hasOwnProperty("topCommenter") ? (
-			<div className="most-comment-users">
-				<h3>Users with most Comments</h3>
-				<ul>
-					{this.state.topCommenter.map((userId) => {
-						return (
-							<UserItem
-								user={this.props.users[userId]}
-								commentCount={this.state.users[userId]}
-							/>
-						);
-					})}
-				</ul>
+			<div id="mc-user-container">
+				<h3 id="mc-users-title">Users with most Comments</h3>
+				<div className="most-comment-users">
+					<ul>
+						{this.state.topCommenter.map((userId) => {
+							return (
+								<UserItem
+									user={this.props.users[userId]}
+									commentCount={this.state.users[userId]}
+								/>
+							);
+						})}
+					</ul>
+				</div>
 			</div>
 		) : null;
 	}
