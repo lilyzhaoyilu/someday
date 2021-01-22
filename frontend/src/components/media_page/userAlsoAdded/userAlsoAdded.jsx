@@ -32,7 +32,7 @@ class UserAlsoAdded extends Component {
           }
           // {this.props.movieTitle} 
 
-          return (<li><span>{(list.name)}</span> <Link className="media-page-user-also-added-username" to={`#/profile/${listOnwerId}`}>{listOnwer}</Link> </li>)
+          return (<li><span>{(list.name)}</span> <Link className="media-page-user-also-added-username" to={`/profile/${listOnwerId}`}>{listOnwer}</Link> </li>)
         })
       )
     }
