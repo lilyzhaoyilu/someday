@@ -13,10 +13,7 @@ class SearchBar extends Component {
 		this.props.clearMovies();
 		this.props
 			.searchShows(this.state.input)
-			.then((res) => this.props.history.push({
-				pathname: "/search-result",
-				state: { detail: this.state.input }
-		}));
+			.then((res) => this.props.history.push("/search-result"));
 	}
 
 	update() {
