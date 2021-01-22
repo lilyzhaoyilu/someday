@@ -1,26 +1,37 @@
-.main-container .medias-container {
-	/* border: pink solid 5px; */
+.main-container {
+	display: flex;
+	margin: 0 auto;
+	justify-content: center;
+}
+.medias-container {
+	box-shadow: 3px 3px 10px grey;
+	border-radius: 30px;
+	padding-top: 1px;
 	overflow: hidden;
 	max-width: 1300px;
 	min-width: 1000px;
-}
-.main-container {
-	display: flex;
+	margin: 0 auto;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
-.main-container .media-index {
+.main-container .medias-container {
+	height: 500px;
+	width: 1000px;
+}
+
+.media-index {
 	display: flex;
 	flex-wrap: wrap;
-	width: 70%;
-	max-width: 1300px;
-	min-width: 1000px;
+	width: 1000px;
 	position: relative;
 	left: 50%;
 	right: 50%;
 	transform: translate(-50%, -50%);
-	top: 480px;
+	top: 375px;
 	box-sizing: border-box;
 	overflow: hidden;
+	box-shadow: inset 1px 1px 5px grey;
 }
 .new-user-index {
 	width: 350px;
@@ -29,10 +40,14 @@
 	overflow: auto;
 	padding: 0 10px;
 	padding-top: 15px;
+
+	box-shadow: inset 0px 0px 4px grey;
 }
 #new-user-title {
+	margin-top: 30px;
 	margin-bottom: 20px;
 	text-align: center;
+	text-shadow: 2px 2px darkgrey;
 }
 .new-user-item {
 	display: block;
@@ -41,10 +56,20 @@
 	padding: 10px 15px;
 	border-radius: 5px;
 	margin-bottom: 3px;
-	transition: background 0.3s ease-out;
+	transition: box-shadow 0.3s ease-out;
 }
 .new-user-item:hover {
-	background: #04bd8c;
+	/* background: #04bd8c; */
+	box-shadow: 3px 3px 5px gray;
+}
+#new-user-container {
+	box-shadow: 3px 3px 10px gray;
+	border-radius: 30px;
+	padding-bottom: 40px;
+	padding-top: 1px;
+	margin-left: 50px;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 .most-comment-users {
 	width: 350px;
@@ -54,10 +79,12 @@
 	/* margin-top: 50px; */
 	padding: 0 10px;
 	padding-top: 15px;
+	box-shadow: inset 1px 1px 5px grey;
 }
 #mc-users-title {
 	margin-bottom: 20px;
 	text-align: center;
+	text-shadow: 2px 2px darkgrey;
 }
 .mc-user-item {
 	display: block;
@@ -66,17 +93,34 @@
 	padding: 10px 15px;
 	border-radius: 5px;
 	margin-bottom: 3px;
-	transition: background 0.3s ease-out;
+	transition: box-shadow 0.3s ease-out;
 }
 .mc-user-item:hover {
-	background: #04bd8c;
+	/* background: #04bd8c; */
+	box-shadow: 5px 5px 5px gray;
 }
 #mc-user-container {
 	margin-top: 50px;
+	box-shadow: 3px 3px 10px gray;
+	border-radius: 30px;
+	margin-left: 50px;
+	padding-top: 30px;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
 .user-item-username {
 	font-weight: bold;
 	color: #007a5a;
 	text-decoration: underline;
+}
+#trending-movie-title {
+	display: block;
+	margin-top: 40px;
+	text-align: center;
+	text-shadow: 2px 2px darkgrey;
+}
+
+.main-container .media-item {
+	/* margin-right: 10px; */
 }
