@@ -21,6 +21,7 @@ import "../stylesheets/list_form.css";
 import "../stylesheets/media-index.css";
 import "../stylesheets/search_result.css";
 import "../stylesheets/about.css";
+import "../stylesheets/main_page.css"
 const Root = ({ store }) => {
   return (
     <Provider store={store}>

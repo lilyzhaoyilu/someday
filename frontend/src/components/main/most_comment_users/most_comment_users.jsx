@@ -26,21 +26,36 @@ class NewUserIndex extends Component {
 					});
 				}
 			});
-			console.log(this.state);
+			const countArr = Object.values(this.state.users).sort((a, b) => b - a);
+			const topCommenter = [];
+			for (let i = 0; i < countArr.length; i++) {
+				const currIdx = Object.values(this.state.users).indexOf(countArr[i]);
+				const currUser = Object.keys(this.state.users)[currIdx];
+				if (topCommenter.includes(currUser) && currIdx + 1 < countArr.length) {
+					topCommenter.push(Object.keys(this.state.users)[currIdx + 1]);
+				} else {
+					topCommenter.push(currUser);
+				}
+				this.setState({ ...this.state, topCommenter: topCommenter });
+			}
 		});
 	}
 	render() {
-		return (
-			<div>
-				{/* {console.log("comments", this.state.comments)} */}
-				{/* <ul>
-					{this.state.users.map((user) => {
-						return <UserItem user={user} />;
+		return this.state.hasOwnProperty("topCommenter") ? (
+			<div className="most-comment-users">
+				<h3>Users with most Comments</h3>
+				<ul>
+					{this.state.topCommenter.map((userId) => {
+						return (
+							<UserItem
+								user={this.props.users[userId]}
+								commentCount={this.state.users[userId]}
+							/>
+						);
 					})}
-				</ul> */}
-				<h1>hi</h1>
+				</ul>
 			</div>
-		);
+		) : null;
 	}
 }
 
