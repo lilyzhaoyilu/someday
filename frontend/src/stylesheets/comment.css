@@ -41,6 +41,8 @@
 .user-comment-index {
 	border-radius: 5px;
 	border: 1px black solid;
+	width: 96%;
+	margin: 0 auto;
 }
 /* .comment-detail-user-right div{
   padding: 0 0 10px;
@@ -74,6 +76,7 @@
 
 .comment-user h2 {
 	margin: 15px;
+	margin-left: 0;
 }
 
 /* comments on media page  */
