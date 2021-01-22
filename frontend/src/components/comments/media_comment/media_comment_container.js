@@ -3,7 +3,7 @@ import { withRouter} from 'react-router-dom';
 
 
 import MediaComment from './media_comment';
-import {getMovieComments} from '../../../actions/comment_actions';
+import {getMovieComments,} from '../../../actions/comment_actions';
 import { fetchThisUser } from '../../../actions/user_actions';
 const mstp = (state, ownProps) => {
   return {
@@ -18,6 +18,7 @@ const mstp = (state, ownProps) => {
 const mdtp = dispatch => ({
   getMovieComments: (movieId) => dispatch(getMovieComments(movieId)),
   fetchThisUser: (userId) => dispatch(fetchThisUser(userId)),
+
 })
 
 

@@ -1,18 +1,27 @@
 import React, { Component } from 'react'
 import moment from 'moment';
 import { Link, withRouter } from "react-router-dom";
+import { RIETextArea } from "riek";
+
 class CommentDetailForMedia extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      comment: this.props.comment.text,
+      // isDisabled: false,
+    }
     this.displayCreatedAt = this.displayCreatedAt.bind(this);
     this.displayUsername = this.displayUsername.bind(this);
     this.handleDeleteComment = this.handleDeleteComment.bind(this);
+    this.handleSubmitEditedComment = this.handleSubmitEditedComment.bind(this);
+    this.displayEdit = this.displayEdit.bind(this);
+    this.commentEditLengthValidation = this.commentEditLengthValidation.bind(this);
+    // this.displayEditComment = this.displayEditComment.bind(this);
   }
 
-  displayUsername = () => {
+  displayUsername () {
     const userId = this.props.comment.user;
-    
     if(userId && this.props.users[userId]){
       const displayedName = this.props.users[userId].handle ? this.props.users[userId].handle : this.props.users[userId].email;
       // const displayedName = this.props.users[userId].email;
@@ -20,42 +29,71 @@ class CommentDetailForMedia extends Component {
     }
   }
 
-  displayCreatedAt = (time) => {
+  displayCreatedAt(time)  {
     let display = moment(time);
     return <span className="media-comment-time">{display.format("MMM D YYYY")}</span>;
   }
 
   
-  handleDeleteComment (e){
+  handleDeleteComment(e){
     e.preventDefault();
     // debugger;
-    let movieId = this.props.comment.movie;
+    // let movieId = this.props.comment.movie;
     this.props.deleteComment(this.props.comment._id)
     // .then((movieId) => {this.props.getMovieComments(movieId)})
   }
 
   displayDeleteButton(e){
     if(this.props.comment.user === this.props.currentUserId){
-      return (    <div className="comment-button">
+      return (
+      <div className="comment-button">
       <button className="comment-button-delete" onClick={this.handleDeleteComment}>delete this comment</button>
-    </div>)
+      </div>
+    )
     }
+  }
+
+  commentEditLengthValidation(string){
+    // console.log(string);
+    return (string.length > 1 && string.length < 144)
+  }
+
+  // displayEditComment(text){
+  //   console.log("text",text)
+  //   if(text.length < 144){
+  //     this.setState({comment: text})
+  //   }
+  // }
+
+  displayEdit(e){
+    // console.log(this.state.comment)
+    if(this.props.comment.user === this.props.currentUserId){
+      return (
+        <div className="media-comments-detail-container">
+          <RIETextArea value={this.state.comment}
+          classEditing='media-comments-detail-edit'
+          propName="text"
+          change={this.handleSubmitEditedComment}
+          validate={this.commentEditLengthValidation}
+          />
+        </div>
+    )
+    }else{
+       return <div>{this.props.comment.text}</div>
+    }
+  }
+
+
+  handleSubmitEditedComment(commentObj) {
+    // console.log('cccccccc ' + commentObj);
+    // console.log(this.props.comment);
+    this.props.patchComment(this.props.comment._id, commentObj)
   }
 
 
   render() {
     
     const {comment} = this.props;
-    // const displayCreatedAt = (time) => {
-    //   let display = moment(time);
-    //   return display.format("MMM D YYYY");}
-
-    // const userId = comment.user
-    // const displayUsername = () => {
-    //   if(this.props.users && this.props.users[userId]){
-    //     return (<Link to={`/profile/${userId}`}>{this.props.users[userId].email}</Link>)
-    //   }
-    // }
 
 
     return (
@@ -66,7 +104,9 @@ class CommentDetailForMedia extends Component {
         {this.displayCreatedAt(comment.date)}
         </div>
 
-        <div>{comment.text}</div>
+        {this.displayEdit()}
+
+    
     
         {this.displayDeleteButton()}
   
