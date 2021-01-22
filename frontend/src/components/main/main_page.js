@@ -9,6 +9,7 @@ import ShowInfinite from '../media_index/show_index_container'
 import ProfileNavbarContainer from '../nav/profile_navbar_container';
 import MoviePageContainer from '../media_page/media_page_cotainer';
 import NewUserIndex from "./new_user_index/new_user_index_container"
+import MostRecentComment from './most_recent_comment/most_recent_comment_container';
 import MostCommentUsers from './most_comment_users/most_comment_users_container'
 export default () => {
   return (
@@ -18,8 +19,10 @@ export default () => {
       </main>
       <aside>
         <NewUserIndex />
+        <MostRecentComment/>
         <MostCommentUsers />
       </aside>
+
     </div>
 
   )
