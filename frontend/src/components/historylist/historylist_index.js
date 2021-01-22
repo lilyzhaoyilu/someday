@@ -39,7 +39,7 @@ export default class HistorylistIndex extends Component {
           loader={<h4 style={{ height: "700px" }}>Loading...</h4>}
           height={400}
           scrollThreshold={0.4}
-          classname={"historylist-index"}
+          className={"historylist-index"}
           endMessage={
             <p >
               The End

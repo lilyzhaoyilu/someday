@@ -22,10 +22,9 @@ class SearchBar extends Component {
 				input: e.currentTarget.value,
 			});
 	}
-
 	render() {
 		return (
-			<form className="search-bar" onSubmit={this.handleSubmit}>
+			<form className="search-bar" onSubmit={this.handleSubmit}>	
 				<div className="search-input">
 					<label htmlFor="search">Search for stuff</label>
 					<input

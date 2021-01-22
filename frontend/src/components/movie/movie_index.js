@@ -1,31 +1,29 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
-import MovieIndexItem from './movie_index_item';
-import NavBar from '../nav/navbar_container'
-import Logo from '../../util/somedaylogo.svg'
-import SearchBarContainer from '../nav/search_bar/search_bar_container'
-
+import MovieIndexItem from "./movie_index_item";
+import NavBar from "../nav/navbar_container";
+import Logo from "../../util/somedaylogo.svg";
+import SearchBarContainer from "../nav/search_bar/search_bar_container";
+import Fire from "./movie_fire"
 // import MediaComment from '../comments/media_comment/media_comment_container'
-
-
 
 export default class MovieIndex extends Component {
   // componentDidUpdate(prevState) {
   //   if (prevState !== this.nextState) {
   //     setState
-  //   } 
+  //   }
   // }
   componentWillUnmount() {
-    this.props.clearMovies()
+    this.props.clearMovies();
   }
 
   render() {
     const { movies } = this.props;
-    if (movies) {
+    if (movies.length !== 0) {
       return (
         <div>
-          {(this.props.loggedIn) ? (null) : (
+          {this.props.loggedIn ? null : (
             <div className="splash-header">
               <div className="splash-header-left">
                 <Link to="/splash">
@@ -37,16 +35,16 @@ export default class MovieIndex extends Component {
                 {/* <Link to="/">try demo need to do</Link> */}
                 <Link id="login" className="splash-link-child" to="/login">
                   login
-						</Link>
+                </Link>
                 <Link id="signup" className="splash-link-child" to="/signup">
                   Sign Up
-						</Link>
+                </Link>
               </div>
             </div>
           )}
           <ul className="search-result">
-            {movies.map(movie => {
-              if (movie.id.slice(0, 2) === 'tt' && movie.i) {
+            {movies.map((movie) => {
+              if (movie.id.slice(0, 2) === "tt" && movie.i) {
                 return (
                   <MovieIndexItem
                     key={movie.id}
@@ -56,16 +54,22 @@ export default class MovieIndex extends Component {
                     year={movie.y}
                     loggedIn={this.props.loggedIn}
                   />
-                )
+                );
               }
             })}
           </ul>
-
         </div>
-      )
-
+      );
     } else {
-      return null;
+      return (
+        <div className="no-result">
+          <div className="no-result-text">No Matching result</div>
+          <Link to="/show-index" className="no-result-link">
+            Click Me to Browser More Show
+            <Fire />
+          </Link>      
+        </div>
+      );
     }
   }
 }

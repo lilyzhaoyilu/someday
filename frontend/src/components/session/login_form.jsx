@@ -102,7 +102,7 @@ class LoginForm extends React.Component {
 							id="email"
 							className="gate"
 						/>
-						<label for="email">Email</label>
+						<label htmlFor="email">Email</label>
 					</span>
 
 					<div className="error-div">
@@ -118,7 +118,7 @@ class LoginForm extends React.Component {
 							id="password"
 							className="gate"
 						/>
-						<label for="password">Password</label>
+						<label htmlFor="password">Password</label>
 					</span>
 
 					{/* {this.renderErrors()} */}
