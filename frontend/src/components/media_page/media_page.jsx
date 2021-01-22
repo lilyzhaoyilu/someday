@@ -5,10 +5,14 @@ import CommentForm from "../comments/comment_form/comment_form_container";
 import MediaHistoryList from "./media_history_container";
 import MediaWatchList from "./media_watch_container";
 import Loading from "./loading";
+import UserAlsoAdded from "./userAlsoAdded/userAlsoAdded_container"
 
 import { HiOutlineUser, HiUserGroup } from "react-icons/hi";
 import { FiTag } from "react-icons/fi";
 import { FcPlanner, FcScatterPlot } from "react-icons/fc";
+
+
+
 class MediaPage extends Component {
   constructor(props) {
     super(props);
@@ -131,11 +135,14 @@ class MediaPage extends Component {
               </div>
             </div>
           </div>
+        <UserAlsoAdded movieId={this.props.movieId} movieTitle={this.state.title} />
+        
           <div className="plot">
             <h3>Plot Summary</h3>
             <span>{this.state.plotOutline}</span>
           </div>
         </div>
+
 
         <div className="media-button">
           <button className="list-add-button" onClick={this.toggleModal}>
