@@ -21,7 +21,7 @@ export default function (oldState = {}, action) {
       return { ...oldState, ...newState }
     case RECEIVE_USERS:
       newState = {}
-      action.users.forEach(user => newState[user._id] = user)
+      action.users.data.forEach(user => newState[user._id] = user)
       return { ...oldState, ...newState }
     default:
       return oldState
