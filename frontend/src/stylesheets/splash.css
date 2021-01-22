@@ -170,7 +170,7 @@
 }
 
 .no-result-text{
-	margin-bottom: 30px;
+	margin-bottom: 176px;
 }
 
 .no-result-link {
@@ -178,187 +178,198 @@
   padding: 20px;
 }
 
-/* fire  */
 
-@keyframes scaleUpDown {
-  0%,
-  100% {
-    transform: scaleY(1) scaleX(1);
-  }
-  50%,
-  90% {
-    transform: scaleY(1.1);
-  }
-  75% {
-    transform: scaleY(0.95);
-  }
-  80% {
-    transform: scaleX(0.95);
-  }
-}
-
-@keyframes shake {
-  0%,
-  100% {
-    transform: skewX(0) scale(1);
-  }
-  50% {
-    transform: skewX(5deg) scale(0.9);
-  }
-}
-
-@keyframes particleUp {
-  0% {
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    top: -100%;
-    transform: scale(0.5);
-  }
-}
-
-@keyframes glow {
-  0%,
-  100% {
-    background-color: #ef5a00;
-  }
-  50% {
-    background-color: #ff7800;
-  }
-}
-
-.fire {
+.sign-search {
   position: absolute;
-  top: calc(151% - 50px);
-  left: calc(50% - 50px);
-  width: 100px;
-  height: 100px;
-  background-color: transparent;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.fire-main {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  animation: scaleUpDown 3s ease-out;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-main .main-fire {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(farthest-corner at 10px 0, #d43300 0%, #ef5a00 95%);
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 60% 40%;
-  filter: drop-shadow(0 0 10px #d43322);
-}
-
-.fire-main .particle-fire {
-  position: absolute;
-  top: 60%;
-  left: 45%;
-  width: 10px;
-  height: 10px;
-  background-color: #ef5a00;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 10px #d43322);
-  animation: particleUp 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-right {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  animation: shake 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
-}
-
-.fire-right .main-fire {
-  position: absolute;
-  top: 15%;
-  right: -25%;
-  width: 80%;
-  height: 80%;
-  background-color: #ef5a00;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 60% 40%;
-  filter: drop-shadow(0 0 10px #d43322);
-}
-
-.fire-right .particle-fire {
-  position: absolute;
-  top: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 50%;
+  background-image: radial-gradient(
+    ellipse 50% 35% at 50% 50%,
+    #114214,
+    transparent
+  );
+  transform: translate(-50%, -50%);
+  letter-spacing: 2;
   left: 50%;
-  width: 15px;
-  height: 15px;
-  background-color: #ef5a00;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 50%;
-  filter: drop-shadow(0 0 10px #d43322);
-  animation: particleUp 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
+  top: 50%;
+  font-family: "Clip";
+  text-transform: uppercase;
+  font-size: 6em;
+  color: #ffe6ff;
+  text-shadow: 0 0 0.6rem #e6f6ff, 0 0 1.5rem #65ffaa,
+    -0.2rem 0.1rem 1rem #0d8b2d, 0.2rem 0.1rem 1rem #65ff7f,
+    0 -0.5rem 2rem #24ff7f, 0 0.5rem 3rem #24ff7f;
+  animation: shine 2s forwards, flicker 3s infinite;
 }
 
-.fire-left {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  animation: shake 3s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #0b9221;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #14cc1d,
+      -0.2rem 0.1rem 1rem #045708, 0.2rem 0.1rem 1rem #0a8a4e,
+      0 -0.5rem 2rem #144d06, 0 0.5rem 3rem #286e0d;
+  }
+  28%,
+  33% {
+    color: #0ebb42;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #48f139;
+    text-shadow: none;
+  }
 }
 
-.fire-left .main-fire {
-  position: absolute;
-  top: 15%;
-  left: -20%;
-  width: 80%;
-  height: 80%;
-  background-color: #ef5a00;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 60% 40%;
-  filter: drop-shadow(0 0 10px #d43322);
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
 }
 
-.fire-left .particle-fire {
-  position: absolute;
-  top: 10%;
-  left: 20%;
-  width: 10%;
-  height: 10%;
-  background-color: #ef5a00;
-  border-radius: 50%;
-  filter: drop-shadow(0 0 10px #d43322);
-  animation: particleUp 3s infinite ease-out 0;
-  animation-fill-mode: both;
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
 }
 
-.fire-bottom .main-fire {
-  position: absolute;
-  top: 30%;
-  left: 20%;
-  width: 75%;
-  height: 75%;
-  background-color: #ff7800;
-  transform: scaleX(0.8) rotate(45deg);
-  border-radius: 0 40% 100% 40%;
-  filter: blur(10px);
-  animation: glow 2s ease-out 0;
-  animation-iteration-count: infinite;
-  animation-fill-mode: both;
+@keyframes shine {
+  0% {
+    color: #164923;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #3ac45d, 0 0 1.5rem #15b83e,
+      -0.2rem 0.1rem 1rem #50b466, 0.2rem 0.1rem 1rem #10962d,
+      0 -0.5rem 2rem #0d6e35, 0 0.5rem 3rem #177a41;
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.9;
+  }
+
+  6% {
+    opacity: 0.85;
+  }
+
+  8% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.9;
+  }
+
+  11% {
+    opacity: 0.922;
+  }
+
+  12% {
+    opacity: 0.9;
+  }
+
+  14% {
+    opacity: 0.95;
+  }
+
+  16% {
+    opacity: 0.98;
+  }
+
+  17% {
+    opacity: 0.9;
+  }
+
+  19% {
+    opacity: 0.93;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  24% {
+    opacity: 1;
+  }
+
+  26% {
+    opacity: 0.94;
+  }
+
+  28% {
+    opacity: 0.98;
+  }
+
+  37% {
+    opacity: 0.93;
+  }
+
+  38% {
+    opacity: 0.5;
+  }
+
+  39% {
+    opacity: 0.96;
+  }
+
+  42% {
+    opacity: 1;
+  }
+
+  44% {
+    opacity: 0.97;
+  }
+
+  46% {
+    opacity: 0.94;
+  }
+
+  56% {
+    opacity: 0.9;
+  }
+
+  58% {
+    opacity: 0.9;
+  }
+
+  60% {
+    opacity: 0.99;
+  }
+
+  68% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.9;
+  }
+
+  72% {
+    opacity: 0.95;
+  }
+
+  93% {
+    opacity: 0.93;
+  }
+
+  95% {
+    opacity: 0.95;
+  }
+
+  97% {
+    opacity: 0.93;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
