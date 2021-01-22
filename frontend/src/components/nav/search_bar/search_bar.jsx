@@ -13,7 +13,10 @@ class SearchBar extends Component {
 		this.props.clearMovies();
 		this.props
 			.searchShows(this.state.input)
-			.then((res) => this.props.history.push("/search-result"));
+			.then((res) => this.props.history.replace({
+				pathname: "/search-result",
+				state: { detail: this.state.input }
+			}));
 	}
 
 	update() {
@@ -31,7 +34,7 @@ class SearchBar extends Component {
 						id="search"
 						type="text"
 						value={this.state.input}
-						placeholder="Search your favorite shows"
+						placeholder="Search shows/users"
 						onChange={this.update()}
 					/>
 					<button>search</button>
