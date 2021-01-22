@@ -41,11 +41,11 @@ class ProfileShow extends Component {
                 <strong>{displayCreatedAt(user.date)}</strong>
               </label>
             </div>
-            <div className="about-me">
+            {/* <div className="about-me">
               <label>About me:
                 <strong>This user does not have a description.</strong>
               </label>
-            </div>
+            </div> */}
             {/* favorite movie added from history list */}
           </div>
         </div>
