@@ -49,51 +49,46 @@ class MediaIndex extends React.Component {
 		this.setState({ page: this.state.page + 3 });
 	};
 
-	render() {
-		return (
-			<div className="medias-container">
-				<h1 id="trending-movie-title">Current Trending Movies</h1>
-				<InfiniteScroll
-					dataLength={this.state.media.length}
-					next={this.fetchMoreData}
-					hasMore={this.state.hasMore}
-					loader={
-						<h4 style={{ height: "750px", position: "absolute" }}>
-							Loading...
-						</h4>
-					}
-					height={700}
-					className="media-index"
-					scrollThreshold={0.4}
-					endMessage={
-						<p style={{ textAlign: "center" }}>
-							<b>That's all folks!</b>
-						</p>
-					}
-				>
-					{this.state.media.map((media, i) => {
-						// console.log("rendering");
-						if (media.hasOwnProperty("image")) {
-							return (
-								<span key={media.key} className="media-item">
-									<Link to={`/mediaPage/${media.id}`} className="media-link">
-										<img
-											src={media.image.url}
-											alt={media.title}
-											style={{ width: "200px", height: "auto" }}
-										/>
-									</Link>
-									<Link to={`/mediaPage/${media.id}`} className="media-link">
-										<h3>{media.title}</h3>
-									</Link>
-								</span>
-							);
-						}
-					})}
-				</InfiniteScroll>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div className="medias-container">
+        <InfiniteScroll
+          dataLength={this.state.media.length}
+          next={this.fetchMoreData}
+          hasMore={this.state.hasMore}
+          loader={<h4 style={{ height: "750px", position: "absolute"}}>Loading...</h4>}
+          height={700}
+          className="media-index"
+          scrollThreshold={0.4}
+          endMessage={
+            <p style={{ textAlign: "center" }}>
+              <b>That's all folks!</b>
+            </p>
+          }
+        >
+          {this.state.media.map((media, i) => {
+            // console.log("rendering");
+            if (media.hasOwnProperty("image")) {
+              return (
+                <span key={media.key + i} className="media-item">
+                  <Link to={`/mediaPage/${media.id}`} className="media-link">
+                    <img
+                      src={media.image.url}
+                      alt={media.title}
+                      style={{ width: "200px", height: "auto" }}
+                    />
+                  </Link>
+                  <Link to={`/mediaPage/${media.id}`} className="media-link">
+                    <h3>{media.title}</h3>
+                  </Link>
+                </span>
+              );
+            }
+          })}
+        </InfiniteScroll>
+      </div>
+    );
+  }
 }
 
 export default MediaIndex;

@@ -5,7 +5,7 @@ import MovieIndexItem from "./movie_index_item";
 import NavBar from "../nav/navbar_container";
 import Logo from "../../util/somedaylogo.svg";
 import SearchBarContainer from "../nav/search_bar/search_bar_container";
-import Fire from "./movie_fire"
+
 // import MediaComment from '../comments/media_comment/media_comment_container'
 
 export default class MovieIndex extends Component {
@@ -63,11 +63,13 @@ export default class MovieIndex extends Component {
     } else {
       return (
         <div className="no-result">
-          <div className="no-result-text">No Matching result</div>
+          <div className="no-result-text">No Matching result, Click me to browse</div>
           <Link to="/show-index" className="no-result-link">
-            Click Me to Browser More Show
-            <Fire />
-          </Link>      
+            <div className="sign-search">
+              <span className="fast-flicker">S</span>ome
+              <span className="flicker">d</span>ay
+            </div>
+          </Link>
         </div>
       );
     }

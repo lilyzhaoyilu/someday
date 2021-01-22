@@ -41,7 +41,7 @@ class NavBar extends React.PureComponent {
 
         <MyProfileContainer />
 
-        <Link to="/show-index">Shows</Link>
+        <Link to="/show-index">TV Shows</Link>
         <Link to="/movie-index">Movies</Link>
         <SearchBarContainer />
         <div className="user-dropdown">
