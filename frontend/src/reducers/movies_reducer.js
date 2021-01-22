@@ -18,7 +18,6 @@ export default (oldState = {}, action) => {
         newState[showId] = { id: showId }
       });
       return { ...oldState, ...newState }
-    case RECEIVE_MOVIES:
       newState = {};
       action.shows.data.d.forEach(show => newState[show.id] = show)
       return { ...oldState, ...newState }
