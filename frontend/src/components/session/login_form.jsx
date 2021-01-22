@@ -40,7 +40,7 @@ class LoginForm extends React.Component {
 		};
 		this.props.login(user).then((res) => {
 			if (this.props.loggedIn) {
-				this.props.history.push("/show-index");
+				// this.props.history.push(`/profile/${this.props.currUser.id}`);
 			} else {
 				this.setState({ errors: this.props.errors });
 				// console.log(this.state.errors);

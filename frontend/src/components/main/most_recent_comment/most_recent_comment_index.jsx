@@ -27,13 +27,20 @@ class MostRecentCommentIndex extends Component {
 	}
 	componentDidMount() {
 		setTimeout(() => {
-			this.props.fetchMovieData(this.props.movieId).then((res) => {
-				this.setState({
-					imgUrl: res.show.data.title.image.url,
-					id: res.show.data.id.slice(7, res.show.data.id.length - 1),
+			if (!this.props.media[this.props.movieId].hasOwnProperty("image")) {
+				this.props.fetchMovieData(this.props.movieId).then((res) => {
+					this.setState({
+						imgUrl: res.show.data.title.image.url,
+						id: res.show.data.id.slice(7, res.show.data.id.length - 1),
+					});
 				});
-			});
-		}, this.props.idx * 1000);
+			} else {
+				this.setState({
+					id: this.props.movieId,
+					imgUrl: this.props.media[this.props.movieId].image.url,
+				});
+			}
+		}, this.props.idx + 1 * 1000);
 		this.props.fetchThisUser(this.props.comment.user).then((res) => {
 			this.setState({ ...this.state, username: res.user.data.handle });
 		});
