@@ -9,7 +9,7 @@ class CommentDetailForMedia extends Component {
     super(props);
     this.state = {
       comment: this.props.comment.text,
-      isDisabled: false,
+      // isDisabled: false,
     }
     this.displayCreatedAt = this.displayCreatedAt.bind(this);
     this.displayUsername = this.displayUsername.bind(this);
@@ -17,6 +17,7 @@ class CommentDetailForMedia extends Component {
     this.handleSubmitEditedComment = this.handleSubmitEditedComment.bind(this);
     this.displayEdit = this.displayEdit.bind(this);
     this.commentEditLengthValidation = this.commentEditLengthValidation.bind(this);
+    // this.displayEditComment = this.displayEditComment.bind(this);
   }
 
   displayUsername () {
@@ -53,9 +54,16 @@ class CommentDetailForMedia extends Component {
   }
 
   commentEditLengthValidation(string){
-    console.log(string);
+    // console.log(string);
     return (string.length > 1 && string.length < 144)
   }
+
+  // displayEditComment(text){
+  //   console.log("text",text)
+  //   if(text.length < 144){
+  //     this.setState({comment: text})
+  //   }
+  // }
 
   displayEdit(e){
     // console.log(this.state.comment)

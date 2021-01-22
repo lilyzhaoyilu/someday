@@ -106,7 +106,7 @@ class SignupForm extends React.Component {
 							id="email"
 							className="gate"
 						/>
-						<label for="email">Email</label>
+						<label htmlFor="email">Email</label>
 					</span>
 
 					<div className="error-div">
@@ -122,7 +122,7 @@ class SignupForm extends React.Component {
 							id="handle"
 							className="gate"
 						/>
-						<label for="handle">Handle</label>
+						<label htmlFor="handle">Handle</label>
 					</span>
 					<div className="error-div">
 						<p>{this.state.errors.handle}</p>
@@ -137,7 +137,7 @@ class SignupForm extends React.Component {
 							id="password"
 							className="gate"
 						/>
-						<label for="password">Password</label>
+						<label htmlFor="password">Password</label>
 					</span>
 
 					<div className="error-div">
@@ -153,7 +153,7 @@ class SignupForm extends React.Component {
 							id="password2"
 							className="gate"
 						/>
-						<label for="password2">Password2</label>
+						<label htmlFor="password2">Password2</label>
 					</span>
 
 					<div className="error-div">

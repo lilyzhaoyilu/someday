@@ -6,8 +6,8 @@ module.exports = function validateComment(data) {
 
   data.text = validText(data.text) ? data.text : '';
 
-  if (!Validator.isLength(data.text, { min: 5, max: 140 })) {
-    errors.text = 'Comments must be between 5 and 140 characters';
+  if (!Validator.isLength(data.text, { min: 1, max: 144 })) {
+    errors.text = 'Comments must be between 1 and 144 characters';
   }
 
   if (Validator.isEmpty(data.text)) {
