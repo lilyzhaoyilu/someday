@@ -14,35 +14,49 @@
 //     </div>
 //   );
 // }
-
+import { Link } from "react-router-dom";
+import moment from "moment";
 import React, { Component } from "react";
 
 class MostRecentCommentIndex extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      imgUrl: "",
-    };
-  }
-  componentDidMount() {
-    setTimeout(
-      () =>
-        this.props.fetchMovieData(this.props.movieId).then((res) =>
-          this.setState({ imgUrl: res.show.data.title.image.url })
-        ),
-      this.props.idx * 1000
-    );
-  }
-  render() {
-    return (
-      <div className="recet-item">
-        <img src={this.state.imgUrl}></img>
-        <div className="recet-text-container">
-          <span className="recet-text">{this.props.comment.text}</span>
-        </div>
-      </div>
-    );
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			imgUrl: "",
+		};
+	}
+	componentDidMount() {
+		setTimeout(() => {
+			this.props.fetchMovieData(this.props.movieId).then((res) => {
+				this.setState({
+					imgUrl: res.show.data.title.image.url,
+					id: res.show.data.id.slice(7, res.show.data.id.length - 1),
+				});
+			});
+		}, this.props.idx * 1000);
+		this.props.fetchThisUser(this.props.comment.user).then((res) => {
+			this.setState({ ...this.state, username: res.user.data.handle });
+		});
+	}
+	render() {
+		return (
+			<div className="recet-item">
+				<Link to={`/mediaPage/${this.state.id}`}>
+					<img src={this.state.imgUrl}></img>
+				</Link>
+
+				<div className="recet-text-container">
+					<Link to={`/profile/${this.props.comment.user}`}>
+						<h3 className="r-t-username">{this.state.username}</h3>
+					</Link>
+					<p className="r-t-date">
+						{moment(this.props.comment.date).format("MMM D YYYY")}
+					</p>
+					<span className="recet-text">{this.props.comment.text}</span>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default MostRecentCommentIndex;

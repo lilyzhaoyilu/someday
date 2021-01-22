@@ -26,8 +26,8 @@ export default (oldState = {}, action) => {
       } else {
         return oldState;
       }
-      // console.log(action)
-      // return oldState
+    // console.log(action)
+    // return oldState
     case CLEAR_MOVIES:
       return {};
     default:
