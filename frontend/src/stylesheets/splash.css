@@ -159,3 +159,10 @@
 	margin: 20px;
 	padding: 20px;
 }
+
+.no-result{
+	position: relative;
+	top: 280px;
+	text-align: center;
+	font-size: 32px
+}

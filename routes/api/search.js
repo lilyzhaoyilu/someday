@@ -47,6 +47,7 @@ router.get("/search/watchedList", (req, res) => {
 router.get("/search/handle", (req, res) => {
   let search = req.body.handle;
   let regSearch = new RegExp(search, 'i')
+  console.log("regSearch")
   const users = User.find({ handle: regSearch });
   if (users != null) {
     users.then((user) => res.json(user))

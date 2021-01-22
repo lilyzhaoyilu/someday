@@ -18,9 +18,16 @@ export default (oldState = {}, action) => {
         newState[showId] = { id: showId }
       });
       return { ...oldState, ...newState }
-      newState = {};
-      action.shows.data.d.forEach(show => newState[show.id] = show)
-      return { ...oldState, ...newState }
+    case RECEIVE_MOVIES:
+      if (action.shows.data.hasOwnProperty("d")) {
+        newState = {};
+        action.shows.data.d.forEach(show => newState[show.id] = show)
+        return { ...oldState, ...newState }
+      } else {
+        return oldState;
+      }
+    // console.log(action)
+    // return oldState
     case CLEAR_MOVIES:
       return {};
     default:
