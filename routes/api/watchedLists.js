@@ -5,7 +5,7 @@ const passport = require("passport");
 const WatchedList = require("../../models/WatchedList");
 const validateList = require("../../validation/list");
 
-////"/api/todoLists"
+////"/api/watchedLists"
 router.get("/watchedList", (req, res) => {
   WatchedList.find()
     .sort({ date: -1 })
@@ -75,6 +75,16 @@ router.delete(
       });
   }
 );
+
+
+//get list by the matching an movie id in the movie array
+router.get("/:movieId", (req, res) => {
+  // console.log("watchedlist", req)
+  WatchedList.find({movie: {$all:[req.params.movieId]}})
+    // .sort({ date: -1 })
+    .then((historylists) => res.json(historylists))
+    .catch((err) => res.status(400).json(err));
+});
 
 
 

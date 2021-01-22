@@ -1,6 +1,6 @@
 .wrapper {
   color: #111;
-  width: 1040px;
+  width: 85vw;
   margin-left: 60px;
   margin-right: 16px;
   padding-left: 16px;
@@ -10,7 +10,7 @@
   margin-bottom: 15px;
 }
 .media-content {
-  width: 900px;
+  width: 90vw;
   height: auto;
   margin: 0 auto;
   padding: 30px;
@@ -41,21 +41,13 @@
 .tag-arr {
   padding-right: 5px;
 }
-.ratings {
-  display: flex;
-  flex-direction: column;
-  border-left: 1px solid lightgray;
-  padding-left: 15px;
-  width: 280px;
-}
-.ratings span {
-  padding-bottom: 10px;
-}
+
 .plot {
   display: flex;
   flex-direction: column;
   line-height: 1.5;
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  margin: 50px 60px 10px 0px;
 }
 
 .plot h3 {

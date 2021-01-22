@@ -1,0 +1,13 @@
+.media-page-side {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid lightgray;
+  padding-left: 15px;
+  /* width: 280px; */
+}
+.media-page-side span {
+  padding-bottom: 10px;
+}
+.media-page-user-also-added{
+  list-style-type: none;
+}
