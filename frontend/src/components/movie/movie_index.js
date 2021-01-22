@@ -5,10 +5,9 @@ import MovieIndexItem from './movie_index_item';
 import NavBar from '../nav/navbar_container'
 import Logo from '../../util/somedaylogo.svg'
 import SearchBarContainer from '../nav/search_bar/search_bar_container'
+import UserSearchIndexContainer from '../search_result/user_search_index_container';
 
 // import MediaComment from '../comments/media_comment/media_comment_container'
-
-
 
 export default class MovieIndex extends Component {
   // componentDidUpdate(prevState) {
@@ -60,7 +59,7 @@ export default class MovieIndex extends Component {
               }
             })}
           </ul>
-
+          <UserSearchIndexContainer input={this.props.history.location.state}/>
         </div>
       )
 
