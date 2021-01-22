@@ -14,11 +14,15 @@ export default function (oldState = {}, action) {
         [action.user.data._id]: action.user.data
       }
     case FETCH_ALL_USER:
-      return action.users
+      const newState = {};
+      action.users.data.forEach(user => {
+        newState[user._id] = user
+      })
+      return { ...oldState, ...newState }
     case RECEIVE_USERS:
       newState = {}
       action.users.forEach(user => newState[user._id] = user)
-      return { ...oldState, newState }
+      return { ...oldState, ...newState }
     default:
       return oldState
   }

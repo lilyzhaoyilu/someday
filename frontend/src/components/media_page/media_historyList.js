@@ -77,15 +77,15 @@ export default class MediaHistoryList extends Component {
             <span>{`Movie already exist in ${errorList}`}</span>
           </div>
         ) : (
-          <span>{`Movie successfully added to ${successList}`}</span>
-        )
+            <span>{`Movie successfully added to ${successList}`}</span>
+          )
       ) : errorList.length !== 0 ? (
         <div>
           <span>{`Movie already exist in ${errorList}`}</span>
         </div>
       ) : (
-        <span>No List is selected</span>
-      );
+            <span>No List is selected</span>
+          );
     // console.log(`CHECKED: ${checked}`);
     return historylists ? (
       <div>
@@ -104,7 +104,7 @@ export default class MediaHistoryList extends Component {
                       id={idx}
                       checked={checked.indexOf(watched._id) !== -1}
                     />
-                    <label for={idx}>{watched.name}</label>
+                    <label htmlFor={idx}>{watched.name}</label>
                   </div>
                 </li>
               ))}

@@ -1,0 +1,53 @@
+.main-container .medias-container {
+	/* border: pink solid 5px; */
+	overflow: hidden;
+	max-width: 1300px;
+	min-width: 1000px;
+}
+.main-container {
+	display: flex;
+}
+
+.main-container .media-index {
+	display: flex;
+	flex-wrap: wrap;
+	width: 70%;
+	max-width: 1300px;
+	min-width: 1000px;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	transform: translate(-50%, -50%);
+	top: 480px;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.new-user-index {
+	width: 350px;
+	/* border: pink solid 1px; */
+	height: 350px;
+	overflow: auto;
+	padding: 0 10px;
+	padding-top: 15px;
+}
+.new-user-index h3 {
+	margin-bottom: 20px;
+}
+.new-user-item {
+	border: solid 1px pink;
+}
+.most-comment-users {
+	width: 350px;
+	/* border: solid 1px pink; */
+	height: 350px;
+	overflow: auto;
+	margin-top: 50px;
+	padding: 0 10px;
+	padding-top: 15px;
+}
+.most-comment-users h3 {
+	margin-bottom: 20px;
+}
+.mc-user-item {
+	border: solid 1px pink;
+}

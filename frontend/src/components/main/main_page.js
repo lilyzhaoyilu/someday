@@ -9,15 +9,16 @@ import ShowInfinite from '../media_index/show_index_container'
 import ProfileNavbarContainer from '../nav/profile_navbar_container';
 import MoviePageContainer from '../media_page/media_page_cotainer';
 import NewUserIndex from "./new_user_index/new_user_index_container"
+import MostCommentUsers from './most_comment_users/most_comment_users_container'
 export default () => {
   return (
-    <div>
+    <div className="main-container">
       <main>
-        <h1></h1>
         <MovieInfinite />
       </main>
       <aside>
         <NewUserIndex />
+        <MostCommentUsers />
       </aside>
     </div>
 
