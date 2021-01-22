@@ -108,7 +108,7 @@ class MediaPage extends Component {
 									<FcPlanner /> Release Date: {this.state.releaseDate}
 								</span>
 							</div>
-							<div className="ratings">
+							<div className="media-page-side">
 								<span>
 									<FcScatterPlot /> Rating: {this.state.rating}
 								</span>

@@ -125,17 +125,18 @@ class MediaPage extends Component {
                   <FcPlanner /> Release Date: {this.state.releaseDate}
                 </span>
               </div>
-              <div className="ratings">
+              <div className="media-page-side">
                 <span>
                   <FcScatterPlot /> Rating: {this.state.rating}
                 </span>
                 <span>
                   <HiUserGroup /> {ratingCount} people rated
                 </span>
+                <UserAlsoAdded movieId={this.props.movieId} movieTitle={this.state.title} />
               </div>
             </div>
           </div>
-        <UserAlsoAdded movieId={this.props.movieId} movieTitle={this.state.title} />
+        
         
           <div className="plot">
             <h3>Plot Summary</h3>

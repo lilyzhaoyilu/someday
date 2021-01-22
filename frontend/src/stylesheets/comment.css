@@ -63,7 +63,8 @@
 
 /* comments on media page  */
 .media-comments {
-	width: 100%;
+	width: 95%;
+	padding: 0 0 0 30px;
 }
 
 .media-comment-user,
