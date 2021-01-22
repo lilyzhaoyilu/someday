@@ -16,10 +16,10 @@ export default () => {
     <div className="main-container">
       <main>
         <MovieInfinite />
+        <MostRecentComment />
       </main>
       <aside>
         <NewUserIndex />
-        <MostRecentComment/>
         <MostCommentUsers />
       </aside>
 
