@@ -212,6 +212,7 @@
 .comment-button-delete svg{
 	width: 1.5em;
 	height: 1.5em;
+	z-index: -1;
 }
 
 /* edit feature */
@@ -225,13 +226,22 @@
 }
 
 .media-comments-detail-container{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	position: relative;
+	
+}
+
+.media-comments-detail-container svg{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
+.media-comments-detail-container span{
+	width: 100%;
 }
 
 .media-comments-detail-container:hover{
 	font-weight: bold;
 	cursor: pointer;
-	
 }
+
