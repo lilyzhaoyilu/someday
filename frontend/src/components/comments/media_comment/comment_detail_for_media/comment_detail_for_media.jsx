@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import moment from 'moment';
 import { Link, withRouter } from "react-router-dom";
 import { RIETextArea } from "riek";
+import {FiEdit3, FiTrash2} from 'react-icons/fi';
 
 class CommentDetailForMedia extends Component {
 
@@ -47,7 +48,7 @@ class CommentDetailForMedia extends Component {
     if(this.props.comment.user === this.props.currentUserId){
       return (
       <div className="comment-button">
-      <button className="comment-button-delete" onClick={this.handleDeleteComment}>delete this comment</button>
+      <button className="comment-button-delete" onClick={this.handleDeleteComment}><FiTrash2 /></button>
       </div>
     )
     }
@@ -76,6 +77,7 @@ class CommentDetailForMedia extends Component {
           change={this.handleSubmitEditedComment}
           validate={this.commentEditLengthValidation}
           />
+          <FiEdit3 />
         </div>
     )
     }else{
@@ -89,7 +91,6 @@ class CommentDetailForMedia extends Component {
     // console.log(this.props.comment);
     this.props.patchComment(this.props.comment._id, commentObj)
   }
-
 
   render() {
     
