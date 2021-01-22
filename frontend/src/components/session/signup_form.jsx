@@ -160,11 +160,11 @@ class SignupForm extends React.Component {
 						<p>{this.state.errors.password2}</p>
 					</div>
 
-					<textarea
+					{/* <textarea
 						value={this.state.about}
 						onChange={this.update("about")}
 						placeholder="Tell us about yourself."
-					/>
+					/> */}
 
 					{/* {this.renderErrors()} */}
 					<button className="sinup-form-demo">Sign Up</button>
