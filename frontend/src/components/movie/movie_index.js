@@ -22,7 +22,7 @@ export default class MovieIndex extends Component {
 
   render() {
     const { movies } = this.props;
-    if (movies) {
+    if (movies.length !== 0) {
       return (
         <div>
           {(this.props.loggedIn) ? (null) : (
@@ -65,7 +65,7 @@ export default class MovieIndex extends Component {
       )
 
     } else {
-      return null;
+      return <div className= "no-result">No Matching result</div>;
     }
   }
 }
