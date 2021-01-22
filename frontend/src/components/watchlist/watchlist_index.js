@@ -31,6 +31,13 @@ export default class WatchlistIndex extends Component {
   }
 
   render() {
+      let listLength = this.props.watchlists.filter(
+        (list) => list.user === this.props.userId
+      ).length;
+      let loadMsg = "Loading...";
+      if (listLength === 0) {
+        loadMsg = "No List yet";
+      }
     return (
 
       <div className="watchlist-index">
@@ -39,7 +46,7 @@ export default class WatchlistIndex extends Component {
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}
           hasMore={this.state.hasMore}
-          loader={<h4 style={{ height: "500px" }}>Loading...</h4>}
+          loader={<h4 style={{ height: "500px" }}>{loadMsg}</h4>}
           height={400}
           className={"historylist-index"}
           endMessage={
