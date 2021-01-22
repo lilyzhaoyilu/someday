@@ -14,7 +14,7 @@ class NewUserIndex extends Component {
 	}
 	render() {
 		return this.state.hasOwnProperty("users") ? (
-			<div >
+			<div id="new-user-container">
 				<h3 id="new-user-title">New User</h3>
 				<div className="new-user-index">
 					{/* {console.log("users", this.state.users)} */}

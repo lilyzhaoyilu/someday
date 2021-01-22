@@ -36,3 +36,11 @@ export const getThisWatchList = (listId) => {
 export const deleteWatchlistItem = (listId, movieId) => {
   return axios.patch(`/api/todoLists/list/${listId}`, {movieId:movieId})
 }
+
+//get lists based on movieId inside movie array
+export const getWatchListBasedOnMovieId = (movieId) => {
+  return axios.get(`/api/todoLists/${movieId}`)
+}
+
+
+//* get /api/dotoLists/todoList/id -get specific todoList

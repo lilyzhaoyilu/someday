@@ -3,51 +3,51 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { Link } from "react-router-dom";
 
 class MediaIndex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      page: 0,
-      hasMore: true,
-      media: [],
-    };
-    this.fetchMoreData = this.fetchMoreData.bind(this);
-  }
-  componentDidMount() {
-    this.props.action().then((res) => {
-      var i = 0;
-      this.setState({ media: this.props.media.slice(0, 4) });
-      while (i < 4) {
-        if (this.state.media[i]) {
-          this.props
-            .fetchMediaData(this.state.media[i].id)
-            .then((res) => {
-              // console.log("request", res);
-              this.setState({ media: this.props.media.slice(0, i) });
-            })
-            .then(i++);
-        }
+	constructor(props) {
+		super(props);
+		this.state = {
+			page: 0,
+			hasMore: true,
+			media: [],
+		};
+		this.fetchMoreData = this.fetchMoreData.bind(this);
+	}
+	componentDidMount() {
+		this.props.action().then((res) => {
+			var i = 0;
+			this.setState({ media: this.props.media.slice(0, 4) });
+			while (i < 4) {
+				if (this.state.media[i]) {
+					this.props
+						.fetchMediaData(this.state.media[i].id)
+						.then((res) => {
+							// console.log("request", res);
+							this.setState({ media: this.props.media.slice(0, i) });
+						})
+						.then(i++);
+				}
 
-        this.setState({ page: 4 });
-      }
-    });
-  }
+				this.setState({ page: 4 });
+			}
+		});
+	}
 
-  fetchMoreData = () => {
-    if (this.state.media.length === this.props.media.length) {
-      this.setState({ hasMore: false });
-      return;
-    }
-    var i = this.state.page;
-    while (i < this.state.page + 3) {
-      this.props
-        .fetchMediaData(this.props.media[i].id)
-        .then((res) => {
-          this.setState({ media: this.props.media.slice(0, i) });
-        })
-        .then(i++);
-    }
-    this.setState({ page: this.state.page + 3 });
-  };
+	fetchMoreData = () => {
+		if (this.state.media.length === this.props.media.length) {
+			this.setState({ hasMore: false });
+			return;
+		}
+		var i = this.state.page;
+		while (i < this.state.page + 3) {
+			this.props
+				.fetchMediaData(this.props.media[i].id)
+				.then((res) => {
+					this.setState({ media: this.props.media.slice(0, i) });
+				})
+				.then(i++);
+		}
+		this.setState({ page: this.state.page + 3 });
+	};
 
   render() {
     return (
@@ -94,6 +94,6 @@ class MediaIndex extends React.Component {
 export default MediaIndex;
 
 {
-  /* 					{this.state.media.every((media) => media.hasOwnProperty("image"))
-   */
+	/* 					{this.state.media.every((media) => media.hasOwnProperty("image"))
+	 */
 }
