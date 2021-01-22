@@ -52,7 +52,7 @@ class MediaIndex extends React.Component {
 	render() {
 		return (
 			<div className="medias-container">
-				<h1 id="trending-movie-title">Current Trending Movies</h1>
+				<h1 className="trending-title">{this.props.title}</h1>
 				<InfiniteScroll
 					dataLength={this.state.media.length}
 					next={this.fetchMoreData}
@@ -75,7 +75,7 @@ class MediaIndex extends React.Component {
 						// console.log("rendering");
 						if (media.hasOwnProperty("image")) {
 							return (
-								<span key={media.key} className="media-item">
+								<span key={media.key + i} className="media-item">
 									<Link to={`/mediaPage/${media.id}`} className="media-link">
 										<img
 											src={media.image.url}

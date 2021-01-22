@@ -3,7 +3,8 @@ import { fetchPopularTv, fetchShowData } from '../../actions/show_actions'
 import MediaIndex from './media_index'
 
 const mSTP = (state, ownProps) => ({
-  media: Object.values(state.entities.shows)
+  media: Object.values(state.entities.shows),
+  title: "trending TV shows"
 });
 
 const mDTP = (dispatch) => ({

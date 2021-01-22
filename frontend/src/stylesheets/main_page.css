@@ -2,6 +2,7 @@
 	display: flex;
 	margin: 0 auto;
 	justify-content: center;
+	margin-top: 30px;
 }
 .medias-container {
 	box-shadow: 3px 3px 10px grey;
@@ -123,4 +124,15 @@
 
 .main-container .media-item {
 	/* margin-right: 10px; */
+}
+.trending-title {
+	padding: 20px;
+	text-align: center;
+	cursor: default;
+	font-weight: 700;
+	font-size: 24px;
+	text-shadow: 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+		0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+		0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+		0 20px 20px rgba(0, 0, 0, 0.15);
 }

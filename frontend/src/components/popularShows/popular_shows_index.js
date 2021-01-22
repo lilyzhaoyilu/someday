@@ -38,6 +38,8 @@ export default class PopularShowsIndex extends Component {
 
     return (
       <div>
+        <h1 className="trending-title">trendeing tv-shows</h1>
+
         <InfiniteScroll
           dataLength={this.state.shows.length}
           next={this.fetchMoreData}
