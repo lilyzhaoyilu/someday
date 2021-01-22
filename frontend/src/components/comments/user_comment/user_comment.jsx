@@ -110,7 +110,7 @@ class UserComment extends Component {
 				<h2>
 					{this.displayUsername()}{" "}
 					<span className="user-cmnt-header">
-						···({this.displayCommentNumber()})
+						··· ({this.displayCommentNumber()})
 					</span>
 				</h2>
 				<InfiniteScroll

@@ -34,7 +34,7 @@ export default class WatchlistIndex extends Component {
     return (
 
       <div className="watchlist-index">
-        <h2>Watchlists ···({this.props.watchlists.filter(list => list.user === this.props.userId).length} watchlists)</h2>
+        <h2>Watchlists ··· ({this.props.watchlists.filter(list => list.user === this.props.userId).length} watchlists)</h2>
         <InfiniteScroll
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}

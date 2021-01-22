@@ -43,7 +43,7 @@ class MediaComment extends Component {
 
     return (
       <div className='media-comments'>
-        <h3 className='media-comments-title'>{this.displayMediaTitle()}'s Comments ···({commentsObjects.length} {commentsObjects.length > 1 ? `comments` : `comment`})</h3>
+        <h3 className='media-comments-title'>{this.displayMediaTitle()}'s Comments ··· ({commentsObjects.length} {commentsObjects.length > 1 ? `comments` : `comment`})</h3>
        {commentsObjects.map(comment => (<CommentDetailForMedia key={comment._id} comment={comment} />))}
        
        <CommentForm title={this.displayMediaTitle()}/>

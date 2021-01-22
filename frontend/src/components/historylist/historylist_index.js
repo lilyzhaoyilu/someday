@@ -31,7 +31,7 @@ export default class HistorylistIndex extends Component {
   render() {
     return (this.state.lists) ? (
       <div className="historylist-index">
-        <h2>Historylists ···({this.props.historylists.filter(list => list.user === this.props.userId).length} historylists)</h2>
+        <h2>Historylists ··· ({this.props.historylists.filter(list => list.user === this.props.userId).length} historylists)</h2>
         <InfiniteScroll
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}

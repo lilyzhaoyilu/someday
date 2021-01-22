@@ -18,6 +18,7 @@ class CommentDetailForMedia extends Component {
     this.handleSubmitEditedComment = this.handleSubmitEditedComment.bind(this);
     this.displayEdit = this.displayEdit.bind(this);
     this.commentEditLengthValidation = this.commentEditLengthValidation.bind(this);
+    // this.handleClickEditButton = this.handleClickEditButton.bind(this);
     // this.displayEditComment = this.displayEditComment.bind(this);
   }
 
@@ -69,6 +70,10 @@ class CommentDetailForMedia extends Component {
   displayEdit(e){
     // console.log(this.state.comment)
     if(this.props.comment.user === this.props.currentUserId){
+
+
+
+
       return (
         <div className="media-comments-detail-container">
           <RIETextArea value={this.state.comment}
@@ -76,14 +81,25 @@ class CommentDetailForMedia extends Component {
           propName="text"
           change={this.handleSubmitEditedComment}
           validate={this.commentEditLengthValidation}
+          // editProps={maxLength="144"}
           />
-          <FiEdit3 />
+
+          
+
+          {/* <FiEdit3 /> */}
+          {/* <button onClick={this.handleClickEditButton}></button> */}
         </div>
     )
     }else{
        return <div>{this.props.comment.text}</div>
     }
   }
+
+  // handleClickEditButton(){
+  //   let editEletment = document.getElementById("media-comments-detail");
+  //   editEletment.classList.remove("media-comments-detail-container");
+  //   editEletment.classList.add("media-comments-detail-edit");
+  // }
 
 
   handleSubmitEditedComment(commentObj) {
