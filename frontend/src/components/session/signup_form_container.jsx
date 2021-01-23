@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 	return {
 		errors: state.errors.session,
 		loggedIn: state.session.isAuthenticated,
+		users: Object.values(state.entities.users),
 	};
 };
 

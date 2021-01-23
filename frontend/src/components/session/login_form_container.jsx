@@ -6,11 +6,11 @@ import {
 } from "../../actions/session_actions";
 import LoginForm from "./login_form";
 
-
-
 const mapStateToProps = (state) => ({
 	errors: state.errors.session,
 	loggedIn: state.session.isAuthenticated,
+	users: Object.values(state.entities.users),
+	currUser: state.session.user,
 });
 
 const mapDispatchToProps = (dispatch) => ({

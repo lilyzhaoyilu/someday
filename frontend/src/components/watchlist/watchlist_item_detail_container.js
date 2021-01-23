@@ -4,7 +4,10 @@ import { updateWatchlist, deleteWatchlistItem, getThisWatchList } from '../../ac
 import WatchlistItemDetail from './watchlist_item_detail';
 
 const mstp = (state, ownProps) => ({
-  listId: ownProps.listId
+  listId: ownProps.listId,
+  media: { ...state.entities.movies, ...state.entities.shows }
+
+
 });
 
 const mdtp = dispatch => ({
