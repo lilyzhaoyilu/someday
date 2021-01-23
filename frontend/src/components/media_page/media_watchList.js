@@ -123,7 +123,7 @@ export default class WatchlistIndex extends Component {
           contentLabel="create New Watch List"
           className="list-modal"
           overlayClassName="list-overlay "
-          closeTimeoutMS={500}
+          closeTimeoutMS={100}
           ariaHideApp={false}
         >
           <ListForm movieId={this.props.movieId} />
@@ -137,7 +137,7 @@ export default class WatchlistIndex extends Component {
           contentLabel="Submit Info"
           className="list-modal"
           overlayClassName="list-overlay "
-          closeTimeoutMS={500}
+          closeTimeoutMS={100}
           ariaHideApp={false}
         >
           {msg}

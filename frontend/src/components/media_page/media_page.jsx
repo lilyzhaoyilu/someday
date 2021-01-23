@@ -159,7 +159,7 @@ class MediaPage extends Component {
             contentLabel="My Todo List"
             className="list-modal"
             overlayClassName="list-overlay "
-            closeTimeoutMS={500}
+            closeTimeoutMS={100}
             ariaHideApp={false}
           >
             <MediaWatchList
@@ -179,7 +179,7 @@ class MediaPage extends Component {
             contentLabel="My Watch List"
             className="list-modal"
             overlayClassName="list-overlay "
-            closeTimeoutMS={500}
+            closeTimeoutMS={100}
             ariaHideApp={false}
           >
             <MediaHistoryList
