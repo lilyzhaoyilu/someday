@@ -17,14 +17,20 @@ class MediaIndex extends React.Component {
 			var i = 0;
 			this.setState({ media: this.props.media.slice(0, 4) });
 			while (i < 4) {
-				if (this.state.media[i]) {
-					this.props
-						.fetchMediaData(this.state.media[i].id)
-						.then((res) => {
-							// console.log("request", res);
-							this.setState({ media: this.props.media.slice(0, i) });
-						})
-						.then(i++);
+				if (
+					!this.props.media
+						.filter((ele) => ele.id === this.state.media[i].id)[0]
+						.hasOwnProperty("image")
+				) {
+					console.log("loading");
+					if (this.state.media[i]) {
+						this.props
+							.fetchMediaData(this.state.media[i].id)
+							.then((res) => {
+								this.setState({ media: this.props.media.slice(0, i) });
+							})
+							.then(i++);
+					}
 				}
 
 				this.setState({ page: 4 });
@@ -39,12 +45,14 @@ class MediaIndex extends React.Component {
 		}
 		var i = this.state.page;
 		while (i < this.state.page + 3) {
-			this.props
-				.fetchMediaData(this.props.media[i].id)
-				.then((res) => {
-					this.setState({ media: this.props.media.slice(0, i) });
-				})
-				.then(i++);
+			if (!this.props.media[i].hasOwnProperty("image")) {
+				this.props
+					.fetchMediaData(this.props.media[i].id)
+					.then((res) => {
+						this.setState({ media: this.props.media.slice(0, i) });
+					})
+					.then(i++);
+			}
 		}
 		this.setState({ page: this.state.page + 3 });
 	};

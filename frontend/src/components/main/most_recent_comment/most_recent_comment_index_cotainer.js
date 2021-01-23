@@ -7,6 +7,7 @@ const mapStateToProps = (state, ownProps) => ({
     comment: ownProps.comment,
     idx: ownProps.idx,
     movieId: ownProps.comment.movie,
+    media: { ...state.entities.movies, ...state.entities.shows }
 })
 
 const mapDispatchToProps = (dispatch) => ({

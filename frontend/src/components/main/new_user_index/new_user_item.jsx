@@ -13,9 +13,9 @@ export default ({ user, idx }) => {
 		>
 			{/* {console.log(date)} */}
 			<p>
-				<span className="user-item-username">{user.handle}</span> joined Someday
+				<span className="user-item-username">{user.handle}</span>
 				<br />
-				at {date}
+				joined at {date}
 			</p>
 		</Link>
 	);

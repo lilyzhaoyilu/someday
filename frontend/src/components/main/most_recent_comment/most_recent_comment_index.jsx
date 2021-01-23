@@ -23,17 +23,34 @@ class MostRecentCommentIndex extends Component {
 		super(props);
 		this.state = {
 			imgUrl: "",
+			id: this.props.movieId,
 		};
 	}
 	componentDidMount() {
 		setTimeout(() => {
-			this.props.fetchMovieData(this.props.movieId).then((res) => {
-				this.setState({
-					imgUrl: res.show.data.title.image.url,
-					id: res.show.data.id.slice(7, res.show.data.id.length - 1),
+			if (this.props.media.hasOwnProperty(`${this.props.movieId}`)) {
+				if (!this.props.media[this.props.movieId].hasOwnProperty("image")) {
+					this.props.fetchMovieData(this.props.movieId).then((res) => {
+						this.setState({
+							imgUrl: res.show.data.title.image.url,
+							id: res.show.data.id.slice(7, res.show.data.id.length - 1),
+						});
+					});
+				} else {
+					this.setState({
+						id: this.props.movieId,
+						imgUrl: this.props.media[this.props.movieId].image.url,
+					});
+				}
+			} else {
+				this.props.fetchMovieData(this.props.movieId).then((res) => {
+					this.setState({
+						imgUrl: res.show.data.title.image.url,
+						id: res.show.data.id.slice(7, res.show.data.id.length - 1),
+					});
 				});
-			});
-		}, this.props.idx * 1500);
+			}
+		}, this.props.idx * 1000 + 1000);
 		this.props.fetchThisUser(this.props.comment.user).then((res) => {
 			this.setState({ ...this.state, username: res.user.data.handle });
 		});

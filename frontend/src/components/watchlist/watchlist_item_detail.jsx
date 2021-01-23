@@ -13,16 +13,36 @@ class WatchlistItemDetail extends Component {
 	}
 
 	componentDidMount() {
-		setTimeout(() => {
-			this.props.fetchMovieData(this.props.movieId).then((result) => {
-				if (result && result.show) {
-					this.setState({
-						title: result.show.data.title.title,
-						imgUrl: result.show.data.title.image.url,
+		if (this.props.media.hasOwnProperty(this.props.movieId)) {
+			if (!this.props.media[this.props.movieId].hasOwnProperty("image")) {
+				setTimeout(() => {
+					this.props.fetchMovieData(this.props.movieId).then((result) => {
+						if (result && result.show) {
+							this.setState({
+								title: result.show.data.title.title,
+								imgUrl: result.show.data.title.image.url,
+							});
+						}
 					});
-				}
-			});
-		}, this.props.idx * 600);
+				}, this.props.idx * 600);
+			} else {
+				this.setState({
+					title: this.props.media[this.props.movieId].title,
+					imgUrl: this.props.media[this.props.movieId].imgUrl,
+				});
+			}
+		} else {
+			setTimeout(() => {
+				this.props.fetchMovieData(this.props.movieId).then((result) => {
+					if (result && result.show) {
+						this.setState({
+							title: result.show.data.title.title,
+							imgUrl: result.show.data.title.image.url,
+						});
+					}
+				});
+			}, this.props.idx * 600);
+		}
 	}
 
 	handleRemoveItemFromList(e) {
