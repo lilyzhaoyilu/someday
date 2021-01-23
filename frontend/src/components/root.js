@@ -23,6 +23,7 @@ import "../stylesheets/search_result.css";
 import "../stylesheets/about.css";
 import "../stylesheets/recent-comments.css";
 import "../stylesheets/mediaPageSide.css";
+import "../stylesheets/user_search.css";
 
 import "../stylesheets/main_page.css"
 const Root = ({ store }) => {
