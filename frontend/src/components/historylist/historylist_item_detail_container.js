@@ -5,10 +5,12 @@ import HistorylistItemDetail from './historylist_item_detail';
 // console.log("historylist_detail");
 
 const mstp = (state, ownProps) => {
+  // console.log(state.entities.shows);
   return {
     listId: ownProps.listId,
     movieId: ownProps.movieId,
-    list: state.entities.historylists[ownProps.listId]
+    list: state.entities.historylists[ownProps.listId],
+    media: { ...state.entities.movies, ...state.entities.shows }
   }
 };
 

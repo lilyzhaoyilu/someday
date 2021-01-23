@@ -72,9 +72,28 @@ class UserComment extends Component {
 			),
 		});
 		// console.log(Object.values(this.props.comments)[this.state.comments.length]);
-		this.props.fetchMovieData(
-			Object.values(this.props.comments)[this.state.comments.length - 1].movie
-		);
+
+		if (
+			this.props.media.hasOwnProperty(
+				Object.values(this.props.comments)[this.state.comments.length - 1].movie
+			)
+		) {
+			if (
+				!this.props.media[
+					Object.values(this.props.comments)[this.state.comments.length - 1]
+						.movie
+				].hasOwnProperty("image")
+			) {
+				this.props.fetchMovieData(
+					Object.values(this.props.comments)[this.state.comments.length - 1]
+						.movie
+				);
+			}
+		} else {
+			this.props.fetchMovieData(
+				Object.values(this.props.comments)[this.state.comments.length - 1].movie
+			);
+		}
 	}
 
 	displayUsername() {
