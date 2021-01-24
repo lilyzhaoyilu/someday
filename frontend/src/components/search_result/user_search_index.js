@@ -32,15 +32,18 @@ export default class UserSearchIndex extends Component {
   render() {
     // console.log(this.props.input)
       const filteredUsers = this.props.users.filter(user =>
-        user.handle.toLowerCase().includes(this.props.input.detail.toLowerCase())
+        user.handle.toLowerCase().startsWith(this.props.input.detail.toLowerCase())
       )
+
       return (
         <div>
           {(this.props.loggedIn) ? (
-          <ul className="user-search-result">
-            <h1> Users </h1>
-            {filteredUsers.map(user => <UserSearchIndexItem user={user} />)}
-          </ul>
+          <div className="user-result-wrapper">
+            {filteredUsers.length !== 0 ? <h1 className="user-header"> Users </h1> : null}
+            <ul className="user-search-result">
+              {filteredUsers.map(user => <UserSearchIndexItem user={user} />)}
+            </ul>
+          </div>
           ) : null }
         </div>
       )

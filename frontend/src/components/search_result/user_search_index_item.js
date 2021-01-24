@@ -7,9 +7,16 @@ export default class UserSearchIndexItem extends Component {
     const randomId = Math.floor(Math.random() * 13)
     return (
       <div>
-        <li>
-          <img src={`https://robohash.org/${randomId}?set=set2`} className="user-search-pic"/>
+        <li className="indiv-user">
           <Link to={`/profile/${user._id}`}>
+            <img 
+                src={`https://robohash.org/${randomId}?set=set2`} 
+                className="user-search-pic"
+                width="100px"
+                height="100px"
+            />
+          </Link>
+          <Link to={`/profile/${user._id}`} className="user-search-handle">
             {user.handle}
           </Link>
         </li>

@@ -1,0 +1,39 @@
+.user-search-result {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-search-pic {
+  width: 100px;
+  height: auto;
+  background-color: #b3b3b3;
+  border-radius: 50%;
+}
+
+.indiv-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 40px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.search-header {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.user-header {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.movie-idx-header {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+a.user-search-handle:hover {
+  background-color: #3377aa;
+}

@@ -21,7 +21,11 @@ export default (oldState = {}, action) => {
     case RECEIVE_MOVIES:
       if (action.shows.data.hasOwnProperty("d")) {
         newState = {};
-        action.shows.data.d.forEach(show => newState[show.id] = show)
+        action.shows.data.d.forEach(show => {
+          if(show.hasOwnProperty("q")){
+            newState[show.id] = show
+          }
+        })
         return { ...oldState, ...newState }
       } else {
         return oldState;
