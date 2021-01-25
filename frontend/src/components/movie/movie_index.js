@@ -15,6 +15,7 @@ export default class MovieIndex extends Component {
   //     setState
   //   }
   // }
+
   componentWillUnmount() {
     this.props.clearMovies();
   }
@@ -43,7 +44,7 @@ export default class MovieIndex extends Component {
               </div>
             </div>
           )}
-          { movies.length === 0 ? null : <h1>Movies and TV-Shows</h1>}
+          { movies.length === 0 ? null : <h1 className="movie-idx-header">Movies and TV-Shows</h1>}
           <ul className="search-result">
             {movies.map((movie) => {
               if (movie.id.slice(0, 2) === "tt" && movie.i) {
@@ -63,7 +64,7 @@ export default class MovieIndex extends Component {
           <UserSearchIndexContainer input={this.props.history.location.state} />
         </div>
       );
-    } else {
+    } else if (movies.length === 0) {
       return (
         <div>
           {this.props.loggedIn ? null : (
@@ -85,17 +86,21 @@ export default class MovieIndex extends Component {
               </div>
             </div>
           )}
-          <div className="no-result">
-            <div className="no-result-text">No Matching Result, Click Me to Browse</div>
-            <Link to="/show-index" className="no-result-link">
-              <div className="sign-search">
-                <span className="fast-flicker">S</span>ome
-              <span className="flicker">d</span>ay
+          <div className="only-users">
+            <UserSearchIndexContainer input={this.props.history.location.state} />
+            {movies.length === 0 ? null : <h1 className="search-header">Movies and TV-Shows</h1>}
+            <div className="no-result">
+              <div className="no-result-text">No Matching result, Click me to browse</div>
+              <Link to="/show-index" className="no-result-link">
+                <div className="sign-search">
+                  <span className="fast-flicker">S</span>ome
+                <span className="flicker">d</span>ay
+              </div>
+              </Link>
             </div>
-            </Link>
           </div>
         </div>
-      );
+      )
     }
   }
 }
