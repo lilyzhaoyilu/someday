@@ -6,7 +6,7 @@ import { searchUsers, fetchAllUsers } from '../../actions/user_actions'
 const mstp = (state, ownProps) => {
   // console.log(ownProps.history);
   return {
-    users: Object.values(state.entities.users),
+    users: ownProps.users,
     loggedIn: state.session.isAuthenticated
   }
 }
