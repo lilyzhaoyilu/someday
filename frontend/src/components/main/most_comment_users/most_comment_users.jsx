@@ -9,6 +9,7 @@ class NewUserIndex extends Component {
 
 	componentDidMount() {
 		this.props.getAllComments().then((res) => {
+			console.log(res);
 			this.setState({ comments: res.comments.data });
 			this.state.comments.forEach((comment) => {
 				if (this.state.users.hasOwnProperty(`${comment.user}`)) {

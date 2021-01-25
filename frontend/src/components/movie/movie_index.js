@@ -43,7 +43,7 @@ export default class MovieIndex extends Component {
               </div>
             </div>
           )}
-          { movies.length === 0 ? null : <h1>Movies and TV-Shows</h1> }
+          { movies.length === 0 ? null : <h1>Movies and TV-Shows</h1>}
           <ul className="search-result">
             {movies.map((movie) => {
               if (movie.id.slice(0, 2) === "tt" && movie.i) {
@@ -60,19 +60,40 @@ export default class MovieIndex extends Component {
               }
             })}
           </ul>
-          <UserSearchIndexContainer input={this.props.history.location.state}/>
+          <UserSearchIndexContainer input={this.props.history.location.state} />
         </div>
       );
     } else {
       return (
-        <div className="no-result">
-          <div className="no-result-text">No Matching Result, Click Me to Browse</div>
-          <Link to="/show-index" className="no-result-link">
-            <div className="sign-search">
-              <span className="fast-flicker">S</span>ome
+        <div>
+          {this.props.loggedIn ? null : (
+            <div className="splash-header">
+              <div className="splash-header-left">
+                <Link to="/splash">
+                  <img src={Logo}></img>
+                </Link>
+                <SearchBarContainer />
+              </div>
+              <div className="splash-link">
+                {/* <Link to="/">try demo need to do</Link> */}
+                <Link id="login" className="splash-link-child" to="/login">
+                  login
+                </Link>
+                <Link id="signup" className="splash-link-child" to="/signup">
+                  Sign Up
+                </Link>
+              </div>
+            </div>
+          )}
+          <div className="no-result">
+            <div className="no-result-text">No Matching Result, Click Me to Browse</div>
+            <Link to="/show-index" className="no-result-link">
+              <div className="sign-search">
+                <span className="fast-flicker">S</span>ome
               <span className="flicker">d</span>ay
             </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       );
     }
