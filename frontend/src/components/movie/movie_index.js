@@ -50,7 +50,7 @@ export default class MovieIndex extends Component {
 
   render() {
     const { movies } = this.props;
-    if (movies.length !== 0 && this.state.users.length !== 0) {
+    if (movies.length !== 0 || this.state.users.length !== 0) {
       return (
         <div>
           {this.props.loggedIn ? null : (
@@ -89,7 +89,8 @@ export default class MovieIndex extends Component {
               }
             })}
           </ul>
-          <UserSearchIndexContainer users={this.state.users} />
+          {this.state.users.length !== 0 ? <UserSearchIndexContainer users={this.state.users} /> : null}
+
         </div>
       );
     } else {
