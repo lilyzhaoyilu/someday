@@ -10,19 +10,47 @@ import UserSearchIndexContainer from '../search_result/user_search_index_contain
 // import MediaComment from '../comments/media_comment/media_comment_container'
 
 export default class MovieIndex extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { users: [], input: this.props.history.location.state }
+  }
   // componentDidUpdate(prevState) {
   //   if (prevState !== this.nextState) {
   //     setState
   //   }
   // }
 
+  componentDidMount() {
+    this.props.fetchAllUsers().then(res => {
+      this.setState({ users: res.users.data.filter(user => user.handle.includes(this.props.history.location.state.detail.toLowerCase())) })
+      console.log(this.state.users.length)
+    })
+
+  }
+
+  componentDidUpdate(prevProps) {
+    console.log("state", this.state)
+    console.log("pre", prevProps.history.location.state.detail)
+    if (prevProps.history.location.state.detail !== this.state.detail) {
+      this.setState({ detail: prevProps.history.location.state.detail })
+      this.props.fetchAllUsers().then(res => {
+        this.setState({ users: res.users.data.filter(user => user.handle.includes(prevProps.history.location.state.detail.toLowerCase())) })
+        console.log(res.users.data)
+      })
+
+    }
+
+  }
+
   componentWillUnmount() {
     this.props.clearMovies();
+    this.props.clearUsers();
+    this.setState({ users: [] })
   }
 
   render() {
     const { movies } = this.props;
-    if (movies.length !== 0) {
+    if (movies.length !== 0 && this.state.users.length !== 0) {
       return (
         <div>
           {this.props.loggedIn ? null : (
@@ -61,10 +89,10 @@ export default class MovieIndex extends Component {
               }
             })}
           </ul>
-          <UserSearchIndexContainer input={this.props.history.location.state} />
+          <UserSearchIndexContainer users={this.state.users} />
         </div>
       );
-    } else if (movies.length === 0) {
+    } else {
       return (
         <div>
           {this.props.loggedIn ? null : (
@@ -87,8 +115,7 @@ export default class MovieIndex extends Component {
             </div>
           )}
           <div className="only-users">
-            <UserSearchIndexContainer input={this.props.history.location.state} />
-            {movies.length === 0 ? null : <h1 className="search-header">Movies and TV-Shows</h1>}
+
             <div className="no-result">
               <div className="no-result-text">No Matching result, Click me to browse</div>
               <Link to="/show-index" className="no-result-link">
