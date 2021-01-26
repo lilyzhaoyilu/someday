@@ -3,7 +3,7 @@ export default ({ demoUser, login }) => {
 		<button
 			className="sinup-form-demo"
 			onClick={() => {
-				login(demoUser).then((res) => console.log(res));
+				login(demoUser);
 			}}
 		>
 			Demo Login

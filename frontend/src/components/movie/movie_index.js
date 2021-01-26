@@ -23,19 +23,19 @@ export default class MovieIndex extends Component {
   componentDidMount() {
     this.props.fetchAllUsers().then(res => {
       this.setState({ users: res.users.data.filter(user => user.handle.includes(this.props.history.location.state.detail.toLowerCase())) })
-      console.log(this.state.users.length)
+      // console.log(this.state.users.length)
     })
 
   }
 
   componentDidUpdate(prevProps) {
-    console.log("state", this.state)
-    console.log("pre", prevProps.history.location.state.detail)
+    // console.log("state", this.state)
+    // console.log("pre", prevProps.history.location.state.detail)
     if (prevProps.history.location.state.detail !== this.state.detail) {
       this.setState({ detail: prevProps.history.location.state.detail })
       this.props.fetchAllUsers().then(res => {
         this.setState({ users: res.users.data.filter(user => user.handle.includes(prevProps.history.location.state.detail.toLowerCase())) })
-        console.log(res.users.data)
+        // console.log(res.users.data)
       })
 
     }
