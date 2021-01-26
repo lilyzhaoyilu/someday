@@ -22,7 +22,7 @@ class MediaIndex extends React.Component {
 						.filter((ele) => ele.id === this.state.media[i].id)[0]
 						.hasOwnProperty("image")
 				) {
-					console.log("loading");
+					// console.log("loading");
 					if (this.state.media[i]) {
 						this.props
 							.fetchMediaData(this.state.media[i].id)
