@@ -9,6 +9,7 @@ const mstp = (state, ownProps) => ({
   watchlists: Object.values(state.entities.watchlists),
   userId: ownProps.userId,
   movieId: ownProps.movieId,
+  modal: ownProps.modal,
 });
 
 const mdtp = (dispatch) => ({

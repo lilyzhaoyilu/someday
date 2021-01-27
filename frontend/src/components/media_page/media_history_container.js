@@ -8,7 +8,8 @@ import MediaHistoryList from "./media_historyList";
 const mstp = (state, ownProps) => ({
   historylists: Object.values(state.entities.historylists),
   userId: ownProps.userId,
-  movieId: ownProps.movieId
+  movieId: ownProps.movieId,
+  modal: ownProps.modal,
 });
 
 const mdtp = (dispatch) => ({

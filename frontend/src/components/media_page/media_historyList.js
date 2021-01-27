@@ -60,6 +60,7 @@ export default class MediaHistoryList extends Component {
     this.setState({
       isDisplay: !this.state.isDisplay,
     });
+    this.props.modal();
   }
   toggleModal4(e) {
     this.setState({
