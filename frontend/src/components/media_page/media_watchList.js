@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
-import ListForm from "../list_form/watchlist_form_container"
+import ListForm from "../list_form/watchlist_form_container";
 export default class WatchlistIndex extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +54,6 @@ export default class WatchlistIndex extends Component {
       errorList: errorList,
       successList: successList,
     });
-
   }
 
   toggleModal3(e) {
@@ -67,6 +66,8 @@ export default class WatchlistIndex extends Component {
     this.setState({
       isDisplay: !this.state.isDisplay,
     });
+    this.props.modal();
+
   }
 
   render() {
@@ -80,15 +81,15 @@ export default class WatchlistIndex extends Component {
             <span>{`Movie already exist in ${errorList}`}</span>
           </div>
         ) : (
-            <span>{`Movie succefully added to ${successList}`}</span>
-          )
+          <span>{`Movie succefully added to ${successList}`}</span>
+        )
       ) : errorList.length !== 0 ? (
         <div>
           <span>{`Movie already exist in ${errorList}`}</span>
         </div>
       ) : (
-            <span>No List is selected</span>
-          );
+        <span>No List is selected</span>
+      );
     // console.log(`CHECKED: ${checked}`);
     return watchlists ? (
       <div>
