@@ -124,7 +124,7 @@ export default class MediaHistoryList extends Component {
           closeTimeoutMS={100}
           ariaHideApp={false}
         >
-          <ListForm movieId={this.props.movieId} />
+          <ListForm movieId={this.props.movieId} modal={this.props.modal}/>
           <button className="list-add-button" onClick={this.toggleModal4}>
             Close
           </button>

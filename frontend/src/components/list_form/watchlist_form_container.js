@@ -5,13 +5,14 @@ import { postWatchlist } from '../../actions/watchlist_actions'
 const mstp = (state, ownProps) => {
 
   return {
+    modal: ownProps.modal,
     formType: "Watch List",
     list: {
       name: "",
       user: state.session.user.id,
-      movie: ownProps.movieId
-    }
-  }
+      movie: ownProps.movieId,
+    },
+  };
 };
 
 const mdtp = dispatch => ({

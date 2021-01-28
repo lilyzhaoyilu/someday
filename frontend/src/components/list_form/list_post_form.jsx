@@ -29,6 +29,7 @@ class ListFrom extends Component {
 		this.setState({
 			isOpen: !this.state.isOpen,
 		});
+		this.props.modal();
 	}
 	render() {
 		return (
