@@ -127,7 +127,7 @@ export default class WatchlistIndex extends Component {
           closeTimeoutMS={100}
           ariaHideApp={false}
         >
-          <ListForm movieId={this.props.movieId} />
+          <ListForm movieId={this.props.movieId} modal={this.toggleModal3} />
           <button className="list-add-button" onClick={this.toggleModal3}>
             Close
           </button>

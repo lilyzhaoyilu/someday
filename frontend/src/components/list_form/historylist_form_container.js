@@ -5,6 +5,7 @@ import { postHistorylist } from '../../actions/historylist_actions'
 const mstp = (state, ownProps) => {
 
   return {
+    modal: ownProps.modal,
     formType: "Watched List",
     list: {
       name: "",
