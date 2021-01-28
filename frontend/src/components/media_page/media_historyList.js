@@ -60,6 +60,7 @@ export default class MediaHistoryList extends Component {
     this.setState({
       isDisplay: !this.state.isDisplay,
     });
+    this.props.modal();
   }
   toggleModal4(e) {
     this.setState({
@@ -112,7 +113,7 @@ export default class MediaHistoryList extends Component {
           <button className="list-add-button">Add to Lists</button>
         </form>
         <button className="list-add-button" onClick={this.toggleModal4}>
-          Add to New Watched List
+          Create a new list
         </button>
         <Modal
           isOpen={this.state.isOpen}
@@ -123,7 +124,7 @@ export default class MediaHistoryList extends Component {
           closeTimeoutMS={100}
           ariaHideApp={false}
         >
-          <ListForm movieId={this.props.movieId} />
+          <ListForm movieId={this.props.movieId} modal={this.toggleModal4} />
           <button className="list-add-button" onClick={this.toggleModal4}>
             Close
           </button>

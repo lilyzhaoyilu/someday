@@ -106,28 +106,27 @@ class MediaPage extends Component {
             <span>{this.state.title}</span>
             <span>{`(${this.state.year})`}</span>
           </h1>
-         
+
           <div className="details">
             <div className="media-page-details-left-side">
-            <img src={this.state.imgUrl} />
-            <div className="info">
-              <span>
-                <HiOutlineUser /> Author: {this.state.author}
-              </span>
-              <span>
-                <FiTag /> Genres:{" "}
-                {this.state.tags.map((tag, idx) => (
-                  <span className="tag-arr" key={idx}>
-                    {tag}
-                  </span>
-                ))}
-              </span>
-              <span>
-                <FcPlanner /> Release Date: {this.state.releaseDate}
-              </span>
+              <img src={this.state.imgUrl} />
+              <div className="info">
+                <span>
+                  <HiOutlineUser /> Author: {this.state.author}
+                </span>
+                <span>
+                  <FiTag /> Genres:{" "}
+                  {this.state.tags.map((tag, idx) => (
+                    <span className="tag-arr" key={idx}>
+                      {tag}
+                    </span>
+                  ))}
+                </span>
+                <span>
+                  <FcPlanner /> Release Date: {this.state.releaseDate}
+                </span>
+              </div>
             </div>
-            </div>
-
 
             <div className="media-page-details-right-side">
               <span>
@@ -136,18 +135,18 @@ class MediaPage extends Component {
               <span>
                 <HiUserGroup /> {ratingCount} people rated
               </span>
-              <UserAlsoAdded movieId={this.props.movieId} movieTitle={this.state.title} />
+              <UserAlsoAdded
+                movieId={this.props.movieId}
+                movieTitle={this.state.title}
+              />
             </div>
           </div>
-      
-        
-        
+
           <div className="plot">
             <h3>Plot Summary</h3>
             <span>{this.state.plotOutline}</span>
           </div>
         </div>
-
 
         <div className="media-button">
           <button className="list-add-button" onClick={this.toggleModal}>
@@ -165,6 +164,7 @@ class MediaPage extends Component {
             <MediaWatchList
               userId={this.props.userId}
               movieId={this.props.movieId}
+              modal={this.toggleModal}
             />
             <button className="list-add-button" onClick={this.toggleModal}>
               Close
@@ -185,6 +185,7 @@ class MediaPage extends Component {
             <MediaHistoryList
               userId={this.props.userId}
               movieId={this.props.movieId}
+              modal={this.toggleModal2}
             />
             <button className="list-add-button" onClick={this.toggleModal2}>
               Close
