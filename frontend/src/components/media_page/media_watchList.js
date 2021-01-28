@@ -116,7 +116,7 @@ export default class WatchlistIndex extends Component {
           <button className="list-add-button">Add to Lists</button>
         </form>
         <button className="list-add-button" onClick={this.toggleModal3}>
-          Add to New Todo List
+          Create a new list
         </button>
         <Modal
           isOpen={this.state.isOpen}

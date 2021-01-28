@@ -39,7 +39,7 @@ export default class HistorylistIndex extends Component {
     }
     return this.state.lists ? (
       <div className="historylist-index">
-        <h2>Historylists ···({listLength} historylists)</h2>
+        <h2>Historylists ···({listLength} list(s))</h2>
         <InfiniteScroll
           dataLength={this.state.lists.length}
           next={this.fetchMoreData}
