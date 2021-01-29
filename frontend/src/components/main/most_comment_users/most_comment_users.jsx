@@ -4,7 +4,7 @@ import React, { Component } from "react";
 class NewUserIndex extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { users: {} };
+		this.state = { users: {}, userHolder: {} };
 	}
 
 	componentDidMount() {
@@ -19,26 +19,35 @@ class NewUserIndex extends Component {
 							...this.state.users,
 							[comment.user]: this.state.users[comment.user] + 1,
 						},
+						userHolder: {
+							...this.state.userHolder,
+							[comment.user]: this.state.userHolder[comment.user] + 1,
+						},
 					});
 				} else {
 					this.setState({
 						...this.state,
 						users: { ...this.state.users, [comment.user]: 1 },
+						userHolder: { ...this.state.userHolder, [comment.user]: 1 },
 					});
 				}
 			});
 			const countArr = Object.values(this.state.users).sort((a, b) => b - a);
 			const topCommenter = [];
+
 			for (let i = 0; i < countArr.length; i++) {
 				const currIdx = Object.values(this.state.users).indexOf(countArr[i]);
 				const currUser = Object.keys(this.state.users)[currIdx];
-				if (topCommenter.includes(currUser) && currIdx + 1 < countArr.length) {
-					topCommenter.push(Object.keys(this.state.users)[currIdx + 1]);
-				} else {
-					topCommenter.push(currUser);
-				}
-				this.setState({ ...this.state, topCommenter: topCommenter });
+				topCommenter.push(currUser);
+				const currUsers = this.state.users;
+				delete currUsers[currUser];
+				this.setState({
+					...this.state,
+					users: currUsers,
+					topCommenter: topCommenter,
+				});
 			}
+			this.setState({ ...this.state, users: this.state.userHolder });
 		});
 	}
 	render() {
